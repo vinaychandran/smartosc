@@ -1,0 +1,179 @@
+.m-lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1;
+    opacity: 0;
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+    -webkit-transition: opacity 0.3s ease-out, -webkit-transform 0.3s ease-out;
+    transition: opacity 0.3s ease-out, -webkit-transform 0.3s ease-out;
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+    pointer-events: none;
+  }
+  .m-lightbox.is-active {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    z-index: 9999;
+    pointer-events: auto;
+  }
+  .m-lightbox__slider {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+  .m-lightbox__slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .m-lightbox__slide img {
+    display: block;
+    max-width: calc(100vw - 2em);
+    max-height: 90vh;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  @media (min-width: 768px) {
+    .m-lightbox__slide img {
+      max-width: calc(100vw - 116px);
+      max-height: 90vh;
+    }
+  }
+  .m-lightbox__slide.is-loaded.is-active img {
+    opacity: 1;
+  }
+  .m-lightbox__slide.is-loaded.is-active .spinner {
+    display: none;
+  }
+  .m-lightbox button {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    z-index: 102;
+    border: none;
+    cursor: pointer;
+  }
+  .m-lightbox__close {
+    top: 1em;
+    right: 1em;
+    background: transparent;
+    span{
+      color: #fff;
+      font-size: 30px;
+      font-weight: 300;
+    }
+  }
+  .m-lightbox__nextPrev {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    -webkit-transition: opacity 0.3s ease-out, -webkit-transform 0.3s ease-out;
+    transition: opacity 0.3s ease-out, -webkit-transform 0.3s ease-out;
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+    width: 66px;
+    height: 66px; 
+    background: $default-bg;
+  }
+  .m-lightbox__nextPrev.is-active {
+    visibility: hidden;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+  @media (min-width: 1024px) {
+    .m-lightbox__nextPrev.is-active {
+      visibility: visible;
+    }
+  }  
+  .m-lightbox__nextPrev--next {
+    right: 1em;
+  }
+  .m-lightbox__nextPrev--prev {
+    left: 1em;
+    .sprite-arw_black_pc:before{
+      transform: rotate(180deg);
+    }
+  }
+  .m-lightbox__nextPrev:hover {
+    cursor: pointer;
+  }
+  .m-lightbox__counter {
+    position: absolute;
+    bottom: 1em;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    color: #333;
+    font-weight: 700;
+  }
+  
+  .spinner {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateY(-50%) translateX(-50%);
+            transform: translateY(-50%) translateX(-50%);
+  }
+  .spinner::before, .spinner::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #333;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+            animation: sk-bounce 2.0s infinite ease-in-out;
+  }
+  .spinner::after {
+    -webkit-animation-delay: -1.0s;
+            animation-delay: -1.0s;
+  }
+  
+  @-webkit-keyframes sk-bounce {
+    0%, 100% {
+      -webkit-transform: scale(0);
+              transform: scale(0);
+    }
+    50% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  
+  @keyframes sk-bounce {
+    0%, 100% {
+      -webkit-transform: scale(0);
+              transform: scale(0);
+    }
+    50% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }

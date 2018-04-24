@@ -1,0 +1,16 @@
+extends ../layouts/default
+
+block append content
+  include ../components/home-banner.pug
+  include ../components/booking-widget.pug
+  include ../components/home-slider.pug
+  .banner-middle
+    picture 
+      source(media='(min-width: 768px)', srcset='/assets/images/banner-middle.jpg')
+      img(src='/assets/images/banner-middle-mobile.jpg')    
+  include ../components/home-video-slider.pug
+  .guest-review
+    .h5 Gust Review
+  include ../components/home-concept.pug
+  include ../components/home-gallery.pug
+  include ../components/google-map.pug

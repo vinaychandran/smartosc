@@ -1,0 +1,218 @@
+@charset "utf-8";
+.date_range_picker {
+    position: relative;
+    z-index: 1;
+    &.active {
+        z-index: 2;
+    }
+    .values {
+        padding: 10px 10px;
+        box-sizing: border-box;
+        border: 1px solid #eee;
+    }
+}
+
+.date_range_picker {
+    &.active .values {
+        box-shadow: 0 1px 0 #3399cc;
+        position: relative;
+        z-index: 2;
+    }
+    .values {
+        .value,
+        .to,
+        .clear {
+            display: inline-block;
+            vertical-align: top;
+            margin-right: 10px;
+            font-size: 18px;
+            line-height: 24px;
+        }
+        .to {
+            width: 20px;
+            height: 1px;
+            margin: 0 calc( 13px - 0.285em) 0 7px;
+            background: #DDDDDD;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .clear {
+            float: right;
+            width: 12px;
+            height: 12px;
+            margin: 0;
+            padding: 6px 0;
+            cursor: pointer;
+            display: none;
+            background: url("../images/clear.svg") 50% 50% no-repeat;
+            background-size: 12px 12px;
+        }
+        .value {
+            span {
+                cursor: pointer;
+            }
+            &.active span {
+                color: #3399cc;
+            }
+            input {
+                opacity: 0;
+            }
+        }
+    }
+    .calendar {
+        display: none;
+        width: 566px;
+        height: 319px;
+        margin: 0px;
+        padding: 10px 0px;
+        background: #fff;
+        text-align: center;
+        overflow: hidden;
+        position: absolute;
+        top: 100%;
+        left: 0px;
+        z-index: 1;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        box-sizing: border-box;
+        transition-duration: 0.5s;
+    }
+    &.active .calendar {
+        display: block;
+    }
+    .calendar {
+        .button {
+            position: absolute;
+            top: 20px;
+            z-index: 3;
+            width: 36px;
+            height: 29px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            opacity: .5;
+            cursor: pointer;
+            box-sizing: border-box;
+            border-radius: 4px;
+            background-size: 18px 11px;
+            background-color: #fff;
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            &:hover {
+                opacity: 1;
+            }
+        }
+        .button-prev {
+            background-image: url("../images/prev.svg");
+            left: 20px;
+        }
+        .button-next {
+            background-image: url("../images/next.svg");
+            right: 20px;
+        }
+        .calendarContainer {
+            position: absolute;
+            top: 10px;
+            left: -263px;
+            z-index: 2;
+            float: left;
+            width: 1092px;
+            text-align: left;
+            font-size: 0px;
+        }
+        table {
+            display: inline-block;
+            vertical-align: top;
+            width: 253px;
+            margin: 10px;
+            padding: 0px;
+            border-collapse: collapse;
+            border-spacing: 0;
+            text-align: center;
+            caption {
+                width: 100%;
+                line-height: 29px;
+                font-size: 18px;
+                font-weight: 700;
+                margin: 0px 0px 10px 0px;
+            }
+            th {
+                width: 37px;
+                font-size: 13px;
+                font-weight: 400;
+                line-height: 20px;
+                color: #999;
+                box-sizing: border-box;
+                padding: 0;
+            }
+        }
+        td {
+            width: 36px;
+            height: 35px;
+            font-size: 15px;
+            line-height: 33px;
+            box-sizing: border-box;
+            padding: 0;
+            &.valid,
+            &.inactive {
+                border: 1px solid #e4e7e7;
+            }
+            &.valid {
+                cursor: pointer;
+                &:hover {
+                    background: #cccccc;
+                }
+            }
+            &.today {
+                color: #666;
+            }
+            &.inactive {
+                color: #ccc;
+            }
+            &.valid {
+                &.intermediate,
+                &.intermediate-hover,
+                &.hovered {
+                    background: #83c6e7;
+                    border: 1px double #56aed9;
+                    color: #fff;
+                }
+                &.intermediate-hover,
+                &.hovered {
+                    color: #3399cc;
+                }
+                &.start,
+                &.end {
+                    background: #3399cc;
+                    border: 1px double #3399cc;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+        font-size: 17px;
+        &:hover {
+            background-color: #ddd;
+        }
+        &.active {
+            background-color: #ccc;
+        }
+    }
+}
+
+.tabcontent {
+    display: none;
+}

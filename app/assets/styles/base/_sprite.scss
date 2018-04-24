@@ -1,0 +1,353 @@
+.icon {
+    font-size: 10px;
+}
+
+.icon:before {
+    content:' ';
+    vertical-align:middle;
+    display: inline-block;
+    background-image: url("../svg/sprite.svg");
+    background-repeat: no-repeat;
+    background-size: 25.6em 155.4em;
+}
+
+.no-svg .icon:before {
+    background-image: url("../svg/sprite.png");
+}
+
+
+
+  .icon.sprite-account_pc:before {
+      background-position: -1em -1em;
+      width: 2em;
+      height: 2.3em;
+  }
+
+
+
+
+  .icon.sprite-account_sp:before {
+      background-position: -1em -5.3em;
+      width: 1.3em;
+      height: 1.6159999999999997em;
+  }
+
+
+
+
+  .icon.sprite-arw_black_pc:before {
+      background-position: -1em -9em;
+      width: 1.7em;
+      height: 0.8em;
+  }
+
+
+
+
+  .icon.sprite-arw_white_pc:before {
+      background-position: -1em -11.8em;
+      width: 1.7em;
+      height: 0.8em;
+  }
+
+
+
+
+  .icon.sprite-calender_pc:before {
+      background-position: -1em -14.6em;
+      width: 1.8em;
+      height: 1.8em;
+  }
+
+
+
+
+  .icon.sprite-checked_pc:before {
+      background-position: -1em -18.4em;
+      width: 2.082em;
+      height: 1.4844000000000002em;
+  }
+
+
+
+
+  .icon.sprite-checked_sp:before {
+      background-position: -1em -21.9em;
+      width: 2.082em;
+      height: 1.4844000000000002em;
+  }
+
+
+
+
+  .icon.sprite-close_black_sp:before {
+      background-position: -1em -25.4em;
+      width: 1.4em;
+      height: 1.4em;
+  }
+
+
+
+
+  .icon.sprite-close_white_sp:before {
+      background-position: -1em -28.8em;
+      width: 1.4em;
+      height: 1.4em;
+  }
+
+
+
+
+  .icon.sprite-fb_pc:before {
+      background-position: -1em -32.2em;
+      width: 3.6em;
+      height: 3.6em;
+  }
+
+
+
+
+  .icon.sprite-fb_sp:before {
+      background-position: -1em -37.8em;
+      width: 4.6em;
+      height: 4.6em;
+  }
+
+
+
+
+  .icon.sprite-flag_ch:before {
+      background-position: -1em -44.4em;
+      width: 3em;
+      height: 2em;
+  }
+
+
+
+
+  .icon.sprite-flag_en:before {
+      background-position: -1em -48.4em;
+      width: 3em;
+      height: 2em;
+  }
+
+
+
+
+  .icon.sprite-flag_jp:before {
+      background-position: -1em -52.4em;
+      width: 3em;
+      height: 2em;
+  }
+
+
+
+
+  .icon.sprite-flag_kr:before {
+      background-position: -1em -56.4em;
+      width: 3em;
+      height: 2em;
+  }
+
+
+
+
+  .icon.sprite-hotel_photo_sp:before {
+      background-position: -1em -60.4em;
+      width: 1.8em;
+      height: 1.5em;
+  }
+
+
+
+
+  .icon.sprite-hotelphoto_pc:before {
+      background-position: -1em -63.9em;
+      width: 2.2em;
+      height: 1.8em;
+  }
+
+
+
+
+  .icon.sprite-info_sp:before {
+      background-position: -1em -67.7em;
+      width: 1.5219999999999998em;
+      height: 1.5259999999999998em;
+  }
+
+
+
+
+  .icon.sprite-infomation_pc:before {
+      background-position: -1em -71.3em;
+      width: 1.6em;
+      height: 1.6em;
+  }
+
+
+
+
+  .icon.sprite-insta_pc:before {
+      background-position: -1em -74.9em;
+      width: 2.1em;
+      height: 2.1em;
+  }
+
+
+
+
+  .icon.sprite-insta_sp:before {
+      background-position: -1em -79em;
+      width: 1.7em;
+      height: 1.7em;
+  }
+
+
+
+
+  .icon.sprite-like_pc:before {
+      background-position: -1em -82.7em;
+      width: 1.9em;
+      height: 2.2em;
+  }
+
+
+
+
+  .icon.sprite-like_sp:before {
+      background-position: -1em -86.9em;
+      width: 1.4em;
+      height: 1.6120000000000005em;
+  }
+
+
+
+
+  .icon.sprite-login:before {
+      background-position: -1em -90.6em;
+      width: 2em;
+      height: 2.3em;
+  }
+
+
+
+
+  .icon.sprite-logo_pc:before {
+      background-position: -1em -94.9em;
+      width: 23.6em;
+      height: 3.4em;
+  }
+
+
+
+
+  .icon.sprite-map_pin_pc:before {
+      background-position: -1em -100.3em;
+      width: 4em;
+      height: 5.8em;
+  }
+
+
+
+
+  .icon.sprite-map_pin_sp:before {
+      background-position: -1em -108.1em;
+      width: 3em;
+      height: 4.4em;
+  }
+
+
+
+
+  .icon.sprite-menu_sp:before {
+      background-position: -1em -114.5em;
+      width: 2.5em;
+      height: 1.5em;
+  }
+
+
+
+
+  .icon.sprite-people_pc:before {
+      background-position: -1em -118em;
+      width: 2.3em;
+      height: 1.81em;
+  }
+
+
+
+
+  .icon.sprite-people_sp:before {
+      background-position: -1em -121.9em;
+      width: 2.8em;
+      height: 2em;
+  }
+
+
+
+
+  .icon.sprite-phone:before {
+      background-position: -1em -125.9em;
+      width: 1.2em;
+      height: 1.2em;
+  }
+
+
+
+
+  .icon.sprite-phone-mobile:before {
+      background-position: -1em -129.1em;
+      width: 1.7em;
+      height: 1.8em;
+  }
+
+
+
+
+  .icon.sprite-tel_pc:before {
+      background-position: -1em -132.9em;
+      width: 1.2em;
+      height: 1.2em;
+  }
+
+
+
+
+  .icon.sprite-tel_sp:before {
+      background-position: -1em -136.1em;
+      width: 1.64em;
+      height: 1.6299999999999997em;
+  }
+
+
+
+
+  .icon.sprite-top-logo:before {
+      background-position: -1em -139.8em;
+      width: 23.6em;
+      height: 3.4em;
+  }
+
+
+
+
+  .icon.sprite-tw_pc:before {
+      background-position: -1em -145.2em;
+      width: 3.6em;
+      height: 3.6em;
+  }
+
+
+
+
+  .icon.sprite-tw_sp:before {
+      background-position: -1em -150.8em;
+      width: 3.6em;
+      height: 3.6em;
+  }
+
+
+
+
+

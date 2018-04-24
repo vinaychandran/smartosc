@@ -1,0 +1,41 @@
+.booking-widget
+  .tab
+    button.tablinks(onclick="FE.global.showBookingTab(event, 'room')") お部屋
+    button.tablinks(onclick="FE.global.showBookingTab(event, 'restaurant')") レストラン
+    button.tablinks(onclick="FE.global.showBookingTab(event, 'packages')") お部屋+航空券
+
+  #room.tabcontent
+    form#form(method='get')
+      #departure
+        label(for='taste_1') 出発空港
+        select(name='cars' placeholder='出発空港')
+          option(value='1') 出発空港
+          option(value='2') 出発空港
+          option(value='3') 出発空港
+          option(value='4') 出発空港
+      #date_range_picker.date_range_picker.col.col-1-4
+        .values
+          .datelabel 
+            input#checkin_date(type='text')
+            input#checkout_date(type='text')
+          .clear
+      #people
+        label(for='taste_1') ご利用人数
+        select(name='cars' placeholder='出発空港')
+          option(value='1') 1
+          option(value='2') 2
+          option(value='3') 3
+          option(value='4') 4
+      #find-button
+        button(name='submit', type='submit', value='空室を検索') 空室を検索
+    .clearfix
+  #restaurant.tabcontent
+    h3 レストラン
+  #packages.tabcontent
+    h3 レストラン
+
+
+
+
+    
+    
