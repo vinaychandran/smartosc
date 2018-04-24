@@ -57,14 +57,18 @@
 }
 
 .btn-map{
-  max-width: 275px;
+  width: 275px;
   box-shadow: 14px 14px 90px 0 rgba(0, 0, 0, 0.2);
   margin: -25px auto 100px;
   position: relative;
-  @include md {
+  @include md {    
     position: absolute;
     bottom: 75px;
     right: 80px;
     margin: 0;
-  }
+    i{
+      top: 45%;
+      right: 25px;
+    }
+  } 
 }
