@@ -9,8 +9,7 @@ block append content
       source(media='(min-width: 768px)', srcset='/assets/images/banner-middle.jpg')
       img(src='/assets/images/banner-middle-mobile.jpg')    
   include ../components/home-video-slider.pug
-  .guest-review
-    .h5 Gust Review
+  include ../components/home-review.pug
   include ../components/home-concept.pug
   include ../components/home-gallery.pug
   include ../components/google-map.pug

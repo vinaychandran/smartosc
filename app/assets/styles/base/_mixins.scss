@@ -64,7 +64,7 @@
 @mixin landscape {
     @media screen and (orientation: landscape) {
         @content;
-    }
+    } 
 }
 
 @mixin portrait {
