@@ -71,9 +71,8 @@
     div {
         @include center(both);
         @include font-size(14px);
-        font-family: 'OpenSans';
-        font-weight: 600;
-        line-height: 1.38;
+        font-family: 'Lato';
+        line-height: 1.38; 
         text-align: center;
         width: 100%;
         span{

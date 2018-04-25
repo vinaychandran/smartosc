@@ -13,6 +13,8 @@
     margin:0 auto 50px;    
     line-height: 2;
     padding: 0 25px;
+    font-family: 'YuMin';
+    letter-spacing: 1.4px;
     @include md {
       padding: 0;
       margin:0 auto 95px;
@@ -54,12 +56,16 @@
     }
     h3{
       margin-bottom: 10px;
+      font-family: 'Lato-B';
+      letter-spacing: 2.4px;
       @include md {
         margin-bottom: 12px;
       }
     }
     p{
       margin-bottom: 0;
+      font-family: 'YuMin';
+      letter-spacing: 2.8px;
       @include md {
         margin-bottom: 25px;
       }

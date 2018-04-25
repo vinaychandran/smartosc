@@ -1,14 +1,15 @@
 .section-title {
     text-align: center;
-    h2 {
-        font-weight: $semi-bold;
+    h2 {        
         line-height: 1.47;
         letter-spacing: 2.6px;
         color: #141414;
         display: inline-block;
         margin: 0 0 50px 0;
         text-underline-position: under;
-        text-decoration: underline;        
+        text-decoration: underline;    
+        font-family: 'Lato';
+        font-weight: normal;    
     }
     padding: 0 15px;
     @include md {

@@ -32,6 +32,8 @@
   }
   h3{
     margin-bottom: 50px; 
+    font-family: 'Lato-B';
+    letter-spacing: 1.8px;
   }
   ul{
     margin-bottom: 40px;
@@ -39,6 +41,7 @@
       @include font-size(14px);
       margin-bottom: 10px;
       font-family: $secondary-font;
+      font-family: 'YuMin';
     }
   }  
 }
@@ -46,12 +49,15 @@
 .airpot-stop-info{
   h6{
     margin-bottom: 20px;
+    font-family: 'YuGo';
   }
   ul{
     margin-bottom: 0;
     li{
       @include font-size(12px);
       margin-bottom: 5px;
+      font-family: 'YuGo';
+      letter-spacing: 1.1px;
     }
   }
 }

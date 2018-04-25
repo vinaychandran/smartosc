@@ -124,8 +124,11 @@
     cursor: pointer;    
     padding: 20px 50px; 
     text-align: center;  
+    font-family: 'YuGo';
+    letter-spacing: 1.1px;
+    font-weight: 700;
     @include md {
-        padding: 30px 50px;
+        padding: 30px 50px; 
     }
 }
 

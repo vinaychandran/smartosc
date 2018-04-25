@@ -21,7 +21,6 @@ header{
   .header-right{
   	float: right;
   	@include font-size(12px);
-	font-weight: $bold;
 	color: $secondary-color; 
   }
 }
@@ -36,8 +35,8 @@ header{
 			a{
 				@include font-size(14px);
 				color: $secondary-color;
-				font-weight: $bold;
 				padding: 0 20px;
+				font-family: 'YuGo';
 			}
 		}
 	}
@@ -52,6 +51,7 @@ header{
 		color: $secondary-color;
 		span{
 			padding-left: 12px;
+			font-family: 'Lato';
 		}
 	}	
 }
@@ -81,6 +81,7 @@ header{
 	p{
 		line-height: 1;
 		margin:10px 0 0;
+		font-family: 'YuGo';
 	}
 }
 
@@ -196,10 +197,10 @@ header{
 		top: 39px;		
 		li a{
 			@include font-size(14px);
-			font-weight: 500;
 			position: relative;
 			display: block;
 			padding: 19px 25px;	
+			font-family: 'YuGo';
 			i{
 				margin-right: 20px;
 			}
@@ -238,13 +239,14 @@ header{
 
 .selected-lang{
 	position: relative;
-	padding-left: 16px;
+	padding-left: 24px;
 	line-height: 1;
 	color: $secondary-color; 
+	font-family: 'Lato';
 	&:before{
 		content:"";
 		position: absolute;
-		left: 0;
+		left: 5px;
 		top: 5px;
 		width: 0; 
 		height: 0; 

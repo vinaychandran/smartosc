@@ -64,7 +64,9 @@ footer {
         display: block;
         padding: 15px 0;
         border-bottom: 1px solid rgba(255,2555,255,0.1); 
-        position: relative;     
+        position: relative; 
+        font-family: 'YuGo'; 
+        letter-spacing: 1.2px;    
         @include md {
           float: left;     
           margin-right: 30px;
@@ -109,7 +111,11 @@ footer {
     li{
       margin-right: 30px;      
       a{
-        @include font-size(10px); 
+        @include font-size(10px);
+        font-family: 'YuGo'; 
+        letter-spacing: 1px; 
+        line-height: 2.6;
+        display: block;
       }
     }
   }
@@ -128,6 +134,10 @@ footer {
       @include md {
         margin-right: 30px;
       }
+      a{
+        font-family: 'YuGo'; 
+        letter-spacing: 1.2px;
+      }
     }
   }
 } 
@@ -137,7 +147,6 @@ footer {
   color: $secondary-color;
   opacity: 0.4;
   @include font-size(10px); 
-  font-family: $default-font;
+   font-family: 'Lato';
   letter-spacing: 1px;
-
 }
