@@ -113,3 +113,34 @@
         }
     }    
 }
+
+.gallery-nav{
+   .slick-slide{
+        text-align: center;
+        img{
+            margin: 0 auto;
+        }
+   } 
+   @include md {
+        .slick-prev{
+            left: 10px;
+        }
+        .slick-next {
+            right: 10px;
+        }
+   }
+}
+
+#tablink {
+    @include font-size(12px);
+    font-family: 'YuGo';
+    font-weight: 700;
+    margin: 0 20px 20px 20px;
+    text-align: center;
+    display: block;
+    padding: 20px;
+    border: 2px solid #000;
+    @include sm {
+      display: none;
+    }
+}

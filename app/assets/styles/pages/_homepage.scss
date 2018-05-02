@@ -4,10 +4,17 @@
 
 .booking-widget {
   padding-bottom: 100px;
+  @include md {
+    padding-bottom: 50px;
+  }
 }
 
 .home-slider {
-  padding-bottom: 100px;  
+  padding: 100px 0;  
+  @include md {
+    padding: 0 0 100px 0;  
+  }
+
   .home-slider-nav{
     max-width: 1040px;
     margin: 0 auto;    
@@ -28,7 +35,7 @@
     max-width: 290px;
     @include md {
       margin: 0 15px; 
-      max-width: 320px;
+      max-width: 320px; 
     }
   }
 
@@ -119,7 +126,7 @@
   //   padding: 0 21px;
   // }
   .home-video-slider-nav{
-    @include md {
+    @include sm {
       display: flex;
       justify-content:space-between;
     }
@@ -128,10 +135,11 @@
     position: relative;
     display: block;
     float: left;
-    width: 47%;
     margin-top: 40px;
-    @include md {
+    width: 47%;
+    @include sm {
       margin-top: 0;
+      width: auto;
     }
     &:nth-child(even) {
       float: right;
@@ -141,11 +149,11 @@
     }
     &:nth-child(2) {
       margin-top: 30px; 
-      @include md {
+      @include sm {
         margin-top: 0;
       }
     }
-    @include md {
+    @include sm {
       margin: 0;
     }
     p {

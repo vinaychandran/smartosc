@@ -3,13 +3,13 @@ footer {
   color: $secondary-color; 
   padding: 30px 0; 
 
-  @include md {
+  @include sm {
     padding: 65px 0 50px; 
   } 
   .large-container{
     display: flex;
     flex-direction: column;
-    @include md {
+    @include sm {
       display: block;
       overflow: hidden;
     }
@@ -33,7 +33,7 @@ footer {
     img{
       display: block;
       margin: 0 auto;
-      @include md {
+      @include sm {
         margin: 0; 
       }
     }
@@ -42,7 +42,7 @@ footer {
     order:2;
     padding-bottom: 40px;
     text-align: center;
-    @include md {
+    @include sm {
       text-align: left;
     }
     a{
@@ -67,7 +67,7 @@ footer {
         position: relative; 
         font-family: 'YuGo'; 
         letter-spacing: 1.2px;    
-        @include md {
+        @include sm {
           float: left;     
           margin-right: 30px;
           padding: 0;
@@ -85,7 +85,7 @@ footer {
           border-width: 2px 2px 0 0;
           border-style: solid;
           transform: rotate(45deg);
-          @include md {
+          @include sm {
             display: none;
           }
         }
@@ -103,7 +103,7 @@ footer {
     float: left;
     opacity: 0.6;
     margin-bottom: 35px;
-    @include md {
+    @include sm {
       width: 25%;
       opacity: 1;
       margin-bottom: 0;
@@ -124,14 +124,14 @@ footer {
 .footer-bottom-menu{
   order:5;
   margin-bottom: 20px;
-  @include md {
+  @include sm {
     margin-bottom: 0;
   }
   ul{
     li{
       float: left;
       margin-right: 10px;
-      @include md {
+      @include sm {
         margin-right: 30px;
       }
       a{

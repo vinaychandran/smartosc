@@ -1,65 +1,139 @@
-class tabs {
-    constructor() {
-        this.tabLinks = [];
-        this.contentDivs = [];
-    };
+/**
+ * @fileOverview
+ * @author Zoltan Toth
+ * @version 1.0.0
+ */
 
-    tabSet() {
-        let tabListItems = document.getElementById('tabs').childNodes;
-        for (let i = 0; i < tabListItems.length; i++) {
-            if (tabListItems[i].nodeName == 'LI') {
-                let tabLink = this.getFirstChildWithTagName(tabListItems[i], 'A');
-                let id = this.getHash(tabLink.getAttribute('href'));
-                this.tabLinks[id] = tabLink;
-                this.contentDivs[id] = document.getElementById(id);
+/**
+ * @description
+ * Vanilla Javascript Tabs
+ *
+ * @class
+ * @param {string} options.elem - HTML id of the tabs container
+ * @param {number} [options.open = 0] - Render the tabs with this item open
+ */
+var Tabs = function(options) {
+    var elem         = document.getElementById(options.elem);
+    if(elem) {
+        
+        var open         = options.open || 0,
+            titleClass   = 'tabs-title',
+            activeClass  = 'tabs-title-active',
+            contentClass = 'tabs-content',
+            tabsNum      = elem.querySelectorAll('.' + titleClass).length;
+            
+        render();
+        
+        /**
+         * Initial rendering of the tabs.
+         */
+        function render(n) {
+            elem.addEventListener('click', onClick);
+
+            var init = (n == null) ? checkTab(open) : checkTab(n);
+    
+            for (var i = 0; i < tabsNum; i++) {
+                elem.querySelectorAll('.' + titleClass)[i].setAttribute('data-index', i);
+                if (i === init) openTab(i);
             }
         }
 
-        let i = 0;
-
-        for (let id in this.tabLinks) {
-
-            this.tabLinks[id].addEventListener('click', this.showTab);
-
-            this.tabLinks[id].onfocus = function() {
-
-                this.blur()
-            };
-            if (i == 0) this.tabLinks[id].className = 'selected';
-            i++;
+        /**
+         * Handle clicks on the tabs.
+         * 
+         * @param {object} e - Element the click occured on.
+         */
+        function onClick(e) {
+            if (e.target.className.indexOf(titleClass) === -1) return;
+            e.preventDefault();
+            openTab(e.target.getAttribute('data-index'));
         }
-        let j = 0;
-
-        for (let id in this.contentDivs) {
-            if (j != 0) this.contentDivs[id].className = 'tabContent hide';
-            j++;
+        
+        /**
+         * Hide all tabs and re-set tab titles.
+         */
+        function reset() {
+            [].forEach.call(elem.querySelectorAll('.' + contentClass), function(item) {
+                item.style.display = 'none';
+            });
+            
+            [].forEach.call(elem.querySelectorAll('.' + titleClass), function(item) {
+                item.className = removeClass(item.className, activeClass);
+            });
         }
-    };
+        
+        /**
+         * Utility function to remove the open class from tab titles.
+         *
+         * @param {string} str - Current class.
+         * @param {string} cls - The class to remove.
+         */
+        function removeClass(str, cls) {
+            var reg = new RegExp('(\ )' + cls + '(\)', 'g');
+            return str.replace(reg, '');
+        }
 
-    showTab(e) {
-        const that = e.target.getAttribute('href');
-        let selectedId = that.substring(that.lastIndexOf('#') + 1);
+        /**
+         * Utility function to remove the open class from tab titles.
+         *
+         * @param n - Tab to open.
+         */
+        function checkTab(n) {
+            return (n < 0 || isNaN(n) || n > tabsNum) ? 0 : n;
+        }
+        
+        /**
+         * Opens a tab by index.
+         * 
+         * @param {number} n - Index of tab to open. Starts at 0.
+         * 
+         * @public
+         */
+        function openTab(n) {
+            reset();
 
-        for (let id in this.contentDivs) {
-            if (id == selectedId) {
-                this.tabLinks[id].className = 'selected';
-                this.contentDivs[id].className = 'tabContent';
-            } else {
-                this.tabLinks[id].className = '';
-                this.contentDivs[id].className = 'tabContent hide';
+            var i = checkTab(n);
+
+            elem.querySelectorAll('.' + titleClass)[i].className += ' ' + activeClass;
+            elem.querySelectorAll('.' + contentClass)[i].style.display = '';
+
+            if(document.getElementById('tablink')) {
+                document.getElementById('tablink').innerText = elem.querySelectorAll('.' + titleClass)[i].text;
+
+                if (window.innerWidth <= 768) {
+                    document.getElementById('tabs-header').style.display = 'none';
+                }
             }
-        }
-        return false;
-    };
 
-    getFirstChildWithTagName(element, tagName) {
-        for (let i = 0; i < element.childNodes.length; i++) {
-            if (element.childNodes[i].nodeName == tagName) return element.childNodes[i];
+            
         }
-    };
 
-    getHash(url) {
-        var hashPos = url.lastIndexOf('#');
-        return url.substring(hashPos + 1);
-    };
-}
+        /**
+         * Updates the tabs.
+         * 
+         * @param {number} n - Index of tab to open. Starts at 0.
+         * 
+         * @public
+         */
+        function update(n) {
+            destroy();
+            reset();
+            render(n);
+        }
+
+        /**
+         * Removes the listeners from the tabs.
+         * 
+         * @public
+         */
+        function destroy() {
+            elem.removeEventListener('click', onClick);
+        }
+
+        return {
+            open: openTab,
+            update: update,
+            destroy: destroy
+        };
+    }
+};

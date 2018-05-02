@@ -1,41 +1,299 @@
-.booking-widget
-  .tab
-    button.tablinks(onclick="FE.global.showBookingTab(event, 'room')") お部屋
-    button.tablinks(onclick="FE.global.showBookingTab(event, 'restaurant')") レストラン
-    button.tablinks(onclick="FE.global.showBookingTab(event, 'packages')") お部屋+航空券
-
-  #room.tabcontent
-    form#form(method='get')
-      #departure
-        label(for='taste_1') 出発空港
-        select(name='cars' placeholder='出発空港')
-          option(value='1') 出発空港
-          option(value='2') 出発空港
-          option(value='3') 出発空港
-          option(value='4') 出発空港
-      #date_range_picker.date_range_picker.col.col-1-4
-        .values
-          .datelabel 
-            input#checkin_date(type='text')
-            input#checkout_date(type='text')
-          .clear
-      #people
-        label(for='taste_1') ご利用人数
-        select(name='cars' placeholder='出発空港')
-          option(value='1') 1
-          option(value='2') 2
-          option(value='3') 3
-          option(value='4') 4
-      #find-button
-        button(name='submit', type='submit', value='空室を検索') 空室を検索
-    .clearfix
-  #restaurant.tabcontent
-    h3 レストラン
-  #packages.tabcontent
-    h3 レストラン
-
-
-
-
-    
-    
+section.booking-widget.visible-desktop#booking-widget
+  .container
+    div.booking-title.visible-mobile
+      p 空室検索
+      a.close-booking
+        i.icon.sprite-close_black_sp
+    .tabs#booking-tabs
+      ul.tabs-header
+        li
+          a.tabs-title(href='#') お部屋
+        li
+          a.tabs-title(href='#') レストラン
+        li
+          a.tabs-title(href='#') お部屋+航空券
+      #booking-tab1.tabs-content
+        .date-picker-tab1
+          label チェックイン
+          .date-picker-tab1-container
+            .values
+              .startDateContainer
+                //label チェックイン
+                .startDate
+                  .value.date_at
+                    span.date_at
+                    input#date_at.date_at(type='hidden')
+              .to ~
+              .endDateContainer
+                //label チェックアウト
+                .endDate
+                  .value.date_to
+                    span.date_to
+                    input#date_to.date_to(type='hidden')
+            //.calendar-backdrop
+            .calendar
+              //img.clear(src='/assets/images/clear.svg' )
+              .button.button-prev
+              .button.button-next
+              .calendarContainer
+              .bottomLayer
+                span.daysFromTo 2018年00月00日 金曜日 ~ 2018年00月00日 金曜日
+                .nights 10 金曜日
+                //.button.closePopup &#x5B8C;&#x4E86;
+        .people
+          label ご利用人数
+          .people-list
+            p 大人2名, 子供1名
+              span １部屋
+          .popup-wrap.popup-create
+                //.overlay
+                .big-popup.people-list-popup
+                  .head-popup
+                    section.grown-up
+                      .form-group
+                        label.form-label(for='') 大人
+                        .input-showtext
+                          input.form-control(type='text', placeholder='0人')
+                          .popup-menu
+                            .popup-content-input
+                              ul.cities
+                                li
+                                  span(target='Hokkaido', names='Hokkaido') 0人
+                                li
+                                  span(target='Okinawa', names='Okinawa') 1人
+                                li
+                                  span(target='Tochigi', names='Tochigi') 2人
+                                li
+                                  span(target='Tokyo', names='Tokyo') 3人
+                    section.children
+                      .form-group
+                        label.form-label(for='') 子供
+                        .input-showtext
+                          input.form-control(type='text', placeholder='0人')
+                          .popup-menu
+                            .popup-content-input
+                              ul.cities
+                                li
+                                  span(target='Hokkaido', names='Hokkaido', value='0') 0人
+                                li
+                                  span(target='Okinawa', names='Okinawa', value='1') 1人
+                                li
+                                  span(target='Tochigi', names='Tochigi', value='2') 2人
+                                li
+                                  span(target='Tokyo', names='Tokyo', value='3') 3人
+                    section.room
+                      .form-group
+                        label.form-label(for='') 部屋
+                        .input-showtext
+                          input.form-control(type='text', placeholder='0')
+                          .popup-menu
+                            .popup-content-input
+                              ul.cities
+                                li
+                                  span(target='Hokkaido', names='Hokkaido') 0
+                                li
+                                  span(target='Okinawa', names='Okinawa') 1
+                                li
+                                  span(target='Tochigi', names='Tochigi') 2
+                                li
+                                  span(target='Tokyo', names='Tokyo') 3
+                  .input-popup
+                      .title 小学生の添い寝について
+                      ul
+                        li 大人1名様に対し、添い寝のお子様1名までとします。
+                        li 小学生の添い寝希望のお客様がご朝食をご希望の場合、現地にて別途1,030円頂戴いたします。（未就学児は無料）
+                        li 小学生の添い寝の場合、幼児欄の「食事・布団不要」に人数をご入力の上、予約画面下の備考欄にお子様の年齢をご記載ください。
+                  .btn-group
+                      button.clear クリア
+                      button.done 完了
+        .promo-code
+          section
+            .form-group
+              label.form-label(for='') プロモコード
+              .input-showtext
+                input.form-control(type='text', placeholder='プロモコード)')
+        .find-button
+          label 最低価格保証
+          button(name='submit', type='submit', value='空室を検索') 空室を検索
+      #booking-tab2.tabs-content
+        .number-of-people
+          section
+            .form-group
+              label.form-label(for='') ご利用人数
+              .input-showtext
+                input.form-control(type='text', placeholder='大阪(伊丹・関西)')
+                .popup-menu
+                  .popup-content-input
+                    ul.cities
+                      li
+                        span(target='Hokkaido', names='Hokkaido') 1名
+                      li
+                        span(target='Okinawa', names='Okinawa') 2名
+                      li
+                        span(target='Tochigi', names='Tochigi') 3名
+                      li
+                        span(target='Tokyo', names='Tokyo') 4名
+        .date-picker-tab2-single
+          label チェックイン
+          .date-picker-tab2-single-container
+            .values
+              .startDateContainer
+                .startDate
+                  .value.date_at
+                    span.date_at
+                    input#date_at.date_at(type='hidden')
+            .time-selection
+              section
+                .form-group
+                  .input-showtext
+                    input.form-control(type='text', placeholder='00:00')
+                    .popup-menu
+                      .popup-content-input
+                        ul.cities
+                          li
+                            span(target='Hokkaido', names='Hokkaido') 19:30
+                          li
+                            span(target='Okinawa', names='Okinawa') 20:00
+                          li
+                            span(target='Tochigi', names='Tochigi') 20:30
+                          li
+                            span(target='Tokyo', names='Tokyo') 21:00
+            //.calendar-backdrop
+            .calendar
+              .button.button-prev
+              .button.button-next
+              .calendarContainer
+        .shop
+          section
+            .form-group
+              label.form-label(for='') お店
+              .input-showtext
+                input.form-control(type='text', placeholder='大阪(伊丹・関西・神戸)')
+                .popup-menu
+                  .popup-content-input
+                    ul.cities
+                      li
+                        span(target='Hokkaido', names='Hokkaido') レストラン「ガーデニア」
+                      li
+                        span(target='Okinawa', names='Okinawa') チェックイン
+                      li
+                        span(target='Tochigi', names='Tochigi') チェックアウト
+                      li
+                        span(target='Tokyo', names='Tokyo') 大人2名
+        .find-button
+          label 最低価格保証
+          button(name='submit', type='submit', value='空室を検索') 空室を検索
+      #booking-tab3.tabs-content
+        .room-locations
+          section
+            .form-group
+              label.form-label(for='') 出発空港
+              .input-showtext
+                input.form-control(type='text', placeholder='大阪(伊丹・関西・神戸)')
+                .popup-menu
+                  .popup-content-input
+                    ul.cities
+                      li
+                        span(target='Hokkaido', names='Hokkaido') 出発空港
+                      li
+                        span(target='Okinawa', names='Okinawa') チェックイン
+                      li
+                        span(target='Tochigi', names='Tochigi') チェックアウト
+                      li
+                        span(target='Tokyo', names='Tokyo') 大人2名
+        .date-picker-tab3
+          label チェックイン
+          .date-picker-tab3-container
+            .values
+              .startDateContainer
+                //label チェックイン
+                .startDate
+                  .value.date_at
+                    span.date_at
+                    input#date_at.date_at(type='hidden')
+              .to ~
+              .endDateContainer
+                //label チェックアウト
+                .endDate
+                  .value.date_to
+                    span.date_to
+                    input#date_to.date_to(type='hidden')
+            //.calendar-backdrop
+            .calendar
+              //img.clear(src='/assets/images/clear.svg' )
+              .button.button-prev
+              .button.button-next
+              .calendarContainer
+              .bottomLayer
+                span.daysFromTo 2018年00月00日 金曜日 ~ 2018年00月00日 金曜日
+                .nights 10 金曜日
+                //.button.closePopup &#x5B8C;&#x4E86;
+        .people
+          label ご利用人数
+          .people-list
+            p 大人2名, 子供1名
+              span １部屋
+          .popup-wrap.popup-create
+                //.overlay
+                .big-popup.people-list-popup
+                  .head-popup
+                    section.grown-up
+                      .form-group
+                        label.form-label(for='') 大人
+                        .input-showtext
+                          input.form-control(type='text', placeholder='0人')
+                          .popup-menu
+                            .popup-content-input
+                              ul.cities
+                                li
+                                  span(target='Hokkaido', names='Hokkaido') 0人
+                                li
+                                  span(target='Okinawa', names='Okinawa') 1人
+                                li
+                                  span(target='Tochigi', names='Tochigi') 2人
+                                li
+                                  span(target='Tokyo', names='Tokyo') 3人
+                    section.children
+                      .form-group
+                        label.form-label(for='') 子供
+                        .input-showtext
+                          input.form-control(type='text', placeholder='0人')
+                          .popup-menu
+                            .popup-content-input
+                              ul.cities
+                                li
+                                  span(target='Hokkaido', names='Hokkaido', value='0') 0人
+                                li
+                                  span(target='Okinawa', names='Okinawa', value='1') 1人
+                                li
+                                  span(target='Tochigi', names='Tochigi', value='2') 2人
+                                li
+                                  span(target='Tokyo', names='Tokyo', value='3') 3人
+                    section.room
+                      .form-group
+                        label.form-label(for='') 部屋
+                        .input-showtext
+                          input.form-control(type='text', placeholder='0')
+                          .popup-menu
+                            .popup-content-input
+                              ul.cities
+                                li
+                                  span(target='Hokkaido', names='Hokkaido') 0
+                                li
+                                  span(target='Okinawa', names='Okinawa') 1
+                                li
+                                  span(target='Tochigi', names='Tochigi') 2
+                                li
+                                  span(target='Tokyo', names='Tokyo') 3
+                  .input-popup
+                      .title 小学生の添い寝について
+                      ul
+                        li 大人1名様に対し、添い寝のお子様1名までとします。
+                        li 小学生の添い寝希望のお客様がご朝食をご希望の場合、現地にて別途1,030円頂戴いたします。（未就学児は無料）
+                        li 小学生の添い寝の場合、幼児欄の「食事・布団不要」に人数をご入力の上、予約画面下の備考欄にお子様の年齢をご記載ください。
+                  .btn-group
+                      button.clear クリア
+                      button.done 完了
+        .find-button
+          label 最低価格保証
+          button(name='submit', type='submit', value='空室を検索') 空室を検索

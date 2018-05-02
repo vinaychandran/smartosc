@@ -3,35 +3,51 @@ section.gallery
 		.section-title
 			h2 LIVE GALLERY
 		a#tablink(href='') open
-		ul.tabs.open#tabs
-			li
-				a(href='', data-href='#tab1') ホテル写真
-			li
-				a(href='', data-href='#tab2') ゲスト写真
-			li
-				a(href='', data-href='#tab3') ライブフィード
-			li
-				a(href='', data-href='#tab4') ブランドビデオ
-		#tab1.tabContent
-			div#instafeed.instafeed(data-limit='7' data-more='67 Hotel Photos' data-morespan='VIEW GALLERY')
-		#tab2.tabContent
-			div.hotel-photos
-				a.lazy(href="/assets/images/concept1.jpg" data-rel="aiLightbox" data-src="/assets/images/gallery/1.jpg")
-				a.lazy(href="https://unsplash.it/1920/1080?image=773" data-rel="aiLightbox" data-src="/assets/images/gallery/2.jpg")
-				a.lazy(href="https://unsplash.it/1920/1080?image=774" data-rel="aiLightbox" data-src="/assets/images/gallery/3.jpg")
-				a.lazy(href="https://unsplash.it/1920/1080?image=775" data-rel="aiLightbox" data-src="/assets/images/gallery/4.jpg")
-				a.lazy(href="https://unsplash.it/1920/1080?image=776" data-rel="aiLightbox" data-src="/assets/images/gallery/5.jpg")
-				a.lazy(href="https://unsplash.it/1920/1080?image=777" data-rel="aiLightbox" data-src="/assets/images/gallery/6.jpg")
-				a.lazy(href="https://unsplash.it/1920/1080?image=778" data-rel="aiLightbox" data-src="/assets/images/gallery/7.jpg")
-				a.lazy(id='more-link' href='gallery.html')
-					div 67 Hotel Photos
-						span VIEW GALLERY
-						i.mys-arrow-left.white
-		#tab3.tabContent
-			div Images
-			p Tab3
-				span VIEW GALLERY
-		#tab4.tabContent
-			div Images
-			p Tab4
-				span VIEW GALLERY
+		.tabs#gallery-tabs
+			ul.tabs-header#tabs-header
+				li
+					a.tabs-title(href='#') ホテル写真
+				li
+					a.tabs-title(href='#') ゲスト写真
+				li
+					a.tabs-title(href='#') ライブフィード
+				li
+					a.tabs-title(href='#') ブランドビデオ
+			.tabs-content
+				div#instafeed.instafeed(data-limit='7' data-more='67 Hotel Photos' data-morespan='VIEW GALLERY')
+			.tabs-content
+				div.hotel-photos
+					a.lazy(data-src="/assets/images/gallery/1.jpg" data-show-id="popup-gallery" data-slide="0")
+					a.lazy(data-src="/assets/images/gallery/2.jpg" data-show-id="popup-gallery" data-slide="1")
+					a.lazy(data-src="/assets/images/gallery/3.jpg" data-show-id="popup-gallery" data-slide="2")
+					a.lazy(data-src="/assets/images/gallery/4.jpg" data-show-id="popup-gallery" data-slide="3")
+					a.lazy(data-src="/assets/images/gallery/5.jpg" data-show-id="popup-gallery" data-slide="4")
+					a.lazy(data-src="/assets/images/gallery/6.jpg" data-show-id="popup-gallery" data-slide="5")
+					a.lazy(data-src="/assets/images/gallery/7.jpg" data-show-id="popup-gallery" data-slide="6")
+					a.lazy(id='more-link' href='gallery.html')
+						div 67 Hotel Photos
+							span VIEW GALLERY
+							i.mys-arrow-left.white
+			.tabs-content
+				div Images
+				p Tab3
+					span VIEW GALLERY
+			.tabs-content
+				div Images
+				p Tab4
+					span VIEW GALLERY 
+.gallery-nav(data-basicLightbox data-id="popup-gallery")
+		div
+			img(src='/assets/images/mobile1.jpg')
+		div
+			img(src='/assets/images/mobile2.jpg')
+		div
+			img(src='/assets/images/mobile3.jpg')
+		div
+			img(src='/assets/images/mobile1.jpg')
+		div
+			img(src='/assets/images/mobile2.jpg')
+		div
+			img(src='/assets/images/mobile3.jpg')
+		div
+			img(src='/assets/images/mobile3.jpg')

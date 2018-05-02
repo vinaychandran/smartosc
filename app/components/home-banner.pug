@@ -1,4 +1,4 @@
-section.main-banner
+section.main-banner.home-banner
 	picture.banner-image
 		source(media='(min-width: 768px)', srcset='/assets/images/homebanner.jpg')
 		img(src='/assets/images/homebanner-mobile.jpg')
@@ -6,14 +6,12 @@ section.main-banner
 		h1 空港と寺社を臨む
 		span RISE ABOVE THE BAY
 	.photos-link.hidden-xs
-		a.guestPhotos(href="#tabs") 
-			span.icon.sprite-insta_pc 
+		a.guestPhotos.scroll(href="#gallery-tabs")
+			span.icon.sprite-insta_pc
 			| Guest Photos
-		a.hotelPhotos(href="#tabs") 
-			span.icon.sprite-hotelphoto_pc 
+		a.hotelPhotos.scroll(href="#gallery-tabs")
+			span.icon.sprite-hotelphoto_pc
 			| Hotel Photos
-	.photos-link-mobile.visible-xs
-		a.guestPhotos(href="#tabs") 
-			span.icon.sprite-insta_sp 
-		a.hotelPhotos(href="#tabs") 
-			span.icon.sprite-hotel_photo_sp
+	.calendar-link.visible-device
+		a(href="#") 空室検索
+			i.icon.sprite-calendar-interface-symbol-tool
