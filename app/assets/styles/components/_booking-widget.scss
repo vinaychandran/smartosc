@@ -7,11 +7,14 @@
   bottom: 0;
   z-index: 9999;
   width: 100%;
+  overflow-y: scroll;
   @include md {
     position: relative;
     margin-top: -80px;
     background: none;
+    overflow-y:inherit;
   }
+
   &.sticky {
     position: fixed;
     top: 94px;
@@ -22,19 +25,23 @@
     box-shadow: 3.5px 3.5px 6px 0 rgba(0, 0, 0, 0.1);
     background: #fff;
     margin: 0;
-    .tabs-header{
+
+    .tabs-header {
       display: none;
     }
+
     .tabs-content {
-        height: 80px;
-        padding: 10px 60px;
-        label {
-          margin-bottom: 9px;
-          display: none;
-        }
+      height: 80px;
+      padding: 10px 60px;
+
+      label {
+        margin-bottom: 9px;
+        display: none;
+      }
     }
+
     + .home-slider {
-        padding-top: 312px;
+      padding-top: 312px;
     }
   }
 
@@ -51,16 +58,20 @@
       @include font-size(14px);
       margin: 0;
       float: left;
-      width: 84%;
+      width: 81%;
       padding: 18px 0;
       line-height: 1.25;
       letter-spacing: 5.3px;
+      border-right: 1px solid #eee;
+    }
+
+    .close-booking {
+      @extend %clearfix;
     }
 
     a {
-      float: right;
-      padding: 18px 22px;
-      border-left: 1px solid #eee;
+      padding: 15px 22px;
+      display: table;
     }
   }
 
@@ -89,10 +100,10 @@
         opacity: 0.4;
         font-family: $primary-font;
         @include font-size(14px);
-        font-weight: bold;
         letter-spacing: 1.1px;
         color: $default-color;
         margin: 0;
+
         &.tabs-title-active {
           opacity: 1;
           background: $secondary-color;
@@ -132,6 +143,7 @@
   #booking-tab2,
   #booking-tab3 {
     @extend %clearfix;
+
     .promo-code {
       float: left;
       margin-right: 11px;
@@ -172,7 +184,6 @@
             height: 66px;
             border: 2px solid #eeeeee;
             @include font-size(12px);
-            font-weight: bold;
             letter-spacing: 0.9px;
             padding: 0 11px;
             color: $default-color;
@@ -205,7 +216,8 @@
         padding: 5px 10px;
       }
 
-      .date-picker-tab1-container, .date-picker-tab3-container {
+      .date-picker-tab1-container,
+      .date-picker-tab3-container {
         border: 2px solid #eeeeee;
         border-radius: 4px;
         width: 360px;
@@ -229,7 +241,6 @@
       .startDate {
         font-family: $primary-font;
         @include font-size(12px);
-        font-weight: bold;
         line-height: 2.5;
         letter-spacing: 0.9px;
         text-align: left;
@@ -248,7 +259,9 @@
           padding-left: 15px;
         }
 
-        .year,.day, .month{
+        .day,
+        .month,
+        .year {
           display: inline;
         }
 
@@ -273,7 +286,6 @@
       .daysFromTo {
         font-family: $primary-font;
         @include font-size(12px);
-        font-weight: bold;
         letter-spacing: normal;
         text-align: center;
         color: rgba(0, 0, 0, 0.6);
@@ -334,7 +346,7 @@
         display: none;
         width: 700px;
         height: 430px;
-        margin: 0;        
+        margin: 0;
         background: $secondary-color;
         text-align: center;
         overflow: hidden;
@@ -352,13 +364,13 @@
         // left: 50%;
         // margin-top: -283px;
         // margin-left: -350px;
-
         @include mobile {
           width: 320px;
         }
+
         &:after {
           content: '';
-          top: -21px;
+          top: -18px;
           width: 0;
           left: -170px;
           @include mobile {
@@ -452,7 +464,6 @@
               border-bottom: 2px solid $default-color;
               font-family: $primary-font;
               @include font-size(14px);
-              font-weight: bold;
               line-height: 2.14;
               letter-spacing: 1.1px;
               text-align: center;
@@ -467,7 +478,6 @@
               box-sizing: border-box;
               padding: 0;
               font-family: $primary-font;
-              font-weight: bold;
               text-align: center;
               color: $default-color;
               padding: 10px 0;
@@ -535,7 +545,10 @@
           left: 0;
           display: block;
           width: 100%;
-          .year,.day, .month{
+
+          .day,
+          .month,
+          .year {
             display: inline;
           }
 
@@ -543,7 +556,6 @@
             opacity: 0.6;
             font-family: $primary-font;
             @include font-size(14px);
-            font-weight: bold;
             letter-spacing: normal;
             text-align: center;
             color: rgba(0, 0, 0, 0.6);
@@ -553,7 +565,6 @@
             height: 13px;
             font-family: $primary-font;
             @include font-size(14px);
-            font-weight: bold;
             letter-spacing: normal;
             text-align: center;
             color: $default-color;
@@ -567,7 +578,6 @@
             margin: 0 auto;
             padding: 25px 0;
             @include font-size(14px);
-            font-weight: bold;
             letter-spacing: 2.8px;
             text-align: center;
             color: $secondary-color;
@@ -577,7 +587,8 @@
       }
     }
 
-    .date-picker-tab2-single, .date-picker-tab3 {
+    .date-picker-tab2-single,
+    .date-picker-tab3 {
       @include mobile {
         clear: both;
         padding: 20px 0;
@@ -591,7 +602,7 @@
       position: relative;
       @include mobile {
         width: 100%;
-        padding: 20px 0 0 0;
+        padding: 20px 0 0;
         margin-right: 0;
       }
 
@@ -606,7 +617,6 @@
         height: 66px;
         border: 2px solid #eeeeee;
         @include font-size(12px);
-        font-weight: bold;
         line-height: 2.5;
         letter-spacing: 0.9px;
         color: $default-color;
@@ -627,7 +637,6 @@
           opacity: 0.5;
           font-family: $primary-font;
           @include font-size(12px);
-          font-weight: bold;
           letter-spacing: 0.9px;
           text-align: left;
           color: rgba(0, 0, 0, 0.5);
@@ -727,7 +736,6 @@
             height: 66px;
             border: 2px solid #eeeeee;
             @include font-size(12px);
-            font-weight: bold;
             letter-spacing: 0.9px;
             padding: 0 11px;
             color: $default-color;
@@ -821,11 +829,17 @@
         border-radius: 4px;
         width: 100%;
         position: relative;
-        @include md {          
+        @include md {
           width: 308px;
         }
+
+        .calendar{
+          height: 340px;
+        }
+
         .values {
           float: left;
+
           .startDate {
             width: 181px;
             height: 62px;
@@ -878,7 +892,6 @@
             border: 0;
             font-family: Lato;
             font-size: 18px;
-            font-weight: bold;
             letter-spacing: 1.4px;
             text-align: left;
             color: #000000;
@@ -917,7 +930,6 @@
     }
   }
 }
-
 // .overlay {
 //   height: 100%;
 //   width: 100%;
@@ -942,16 +954,16 @@
   width: 100%;
   box-shadow: 35.4px 35.4px 90px 0 rgba(0, 0, 0, 0.15);
   @include md {
-    
+    padding: 77px 55px 45px;
     width: 640px;
   }
   position: absolute;
   top: 0;
   left: 0;
-    // This lines is not working
+  // This lines is not working
   // margin-left: -320px;
   // margin-top: -275px;
-  padding: 77px 55px 45px;
+  padding: 40px 20px;
   background-color: $secondary-color;
   opacity: 1;
   z-index: 1001;
@@ -979,10 +991,14 @@
     width: 100%;
   }
 
-
   .head-popup {
     @extend %clearfix;
-    padding-bottom: 32px;
+    //padding-bottom: 32px;
+    .children,
+    .grown-up,
+    .room {
+      padding-bottom: 32px;
+    }
 
     section {
       float: left;
@@ -1035,7 +1051,6 @@
             height: 66px;
             border: 2px solid #eeeeee;
             @include font-size(12px);
-            font-weight: bold;
             letter-spacing: 0.9px;
             padding: 0 11px;
             color: $default-color;
@@ -1053,7 +1068,7 @@
 
         .popup-menu {
           display: none;
-          
+
           ul {
             margin: 0;
             padding: 0;
@@ -1092,6 +1107,7 @@
             // border-top: 3px solid #000;
             // margin-top: 10px;
             box-shadow: 35.4px 35.4px 90px 0 rgba(0, 0, 0, 0.15);
+
             &:after {
               content: '';
               top: 2px;
@@ -1127,7 +1143,6 @@
     .title {
       @include font-size(14px);
       font-family: $primary-font;
-      font-weight: bold;
       line-height: 2.14;
       letter-spacing: normal;
       text-align: left;
@@ -1148,18 +1163,24 @@
     }
 
     .clear {
-      width: 261px;
+      width: 48%;
       height: 70px;
       cursor: pointer;
       background-color: #eeeeee;
       float: left;
+      @include md {
+        width: 261px;
+      }
     }
 
     .done {
-      width: 261px;
+      width: 48%;
       height: 70px;
       float: right;
       background-color: #c5ad6c;
+      @include md {
+        width: 261px;
+      }
     }
   }
 }

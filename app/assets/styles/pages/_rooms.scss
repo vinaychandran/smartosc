@@ -2,27 +2,31 @@
   .about-rooms-info{
     max-width: 660px;
     margin: 0 auto;
-    padding: 60px 0;
+    padding: 60px 30px;
     text-align: center;
     @include md {
       padding: 90px 0;
     }
     h3{
-      font-family: 'Lato';
-      font-weight: normal;
+      font-family: 'Lato-B';
       line-height: 1;
       margin-bottom: 30px;
+      letter-spacing: 0.8px;
     }
     p{
       @include font-size(14px);
       font-family: 'YuMin'; 
-      color: #333;  
+       line-height: 2;
+       margin: 0;
     }
   }  
 
   .rooms-list-wrap{ 
     background-color: #fafafa; 
-    padding: 80px 0;
+    padding: 60px 10px 20px; 
+    @include md {
+      padding: 80px 0;
+    }
     h4{
       text-align: center;
       @include font-size(20px);
@@ -46,11 +50,13 @@
         font-family: 'YuGo';
         line-height: 1.43;
         letter-spacing: 1.4px;
+        font-weight: 700;
         text-align: center;
         color: #888888;
         display: block;
         position: relative;
         margin: 8px 0;
+        cursor: pointer; 
         @include sm {
           text-align: left;
           margin: 0;
@@ -91,48 +97,84 @@
     flex-flow: row wrap;
     justify-content:space-between;  
     > li{
-      width: 48%;
+      width: 100%;
       background:$default-bg; 
       margin-bottom: 110px; 
+      display: none;
+      transition: all 1s ease;
+      opacity: 0;
       .room-short-info{
-        padding: 27px 50px 20px;
+        padding: 27px 20px 20px;
         width: 100%;
         float: left;
-      }      
+        box-shadow: 14.1px 14.1px 90px 0 rgba(0, 0, 0, 0.1);
+        @include sm {
+          padding: 27px 50px 20px; 
+        }
+      }  
+      &.show{
+        display: block;
+        opacity: 1;
+      } 
+      @include sm {
+        width: 48%;
+      }   
     }  
-    h6{
-      float: left;
+    h6{      
       @include font-size(16px);
       font-family: 'YuGo';
+      text-align: center;
+      margin-bottom: 15px;
+      @include sm {
+        float: left;
+        text-align: left;
+        margin-bottom: 0;
+      }
     }
     .price{
       @include font-size(24px);
-      font-family: 'YuGo';
-      float: right;
+      font-family: 'Lato-B';
+      text-align: center;
+      font-weight: 700;
+      @include sm {
+        float: right;
+        text-align: right;
+      }
     }
     .room-facilities{
       clear: both;
       margin-top: 25px;
       border-top: 1px solid #f1f3ee;
       width: 100%;
-      padding: 25px 0 50px; 
+      padding: 0 0 50px; 
       float: left;
       position: relative;
-      ul{
-        width: 50%;
-        float: left;
-        padding-right:50px; 
-        border-right: 1px solid #f1f3ee;
-        &:nth-child(2) {
-          border-right: 0px;
-          padding-left: 30px;
+      @include sm { 
+        padding-top: 25px;
+      }
+      ul{      
+        
+        @include sm { 
+          width: 50%;
+          float: left; 
+          padding-right:50px; 
+          border-right: 1px solid #f1f3ee;
+          &:nth-child(2) {
+            border-right: 0px;
+            padding-left: 30px;
+          } 
         }
       }
       li{ 
         @include font-size(14px);
         font-family: 'YuGo';
         width: 100%;
-        padding: 6px 0;
+        padding: 15px 0;
+        border-bottom: 1px solid #f1f3ee;
+        @include sm {
+          border-bottom: 0;
+          padding: 6px 0;
+        }
         span{
           float: right;
           font-weight: 700;
@@ -152,10 +194,25 @@
 } 
 
 .breadcrumb{
-  padding: 30px 0;
+  padding: 20px 0;
   @include font-size(12px);
   color: $primary-color;
-  font-family: 'YuGo';  
+  font-family: 'YuGo';
+  @include sm {
+    padding: 30px 0;
+  }  
+  span{
+    width: 4px;
+    height: 4px;
+    border-width: 1px 1px 0 0;
+    border-style: solid;
+    margin: 0 15px;
+    border-color: #000;
+    vertical-align: middle;
+    box-sizing: border-box;
+    transform: rotate(45deg);
+    display: inline-block;
+  }
 }
 
 .roomPopup{
@@ -168,7 +225,10 @@
 }
 
 #room-full-info{
-  padding-top: 94px; 
+  padding-top: 55px;  
+  @include sm {
+    padding-top: 94px;
+  }
 }
 
 .room-info-header{
@@ -179,21 +239,33 @@
   background: $secondary-color;
   .room-price{
     color: $primary-color;
-    @include font-size(32px);
-    padding-left: 30px;
+    @include font-size(18px);
+    padding-left: 15px;
     font-family: 'Lato-B';
     float: left;
+    line-height: 50px; 
+    font-weight: 700;
     span{
       @include font-size(14px);  
-      padding-right: 20px;    
+      padding-right: 20px;   
+      font-family: 'YuGo';
+      font-weight: 500; 
+      display: none;
+      @include sm {
+        display: inline-block;
+      }
+    }
+    @include sm {
+      line-height: 85px; 
+      @include font-size(32px); 
     }
   }
   .close-room{
     color: $secondary-color;
     background:$primary-bg;
-    width: 94px;
-    height: 94px;
-    line-height: 94px;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
     position: absolute;
     right: 0;
     top: 0;
@@ -201,34 +273,56 @@
      font-family: 'Lato-L';
      text-align: center;
      cursor: pointer;
+    @include sm {
+      width: 94px;
+      height: 94px;
+      line-height: 94px;
+    }
   }
   .book-room{
     float: right;
-    margin-right: 94px;
+    margin-right: 55px;
     background-color: #c5ad6c;
     color: #ffffff;
-    @include font-size(16px);
+    @include font-size(14px);
     font-family: 'YuGo';
-    padding: 39px 80px;
+    padding: 21px 35px 20px;
     line-height: 1;
+    @include sm {
+      margin-right: 94px;
+      padding: 39px 80px;
+      @include font-size(16px);
+    }
   }
 }
 
 .room-info-container{
   max-width: 920px;
-  margin: 80px auto;
+  margin: 50px auto;
   text-align: center;
-  h4{
-    @include font-size(24px);
+  @include sm {
+    margin: 80px auto;
+  }
+  h2{
+    @include font-size(18px);
     font-family: 'YuMin';
     font-weight: 500;
-    margin-bottom: 15px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    @include sm {
+      @include font-size(24px);
+      margin-bottom: 15px;
+    }
   }
   .room-quick-info{
-    @include font-size(14px);
+    @include font-size(12px);
     font-family: 'YuMin';
     opacity: 0.5;
-    padding-bottom: 50px;
+    padding-bottom: 40px;
+    @include sm {
+      @include font-size(14px);
+      padding-bottom: 50px;
+    }
   }
 }
 
@@ -241,20 +335,270 @@
     @include font-size(12px);
     font-family: 'YuGo';
     color: $secondary-color;
+    display: none;
+    @include sm {
+      display: block;
+    }
+  }
+  .slick-next, .slick-prev{
+    display: none !important;
+    @include sm {
+      display: block; 
+    }
+  }
+}
+
+.room-info-slider{
+  //padding:0 25px;
+  .slick-list{
+    padding:0 25px; 
+    @include sm {
+      padding: 0;
+    }
+  }
+  .slick-slide{
+    margin: 0 5px;
+    @include sm {
+      margin: 0;
+    }
   }
 }
 
 .room-info-slider-thumb{
-  display: flex; 
-  flex-wrap:wrap;
-  justify-content: space-between;
-  padding: 10px 0 85px;
+  display: none;
+  padding: 10px 0;
+  @include md {
+    display: flex; 
+    flex-wrap:wrap;
+    justify-content: space-between;
+  }
   img{
     width: calc(100% * (1/6) - 4px);
     margin-bottom: 4px;
     cursor: pointer;
     &.active{
       opacity: 0.5;
+    }
+  }
+}
+
+.room-overview{
+  background: #fff;
+  padding: 40px 20px;
+  text-align: left;
+  margin: 20px 15px;  
+  @include sm {
+    margin: 0 0 30px;
+    padding: 75px 55px;
+  }
+  h5{
+    @include font-size(16px);
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: 3.2px;
+    border-bottom: 1px solid #000;
+    padding-bottom: 15px;
+    text-align: center;
+  }
+  
+}
+
+.room-highlight-wrap{  
+  padding: 30px 0 0;
+  
+  @include md {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    padding: 35px 50px 40px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+  }
+  .checkin-checkout{
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    @include md {
+      max-width: 210px;
+      padding-bottom: 0;
+      border-bottom: 0px;
+    } 
+    .time{
+      @include font-size(14px);
+      font-family: 'YuGo';
+      margin-bottom: 10px;
+      span{
+        float: right; 
+        
+        @include font-size(15px);         
+         font-weight: 700;
+      }
+    }
+    .note{
+      font-family: 'YuGo';
+      @include font-size(10px);
+      margin-top: 10px;
+      letter-spacing: 0.6px;
+    }
+  }
+  .room-tags{
+    padding: 25px 0 35px;
+    @include md {
+      max-width: 210px;
+      padding: 0;
+      border-bottom: 0px;
+    } 
+    ul{
+      margin: 0;
+    }
+    li{
+      display: inline-block;
+      border: 1px solid #000;
+      padding: 5px 15px;
+      margin-right: 10px; 
+      @include font-size(12px);
+      letter-spacing: 2.4px; 
+      margin-bottom: 10px;
+      font-family: 'YuGo';
+    }
+  }
+  .room-downloads{
+    padding: 0 0 25px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    @include md {
+      max-width: 210px; 
+      border-bottom: 0;
+      padding: 0;
+    } 
+    ul{
+      margin: 0;
+    }
+    li{
+      font-family: 'YuGo'; 
+      line-height: 2.83;
+      span{
+        @include font-size(12px);
+        margin-left: 8px;
+        letter-spacing: 2.4px;
+        border-bottom: 1px solid #000;
+      }
+    }
+  }
+}
+
+.room-amenities{
+  ul{
+    margin: 0;
+    display: flex;
+    justify-content:space-between;  
+    flex-wrap:  wrap;
+    @include md {
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      padding: 40px 50px 40px 0;
+    }
+    li{
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      width: 50%;
+      padding: 15px 5px;
+      @include md {
+        border-bottom: 0;
+        width: 25%;
+      }
+      span{
+        padding-left: 15px;
+        @include font-size(12px);
+        font-family: 'YuGo';
+      }
+    }
+  }
+}
+
+.room-features{
+  background:#fff;
+  padding: 50px 20px 20px;
+  margin: 0 15px;
+  @include md {
+    padding: 100px 0 25px;
+  }
+  h3{
+    @include font-size(16px);
+    font-weight: 500;
+    font-family: 'YuMin';
+    letter-spacing: 1.5px;
+    margin-bottom: 35px;
+    @include md {
+      @include font-size(20px);
+      margin-bottom: 50px;
+      letter-spacing: 2px;
+    }
+  }
+  .content{
+    letter-spacing: 1.4px;
+    max-width: 645px;
+    margin:0 auto 60px;
+    line-height: 1.8;
+    font-family: 'YuMin'; 
+    @include font-size(14px);
+    @include md {
+      margin:0 auto 75px;
+      line-height: 2;
+    }
+  }
+  .separator{
+    width: 150px;
+    margin:0 auto 60px;
+    height: 1px; 
+    background:#1b1b1b; 
+    display: none;
+    @include md {
+      display: block;
+    }
+  }
+  h4{
+    @include font-size(14px);
+    margin-bottom: 25px;
+    font-family: 'YuGo';  
+  }
+  .strech{
+    margin: 0 -35px 40px;
+    @include md {
+      margin: 0 -40px 40px;
+    }
+  }
+  .three-images{
+    max-width: 725px;
+    margin: 0 -20px 40px;
+    overflow: hidden;
+    @include md {
+      margin: 0 auto 40px;
+    }
+    img{
+      float: left;
+      display: block;
+      &:nth-child(1) {
+        width: 55%;
+        @include md {
+          width: auto;
+        }
+      }
+      &:nth-child(2) {
+        float: right;
+        margin-top: 40px;
+        width: 40%;
+        @include md {
+          width: auto;
+          margin-top: 80px;
+        }
+      }
+      &:nth-child(3) {
+        float: left;
+        margin-top: 25px;
+        margin-left: 30px;
+        width: 45%;
+        @include md {
+          width: auto;
+          margin-top: 50px;
+          margin-left: 80px;
+        }
+      }
     }
   }
 }

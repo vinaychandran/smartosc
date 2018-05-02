@@ -347,6 +347,44 @@ const FE = {
             return { top: _y, left: _x };
         },
 
+        filterRooms: () => {
+            
+            function showFilterRoom(el) {
+                const type = el.getAttribute('data-room-type');
+                const className = "show";
+                const classNa = "selected";
+                document.querySelectorAll('[data-rooms]').forEach(function(e) { 
+                    let string = e.getAttribute('data-rooms');
+                    if (e.classList){
+                      e.classList.remove(className);
+                    }
+                    else{
+                      e.className = e.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+                    }
+                    let clasString = string.includes(type)
+                    console.log(type);
+                    console.log(clasString);
+                    if (string.includes(type)){
+                        if (e.classList){
+                          e.classList.add(className);
+                        }
+                        else{
+                          e.className += ' ' + className;
+                        }
+                    }
+                });
+                document.querySelectorAll('[data-room-type]').forEach(function(e) {                     
+                    e.classList.remove(classNa);                    
+                })
+                el.classList.add(classNa);
+            };    
+            document.querySelectorAll('[data-room-type]').forEach(function(elem) {                
+                elem.addEventListener('click', function(){
+                    showFilterRoom(elem);                    
+                }, false);
+            })
+        },
+
         init: () => {
             //initialling modal
             //FE.global.loginModal('modal1', false, false);
@@ -374,6 +412,7 @@ const FE = {
             FE.global.clickOutside('fade', '.people-list-popup', '.popup-wrap.popup-create');
             FE.global.autocomplatePopup();
             FE.global.itemShowHide();
+            FE.global.filterRooms();
         },
         resize: function resize() {
             //Functions inside loaded execute when window resize

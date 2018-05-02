@@ -2,6 +2,11 @@
     @include md {
         box-shadow: -3px 53px 81px rgba(0,0,0,0.2);  
     }
+    .banner-text {
+        h1{
+            @include font-size(32px);
+        }
+    }
 }
 
 .main-banner {
@@ -29,8 +34,10 @@
             letter-spacing: 3.8px;
             text-align: center;            
             margin: 0 0 15px;
+            @include font-size(32px);
             @include md {
                 margin: 0 0 20px; 
+                @include font-size(40px);
             }
         }
         span {            
@@ -42,6 +49,18 @@
             @include md {
                 @include font-size(14px);
             }
+        }
+    }
+    .divider{
+        background:$default-bg;
+        width: 2px;
+        height: 65px;
+        position: absolute;
+        left: 50%;
+        bottom: 100px;
+        @include md {
+            height: 70px;
+            bottom: 0;
         }
     }
     .photos-link {

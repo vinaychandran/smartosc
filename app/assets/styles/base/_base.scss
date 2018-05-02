@@ -10,7 +10,7 @@ body {
     font-family: 'YuGo';
     @include font-size($font-size);
     background: $default-bg;
-    color: $default-color;
+    color:$primary-color;
     line-height: $line-height;
     position: relative;
 }
@@ -214,7 +214,6 @@ label,
 legend {
     display: block;
     margin-bottom: 5px;
-    font-weight: 600;
 }
 
 fieldset {
