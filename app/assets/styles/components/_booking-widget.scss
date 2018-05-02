@@ -346,6 +346,7 @@
         box-sizing: border-box;
         transition-duration: 0.5s;
         position: absolute;
+        box-shadow: 35.4px 35.4px 90px 0 rgba(0, 0, 0, 0.15);
         //border-top: 2px solid #000;
         // top: 50%;
         // left: 50%;
@@ -747,7 +748,7 @@
 
           ul {
             margin: 0;
-            padding: 10px 0;
+            padding: 0;
 
             li {
               border-bottom: 1px solid #eeeeee;
@@ -781,6 +782,7 @@
             width: 200px;
             //border-top: 3px solid #000;
             //margin-top: 10px;
+            box-shadow: 35.4px 35.4px 90px 0 rgba(0, 0, 0, 0.15);
             padding-top: 10px;
             @include mobile {
               width: 100%;
@@ -817,13 +819,13 @@
         @extend %clearfix;
         border: 2px solid #eeeeee;
         border-radius: 4px;
-        width: 308px;
-        @include mobile {
-          width: 100%;
+        width: 100%;
+        position: relative;
+        @include md {          
+          width: 308px;
         }
         .values {
           float: left;
-
           .startDate {
             width: 181px;
             height: 62px;
@@ -937,10 +939,12 @@
 }
 
 .big-popup {
-  width: 640px;
-    @include mobile {
-      width: 100%;
-    }
+  width: 100%;
+  box-shadow: 35.4px 35.4px 90px 0 rgba(0, 0, 0, 0.15);
+  @include md {
+    
+    width: 640px;
+  }
   position: absolute;
   top: 0;
   left: 0;
@@ -997,6 +1001,7 @@
           color: $default-color;
           padding: 20px 44px 20px 12px;
           float: left;
+          display: block;
         }
 
         .input-showtext {
@@ -1048,10 +1053,10 @@
 
         .popup-menu {
           display: none;
-
+          
           ul {
             margin: 0;
-            padding: 10px 0;
+            padding: 0;
 
             li {
               border-bottom: 1px solid #eeeeee;
@@ -1086,6 +1091,7 @@
             padding-top: 10px;
             // border-top: 3px solid #000;
             // margin-top: 10px;
+            box-shadow: 35.4px 35.4px 90px 0 rgba(0, 0, 0, 0.15);
             &:after {
               content: '';
               top: 2px;
