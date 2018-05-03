@@ -1,0 +1,18 @@
+.page-gallery {
+    position: relative;
+    top: 94px;
+    margin-bottom: 120px;
+    .instafeed {
+        a {
+            .insta-bg {
+                margin: 10px;
+                width: 264px;
+                height: 264px;
+            }
+        }
+    }
+    
+    #more-link {
+        display: none;
+    }
+}

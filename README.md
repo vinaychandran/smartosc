@@ -3,7 +3,7 @@
 ### Structure
 
 ```
-assets/
+assets/narita/
 --- styles/
 --- scripts/
 --- fonts/

@@ -1,0 +1,34 @@
+// Core
+@import "base/variables";
+@import "base/normalize";
+@import "base/mixins";
+@import "base/base";
+@import "base/helpers";
+@import "base/sprite";
+
+// Common
+@import "base/common";
+
+// Components
+@import "components/header";
+@import "components/banner";
+@import "components/booking-widget";
+@import "components/lazyload";
+@import "components/slick-slider";
+@import "components/tabs";
+@import "components/video-player";
+@import "components/home-concept";
+@import "components/home-gallery";
+@import "components/review"; 
+@import "components/google-map";
+@import "components/modal-lightbox";
+@import "components/footer"; 
+
+// @import "en-EN";
+
+// Pages
+@import "pages/homepage";  
+@import "pages/gallerypage"; 
+@import "pages/rooms";    
+
+
