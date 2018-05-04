@@ -239,7 +239,8 @@ const FE = {
                 let checkSlider = false;
                // elem.onclick = basicLightbox.create(html).show;
                if(checkSlider){
-                    $('.room-info-slider').slick('unslick');
+				    //TungDA updated
+                    $('.roomPopup .room-info-slider').slick('unslick');
                 }               
                 elem.onclick = basicLightbox.create(html,{
                     className: 'roomPopup',
@@ -248,20 +249,25 @@ const FE = {
                        $('body').addClass('modal-open');  
                     },
                     afterShow: (instance) => {
-                        FE.global.sliderImage('.room-info-slider', 1, false, true);
+						//TungDA updated
+                        FE.global.sliderImage('.roomPopup .room-info-slider', 1, false, true);
                         let checkSlider = true;
                     },
                     beforeClose: (instance) => {
-                       $('.room-info-slider').slick('unslick');
+					   //TungDA updated
+                       $('.roomPopup .room-info-slider').slick('unslick');
                        $('body').removeClass('modal-open');  
                     }                   
                 }).show
             })
-            $(document).on('click',  '#room-full-info .close-room', function () {
+			
+			//TungDA updated
+            $(document).on('click',  '.room-detail .close-room', function () {
                 $('.roomPopup').removeClass('basicLightbox--visible')
                 setTimeout(() => {
                     $('.roomPopup').remove();
-                    $('.room-info-slider').slick('unslick');
+					//TungDA updated
+                    $('.roomPopup .room-info-slider').slick('unslick');
                     $('body').removeClass('modal-open');  
                 }, 410)
             });
