@@ -229,8 +229,9 @@
     transition: scale(1) ;
   }
   &.basicLightbox--visible{
-    animation: roomPop 0.2s ease; /* IE 10+, Fx 29+ */
-    opacity: 1;
+     opacity: 1;
+    animation: roomPop 1s ease; /* IE 10+, Fx 29+ */
+   
   }
 }
 
@@ -238,31 +239,29 @@
 @keyframes roomPop {
   0%   { 
     top: -5%;
-    opacity: 0.5; 
-  }
-  50%  { 
-    top: -2%;
-    opacity: 1;
-  }
+    opacity: 1; 
+  }  
   100% { 
     top: 0;  
     opacity: 1;  
   }
 }
 
-#room-full-info{
-  padding-top: 55px;  
-  @include sm {
-    padding-top: 94px;
-  }
-}
+// #room-full-info{
+//   padding-top: 55px;  
+//   @include sm {
+//     padding-top: 94px;
+//   }
+// }
 
 .room-info-header{
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
   background: $secondary-color;
+  z-index: 99;
+  height: 55px;
   .room-price{
     color: $primary-color;
     @include font-size(18px);
@@ -284,6 +283,7 @@
     @include sm {
       line-height: 85px; 
       @include font-size(32px); 
+      height: 94px;
     }
   }
   .close-room{
@@ -319,6 +319,9 @@
       padding: 39px 80px;
       @include font-size(16px);
     }
+  }
+  @include sm {
+    height: 94px;
   }
 }
 
