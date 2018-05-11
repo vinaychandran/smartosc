@@ -107,6 +107,7 @@
         background-position: center center;
         position: relative;
         display: block;
+        cursor: pointer;
         @include sm {
             width: 25%;
             height: 285px;

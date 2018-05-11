@@ -425,6 +425,7 @@ const FE = {
             FE.global.autocomplatePopup();
             FE.global.itemShowHide();
             FE.global.filterRooms();
+            FE.global.sliderImage('.single-room-wrap .room-info-slider', 1, false, true);
         },
         resize: function resize() {
             //Functions inside loaded execute when window resize

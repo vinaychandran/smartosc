@@ -4,6 +4,8 @@
 
 .slick-next,
 .slick-prev {
+  @extend .icon;
+  @extend .sprite-arw_black_pc;
   font-size: 0;
   z-index: 1;
   width: 45px;
@@ -21,13 +23,7 @@
   }; 
   &:before{
     content:' ';
-    vertical-align:middle;
-    background-image: url("../svg/sprite.svg");
-    background-repeat: no-repeat;
-    background-size: 25.6em 155.4em;
-    background-position: -1em -9em;
-    width: 1.7em;
-    height: 0.8em;
+    vertical-align:middle;    
     position: absolute;
     right: 20px;
     top: 45%;
