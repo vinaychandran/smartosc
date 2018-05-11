@@ -2,6 +2,8 @@ extends ../layouts/default
 
 block append content
 	include ../components/banner.pug
+	.visible-device
+		include ../components/booking-widget.pug
 	.about-rooms-wrap
 		.about-rooms-info
 			h3 ELEGANTLY REFINED AND SUMPTUOUSLY DESIGNED
@@ -9,7 +11,8 @@ block append content
 		.rooms-list-wrap
 			.container
 				h4 お部屋一覧
-				ul.room-types
+				a#tablink(href='') 一覧表示
+				ul.room-types#room-types
 					li
 						a.selected(data-room-type="all") 一覧表示
 					li

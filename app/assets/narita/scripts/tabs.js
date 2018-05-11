@@ -97,7 +97,7 @@ var Tabs = function(options) {
             elem.querySelectorAll('.' + titleClass)[i].className += ' ' + activeClass;
             elem.querySelectorAll('.' + contentClass)[i].style.display = '';
 
-            if(document.getElementById('tablink')) {
+            if(document.getElementById('tablink') && document.getElementById('tabs-header')) {
                 document.getElementById('tablink').innerText = elem.querySelectorAll('.' + titleClass)[i].text;
 
                 if (window.innerWidth <= 768) {
@@ -105,7 +105,6 @@ var Tabs = function(options) {
                 }
             }
 
-            
         }
 
         /**
