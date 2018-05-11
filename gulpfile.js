@@ -85,7 +85,6 @@ gulp.task('html-dev', ['views', 'styles', 'scripts'], () => {
     }
       )))
     .pipe($.if('*.css', $.cssnano({safe: true, autoprefixer: false})))
-    .pipe($.if('*.html', $.htmlmin({collapseWhitespace: true})))
     .pipe(gulp.dest('dist'));
 });
 
