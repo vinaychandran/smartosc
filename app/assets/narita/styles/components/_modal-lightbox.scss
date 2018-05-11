@@ -17,7 +17,7 @@ $basicLightbox__timing: ease !default;
   height: 100vh;
   background: $basicLightbox__background;
   opacity: .01; // Start with .01 to avoid the repaint that happens from 0 to .01
-  transition: opacity $basicLightbox__duration $basicLightbox__timing;
+ // transition: opacity $basicLightbox__duration $basicLightbox__timing;
   z-index: $basicLightbox__zIndex;
   will-change: opacity;
   &:after{
@@ -41,7 +41,7 @@ $basicLightbox__timing: ease !default;
   &__placeholder {
     max-width: 100%;
     transform: scale(.9);
-    transition: transform $basicLightbox__duration $basicLightbox__timing;
+   // transition: transform $basicLightbox__duration $basicLightbox__timing;
     z-index: 1;
     will-change: transform;
 

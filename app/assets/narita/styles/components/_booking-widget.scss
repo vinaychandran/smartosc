@@ -293,6 +293,10 @@
             //background: url("../icons/calendar-interface-symbol-tool.svg") 10% center no-repeat;
             padding-left: 45px;
             float: left;
+            @-moz-document url-prefix() {
+              background-position: 0.4em -20.8em;
+              background-size: 42.6em 282.4em;
+            }
           }
         }
 
@@ -679,6 +683,9 @@
           background-position: 0.5em -139.4em;
           padding-left: 50px;
           line-height: 1.4em;
+          @-moz-document url-prefix() {
+            background-position: 0.5em -142.4em;
+          }
         }
 
         span {
@@ -826,6 +833,8 @@
           ul {
             margin: 0;
             padding: 0;
+            max-height: 150px;
+            overflow-y: auto; 
 
             li {
               border-bottom: 1px solid #eeeeee;
