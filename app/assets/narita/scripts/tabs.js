@@ -99,7 +99,7 @@ var Tabs = function(options) {
 
             if(document.getElementById('tablink') && document.getElementById('tabs-header')) {
                 document.getElementById('tablink').innerText = elem.querySelectorAll('.' + titleClass)[i].text;
-
+                document.getElementById('tablink').classList.remove('opened');
                 if (window.innerWidth <= 768) {
                     document.getElementById('tabs-header').style.display = 'none';
                 }

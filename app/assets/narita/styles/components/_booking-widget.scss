@@ -303,12 +303,14 @@
         .day,
         .month,
         .year {
-          display: inline;
+          @include md {
+            display: inline;
+          }
         }
 
         .day {
           @include font-size(45px);
-          margin: 6px 10px 0 0;
+          margin: 6px 6px 0 0;
           float: left;
           // @include mobile {
           //   font-size: 45px;
@@ -834,7 +836,7 @@
             margin: 0;
             padding: 0;
             max-height: 150px;
-            overflow-y: auto; 
+            overflow-y: auto;
 
             li {
               border-bottom: 1px solid #eeeeee;
@@ -917,25 +919,27 @@
 
         .values {
           float: left;
-
-          .startDate {
-            width: auto;
-            height: 62px;
-            // background: url("../icons/calendar-interface-symbol-tool.svg") 5% center no-repeat;
-            // padding-left: 35px;
-            // background-size: 20px;
-            border: 0;
-            @include mobile {
-              background: none;
-              padding-left: 15px;
-            }
-            @include md {
-              width: 181px;
-            }
-
-            .value {
-              //border-right: 2px solid #eeeeee;
-              padding-right: 20px;
+          .startDateContainer {
+            width: 160px;
+            .startDate {
+              width: auto;
+              height: 62px;
+              // background: url("../icons/calendar-interface-symbol-tool.svg") 5% center no-repeat;
+              // padding-left: 35px;
+              // background-size: 20px;
+              border: 0;
+              @include mobile {
+                background: none;
+                padding-left: 15px;
+              }
+              @include md {
+                width: 181px;
+              }
+  
+              .value {
+                //border-right: 2px solid #eeeeee;
+                padding-right: 20px;
+              }
             }
           }
         }
@@ -1333,5 +1337,17 @@
         width: 190px;
       }
     }
+  }
+}
+
+.restaurant-detail {
+  background: #fff;
+  padding: 30px;
+}
+
+#show-restaurant{
+  width: 100vw;
+  @include md {
+    width: 480px;
   }
 }

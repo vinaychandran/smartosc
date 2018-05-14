@@ -103,6 +103,7 @@
       display: none;
       transition: all 1s ease;
       opacity: 0;
+      animation: all 0.3s; 
       .room-short-info{
         padding: 27px 20px 20px;
         width: 100%;
@@ -114,6 +115,7 @@
       }  
       &.show{
         display: block;
+        animation: bounceList 0.3s; 
         opacity: 1;
       } 
       @include sm {
@@ -192,6 +194,21 @@
     }
   }
 } 
+@keyframes bounceList {
+  0% {
+     transform: scale(0.7);
+  }
+  25% {
+     transform: scale(0.8);
+  }
+  50% {
+     transform: scale(0.9);
+  }
+  100% {
+     transform: scale(1);
+  }
+}
+         
 
 .breadcrumb{
   padding: 20px 0;

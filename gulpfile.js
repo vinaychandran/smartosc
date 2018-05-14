@@ -5,8 +5,8 @@ const browserSync = require('browser-sync').create();
 const del = require('del');
 const wiredep = require('wiredep').stream;
 const runSequence = require('run-sequence');
-var svgSprite = require("gulp-svg-sprites");
-
+const svgSprite = require("gulp-svg-sprites");
+const spritesmith = require('gulp.spritesmith');
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
@@ -104,6 +104,14 @@ gulp.task('sprite', function () {
         }))
         .pipe(gulp.dest("app/assets/narita/"));
 });
+
+gulp.task('sprite-png', function () {
+  var spriteData = gulp.src('app/assets/narita/icons/*.png').pipe(spritesmith({
+    imgName: 'sprite.png',
+    cssName: '_sprite1.scss'
+  }));
+  return spriteData.pipe(gulp.dest('app/assets/narita/styles/'));
+});
 gulp.task('fonts', () => {
   return gulp.src(require('main-bower-files')('**/*.{eot,svg,ttf,woff,woff2}', function (err) {})
     .concat('app/assets/narita/fonts/**/*'))
@@ -123,7 +131,7 @@ gulp.task('extras', () => {
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 
 gulp.task('serve', () => {
-  runSequence(['clean', 'wiredep'], ['views', 'styles', 'scripts', 'fonts', 'sprite'], () => {
+  runSequence(['clean', 'wiredep'], ['views', 'styles', 'scripts', 'fonts', 'sprite', 'sprite-png'], () => {
     browserSync.init({
       notify: false,
       port: 9001,

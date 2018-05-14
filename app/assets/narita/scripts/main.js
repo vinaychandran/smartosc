@@ -57,10 +57,13 @@ const FE = {
             }
         },
         openTab: (e) => {
-            if (document.getElementById('tabs-header') !== null)
+            if (document.getElementById('tabs-header') !== null) {
                 document.getElementById('tabs-header').style.display = 'block';
+                e.target.classList.add('opened');
+            }                
             if (document.getElementById('room-types') !== null)
                 document.getElementById('room-types').style.display = 'block';
+                e.target.classList.add('opened');
             e.preventDefault();
         },
         sliderImage: (slider, slideToShow, dots, arrows) => {
@@ -164,8 +167,33 @@ const FE = {
         },
 
         scroll: () => {
-            const scroll = new SmoothScroll('.scroll', { speed: 2000 });
-        },
+            const scroll = new SmoothScroll('.scroll', { speed: 2000, offset: 180,
+                before: function (anchor, toggle) {
+                    console.log(toggle.className.split(' ')[0]);
+                    [].forEach.call(
+                        anchor.querySelectorAll('.tabs-title'),
+                        function (el) {
+                            if (el.classList.contains('tabs-title-active')) {                    
+                                el.classList.remove('tabs-title-active');
+                            }
+                        }
+                    );
+                    [].forEach.call(
+                        anchor.querySelectorAll('.tabs-content'),
+                        function (el) {
+                            el.style.display = 'none';
+                        }
+                    );                    
+                    if(toggle.className.split(' ')[0] == 'guestPhotos') {                            
+                        anchor.querySelectorAll('.tabs-title')[0].classList.add('tabs-title-active');                        
+                        anchor.querySelectorAll('.tabs-content')[0].style.display = 'block';                        
+                    } else if(toggle.className.split(' ')[0] == 'hotelPhotos') {   
+                        anchor.querySelectorAll('.tabs-title')[1].classList.add('tabs-title-active');                        
+                        anchor.querySelectorAll('.tabs-content')[1].style.display = 'block';
+                    }
+                }
+            });
+        },        
 
         changeLanguage: () => {
             let lang = document.getElementsByClassName('selected-lang');
@@ -313,6 +341,11 @@ const FE = {
 
             $(document).on('click', '.people-list', function() {
                 $(this).next().show();
+                $(this).next()[0].scrollIntoView({
+                    behavior: 'smooth', // or "auto" or "instant"
+                    block: 'start', // or "end"
+                    inline: 'nearest'
+                });
             });
 
             $(document).on('click', '.calendar-link', function() {
@@ -366,6 +399,7 @@ const FE = {
                 document.getElementById('tablink').innerText = el.text;
                 if (isMobile && (document.getElementById('room-types') !== null)) {
                     document.getElementById('room-types').style.display = 'none';
+                    document.getElementById('tablink').classList.remove('opened');
                 }
                 document.querySelectorAll('[data-rooms]').forEach(function(e) {
                     let string = e.getAttribute('data-rooms');
@@ -426,6 +460,10 @@ const FE = {
             FE.global.itemShowHide();
             FE.global.filterRooms();
             FE.global.sliderImage('.single-room-wrap .room-info-slider', 1, false, true);
+            if (!isMobile && document.getElementById('booking-widget')) {
+                window.onscroll = function() { FE.global.sticky(document.getElementById('booking-widget')) };
+            }
+            
         },
         resize: function resize() {
             //Functions inside loaded execute when window resize
@@ -439,9 +477,7 @@ $(function() {
     FE.global.init();
 });
 
-if (!isMobile && document.getElementById('booking-widget')) {
-    window.onscroll = function() { FE.global.sticky(document.getElementById('booking-widget')) };
-}
+
 
 
 $(window).load(function() {
@@ -459,6 +495,8 @@ $(window).load(function() {
         container: '.date-picker-tab1',
         locale: 'ja'
     });
+    
+
     $.DateRangePicker({
         container: '.date-picker-tab2-single',
         singleDatePicker: true
