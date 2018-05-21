@@ -1,0 +1,1290 @@
+.venue-page {
+  background: #fcfcfc;
+}
+
+.venue-banner {
+  h1 {
+    text-shadow: 0 0 8.5px rgba(0, 0, 0, 0.6);
+  }
+}
+
+.about-venue-info {
+  max-width: 660px;
+  margin: 0 auto;
+  padding: 60px 30px;
+  text-align: center;
+  @include md {
+    padding: 80px 0 50px;
+  }
+
+  h3 {
+    font-family: 'Lato-B';
+    line-height: 1;
+    margin-bottom: 30px;
+    letter-spacing: 0.8px;
+  }
+
+  p {
+    @include font-size(14px);
+    font-family: 'YuMin';
+    line-height: 2;
+    margin: 0;
+  }
+}
+
+.venues-list-wrap {
+  padding: 60px 10px 20px;
+  @include md {
+    padding: 80px 0 35px;
+  }
+
+  h4 {
+    text-align: center;
+    @include font-size(24px);
+    font-weight: 500;
+    font-family: 'YuGo';
+    margin-bottom: 30px;
+  }
+}
+
+ul.venue-types {
+  @extend ul.room-types;
+}
+
+ul.venue-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin: 0;
+
+  > li {
+    width: 100%;
+    background: $default-bg;
+    margin-bottom: 40px;
+    display: none;
+    transition: all 1s ease;
+    opacity: 1;
+    animation: all 0.3s;
+    box-shadow: 14.1px 14.1px 90px 0 rgba(0, 0, 0, 0.1);
+
+    &.show {
+      display: block;
+      animation: bounceList 0.3s;
+      opacity: 1;
+    }
+    @include sm {
+      width: calc(100% / 3 - 23px);
+    }
+  }
+
+  .venue-short-info {
+    padding: 25px 25px 40px;
+
+    h6 {
+      @include font-size(14px);
+      line-height: 1.43;
+      font-weight: 500;
+      font-family: 'YuGo';
+      color: rgba(0, 0, 0, 0.6);
+      margin-bottom: 10px;
+    }
+
+    h5 {
+      @include font-size(20px);
+      line-height: 1;
+      font-weight: 500;
+      font-family: 'YuGo';
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    .floor {
+      margin-bottom: 25px;
+      font-family: 'Lato';
+    }
+
+    ul {
+      margin: 0 -8px;
+      padding: 10px 8px;
+      border-top: 1px solid #f1f3ee;
+
+      li {
+        margin-bottom: 10px;
+        font-family: 'YuGo';
+        display: flex;
+        align-items: center;
+
+        span {
+          border: solid 1px #000000;
+          width: 122px;
+          line-height: 1;
+          padding: 15px 5px;
+          display: inline-block;
+          text-align: center;
+          margin-right: 30px;
+        }
+
+        .size {
+          display: inline-block;
+        }
+      }
+    }
+
+    .see-more {
+      text-align: center;
+      position: relative;
+      margin-top: 20px;
+      display: block;
+
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background-color: #000;
+        top: 8px;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background-color: #000;
+        top: 10px;
+      }
+
+      span {
+        background: #fff;
+        font-weight: 700;
+        color: #c5ad6c;
+        padding: 0 35px;
+        position: relative;
+        z-index: 1;
+      }
+    }
+  }
+}
+
+.venues-slider-wrap {
+  text-align: center;
+  background: #fff;
+  padding: 55px 0 25px;
+  overflow: hidden;
+
+  h2 {
+    @include font-size(24px);
+    font-weight: 500;
+    margin: 0 0 50px;
+  }
+
+  .venues-slider {
+    .slick-prev {
+      left: -60px;
+    }
+
+    .slick-slide {
+      margin: 0 25px;
+    }
+
+    .slick-next {
+      right: -60px;
+    }
+  }
+
+  .slick-list {
+    overflow: initial;
+  }
+
+  .slick-arrow {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 66px;
+    height: 66px;
+  }
+}
+
+.venue-slider-info {
+  padding: 25px 25px 60px;
+
+  .slider-count {
+    float: left;
+    line-height: 81px;
+    font-family: 'Lato';
+  }
+
+  .faq-link {
+    float: right;
+    line-height: 81px;
+    margin-right: 80px;
+    @include font-size(12px);
+    letter-spacing: 1.2px;
+    text-decoration: underline;
+  }
+
+  .btn {
+    float: right;
+  }
+}
+
+.venue-menu-wrap {
+  position: relative;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.venue-menu-info {
+  width: 540px;
+  background: #000;
+  padding: 50px 70px 70px;
+  color: #fff;
+  position: absolute;
+  z-index: 1;
+  top: 100px;
+  left: 80px;
+
+  h4 {
+    @include font-size(24px);
+    margin: 55px 0 50px;
+  }
+
+  .venu-menu {
+    @include font-size(14px);
+    font-family: 'YuMin';
+    line-height: 2;
+    letter-spacing: 1.4px;
+  }
+
+  .see-more {
+    text-align: center;
+    position: relative;
+    margin-top: 40px;
+    display: block;
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: #fff;
+      top: 8px;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: #fff;
+      top: 10px;
+    }
+
+    span {
+      background: #000;
+      font-weight: 700;
+      color: #c5ad6c;
+      padding: 0 35px;
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  .star {
+    @extend .see-more;
+    margin-top: 0;
+
+    span {
+      position: relative;
+
+      &:before {
+        content: '';
+        width: 15px;
+        height: 15px;
+        background: #fff;
+        display: inline-block;
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
+
+.phone-number {
+  @include font-size(18px);
+  color: $primary-color;
+  padding-left: 10px;
+  font-family: 'YuGo';
+  float: left;
+  line-height: 55px; 
+  font-weight: 500;
+  @include sm {
+    line-height: 92px; 
+    @include font-size(24px); 
+    height: 94px;
+  }
+  i {
+    @include font-size(13px);
+    margin-right: 10px;
+  }
+}
+
+.venue-info {
+  margin-bottom: 0;
+  h2 {
+    font-family: 'YuGo';
+    font-weight: bold;
+  }
+  .venue-quick {
+    font-family: 'YuGo';
+    padding-bottom: 8px;
+  }
+  .venue-floor {
+    @include font-size(14px);
+    font-family: 'Lato';
+    line-height: 26px;
+    color: $primary-color;
+    padding-bottom: 50px;
+  }
+}
+
+.venue-slider-count {
+  @include font-size(14px);
+  font-weight: 500;
+  line-height: 26px;
+  color: $primary-color;
+  float: left;
+  padding: 6px 0;
+  margin-left: 28px;
+  @include sm {
+    margin-left: 0;
+  }
+}
+
+.venue-info-container {
+  margin-top: 0;
+}
+.venue-overview{
+  h5{
+    border-bottom: 2px solid #000;
+    font-weight: bold;
+  }
+  .venue-facilities {
+    @extend %clearfix;
+    padding: 40px 0;
+    border-bottom: 1px solid #eee;
+    ul {
+      @include sm {
+        width: 33.3%;
+        float: left;
+        padding-right: 80px;
+      }
+      li {
+        @include font-size(15px);
+        line-height: 26px;
+        padding-bottom: 8px;
+        span {
+          float: right;
+          font-weight: bold;
+        }
+      }
+    }
+    .btn-download {
+      background: $default-color;
+      position: relative;
+      span {
+        text-align: left;
+        display: block;
+        width: 75%;
+      }
+      i {
+        @include center(vertical);
+        right: 30px;
+      }
+      @include sm {
+        float: left;
+        width: 33.3%;
+        padding: 30px;
+      }
+    }
+  }
+  .venue-layout {
+    padding: 40px 0;
+    #tablink {
+      margin: 20px 0;
+    }
+    h4 {
+      @include font-size(14px);
+      letter-spacing: 2.8px;
+      font-weight: bold;
+    }
+    .tabs {
+      padding: 30px 0 0 0;
+      .tabs-header {
+        margin: 0 0 30px 0;
+        li {
+          &:first-of-type {
+            padding-left: 0;
+          }
+        }
+      }
+      .tabs-content {
+        background: #fafafa;
+        padding: 30px 30px 50px 30px;
+        img {
+          margin-bottom: 30px;
+        }
+        .max-text {
+          @include font-size(12px);
+          float: right;
+        }
+      }
+    }
+  }
+  .meeting-details, .price-details {
+    overflow: hidden;
+    overflow-x: auto;
+    @include sm {
+      overflow: visible;
+    }
+    table {
+      overflow-x: auto;
+      width: 100%;
+      thead {
+        background: #eee;
+        th {
+          text-align: center;
+          vertical-align: middle;
+          border-right: 1px solid #E1E1E1;
+          &:last-of-type {
+            border-right: none;
+          }
+        }
+      }
+      tbody {
+        background: #fafafa;
+        td {
+          text-align: center;
+          vertical-align: middle;
+          padding: 20px 10px;
+          min-width: 100px;
+          border-right: 1px solid #E1E1E1;
+          &:last-of-type {
+            border-right: none;
+          }
+        }
+      }
+    }
+  }
+  .venue-links {
+    @extend %clearfix;
+    .links {
+      padding-bottom: 20px;
+      @include sm {
+        float: left;
+      }      
+      a {
+        text-decoration: underline;
+        margin-right: 10px;
+        @include font-size(14px);
+        line-break: 24px;
+        letter-spacing: 0.4px;
+      }
+    }
+    .note {
+      @include sm {
+        float: right;
+      }      
+      p {
+        @include font-size(10px);
+        letter-spacing: 0.3px;
+        line-height: 15px;
+      }
+    }
+  }
+}
+
+.benefits-overview {
+  h4 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .benefits-details {
+    @extend %clearfix;
+    background: url('../images/benefits-img.png') no-repeat;
+    padding: 14px;
+    color: $secondary-color;
+    background-size: cover;
+    .planner-benefits, .meeting-benefits {
+      padding: 30px;
+      @include sm {
+        padding: 50px 30px 50px 50px;
+        width: 50%;
+        float: left;
+      }     
+      h6 {        
+        @include font-size(16px);
+        line-height: 26px;
+        letter-spacing: 1.6px;
+        margin-bottom: 30px;
+        text-align: left;
+        @include sm {
+          text-align: center;
+        }
+      }
+      ul {
+        li {
+          text-shadow: 0 0 8.5px rgba(0, 0, 0, 0.3);
+          @include font-size(16px);
+          font-weight: 500;
+          line-height: 34px;
+          list-style-type: disc;
+        }
+      }
+    }
+    p {
+      clear: both;
+      margin: 0;
+      @include font-size(10px);
+    }
+  }
+}
+
+.venues-popup {
+  padding-top: 0;
+  .container {
+    h4 {
+      @include font-size(16px);
+      line-height: 20px;
+      letter-spacing: 3.2px;
+      font-weight: bold;
+    }
+  }
+}
+
+.rfp-form-details {
+  background: #fff;
+  border: 30px solid #fff;
+}
+
+#rfp-form {
+  width: 100vw;
+
+  #rpfForm {
+    margin-bottom: 0;
+  }
+  @include md {
+    width: 734px;
+    height: 95vh;
+    overflow-y: scroll;
+  }
+
+  h5,
+  p {
+    margin-bottom: 15px;
+    text-align: center;
+
+    &.meeting {
+      clear: both;
+      padding-top: 20px;
+    }
+  }
+
+  .attendees,
+  .email,
+  .event,
+  .firstname,
+  .lastname,
+  .onedayevent,
+  .phone,
+  .typeofevent {
+    width: 50%;
+    float: left;
+    padding-right: 5%;
+  }
+
+  .attendees,
+  .lastname,
+  .onedayevent,
+  .phone {
+    //float: right;
+    padding-right: 0;
+  }
+
+  .event,
+  .typeofevent {
+    width: 75%;
+  }
+
+  .attendees,
+  .onedayevent {
+    width: 25%;
+  }
+
+  .onedayevent {
+    padding-top: 40px;
+  }
+
+  .attachFile {
+    input[type=file] {
+      border: none;
+      height: auto;
+      padding: 0;
+      //color:transparent;
+    }
+  }
+
+  .companyname {
+    clear: both;
+  }
+
+  .duration,
+  .guestrooms {
+    @extend %clearfix;
+    float: left;
+    width: 160px;
+  }
+
+  .guestrooms {
+    margin-right: 11px;
+  }
+
+  .form-group {
+    clear: both;
+    margin: 0;
+    width: 100%;
+    margin-bottom: 15px;
+    @include md {
+      width: 100%;
+    }
+    // label {
+    //   font-family: $secondary-font;
+    //   @include font-size(14px);
+    //   font-weight: 500;
+    //   letter-spacing: 1.1px;
+    //   text-align: left;
+    //   color: $default-color;
+    //   padding: 5px 10px;
+    // }
+    //
+    .input-showtext {
+      position: relative;
+
+      &:after {
+        content: '';
+        position: absolute;
+        right: 5%;
+        top: 45%;
+        width: 0;
+        cursor: pointer;
+        height: 0;
+        border-left: 3px solid transparent;
+        border-right: 3px solid transparent;
+        border-top: 5px solid $default-color;
+        clear: both;
+      }
+
+      button,
+      input,
+      input::placeholder {
+        font-family: $primary-font;
+        background-size: 6px;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        border-radius: 4px;
+        margin: 0;
+        height: 46px;
+        width: 100%;
+        background: none;
+        border: none;
+        border: 2px solid #eeeeee;
+        @include font-size(12px);
+        letter-spacing: 0.9px;
+        padding: 0 12px;
+        color: $default-color;
+        text-align: left;
+        @include md {
+          width: 100%;
+        }
+
+        &:focus {
+          border: 2px solid #eeeeee;
+        }
+      }
+
+      input::placeholder {
+        border: 0;
+        padding-left: 0;
+      }
+    }
+
+    .form-checkbox {
+      @extend %clearfix;
+
+      input {
+        display: none;
+      }
+
+      .checkbox-style {
+        float: left;
+        position: relative;
+        padding-right: 0;
+        width: 33.333%;
+        margin-bottom: 20px;
+      }
+
+      .checkbox-style label.checkbox {
+        padding-left: 40px;
+        margin: 0;
+      }
+
+      .checkbox-style .checkbox > span {
+        border: 1px solid #232e48;
+        display: inline-block;
+        left: 0;
+        width: 21px;
+        height: 21px;
+        position: absolute;
+        background: #fff;
+        pointer-events: none;
+      }
+
+      .checkbox-style .checkbox > span i {
+        opacity: 0;
+      }
+
+      .checkbox-style .checkbox > input:checked + span i {
+        opacity: 1;
+      }
+    }
+
+    .popup-menu {
+      display: none;
+
+      ul {
+        margin: 0;
+        padding: 0;
+        max-height: 150px;
+        overflow-y: auto;
+
+        li {
+          border-bottom: 1px solid #eeeeee;
+
+          &:first-child {
+            border-top: 1px solid #eeeeee;
+          }
+
+          span {
+            cursor: pointer;
+            display: block;
+            @include font-size(12px);
+            line-height: 1.4;
+            padding: 8px 12px;
+            color: $default-color;
+
+            &.active,
+            &:focus,
+            &:hover {
+              background-color: #eeeeee;
+            }
+          }
+        }
+      }
+
+      .popup-content-input {
+        overflow-y: auto;
+        position: absolute;
+        background: #fff;
+        z-index: 999;
+        width: 100%;
+        //border-top: 3px solid #000;
+        //margin-top: 10px;
+        box-shadow: 35.4px 35.4px 90px 0 rgba(0, 0, 0, 0.15);
+        padding-top: 13px;
+        @include mobile {
+          width: 100%;
+        }
+
+        &:after {
+          content: '';
+          top: 2px;
+          width: 0;
+          left: 48%;
+          position: absolute;
+          height: 0;
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+          border-bottom: 9px solid black;
+        }
+
+        &:before {
+          content: "";
+          position: absolute;
+          height: 5px;
+          border-bottom: 4px solid #000;
+          top: 8px;
+          left: 0;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  button {
+    background: #c5ad6c;
+    color: #fefefe;
+    border: none;
+    height: 46px;
+    width: 100%;
+  }
+
+  input,
+  input::placeholder {
+    font-family: $primary-font;
+    background-size: 6px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 0;
+    height: 46px;
+    border: 2px solid #eeeeee;
+    @include font-size(12px);
+    letter-spacing: 0.9px;
+    padding: 0 11px;
+    color: $default-color;
+    margin-bottom: 15px;
+
+    &:focus {
+      border: 2px solid #eeeeee;
+    }
+  }
+
+  input::placeholder {
+    border: 0;
+    padding-left: 0;
+  }
+
+  #venue-booking-tab .date-picker-venue-rpf {
+    //@extend %clearfix;
+    float: left;
+    //width: 380px;
+    position: relative;
+    // @include mobile {
+    //   float: none;
+    //   width: 100%;
+    // }
+    padding-bottom: 20px;
+    // @include md {
+    //   float: left;
+    //   margin-right: 9px;
+    //   width: auto;
+    //   padding-bottom: 0;
+    // }
+    label {
+      //padding: 5px 10px;
+    }
+
+    .date-picker-tab1-container,
+    .date-picker-tab3-container {
+      width: 100%;
+      position: relative;
+      @include md {
+        //width: 360px;
+      }
+    }
+
+    .endDateContainer,
+    .startDateContainer {
+      float: left;
+      margin-right: 11px;
+      width: 160px;
+      @include mobile {
+        margin-right: 0;
+        width: 46%;
+      }
+    }
+
+    .endDate,
+    .startDate {
+      font-family: $primary-font;
+      @include font-size(12px);
+      line-height: 2.5;
+      letter-spacing: 0.9px;
+      text-align: left;
+      color: $default-color;
+      border: 2px solid #eeeeee;
+      border-radius: 4px;
+      height: 46px;
+      line-height: 66px;
+      padding-top: 8px;
+      // background: url("../icons/calendar-interface-symbol-tool.svg") 10% center no-repeat;
+      // padding-left: 45px;
+      // background-size: 20px;
+      //width: 164px;
+      @include mobile {
+        width: 100%;
+        background: none;
+        padding-left: 15px;
+      }
+
+      span.date_at,
+      span.date_to {
+        @include md {
+          background-image: url("../svg/sprite.svg");
+          background-repeat: no-repeat;
+          background-size: 42.6em 346.4em;
+          background-position: 0.4em -72.7em;
+          //background: url("../icons/calendar-interface-symbol-tool.svg") 10% center no-repeat;
+          padding-left: 45px;
+          float: left;
+          @-moz-document url-prefix() {
+            background-position: 0.4em -20.8em;
+            background-size: 42.6em 282.4em;
+          }
+        }
+      }
+
+      .day,
+      .month,
+      .year {
+        @include md {
+          display: inline;
+        }
+      }
+
+      .day {
+        @include font-size(45px);
+        margin: 6px 6px 0 0;
+        float: left;
+        // @include mobile {
+        //   font-size: 45px;
+        //   float: left;
+        //   margin: 6px 10px 0 0;
+        // }
+        @include md {
+           @include font-size(12px);
+          float: none;
+          margin: 0;
+        }
+      }
+
+      .dayoftheweek {
+        @include font-size(12px);
+        opacity: 0.5;
+        color: rgba(0, 0, 0, 0.5);
+      }
+    }
+
+    .daysFromTo .dayoftheweek {
+      display: none;
+    }
+
+    .daysFromTo {
+      font-family: $primary-font;
+      @include font-size(12px);
+      letter-spacing: normal;
+      text-align: center;
+      color: rgba(0, 0, 0, 0.6);
+    }
+
+    .values {
+      @extend %clearfix;
+      position: relative;
+      @include mobile {
+        clear: both;
+      }
+
+      .clear,
+      .to,
+      .value {
+        margin: 0 5px;
+        display: block;
+        line-height: 14px;
+        text-align: left;
+      }
+
+      .to {
+        float: left;
+        padding-top: 25px;
+        //margin-right: 11px;
+        vertical-align: middle;
+        color: #d3d3d3;
+      }
+
+      .value {
+        span {
+          cursor: pointer;
+        }
+
+        &.active span {
+          color: #3399cc;
+        }
+
+        input {
+          opacity: 0;
+        }
+      }
+    }
+
+    .calendar-backdrop {
+      display: none;
+      opacity: 0.5;
+      height: 100vh;
+      width: 100vw;
+      background: $primary-bg;
+      left: 0;
+      position: fixed;
+      top: 0;
+      z-index: 99998;
+    }
+
+    .calendar {
+      display: none;
+      width: 700px;
+      height: 430px;
+      margin: 0;
+      background: $secondary-color;
+      text-align: center;
+      overflow: hidden;
+      top: 85px;
+      left: 0;
+      z-index: 99999;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      box-sizing: border-box;
+      transition-duration: 0.5s;
+      position: absolute;
+      box-shadow: 35.4px 35.4px 90px 0 rgba(0, 0, 0, 0.15);
+      //border-top: 2px solid #000;
+      // top: 50%;
+      // left: 50%;
+      // margin-top: -283px;
+      // margin-left: -350px;
+      @include mobile {
+        width: 320px;
+      }
+
+      &:after {
+        content: '';
+        top: -18px;
+        width: 0;
+        left: -170px;
+        @include mobile {
+          left: 0;
+        }
+        position: relative;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-bottom: 9px solid black;
+      }
+
+      &:before {
+        content: "";
+        position: absolute;
+        height: 5px;
+        border-bottom: 4px solid #000;
+        top: 7px;
+        left: 0;
+        width: 100%;
+      }
+    }
+
+    &.active .calendar {
+      display: block;
+    }
+
+    .calendar {
+      .clear {
+        width: 16px;
+        height: 16px;
+        margin: 0 auto;
+        cursor: pointer;
+      }
+
+      .button-next,
+      .button-prev {
+        position: absolute;
+        top: 20px;
+        z-index: 3;
+        width: 36px;
+        height: 29px;
+        padding: 8px;
+        cursor: pointer;
+        box-sizing: border-box;
+        background-size: 15px;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+      }
+
+      .button-prev {
+        background-image: url("../icons/prev.svg");
+        left: 20px;
+      }
+
+      .button-next {
+        background-image: url("../icons/next.svg");
+        right: 20px;
+      }
+
+      .close {
+        position: absolute;
+        top: 0;
+        width: 15px;
+        left: 50%;
+      }
+
+      .calendarContainer {
+        position: absolute;
+        top: 0;
+        left: -292px;
+        z-index: 2;
+        float: left;
+        text-align: left;
+        padding-top: 15px;
+
+        table {
+          display: inline-block;
+          vertical-align: top;
+          width: 304px;
+          @include mobile {
+            width: 285px;
+          }
+          margin: 10px;
+          padding: 0;
+          border-collapse: collapse;
+          border-spacing: 0;
+          text-align: center;
+
+          caption {
+            border-bottom: 2px solid $default-color;
+            font-family: $primary-font;
+            @include font-size(14px);
+            line-height: 2.14;
+            letter-spacing: 1.1px;
+            text-align: center;
+            color: $default-color;
+            padding-bottom: 12px;
+          }
+
+          th {
+            width: 37px;
+            @include font-size(14px);
+            line-height: 20px;
+            box-sizing: border-box;
+            padding: 0;
+            font-family: $primary-font;
+            text-align: center;
+            color: $default-color;
+            padding: 10px 0;
+            border: none;
+          }
+
+          td {
+            width: 40px;
+            height: 40px;
+            @include font-size(15px);
+            line-height: 33px;
+            box-sizing: border-box;
+            padding: 0;
+            text-align: center;
+            border: none;
+            border: 5px solid $secondary-color;
+
+            span {
+              display: block;
+              border: 1px solid #eeeeee;
+            }
+
+            &.valid {
+              cursor: pointer;
+
+              &:hover {
+                background: #cccccc;
+              }
+            }
+
+            &.today {
+              color: #666;
+            }
+
+            &.inactive {
+              color: #ccc;
+            }
+
+            &.valid {
+              &.hovered,
+              &.intermediate,
+              &.intermediate-hover {
+                background: #eeeeee;
+                color: $default-color;
+              }
+
+              &.hovered,
+              &.intermediate-hover {
+                color: $default-color;
+              }
+
+              &.end,
+              &.start {
+                background: $primary-bg;
+                color: $secondary-color;
+              }
+            }
+          }
+        }
+      }
+
+      .bottomLayer {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        display: block;
+        width: 100%;
+
+        .day,
+        .month,
+        .year {
+          display: inline;
+        }
+
+        .days {
+          opacity: 0.6;
+          font-family: $primary-font;
+          @include font-size(14px);
+          letter-spacing: normal;
+          text-align: center;
+          color: rgba(0, 0, 0, 0.6);
+        }
+
+        .nights {
+          height: 13px;
+          font-family: $primary-font;
+          @include font-size(14px);
+          letter-spacing: normal;
+          text-align: center;
+          color: $default-color;
+          margin: 0 0 10px;
+        }
+
+        .closePopup {
+          opacity: 1;
+          width: 320px;
+          background-color: #c5ad6c;
+          margin: 0 auto;
+          padding: 25px 0;
+          @include font-size(14px);
+          letter-spacing: 2.8px;
+          text-align: center;
+          color: $secondary-color;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

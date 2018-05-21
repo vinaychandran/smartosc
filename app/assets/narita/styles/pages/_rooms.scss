@@ -19,181 +19,182 @@
        line-height: 2;
        margin: 0;
     }
-  }  
-
-  .rooms-list-wrap{ 
-    background-color: #fafafa; 
-    padding: 60px 10px 20px; 
-    @include md {
-      padding: 80px 0;
-    }
-    h4{
-      text-align: center;
-      @include font-size(20px);
-      font-weight: 500; 
-      font-family: 'YuMin';
-      margin-bottom: 30px;
-    }
-  }
-  ul.room-types{
-      @include sm {
-      display: table;
-      margin: 0 auto 40px;
-    }
-    li {    
-      @include sm {
-        float: left;
-        padding: 0 20px;
-      }
-      a {
-        @include font-size(14px);
-        font-family: 'YuGo';
-        line-height: 1.43;
-        letter-spacing: 1.4px;
-        font-weight: 700;
-        text-align: center;
-        color: #888888;
-        display: block;
-        position: relative;
-        margin: 8px 0;
-        cursor: pointer; 
-        @include sm {
-          text-align: left;
-          margin: 0;
-        }
-        &.selected {
-          color: $default-color;
-          &:after {
-            @include sm {
-              content: "";
-              width: 100%;
-              height: 2px;
-              display: block;
-              background-color: #232e48;
-              margin-top: 3px;
-            }
-          }
-          &:before {
-            @include sm {
-              content: '';
-              width: 0; 
-              height: 0; 
-              position: absolute;
-              bottom: -6px;
-              left: 50%;
-              margin-left: -4px;
-              border-left: 6px solid transparent;
-              border-right: 6px solid transparent;          
-              border-top: 6px solid $default-color;
-            }
-          }
-        }      
-      }
-    } 
-  }
-
-  ul.rooms-list{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content:space-between;  
-    > li{
-      width: 100%;
-      background:$default-bg; 
-      margin-bottom: 110px; 
-      display: none;
-      transition: all 1s ease;
-      opacity: 0;
-      animation: all 0.3s; 
-      .room-short-info{
-        padding: 27px 20px 20px;
-        width: 100%;
-        float: left;
-        box-shadow: 14.1px 14.1px 90px 0 rgba(0, 0, 0, 0.1);
-        @include sm {
-          padding: 27px 50px 20px; 
-        }
-      }  
-      &.show{
-        display: block;
-        animation: bounceList 0.3s; 
-        opacity: 1;
-      } 
-      @include sm {
-        width: 48%;
-      }   
-    }  
-    h6{      
-      @include font-size(16px);
-      font-family: 'YuGo';
-      text-align: center;
-      margin-bottom: 15px;
-      @include sm {
-        float: left;
-        text-align: left;
-        margin-bottom: 0;
-      }
-    }
-    .price{
-      @include font-size(24px);
-      font-family: 'Lato-B';
-      text-align: center;
-      font-weight: 700;
-      @include sm {
-        float: right;
-        text-align: right;
-      }
-    }
-    .room-facilities{
-      clear: both;
-      margin-top: 25px;
-      border-top: 1px solid #f1f3ee;
-      width: 100%;
-      padding: 0 0 50px; 
-      float: left;
-      position: relative;
-      @include sm { 
-        padding-top: 25px;
-      }
-      ul{      
-        
-        @include sm { 
-          width: 50%;
-          float: left; 
-          padding-right:50px; 
-          border-right: 1px solid #f1f3ee;
-          &:nth-child(2) {
-            border-right: 0px;
-            padding-left: 30px;
-          } 
-        }
-      }
-      li{ 
-        @include font-size(14px);
-        font-family: 'YuGo';
-        width: 100%;
-        padding: 15px 0;
-        border-bottom: 1px solid #f1f3ee;
-        @include sm {
-          border-bottom: 0;
-          padding: 6px 0;
-        }
-        span{
-          float: right;
-          font-weight: 700;
-        }
-      }
-    }    
-  }  
-  .room-more{
-    position: absolute;
-    bottom: -60px;
-    width: 100%;
-    .mys-arrow-left{
-      @include center(vertical);
-      right: 30px; 
-    }
-  }
+  }    
 } 
+
+.rooms-list-wrap{ 
+  background-color: #fafafa; 
+  padding: 60px 10px 20px; 
+  @include md {
+    padding: 80px 0;
+  }
+  h4{
+    text-align: center;
+    @include font-size(20px);
+    font-weight: 500; 
+    font-family: 'YuMin';
+    margin-bottom: 30px;
+  }
+}
+ul.room-types{
+    @include sm {
+    display: table;
+    margin: 0 auto 40px;
+  }
+  li {    
+    @include sm {
+      float: left;
+      padding: 0 20px;
+    }
+    a {
+      @include font-size(14px);
+      font-family: 'YuGo';
+      line-height: 1.43;
+      letter-spacing: 1.4px;
+      font-weight: 700;
+      text-align: center;
+      color: #888888;
+      display: block;
+      position: relative;
+      margin: 8px 0;
+      cursor: pointer; 
+      @include sm {
+        text-align: left;
+        margin: 0;
+      }
+      &.selected {
+        color: $default-color;
+        &:after {
+          @include sm {
+            content: "";
+            width: 100%;
+            height: 2px;
+            display: block;
+            background-color: #232e48;
+            margin-top: 3px;
+          }
+        }
+        &:before {
+          @include sm {
+            content: '';
+            width: 0; 
+            height: 0; 
+            position: absolute;
+            bottom: -6px;
+            left: 50%;
+            margin-left: -4px;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;          
+            border-top: 6px solid $default-color;
+          }
+        }
+      }      
+    }
+  } 
+}
+
+ul.rooms-list{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content:space-between;  
+  > li{
+    width: 100%;
+    background:$default-bg; 
+    margin-bottom: 110px; 
+    display: none;
+    transition: all 1s ease;
+    opacity: 0;
+    animation: all 0.3s; 
+    .room-short-info{
+      padding: 27px 20px 20px;
+      width: 100%;
+      float: left;
+      box-shadow: 14.1px 14.1px 90px 0 rgba(0, 0, 0, 0.1);
+      @include sm {
+        padding: 27px 50px 20px; 
+      }
+    }  
+    &.show{
+      display: block;
+      animation: bounceList 0.3s; 
+      opacity: 1;
+    } 
+    @include sm {
+      width: 48%;
+    }   
+  }  
+  h6{      
+    @include font-size(16px);
+    font-family: 'YuGo';
+    text-align: center;
+    margin-bottom: 15px;
+    @include sm {
+      float: left;
+      text-align: left;
+      margin-bottom: 0;
+    }
+  }
+  .price{
+    @include font-size(24px);
+    font-family: 'Lato-B';
+    text-align: center;
+    font-weight: 700;
+    @include sm {
+      float: right;
+      text-align: right;
+    }
+  }
+  .room-facilities{
+    clear: both;
+    margin-top: 25px;
+    border-top: 1px solid #f1f3ee;
+    width: 100%;
+    padding: 0 0 50px; 
+    float: left;
+    position: relative;
+    @include sm { 
+      padding-top: 25px;
+    }
+    ul{      
+      
+      @include sm { 
+        width: 50%;
+        float: left; 
+        padding-right:50px; 
+        border-right: 1px solid #f1f3ee;
+        &:nth-child(2) {
+          border-right: 0px;
+          padding-left: 30px;
+        } 
+      }
+    }
+    li{ 
+      @include font-size(14px);
+      font-family: 'YuGo';
+      width: 100%;
+      padding: 15px 0;
+      border-bottom: 1px solid #f1f3ee;
+      @include sm {
+        border-bottom: 0;
+        padding: 6px 0;
+      }
+      span{
+        float: right;
+        font-weight: 700;
+      }
+    }
+  }    
+}  
+.room-more{
+  position: absolute;
+  bottom: -60px;
+  width: 100%;
+  .mys-arrow-left{
+    @include center(vertical);
+    right: 30px; 
+  }
+}
+
 @keyframes bounceList {
   0% {
      transform: scale(0.7);
@@ -389,8 +390,16 @@
   .slick-next, .slick-prev{
     display: none !important;
     @include sm {
-      display: block; 
+      display: block !important;  
+      top: 50%;
+      transform: translateY(-50%);
     }
+  }
+  .slick-next{
+    right: -28px;
+  }
+  .slick-prev{
+    left: -28px;
   }
 }
 

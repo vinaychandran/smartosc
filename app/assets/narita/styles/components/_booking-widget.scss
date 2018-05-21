@@ -70,7 +70,7 @@
       padding: 18px 0;
       line-height: 1.25;
       letter-spacing: 5.3px;
-      border-right: 1px solid #eee;
+      //border-right: 1px solid #eee;
       @include tablet {
         width: 90%;
       };
@@ -83,6 +83,8 @@
     a {
       padding: 15px 22px;
       display: table;
+      float: right;
+      border-left: 1px solid #eee
     }
   }
 
@@ -620,7 +622,7 @@
             letter-spacing: normal;
             text-align: center;
             color: $default-color;
-            margin: 10px 0 30px;
+            margin: 0px 0 10px;
           }
 
           .closePopup {
@@ -935,7 +937,7 @@
               @include md {
                 width: 181px;
               }
-  
+
               .value {
                 //border-right: 2px solid #eeeeee;
                 padding-right: 20px;
@@ -1350,4 +1352,40 @@
   @include md {
     width: 480px;
   }
+  button{
+    background: #c5ad6c;
+    color: #fefefe;
+    border: none;
+    height: 46px;
+    width: 100%;
+  }
+  input,
+  input::placeholder {
+    font-family: $primary-font;
+    background-size: 6px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 0;
+    height: 46px;
+    border: 2px solid #eeeeee;
+    @include font-size(12px);
+    letter-spacing: 0.9px;
+    padding: 0 11px;
+    color: $default-color;
+    margin-bottom: 15px;
+
+    &:focus {
+      border: 2px solid #eeeeee;
+    }
+  }
+
+  input::placeholder {
+    border: 0;
+    padding-left: 0;
+  }
+}
+
+#bookingForm{
+  margin-bottom: 0;
 }

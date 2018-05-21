@@ -1,0 +1,386 @@
+extends ../layouts/default
+
+block append content
+	.venue-page
+		section.main-banner.venue-banner
+			picture.banner-image
+				source(media='(min-width: 768px)', srcset='/assets/narita/images/venue-banner.jpg')
+				img(src='/assets/narita/images/venue-banner.jpg')
+			.banner-text
+				h1 会議・宴会
+			//- .divider
+			//- .calendar-link.visible-device
+			//- 	a(href="#") 空室検索
+			//- 		i.icon.sprite-calendar-interface-symbol-tool
+		//- .visible-device
+		//- 	include ../components/booking-widget.pug
+		section.thiru_toRename
+			button(data-show-id='rfp-form') New Popup
+			#rfp-form(data-basicLightbox data-id="rfp-form" class=" row rfp-form-details")
+				.errors
+				form(id='rpfForm' name="rpfForm")
+					h5 Planning your meeting of event
+						p Free quotation - Please fill out the form below
+					section
+						.form-group
+							label Select Location
+							.input-showtext
+								button(name='button', type='button', value='空室を検索') Cities, Hotels
+								.popup-menu
+									.popup-content-input
+
+										ul.cities
+											label Cities
+											li
+												span(target='Hokkaido', names='Hokkaido') 1名
+											li
+												span(target='Okinawa', names='Okinawa') 2名
+											li
+												span(target='Tochigi', names='Tochigi') 3名
+											li
+												span(target='Tokyo', names='Tokyo') 4名
+											label Hotels
+											ul.hotels
+												li
+													span(target='Hokkaido', names='Hokkaido') 1名
+												li
+													span(target='Okinawa', names='Okinawa') 2名
+												li
+													span(target='Tochigi', names='Tochigi') 3名
+												li
+													span(target='Tokyo', names='Tokyo') 4名
+					section.firstname
+						label First Name
+						.input-showtext
+							input.form-control(id='fname' name= "fname" type='text', placeholder='First Name' )
+					section.lastname
+						label Last Name
+						.input-showtext
+							input.form-control(id='lname' type='text', placeholder='Last Name' name='lname')
+					section.companyname
+						label Company Name
+						.input-showtext
+							input.form-control(id='company' type='text', placeholder='Company Name' name='company')
+					section.email
+						label Email Address
+						.input-showtext
+							input.form-control(id='email' type='text', placeholder='Email Address' name='email')
+					section.phone
+						label Phone Number
+						.input-showtext
+							input.form-control(id='mobile' type='number', placeholder='Phone Number' name='mobile')
+					h5.meeting Meeting / Event Information
+					section.event
+						label Event / Meeting Name
+						.input-showtext
+							input.form-control(id='meeting' type='text', placeholder='Event / Meeting Name' name='meeting')
+					section.attendees
+						label Nr. Attendees
+						.input-showtext
+							input.form-control(id='attendees' type='number', placeholder='Nr. Attendees' name='mobile')
+					#venue-booking-tab
+						.date-picker-venue-rpf
+							.date-picker-tab1-container
+								.values
+									.startDateContainer
+										label Start Date
+										.startDate
+											.value.date_at
+												span.date_at
+												input#date_at.date_at(type='hidden')
+									//.to ~
+									.endDateContainer
+										label End Date
+										.endDate
+											.value.date_to
+												span.date_to
+												input#date_to.date_to(type='hidden')
+								//.calendar-backdrop
+								.calendar
+									//img.clear(src='/assets/narita/images/clear.svg' )
+									.button.button-prev
+									.button.button-next
+									.calendarContainer
+									.bottomLayer
+										span.daysFromTo 2018年00月00日 金曜日 ~ 2018年00月00日 金曜日
+										.nights 10 金曜日
+										//.button.closePopup &#x5B8C;&#x4E86;
+						section.guestrooms
+							.form-group
+								label Guest Rooms
+								.input-showtext
+									button(name='button', type='button', value='空室を検索') Rooms
+									.popup-menu
+										.popup-content-input
+											ul.cities
+												li
+													span(target='Hokkaido', names='Hokkaido') 1
+												li
+													span(target='Okinawa', names='Okinawa') 2
+												li
+													span(target='Tochigi', names='Tochigi') 3
+												li
+													span(target='Tokyo', names='Tokyo') 4
+						section.duration
+							.form-group
+								label Duration
+								.input-showtext
+									button(name='button', type='button', value='空室を検索') Duration
+									.popup-menu
+										.popup-content-input
+											ul.cities
+												li
+													span(target='Hokkaido', names='Hokkaido') All Day
+												li
+													span(target='Okinawa', names='Okinawa') Item name item
+
+					section.typeofevent
+						.form-group
+							label Type of Event
+							.input-showtext
+								button(name='button', type='button', value='空室を検索') Trade show
+								.popup-menu
+									.popup-content-input
+										ul.cities
+											li
+												span(target='Hokkaido', names='Hokkaido') Party
+											li
+												span(target='Okinawa', names='Okinawa') Meeting
+											li
+												span(target='Tochigi', names='Tochigi') Conference
+											li
+												span(target='Tokyo', names='Tokyo') Others
+					section.onedayevent
+						.form-group
+							label 1Day Event
+					section
+						.form-group.food-beverage
+							.form-checkbox
+								label.form-label Check applicable food and beverage needs
+								.checkbox-style
+									label.checkbox
+										input.form-control(type='checkbox' name="food" value="breakfast")
+										span
+											i.icon.sprite-checked_sp
+										|	Breakfast
+								.checkbox-style
+									label.checkbox
+										input.form-control(type='checkbox' name="food" value="Lunch")
+										span
+											i.icon.sprite-checked_sp
+										|	Lunch
+								.checkbox-style
+									label.checkbox
+										input.form-control(type='checkbox' name="food" value="Dinner")
+										span
+											i.icon.sprite-checked_sp
+										|	Dinner
+								.checkbox-style
+									label.checkbox
+										input.form-control(type='checkbox' name="food" value="Reception")
+										span
+											i.icon.sprite-checked_sp
+										|	Reception
+								.checkbox-style
+									label.checkbox
+										input.form-control(type='checkbox' name="food" value="Others")
+										span
+											i.icon.sprite-checked_sp
+										|	Others
+					label Please tell us about your other / Audio Visual requirements:
+					.input-showtext.details
+						textarea.form-control(type='text',  placeholder='', cols='40', rows='8', name='mobile')
+					section.attachFile
+						label.fileLabel Attach File
+						input.form-control(type='file')
+					p Free Quotation - We will call you within 24H
+					.find-button
+
+						button(name='button', type='button', value='空室を検索' onclick='FE.global.submitRFPForm()') Submit my RPF
+					p By submiting this RFP, you are agreeing with our Terms and Conditions and Privacy Statement.
+
+		section.about-venue-info
+			h3 TOGETHER IN  STYLE
+			p のイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさをもつ青いそら、あうつくしい森で飾られたモリーオ市あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
+		section.venues-list-wrap
+			.container
+				h4 会場一覧
+				a#tablink(href='') 一覧表示
+				ul.venue-types#venue-types
+					li
+						a.selected(data-room-type="all") 一覧表示
+					li
+						a(data-room-type="small") 30名以下
+					li
+						a( data-room-type="medium") 31名〜60名
+					li
+						a( data-room-type="big") 61名〜100名
+				ul.venue-list
+					li.show(data-rooms="all small")
+						img.lazy(data-src='/assets/narita/images/room-big1.jpg')
+						.venue-short-info
+							h6 オークルーム
+							h5 スーペリアツインハイフロア
+							.floor MAIN FLOOR 4F
+							ul
+								li
+									span 面積
+									.size 805㎡
+								li
+									span 天井の高さ
+									.size 3m
+								li
+									span 面積
+									.size
+										| 立食時  〜1200人
+										br
+										| 着席時  〜600人
+							a.see-more(href="#" data-show-rooms="room-full-info")
+								span もっと見る
+					li.show(data-rooms="all medium")
+						img.lazy(data-src='/assets/narita/images/room-big1.jpg')
+						.venue-short-info
+							h6 オークルーム
+							h5 スーペリアツインハイフロア
+							.floor MAIN FLOOR 4F
+							ul
+								li
+									span 面積
+									.size 805㎡
+								li
+									span 天井の高さ
+									.size 3m
+								li
+									span 面積
+									.size
+										| 立食時  〜1200人
+										br
+										| 着席時  〜600人
+							a.see-more(href="#")
+								span もっと見る
+					li.show(data-rooms="all big")
+						img.lazy(data-src='/assets/narita/images/room-big1.jpg')
+						.venue-short-info
+							h6 オークルーム
+							h5 スーペリアツインハイフロア
+							.floor MAIN FLOOR 4F
+							ul
+								li
+									span 面積
+									.size 805㎡
+								li
+									span 天井の高さ
+									.size 3m
+								li
+									span 面積
+									.size
+										| 立食時  〜1200人
+										br
+										| 着席時  〜600人
+							a.see-more(href="#")
+								span もっと見る
+					li.show(data-rooms="all big")
+						img.lazy(data-src='/assets/narita/images/room-big1.jpg')
+						.venue-short-info
+							h6 オークルーム
+							h5 スーペリアツインハイフロア
+							.floor MAIN FLOOR 4F
+							ul
+								li
+									span 面積
+									.size 805㎡
+								li
+									span 天井の高さ
+									.size 3m
+								li
+									span 面積
+									.size
+										| 立食時  〜1200人
+										br
+										| 着席時  〜600人
+							a.see-more(href="#")
+								span もっと見る
+					li.show(data-rooms="all medium")
+						img.lazy(data-src='/assets/narita/images/room-big1.jpg')
+						.venue-short-info
+							h6 オークルーム
+							h5 スーペリアツインハイフロア
+							.floor MAIN FLOOR 4F
+							ul
+								li
+									span 面積
+									.size 805㎡
+								li
+									span 天井の高さ
+									.size 3m
+								li
+									span 面積
+									.size
+										| 立食時  〜1200人
+										br
+										| 着席時  〜600人
+							a.see-more(href="#")
+								span もっと見る
+					li.show(data-rooms="all small")
+						img.lazy(data-src='/assets/narita/images/room-big1.jpg')
+						.venue-short-info
+							h6 オークルーム
+							h5 スーペリアツインハイフロア
+							.floor MAIN FLOOR 4F
+							ul
+								li
+									span 面積
+									.size 805㎡
+								li
+									span 天井の高さ
+									.size 3m
+								li
+									span 面積
+									.size
+										| 立食時  〜1200人
+										br
+										| 着席時  〜600人
+							a.see-more(href="#")
+								span もっと見る
+		section.venues-slider-wrap
+			h2 ギャラリー
+			.venues-slider.container
+				div.slick-slide
+					img(src='/assets/narita/images/venue-slider/venue-slider1.jpg')
+				div.slick-slide
+					img(src='/assets/narita/images/venue-slider/venue-slider2.jpg')
+				div.slick-slide
+					img(src='/assets/narita/images/venue-slider/venue-slider3.jpg')
+				div.slick-slide
+					img(src='/assets/narita/images/venue-slider/venue-slider1.jpg')
+				div.slick-slide
+					img(src='/assets/narita/images/venue-slider/venue-slider2.jpg')
+				div.slick-slide
+					img(src='/assets/narita/images/venue-slider/venue-slider3.jpg')
+			.venue-slider-info.container
+				.slider-count
+					span.number 1
+					|  / 6
+				.btn PDFをダウンロード
+				a.faq-link(href="#") FAQ
+			.venue-menu-wrap
+				img(src='/assets/narita/images/venue-menu.jpg')
+				.venue-menu-info
+					.star
+						span
+					h4 ケータリングメニュー
+					.venu-menu あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさをもつ青いそら、あうつくしい森で飾られたモリーオ市あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそらあのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさをもつ青いそら、あうつくしい森で飾られたモリーオ市あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
+					a.see-more(href="#")
+						span もっと見る
+		include ../components/google-map.pug
+		include ../components/breadcrumb.pug
+	#room-full-info(data-basicLightbox data-id="room-full-info" class="room-detail")
+		.room-info-header
+			.phone-number
+				i.icon.sprite-tel_sp
+				| 000-0000-0000
+			a(href="#").book-room
+				| お問い合わせ
+			.close-room
+				| x  
+		include ../components/venue-info.pug

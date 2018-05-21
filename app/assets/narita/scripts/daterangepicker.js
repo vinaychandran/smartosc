@@ -51,7 +51,7 @@
         } else {
             days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
         }
-
+        console.log("getting till");
         var container = $(opts.container),
             singleDatePicker = opts.singleDatePicker,
             containerValues = container.find('.values'),
