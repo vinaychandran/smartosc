@@ -188,18 +188,18 @@ section.booking-widget.visible-desktop#booking-widget
           form(id='bookingForm' name="bookingForm")
             label First Name
             .input-showtext
-              input.form-control(id='fname' name= "fname" type='text', placeholder='プロモコード)' )
+              input.form-control(id='fname' name= "fname" type='text', placeholder='プロモコード)' required)
             label Last Name
             .input-showtext
-              input.form-control(id='lname' type='text', placeholder='プロモコード)' name='lname')
+              input.form-control(id='lname' type='text', placeholder='プロモコード)' name='lname' required)
             label Mobile
             .input-showtext
-              input.form-control(id='mobile' type='number', placeholder='プロモコード)' name='mobile')
+              input.form-control(id='mobile' type='number', placeholder='プロモコード)' name='mobile' required)
             label Deatils
             .input-showtext
-              input.form-control(id='details' type='text', placeholder='プロモコード)' name='details')
+              input.form-control(id='details' type='text', placeholder='プロモコード)' name='details' required)
             .find-button
-              button(name='button', type='button', value='空室を検索' onclick='FE.global.validateForm()') 空室を検索
+              button(name='button', type='button', value='空室を検索' class='bookingForm') 空室を検索
       #booking-tab3.tabs-content(onclick='FE.global.bookingWidgetClick()')
         .room-locations
           section

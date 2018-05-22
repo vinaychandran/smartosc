@@ -65,33 +65,32 @@ const FE = {
         },
 
         checkValidationRules: (x) => {
-            let formId = x.id;
+            let formId = x;
             let fieldId, fieldRegex;
             let errorField = [],
                 noError = [];
-            let lightBox = document.querySelector(".basicLightbox--visible");
-            for (let i = 0; i < x.rules.length; i++) {
-                fieldId = (x.rules[i]) ? x.rules[i].name : '';
-                fieldRegex = (x.rules[i]) ? x.rules[i].regex : '';
-                if (x.rules[i].required && document.querySelector(".basicLightbox--visible form#" + formId + " #" + fieldId).value == '') {
-                    errorField.push(fieldId);
+            let formElem = document.querySelector(formId);
+            var inputs = formElem.getElementsByTagName('input');
+            for (var i = 0; i < inputs.length; i += 1) {
+                if (inputs[i].hasAttribute('required') && !inputs[i].value.length) {
+                    if (inputs[i].id) {
+                        errorField.push(inputs[i].id);
+                    }
                 } else {
-                    if (fieldRegex && !fieldRegex.test(String(document.querySelector(".basicLightbox--visible form#" + formId + " #" + fieldId).value).toLowerCase())) {
-                        errorField.push(fieldId);
-                    } else {
-                        noError.push(fieldId);
+                    if (inputs[i].id) {
+                        noError.push(inputs[i].id);
                     }
                 }
             }
             if (noError.length) {
                 for (let i = 0; i < noError.length; i++) {
-                    let element = document.querySelector(".basicLightbox--visible form#" + formId + " #" + noError[i]);
+                    let element = document.querySelector(formId + " #" + noError[i]);
                     element.classList.remove("error-border");
                 }
             }
             if (errorField.length) {
                 for (let i = 0; i < errorField.length; i++) {
-                    let element = document.querySelector(".basicLightbox--visible form#" + formId + " #" + errorField[i]);
+                    let element = document.querySelector(formId + " #" + errorField[i]);
                     element.classList.add("error-border");
                 }
                 return false;
@@ -100,67 +99,20 @@ const FE = {
             }
         },
 
-        submitRFPForm: () => {
-            let validationRules = {
-                "id": "rpfForm",
-                "rules": [{
-                        "name": "fname",
-                        "required": true
-                    },
-                    {
-                        "name": "lname",
-                        "required": true
-                    },
-                    {
-                        "name": "company",
-                        "required": true
-                    },
-                    {
-                        "name": "meeting",
-                        "required": true
-                    },
-                    {
-                        "name": "attendees",
-                        "required": true
-                    },
-                    {
-                        "name": "mobile",
-                        "required": true
-                    },
-                    {
-                        "name": "email",
-                        "required": true,
-                        "regex": /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-                    },
-                ]
-            };
-
-            FE.global.checkValidationRules(validationRules);
+        submitForm: () => {
+            let lightBoxId = ".basicLightbox--visible";
+            if (document.querySelector(lightBoxId + " .submitRfpForm")) {
+                document.querySelector(lightBoxId + " .submitRfpForm").addEventListener("click", function() {
+                    FE.global.checkValidationRules(lightBoxId + " form#rpfForm");
+                });
+            }
+            if (document.querySelector(lightBoxId + " .bookingForm")) {
+                document.querySelector(lightBoxId + " .bookingForm").addEventListener("click", function() {
+                    FE.global.checkValidationRules(lightBoxId + " form#bookingForm");
+                });
+            }
         },
 
-        validateForm: () => {
-            let validationRules = {
-                "id": "bookingForm",
-                "rules": [{
-                        "name": "fname",
-                        "required": true
-                    },
-                    {
-                        "name": "lname",
-                        required: true
-                    },
-                    {
-                        "name": "mobile",
-                        required: true
-                    },
-                    {
-                        "name": "details",
-                        required: true
-                    }
-                ]
-            };
-            FE.global.checkValidationRules(validationRules);
-        },
         sliderImage: (slider, slideToShow, dots, arrows) => {
             $(slider).each(function() {
                 let imgIndex, sliderImageCount;
@@ -335,6 +287,7 @@ const FE = {
                         FE.global.lazyLoad();
                         FE.global.sliderImage('.gallery-nav', 1, false, true);
                         $('.gallery-nav').slick('slickGoTo', SlideNumber, true);
+                        FE.global.submitForm();
                     },
                     afterClose: (instance) => {
                         $('.gallery-nav').slick('unslick');
@@ -354,7 +307,7 @@ const FE = {
                 let checkSlider = false;
                 // elem.onclick = basicLightbox.create(html).show;
                 if (checkSlider) {
-					$('.roomPopup .room-info-slider').slick('unslick');
+                    $('.roomPopup .room-info-slider').slick('unslick');
                 }
                 elem.onclick = basicLightbox.create(html, {
                     className: 'roomPopup',
@@ -363,20 +316,20 @@ const FE = {
                         $('body').addClass('modal-open');
                     },
                     afterShow: (instance) => {
-						FE.global.sliderImage('.roomPopup .room-info-slider', 1, false, true);
+                        FE.global.sliderImage('.roomPopup .room-info-slider', 1, false, true);
                         let checkSlider = true;
                     },
                     beforeClose: (instance) => {
-						$('.roomPopup .room-info-slider').slick('unslick');
+                        $('.roomPopup .room-info-slider').slick('unslick');
                         $('body').removeClass('modal-open');
                     }
                 }).show
             })
-			$(document).on('click',  '.room-detail .close-room', function () {
+            $(document).on('click', '.room-detail .close-room', function() {
                 $('.roomPopup').removeClass('basicLightbox--visible')
                 setTimeout(() => {
-					$('.roomPopup .room-info-slider').slick('unslick');
                     $('.roomPopup').remove();
+                    $('.roomPopup .room-info-slider').slick('unslick');
                     $('body').removeClass('modal-open');
                 }, 410)
             });
@@ -540,6 +493,78 @@ const FE = {
                 }, false);
             })
         },
+        filter: (targetElement) => {
+            // get all of our list items
+            let itemsToFilter = document.querySelectorAll(".itemsToFilter li");
+              
+            //setup click event handlers on our checkboxes
+            let checkBoxes = document.querySelectorAll(".filterSection li input");
+              
+            for (let i = 0; i < checkBoxes.length; i++) {
+                checkBoxes[i].addEventListener("click", filterItems, false);
+                //checkBoxes[i].checked = true;
+            }
+              
+            // the event handler!
+            function filterItems(e) {
+                var clickedItem = e.target;
+                  
+                if (clickedItem.checked == true) {
+                    hideOrShowItems(clickedItem.value, "hideItem", "showItem");
+                } else if (clickedItem.checked == false) {
+                    hideOrShowItems(clickedItem.value, "showItem", "hideItem");
+                } else {
+                    // deal with the indeterminate state if needed
+                }
+            }
+              
+            // add or remove classes to show or hide our content
+            function hideOrShowItems(itemType, classToRemove, classToAdd) {
+                for (var i = 0; i < itemsToFilter.length; i++) {
+                    var currentItem = itemsToFilter[i];
+                      
+                    if (currentItem.getAttribute("data-type") == itemType) {
+                        removeClass(currentItem, classToRemove);
+                        addClass(currentItem, classToAdd);
+                    }
+                }
+            }
+              
+            //
+            // Helper functions for adding and removing class values
+            //
+            function addClass(element, classToAdd) {
+                var currentClassValue = element.className;
+                    
+                if (currentClassValue.indexOf(classToAdd) == -1) {
+                    if ((currentClassValue == null) || (currentClassValue === "")) {
+                        element.className = classToAdd;
+                    } else {
+                        element.className += " " + classToAdd;
+                    }
+                }
+            }
+                    
+            function removeClass(element, classToRemove) {
+                var currentClassValue = element.className;
+              
+                if (currentClassValue == classToRemove) {
+                    element.className = "";
+                    return;
+                }
+              
+                var classValues = currentClassValue.split(" ");
+                var filteredList = [];
+              
+                for (var i = 0 ; i < classValues.length; i++) {
+                    if (classToRemove != classValues[i]) {
+                        filteredList.push(classValues[i]);
+                    }
+                }
+              
+                element.className = filteredList.join(" ");
+            }
+        },
 
         showCheckBoxAction: () => {
             $(document).on('click', '.form-checkbox .checkbox-style input', function() {
@@ -586,13 +611,14 @@ const FE = {
             FE.global.autocomplatePopup();
             FE.global.itemShowHide();
             FE.global.filterRooms('room-types');
-            FE.global.filterRooms('venue-types');
+            FE.global.filter('venue-types');
             FE.global.datePickerInit('.date-picker-tab1', 'ja', false);
             FE.global.datePickerInit('.date-picker-tab2-single', 'ja', true);
             FE.global.datePickerInit('.date-picker-tab3', 'ja', false);
             FE.global.datePickerInit('.basicLightbox--visible .date-picker-venue-rpf', 'ja', false);
             FE.global.pageScroll();
             FE.global.sliderImage('.venues-slider', 1, false, true);
+            FE.global.submitForm();
         },
         resize: function resize() {
             //Functions inside loaded execute when window resize

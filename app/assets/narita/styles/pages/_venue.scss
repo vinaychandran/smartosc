@@ -8,6 +8,85 @@
   }
 }
 
+.inner-menu-wrap {
+  background: #fff;
+  overflow: hidden;
+
+  .inner-menu {
+    background: #fafafa;    
+    @include md {
+      float: left;
+      padding-left: 70px;
+      background: #fff;
+    }
+    ul{
+      margin-top: 0;
+    }
+    li {      
+       @include md {
+        float: left;      
+        line-height: 80px;
+       }
+      a{
+        @include font-size(14px);               
+        display: block;
+        letter-spacing: 1.6px;
+        text-align: center;
+        padding: 20px 10px;
+        border-bottom: 1px solid #eeeeee;
+        @include md {
+          padding: 0 25px 0 10px;
+          text-align: left;
+        } 
+      }
+    }
+  }
+
+  .inner-links-right {    
+    @include md {
+      float: right;
+    }
+  }
+
+  .inner-phone {
+    display: block;
+    float: left;
+    @include font-size(18px);
+    width: 50%;
+    text-align: center;
+    padding-top: 14px;
+    @include md {
+      @include font-size(24px);
+       display: inline-block;
+      padding-right: 25px;
+      width: auto;
+      padding-top: 0;
+      line-height: 61px;
+    }
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 15px 40px;
+    width: 50%;
+    @include md {
+      padding: 20px 50px;
+      width: auto;
+    }
+  }
+  .pdf-download{
+    background: #000;
+    margin-right: -5px;
+    height: 61px;
+    display: none;
+    @include md {
+      display: inline-block;
+    }
+  }
+}
+
+
+
 .about-venue-info {
   max-width: 660px;
   margin: 0 auto;
@@ -32,8 +111,111 @@
   }
 }
 
+.venue-party-plan-wrap{
+  max-width: 720px;
+  margin:0 20px;
+  @include md {
+    margin:0 auto; 
+    padding-bottom: 30px;
+  }
+  .venue-party-plan{
+    float: left;
+    position: relative;
+    &.big{
+      margin-bottom: 20px;
+    }
+    &.small{
+      h4{
+        position: absolute;
+        top: 40%;
+        left: 0;
+        right: 0;
+        text-align: center;  
+      }
+      margin-bottom: 33px; 
+    }
+    &:last-child{
+      float: right;
+    }
+    h4{
+      @include font-size(16px);
+      letter-spacing: 0.8px;
+      @include md {
+        color: #fff;
+      }
+      
+    }
+    p{
+      @include font-size(12px);
+      margin-top: 8px;
+      margin-bottom: 0;
+    }
+  }
+  .venue-plan-content{    
+    @include md {
+      position: absolute;
+      left: 50%;
+      top: 55px;
+      max-width: 260px;
+    }
+    h4{
+      text-align: center;
+      margin-top: 20px;
+      @include md {
+        text-align: left;
+        margin-top: 0;
+      }
+    }
+    p{
+      
+      letter-spacing: 0.7px;
+      @include font-size(14px);
+      font-family: 'YuMin';
+      line-height: 1.79;
+      margin-top: 20px;
+      @include md {
+        color: #fff;
+      }
+    }
+  }
+  .latest-plan{
+    position: absolute;
+    right: 10px;
+    top: -37px;
+    width: 74px;
+    height: 74px;
+    background: #eeeeee; 
+    border-radius: 50%;
+    @include font-size(11px);
+    text-align: center;
+    line-height: 1.45;
+    padding-top: 22px;
+    &:after{
+      content:"";
+      width: 68px;
+      height: 68px;
+      border: 1px solid #000;
+      border-radius: 50%;
+      position: absolute;
+    left: 3px;
+    top: 3px;
+    }
+  }  
+}
+
+.btn-party-plan{
+  clear: both;
+  margin:0 20px;
+   
+  @include md {
+    margin:0 auto;
+    max-width: 460px;
+  }
+}
+
 .venues-list-wrap {
   padding: 60px 10px 20px;
+  clear: both;
   @include md {
     padding: 80px 0 35px;
   }
@@ -44,11 +226,36 @@
     font-weight: 500;
     font-family: 'YuGo';
     margin-bottom: 30px;
-  }
+  }  
 }
 
 ul.venue-types {
-  @extend ul.room-types;
+  text-align: center;
+  margin-bottom: 50px;
+  li{
+    display: inline-block; 
+    margin:0 15px; 
+    input[type="checkbox"] {
+      display:none;
+    }
+    input[type="checkbox"] + label span {
+        display:inline-block;
+        width:24px;
+        height:24px;
+        margin:-2px 10px 0 0;
+        vertical-align:middle;
+        background:#eee;
+        cursor:pointer; 
+    }
+
+    input[type="checkbox"]:checked + label span {
+        @extend .icon;
+        @extend .sprite-checked_pc;
+        &:before{
+          margin-left: 2px;
+        }
+    }
+  }
 }
 
 ul.venue-list {
@@ -61,10 +268,8 @@ ul.venue-list {
     width: 100%;
     background: $default-bg;
     margin-bottom: 40px;
-    display: none;
-    transition: all 1s ease;
-    opacity: 1;
-    animation: all 0.3s;
+    display: none;   
+    animation: all 0.3s ease;
     box-shadow: 14.1px 14.1px 90px 0 rgba(0, 0, 0, 0.1);
 
     &.show {
@@ -72,9 +277,17 @@ ul.venue-list {
       animation: bounceList 0.3s;
       opacity: 1;
     }
+    &.showItem {
+        display: list-item;
+        animation: bounceList 0.3s;
+    }
+    &.hideItem {
+        display: none;
+    }
     @include sm {
       width: calc(100% / 3 - 23px);
     }
+
   }
 
   .venue-short-info {
@@ -171,7 +384,7 @@ ul.venue-list {
 .venues-slider-wrap {
   text-align: center;
   background: #fff;
-  padding: 55px 0 25px;
+  padding: 55px 0 75px;
   overflow: hidden;
 
   h2 {
@@ -186,16 +399,24 @@ ul.venue-list {
     }
 
     .slick-slide {
-      margin: 0 25px;
+      margin: 0 5px;
+      @include md {
+        margin: 0 25px;
+      }
     }
 
     .slick-next {
       right: -60px;
-    }
+    }    
   }
 
   .slick-list {
     overflow: initial;
+    max-width: 300px;
+    margin:0 auto;
+    @include md {
+      max-width: none; 
+    }
   }
 
   .slick-arrow {
@@ -203,29 +424,46 @@ ul.venue-list {
     transform: translateY(-50%);
     width: 66px;
     height: 66px;
+    display: none !important;
+    @include md {
+      display: block  !important;
+    }
   }
 }
 
 .venue-slider-info {
   padding: 25px 25px 60px;
 
-  .slider-count {
-    float: left;
-    line-height: 81px;
+  .slider-count {    
     font-family: 'Lato';
+    text-align: center;
+    @include md {
+      float: left;
+      line-height: 81px;
+      text-align: left;
+    }
+
   }
 
-  .faq-link {
-    float: right;
-    line-height: 81px;
-    margin-right: 80px;
+  .faq-link {    
+    display: block;
+    text-align: center;    
     @include font-size(12px);
     letter-spacing: 1.2px;
     text-decoration: underline;
+    @include md {
+      float: right;
+      line-height: 81px;
+      text-align: left;
+      margin-right: 80px;
+    }
   }
 
   .btn {
-    float: right;
+    margin:10px 0;
+    @include md {
+      float: right;
+    }
   }
 }
 
@@ -239,18 +477,29 @@ ul.venue-list {
 }
 
 .venue-menu-info {
-  width: 540px;
+  
   background: #000;
-  padding: 50px 70px 70px;
+  padding: 30px 20px 40px;
   color: #fff;
-  position: absolute;
   z-index: 1;
-  top: 100px;
-  left: 80px;
+  position: relative;
+  margin:-60px 20px 0;
+  @include md {
+    margin:0;
+    position: absolute;    
+    top: 100px;
+    left: 80px;
+    padding: 50px 70px 70px;
+    width: 540px;
+  }
 
   h4 {
-    @include font-size(24px);
-    margin: 55px 0 50px;
+    @include font-size(20px);
+    margin: 40px 0;
+    @include md {
+      @include font-size(24px);
+       margin: 55px 0 50px;
+    }
   }
 
   .venu-menu {
@@ -321,13 +570,14 @@ ul.venue-list {
   padding-left: 10px;
   font-family: 'YuGo';
   float: left;
-  line-height: 55px; 
+  line-height: 55px;
   font-weight: 500;
   @include sm {
-    line-height: 92px; 
-    @include font-size(24px); 
+    line-height: 92px;
+    @include font-size(24px);
     height: 94px;
   }
+
   i {
     @include font-size(13px);
     margin-right: 10px;
@@ -336,14 +586,17 @@ ul.venue-list {
 
 .venue-info {
   margin-bottom: 0;
+
   h2 {
     font-family: 'YuGo';
     font-weight: bold;
   }
+
   .venue-quick {
     font-family: 'YuGo';
     padding-bottom: 8px;
   }
+
   .venue-floor {
     @include font-size(14px);
     font-family: 'Lato';
@@ -369,39 +622,47 @@ ul.venue-list {
 .venue-info-container {
   margin-top: 0;
 }
-.venue-overview{
-  h5{
+
+.venue-overview {
+  h5 {
     border-bottom: 2px solid #000;
     font-weight: bold;
   }
+
   .venue-facilities {
     @extend %clearfix;
     padding: 40px 0;
     border-bottom: 1px solid #eee;
+
     ul {
       @include sm {
         width: 33.3%;
         float: left;
         padding-right: 80px;
       }
+
       li {
         @include font-size(15px);
         line-height: 26px;
         padding-bottom: 8px;
+
         span {
           float: right;
           font-weight: bold;
         }
       }
     }
+
     .btn-download {
       background: $default-color;
       position: relative;
+
       span {
         text-align: left;
         display: block;
         width: 75%;
       }
+
       i {
         @include center(vertical);
         right: 30px;
@@ -413,32 +674,41 @@ ul.venue-list {
       }
     }
   }
+
   .venue-layout {
     padding: 40px 0;
+
     #tablink {
       margin: 20px 0;
     }
+
     h4 {
       @include font-size(14px);
       letter-spacing: 2.8px;
       font-weight: bold;
     }
+
     .tabs {
-      padding: 30px 0 0 0;
+      padding: 30px 0 0;
+
       .tabs-header {
-        margin: 0 0 30px 0;
+        margin: 0 0 30px;
+
         li {
           &:first-of-type {
             padding-left: 0;
           }
         }
       }
+
       .tabs-content {
         background: #fafafa;
-        padding: 30px 30px 50px 30px;
+        padding: 30px 30px 50px;
+
         img {
           margin-bottom: 30px;
         }
+
         .max-text {
           @include font-size(12px);
           float: right;
@@ -446,34 +716,43 @@ ul.venue-list {
       }
     }
   }
-  .meeting-details, .price-details {
+
+  .meeting-details,
+  .price-details {
     overflow: hidden;
     overflow-x: auto;
     @include sm {
       overflow: visible;
     }
+
     table {
       overflow-x: auto;
       width: 100%;
+
       thead {
         background: #eee;
+
         th {
           text-align: center;
           vertical-align: middle;
           border-right: 1px solid #E1E1E1;
+
           &:last-of-type {
             border-right: none;
           }
         }
       }
+
       tbody {
         background: #fafafa;
+
         td {
           text-align: center;
           vertical-align: middle;
           padding: 20px 10px;
           min-width: 100px;
           border-right: 1px solid #E1E1E1;
+
           &:last-of-type {
             border-right: none;
           }
@@ -481,13 +760,16 @@ ul.venue-list {
       }
     }
   }
+
   .venue-links {
     @extend %clearfix;
+
     .links {
       padding-bottom: 20px;
       @include sm {
         float: left;
-      }      
+      }
+
       a {
         text-decoration: underline;
         margin-right: 10px;
@@ -496,10 +778,12 @@ ul.venue-list {
         letter-spacing: 0.4px;
       }
     }
+
     .note {
       @include sm {
         float: right;
-      }      
+      }
+
       p {
         @include font-size(10px);
         letter-spacing: 0.3px;
@@ -514,20 +798,24 @@ ul.venue-list {
     text-align: center;
     margin-bottom: 30px;
   }
+
   .benefits-details {
     @extend %clearfix;
     background: url('../images/benefits-img.png') no-repeat;
     padding: 14px;
     color: $secondary-color;
     background-size: cover;
-    .planner-benefits, .meeting-benefits {
+
+    .meeting-benefits,
+    .planner-benefits {
       padding: 30px;
       @include sm {
         padding: 50px 30px 50px 50px;
         width: 50%;
         float: left;
-      }     
-      h6 {        
+      }
+
+      h6 {
         @include font-size(16px);
         line-height: 26px;
         letter-spacing: 1.6px;
@@ -537,6 +825,7 @@ ul.venue-list {
           text-align: center;
         }
       }
+
       ul {
         li {
           text-shadow: 0 0 8.5px rgba(0, 0, 0, 0.3);
@@ -547,6 +836,7 @@ ul.venue-list {
         }
       }
     }
+
     p {
       clear: both;
       margin: 0;
@@ -557,6 +847,7 @@ ul.venue-list {
 
 .venues-popup {
   padding-top: 0;
+
   .container {
     h4 {
       @include font-size(16px);
@@ -569,11 +860,13 @@ ul.venue-list {
 
 .rfp-form-details {
   background: #fff;
-  border: 30px solid #fff;
+  padding: 30px;
 }
 
 #rfp-form {
-  width: 100vw;
+  width: 98vw;
+  overflow-y: scroll;
+  height: 87vh;
 
   #rpfForm {
     margin-bottom: 0;
@@ -581,7 +874,6 @@ ul.venue-list {
   @include md {
     width: 734px;
     height: 95vh;
-    overflow-y: scroll;
   }
 
   h5,
@@ -603,9 +895,11 @@ ul.venue-list {
   .onedayevent,
   .phone,
   .typeofevent {
-    width: 50%;
-    float: left;
-    padding-right: 5%;
+    @include md {
+      width: 50%;
+      float: left;
+      padding-right: 5%;
+    };
   }
 
   .attendees,
@@ -613,21 +907,29 @@ ul.venue-list {
   .onedayevent,
   .phone {
     //float: right;
-    padding-right: 0;
+    @include md {
+      padding-right: 0;
+    }
   }
 
   .event,
   .typeofevent {
-    width: 75%;
+    @include md {
+      width: 75%;
+    }
   }
 
   .attendees,
   .onedayevent {
-    width: 25%;
+    @include md {
+      width: 25%;
+    }
   }
 
   .onedayevent {
-    padding-top: 40px;
+    @include md {
+      padding-top: 40px;
+    }
   }
 
   .attachFile {
@@ -646,12 +948,16 @@ ul.venue-list {
   .duration,
   .guestrooms {
     @extend %clearfix;
-    float: left;
-    width: 160px;
+    @include md {
+      float: left;
+      width: 160px;
+    }
   }
 
   .guestrooms {
-    margin-right: 11px;
+    @include md {
+      margin-right: 11px;
+    }
   }
 
   .form-group {
@@ -731,11 +1037,14 @@ ul.venue-list {
       }
 
       .checkbox-style {
-        float: left;
+        float: none;
         position: relative;
         padding-right: 0;
         width: 33.333%;
         margin-bottom: 20px;
+        @include md {
+          float: left;
+        };
       }
 
       .checkbox-style label.checkbox {
@@ -885,6 +1194,11 @@ ul.venue-list {
     //   width: auto;
     //   padding-bottom: 0;
     // }
+    width: 100%;
+    @include md {
+      width: auto;
+    };
+
     label {
       //padding: 5px 10px;
     }
@@ -901,11 +1215,18 @@ ul.venue-list {
     .endDateContainer,
     .startDateContainer {
       float: left;
-      margin-right: 11px;
-      width: 160px;
-      @include mobile {
-        margin-right: 0;
-        width: 46%;
+      width: 100%;
+      @include mobile {}
+      @include md {
+        margin-right: 11px;
+        width: 160px;
+      };
+    }
+
+    .startDateContainer {
+      margin-bottom: 15px;
+      @include md {
+        margin-bottom: 0;
       }
     }
 
@@ -958,7 +1279,7 @@ ul.venue-list {
       }
 
       .day {
-        @include font-size(45px);
+        @include font-size(35px);
         margin: 6px 6px 0 0;
         float: left;
         // @include mobile {

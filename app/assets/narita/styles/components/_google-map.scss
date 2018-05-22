@@ -43,7 +43,20 @@
       font-family: $secondary-font;
       font-family: 'YuMin';
     }
-  }  
+  } 
+  .contact-us-info{
+    .phone{
+      line-height: 1.64;
+      padding: 20px 0;
+      border-bottom: 1px solid #eeeeee;
+      span{
+        float: right;
+        line-height: 1;
+        letter-spacing: 0.6px;
+        @include font-size(24px); 
+      }
+    }
+  } 
 }
 
 .airpot-stop-info{
