@@ -375,8 +375,8 @@ const FE = {
 			$(document).on('click',  '.room-detail .close-room', function () {
                 $('.roomPopup').removeClass('basicLightbox--visible')
                 setTimeout(() => {
-                    $('.roomPopup').remove();
 					$('.roomPopup .room-info-slider').slick('unslick');
+                    $('.roomPopup').remove();
                     $('body').removeClass('modal-open');
                 }, 410)
             });
