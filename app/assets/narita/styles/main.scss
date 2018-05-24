@@ -24,12 +24,15 @@
 @import "components/google-map";
 @import "components/modal-lightbox";
 @import "components/footer"; 
+        
 
 // @import "en-EN";
 
 // Pages
 @import "pages/homepage";  
-@import "pages/gallerypage"; 
+@import "pages/gallerypage";  
 @import "pages/rooms";    
 @import "pages/venue"; 
-
+@import "pages/resturants"; 
+@import "components/inner-page-slider";   
+@import "components/inner-page-menu-box";

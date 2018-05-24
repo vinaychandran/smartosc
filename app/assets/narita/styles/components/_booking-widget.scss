@@ -84,7 +84,7 @@
       padding: 15px 22px;
       display: table;
       float: right;
-      border-left: 1px solid #eee
+      border-left: 1px solid #eee;
     }
   }
 
@@ -274,7 +274,6 @@
         //border: 2px solid #eeeeee;
         height: 62px;
         line-height: 66px;
-        padding-top: 18px;
         // background: url("../icons/calendar-interface-symbol-tool.svg") 10% center no-repeat;
         // padding-left: 45px;
         // background-size: 20px;
@@ -284,20 +283,41 @@
           background: none;
           padding-left: 15px;
         }
+        //padding-top: 18px;
+        @include md {
+          padding-top: 0;
+        };
 
         span.date_at,
         span.date_to {
+          @extend .icon;
+          @extend .sprite-calender_pc;
+
+          &:before {
+            display: block;
+            background-image: none;
+          }
           @include md {
-            background-image: url("../svg/sprite.svg");
-            background-repeat: no-repeat;
-            background-size: 42.6em 346.4em;
-            background-position: 0.4em -72.7em;
-            //background: url("../icons/calendar-interface-symbol-tool.svg") 10% center no-repeat;
-            padding-left: 45px;
             float: left;
-            @-moz-document url-prefix() {
-              background-position: 0.4em -20.8em;
-              background-size: 42.6em 282.4em;
+            padding: 15px 10px;
+            // background-image: url("../svg/sprite.svg");
+            // background-repeat: no-repeat;
+            // background-size: 42.6em 346.4em;
+            // background-position: 0.4em -72.7em;
+            //background: url("../icons/calendar-interface-symbol-tool.svg") 10% center no-repeat;
+            // padding-left: 45px;
+            // float: left;
+            // @-moz-document url-prefix() {
+            //   background-position: 0.4em -20.8em;
+            //   background-size: 42.6em 282.4em;
+            // }
+            &:before {
+              background-image: url("../svg/sprite.svg");
+              margin-left: 5px;
+              width: 28px;
+              margin: 7px 0;
+              float: left;
+              display: inline-block;
             }
           }
         }
@@ -382,18 +402,6 @@
             opacity: 0;
           }
         }
-      }
-
-      .calendar-backdrop {
-        display: none;
-        opacity: 0.5;
-        height: 100vh;
-        width: 100vw;
-        background: $primary-bg;
-        left: 0;
-        position: fixed;
-        top: 0;
-        z-index: 99998;
       }
 
       .calendar {
@@ -622,7 +630,7 @@
             letter-spacing: normal;
             text-align: center;
             color: $default-color;
-            margin: 0px 0 10px;
+            margin: 0 0 10px;
           }
 
           .closePopup {
@@ -662,6 +670,8 @@
       }
 
       .people-list {
+        @extend .icon;
+        @extend .sprite-people_pc;
         font-family: $primary-font;
         background-size: 6px;
         background-repeat: no-repeat;
@@ -675,21 +685,28 @@
         line-height: 2.5;
         letter-spacing: 0.9px;
         color: $default-color;
-        padding: 15px 0;
+        //padding: 15px 0;
+        &:before {
+          float: left;
+          margin: 22px 10px 22px 15px;
+        }
         @include md {
           width: 200px;
         }
 
         p {
-          background-image: url("../svg/sprite.svg");
-          background-repeat: no-repeat;
-          background-size: 32.5em 210em;
-          background-position: 0.5em -139.4em;
-          padding-left: 50px;
+          float: left;
+          margin: 0;
+          padding: 13px 0;
+          // background-image: url("../svg/sprite.svg");
+          // background-repeat: no-repeat;
+          // background-size: 32.5em 210em;
+          // background-position: 0.5em -139.4em;
+          //padding-left: 15px;
           line-height: 1.4em;
-          @-moz-document url-prefix() {
-            background-position: 0.5em -142.4em;
-          }
+          // @-moz-document url-prefix() {
+          //   background-position: 0.5em -142.4em;
+          // }
         }
 
         span {
@@ -921,8 +938,10 @@
 
         .values {
           float: left;
+
           .startDateContainer {
             width: 160px;
+
             .startDate {
               width: auto;
               height: 62px;
@@ -1347,18 +1366,20 @@
   padding: 30px;
 }
 
-#show-restaurant{
+#show-restaurant {
   width: 100vw;
   @include md {
     width: 480px;
   }
-  button{
+
+  button {
     background: #c5ad6c;
     color: #fefefe;
     border: none;
     height: 46px;
     width: 100%;
   }
+
   input,
   input::placeholder {
     font-family: $primary-font;
@@ -1386,6 +1407,6 @@
   }
 }
 
-#bookingForm{
+#bookingForm {
   margin-bottom: 0;
 }

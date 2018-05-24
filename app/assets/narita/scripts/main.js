@@ -617,7 +617,7 @@ const FE = {
             FE.global.datePickerInit('.date-picker-tab3', 'ja', false);
             FE.global.datePickerInit('.basicLightbox--visible .date-picker-venue-rpf', 'ja', false);
             FE.global.pageScroll();
-            FE.global.sliderImage('.venues-slider', 1, false, true);
+            FE.global.sliderImage('.inner-page-slider', 1, false, true);
             FE.global.submitForm();
         },
         resize: function resize() {
