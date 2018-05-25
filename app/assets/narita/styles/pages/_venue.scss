@@ -19,25 +19,44 @@
       padding-left: 70px;
       background: #fff;
     }
-    ul{
+
+    ul {
       margin-top: 0;
     }
+
     li {
       @include md {
         float: left;
         line-height: 60px;
       }
-      a{
+
+      a {
         @include font-size(14px);
         display: block;
         letter-spacing: 1.6px;
         text-align: center;
-        padding: 20px 10px;
+        padding: 20px 30px;
         border-bottom: 1px solid #eeeeee;
         @include md {
           padding: 0 25px 0 10px;
           text-align: left;
           border-bottom: 0;
+        }
+
+        i {
+          border: solid black;
+          border-width: 0 3px 3px 0;
+          display: inline-block;
+          padding: 3px;
+          float: right;
+          @include md {
+            border: none;
+          }
+        }
+
+        .down {
+          transform: rotate(45deg);
+          -webkit-transform: rotate(45deg);
         }
       }
     }
@@ -57,7 +76,7 @@
     text-align: center;
     padding-top: 14px;
     @include md {
-      @include font-size(24px);
+       @include font-size(24px);
       display: inline-block;
       padding-right: 25px;
       width: auto;
@@ -75,7 +94,8 @@
       width: auto;
     }
   }
-  .pdf-download{
+
+  .pdf-download {
     background: #000;
     margin-right: -5px;
     height: 61px;
@@ -85,8 +105,6 @@
     }
   }
 }
-
-
 
 .about-venue-info {
   max-width: 660px;
@@ -112,25 +130,38 @@
   }
 }
 
-.venue-party-plan-wrap{
-  float: left;
-  margin:0 20px; 
+.venue-party-plan-wrap {
+  //float: left;
+  margin: 0 20px;
   padding-bottom: 30px;
   @include md {
-    margin:0 auto;
+    margin: 0 auto;
     padding-bottom: 30px;
     max-width: 720px;
     float: none;
   }
-  
-  .venue-party-plan{
-    float: left;
+
+  .venue-party-plan {
     position: relative;
-    &.big{
+    @include md {
+      float: left;
+    };
+
+    &.big {
       margin-bottom: 20px;
     }
-    &.small{
-      h4{
+
+    &.small {
+      //  float: none;
+      //display: flex;
+      .venue-party-plan-container {
+        // justify-content: center;
+        // @include md{
+        //   justify-content:unset;
+        // };
+      }
+
+      h4 {
         position: absolute;
         top: 40%;
         left: 0;
@@ -139,43 +170,59 @@
       }
       margin-bottom: 33px;
     }
-    &:last-child{
-      float: right;
+
+    &:last-child {
+      @include md {
+        float: right;
+      };
     }
-    h4{
+
+    h4 {
       @include font-size(16px);
       letter-spacing: 0.8px;
       color: #fff;
       @include md {
         color: #fff;
       }
-
     }
-    p{
+
+    img {
+      margin: 0 auto;
+      width: 100%;
+      @include md {
+        margin: 0;
+        width: auto;
+      }
+    }
+
+    p {
       @include font-size(12px);
       margin-top: 8px;
       margin-bottom: 0;
+      text-align: left;
     }
   }
-  .venue-plan-content{
+
+  .venue-plan-content {
     @include md {
       position: absolute;
       left: 50%;
       top: 55px;
       max-width: 260px;
     }
-    h4{
+
+    h4 {
       text-align: center;
       margin-top: 20px;
       color: #000;
       @include md {
         text-align: left;
         margin-top: 0;
-        color: #fff; 
+        color: #fff;
       }
     }
-    p{
 
+    p {
       letter-spacing: 0.7px;
       @include font-size(14px);
       font-family: 'YuMin';
@@ -186,7 +233,8 @@
       }
     }
   }
-  .latest-plan{
+
+  .latest-plan {
     position: absolute;
     right: 10px;
     top: -37px;
@@ -198,36 +246,41 @@
     text-align: center;
     line-height: 1.45;
     padding-top: 22px;
-    &:after{
-      content:"";
+
+    &:after {
+      content: "";
       width: 68px;
       height: 68px;
       border: 1px solid #000;
       border-radius: 50%;
       position: absolute;
-    left: 3px;
-    top: 3px;
+      left: 3px;
+      top: 3px;
     }
   }
 }
 
-.btn-party-plan{
+.btn-party-plan {
   clear: both;
-  margin:0 20px;
-
+  margin: 0 20px;
   @include md {
-    margin:0 auto;
+    margin: 0 auto;
     max-width: 460px;
   }
-  max-width: 460px;
-  margin:0 auto;
 }
 
 .venues-list-wrap {
   padding: 60px 10px 20px;
   clear: both;
   @include md {
-    padding: 80px 0 35px;
+    padding: 80px 0 0;
+  }
+
+  .container {
+    @include md {
+      padding: 80px 0;
+      background: #fafafa;
+    };
   }
 
   h4 {
@@ -240,35 +293,48 @@
 }
 
 ul.venue-types {
+  @extend %clearfix;
   text-align: center;
-  margin-bottom: 50px;
-  li{
-    display: inline-block;
-    margin:0 15px;
-    input[type="checkbox"] {
-      display:none;
+  margin-bottom: 30px;
+  @include md {
+    margin-bottom: 50px;
+  }
+
+  li {
+    float: left;
+    @include md {
+      float: none;
     }
+    display: inline-block;
+    margin: 0 15px;
+
+    input[type="checkbox"] {
+      display: none;
+    }
+
     input[type="checkbox"] + label span {
-        display:inline-block;
-        width:24px;
-        height:24px;
-        margin:-2px 10px 0 0;
-        vertical-align:middle;
-        background:#eee;
-        cursor:pointer;
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      margin: -2px 10px 0 0;
+      vertical-align: middle;
+      background: #eee;
+      cursor: pointer;
     }
 
     input[type="checkbox"]:checked + label span {
-        @extend .icon;
-        @extend .sprite-checked_pc;
-        &:before{
-          margin-left: 2px;
-        }
+      @extend .icon;
+      @extend .sprite-checked_pc;
+
+      &:before {
+        margin-left: 2px;
+      }
     }
   }
 }
 
 ul.venue-list {
+  clear: both;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
@@ -287,17 +353,22 @@ ul.venue-list {
       animation: bounceList 0.3s;
       opacity: 1;
     }
+
     &.showItem {
-        display: list-item;
-        animation: bounceList 0.3s;
+      display: list-item;
+      animation: bounceList 0.3s;
     }
+
     &.hideItem {
-        display: none;
+      display: none;
+    }
+
+    img {
+      margin: 0 auto;
     }
     @include sm {
       width: calc(100% / 3 - 23px);
     }
-
   }
 
   .venue-short-info {
@@ -391,10 +462,6 @@ ul.venue-list {
   }
 }
 
-
-
-
-
 .phone-number {
   @include font-size(18px);
   color: $primary-color;
@@ -408,6 +475,7 @@ ul.venue-list {
     @include font-size(24px);
     height: 94px;
   }
+
   i {
     @include font-size(13px);
     margin-right: 10px;
@@ -450,7 +518,7 @@ ul.venue-list {
 }
 
 .venue-info-container {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 .venue-overview {
@@ -549,48 +617,213 @@ ul.venue-list {
 
   .meeting-details,
   .price-details {
-    overflow: hidden;
-    overflow-x: auto;
-    @include sm {
-      overflow: visible;
-    }
+    @extend %clearfix;
+    margin-bottom: 30px;
 
-    table {
-      overflow-x: auto;
-      width: 100%;
+    .meeting-details-container,
+    .price-details-container {
+      .column-one,
+      .column-two {
+        @extend %clearfix;
+        display: block;
+        padding-bottom: 30px;
+        border-top: 1px solid #E1E1E1;
+        @include md {
+          padding-bottom: 0;
+          width: 62.5%;
+          display: inline-block;
+          border-bottom: 1px solid #E1E1E1;
+          float: left;
+        };
 
-      thead {
-        background: #eee;
-
-        th {
+        h6 {
           text-align: center;
-          vertical-align: middle;
-          border-right: 1px solid #E1E1E1;
+          display: block;
+          border-bottom: 1px solid #E1E1E1;
+          background: #EFEFEF;
+          padding: 12px 15px;
+        }
 
-          &:last-of-type {
-            border-right: none;
+        div {
+          @extend %clearfix;
+          display: block;
+          @include md {
+            width: 20%;
+            display: inline-block;
+            float: left;
+            //width: 12.5%;
+          }
+
+          &:last-child {
+            span {
+              border-right: 0;
+            }
+          }
+
+          span {
+            @extend %clearfix;
+            padding: 13px 0;
+            min-width: 100px;
+            text-align: center;
+            border-bottom: 1px solid #E1E1E1;
+            width: 50%;
+            background: #fafafa;
+            @include md {
+              padding: 20px 0;
+              width: auto;
+              border-bottom: 0;
+              border-right: 1px solid #E1E1E1;
+            }
+
+            &:first-child {
+              float: left;
+              border-right: 1px solid #E1E1E1;
+              @include md {
+                clear: both;
+                float: none;
+                border-right: 0;
+                border-bottom: 1px solid #E1E1E1;
+                border-right: 1px solid #E1E1E1;
+                display: block;
+                border-left: 0;
+              }
+            }
+
+            &:last-child {
+              float: right;
+              @include md {
+                float: none;
+                display: block;
+              }
+            }
           }
         }
       }
 
-      tbody {
-        background: #fafafa;
+      .column-one {
+        div:last-child {
+          span:first-child {
+            @include md {
+              border-right: 0;
+            };
+          }
+        }
+      }
 
-        td {
-          text-align: center;
-          vertical-align: middle;
-          padding: 20px 10px;
-          min-width: 100px;
-          border-right: 1px solid #E1E1E1;
+      .column-two {
+        padding-bottom: 0;
+        @include md {
+          width: 37.5%;
+          border-left: 1px solid #E1E1E1;
+        }
 
-          &:last-of-type {
-            border-right: none;
+        div {
+          @include md {
+            width: 33%;
+          }
+
+          &:last-child {
+            span {
+              @include md {
+                border-right: 0;
+              }
+            }
           }
         }
       }
     }
+    // overflow: hidden;
+    // overflow-x: auto;
+    // @include sm {
+    //   overflow: visible;
+    // }
+    //
+    // table {
+    //   overflow-x: auto;
+    //   width: 100%;
+    //
+    //   thead {
+    //     background: #eee;
+    //
+    //     th {
+    //       text-align: center;
+    //       vertical-align: middle;
+    //       border-right: 1px solid #E1E1E1;
+    //
+    //       &:last-of-type {
+    //         border-right: none;
+    //       }
+    //     }
+    //   }
+    //
+    //   tbody {
+    //     background: #fafafa;
+    //
+    //     td {
+    //       text-align: center;
+    //       vertical-align: middle;
+    //       padding: 20px 10px;
+    //       min-width: 100px;
+    //       border-right: 1px solid #E1E1E1;
+    //
+    //       &:last-of-type {
+    //         border-right: none;
+    //       }
+    //     }
+    //   }
+    // }
   }
 
+  .price-details .price-details-container {
+    .column-one {
+      @include md {
+        width: 100%;
+      };
+    }
+  }
+  // .meeting-details,
+  // .price-details {
+  //   overflow: hidden;
+  //   overflow-x: auto;
+  //   @include sm {
+  //     overflow: visible;
+  //   }
+  //
+  //   table {
+  //     overflow-x: auto;
+  //     width: 100%;
+  //
+  //     thead {
+  //       background: #eee;
+  //
+  //       th {
+  //         text-align: center;
+  //         vertical-align: middle;
+  //         border-right: 1px solid #E1E1E1;
+  //
+  //         &:last-of-type {
+  //           border-right: none;
+  //         }
+  //       }
+  //     }
+  //
+  //     tbody {
+  //       background: #fafafa;
+  //
+  //       td {
+  //         text-align: center;
+  //         vertical-align: middle;
+  //         padding: 20px 10px;
+  //         min-width: 100px;
+  //         border-right: 1px solid #E1E1E1;
+  //
+  //         &:last-of-type {
+  //           border-right: none;
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
   .venue-links {
     @extend %clearfix;
 
@@ -684,778 +917,6 @@ ul.venue-list {
       line-height: 20px;
       letter-spacing: 3.2px;
       font-weight: bold;
-    }
-  }
-}
-
-.rfp-form-details {
-  background: #fff;
-  padding: 30px;
-}
-
-#rfp-form {
-  width: 98vw;
-  overflow-y: scroll;
-  height: 87vh;
-
-  #rpfForm {
-    margin-bottom: 0;
-  }
-  @include md {
-    width: 734px;
-    height: 95vh;
-  }
-
-  h5,
-  p {
-    margin-bottom: 15px;
-    text-align: center;
-
-    &.meeting {
-      clear: both;
-      padding-top: 20px;
-    }
-  }
-
-  .attendees,
-  .email,
-  .event,
-  .firstname,
-  .lastname,
-  .onedayevent,
-  .phone,
-  .typeofevent {
-    @include md {
-      width: 50%;
-      float: left;
-      padding-right: 5%;
-    };
-  }
-
-  .attendees,
-  .lastname,
-  .onedayevent,
-  .phone {
-    //float: right;
-    @include md {
-      padding-right: 0;
-    }
-  }
-
-  .event,
-  .typeofevent {
-    @include md {
-      width: 75%;
-    }
-  }
-
-  .attendees,
-  .onedayevent {
-    @include md {
-      width: 25%;
-    }
-  }
-
-  .onedayevent {
-    @include md {
-      padding-top: 40px;
-    }
-  }
-
-  .attachFile {
-    input[type=file] {
-      border: none;
-      height: auto;
-      padding: 0;
-      //color:transparent;
-    }
-  }
-
-  .companyname {
-    clear: both;
-  }
-
-  .duration,
-  .guestrooms {
-    @extend %clearfix;
-    @include md {
-      float: left;
-      width: 160px;
-    }
-  }
-
-  .guestrooms {
-    @include md {
-      margin-right: 11px;
-    }
-  }
-
-  .form-group {
-    clear: both;
-    margin: 0;
-    width: 100%;
-    margin-bottom: 15px;
-    @include md {
-      width: 100%;
-    }
-    // label {
-    //   font-family: $secondary-font;
-    //   @include font-size(14px);
-    //   font-weight: 500;
-    //   letter-spacing: 1.1px;
-    //   text-align: left;
-    //   color: $default-color;
-    //   padding: 5px 10px;
-    // }
-    //
-    .input-showtext {
-      position: relative;
-
-      &:after {
-        content: '';
-        position: absolute;
-        right: 5%;
-        top: 45%;
-        width: 0;
-        cursor: pointer;
-        height: 0;
-        border-left: 3px solid transparent;
-        border-right: 3px solid transparent;
-        border-top: 5px solid $default-color;
-        clear: both;
-      }
-
-      button,
-      input,
-      input::placeholder {
-        font-family: $primary-font;
-        background-size: 6px;
-        background-repeat: no-repeat;
-        cursor: pointer;
-        border-radius: 4px;
-        margin: 0;
-        height: 46px;
-        width: 100%;
-        background: none;
-        border: none;
-        border: 2px solid #eeeeee;
-        @include font-size(12px);
-        letter-spacing: 0.9px;
-        padding: 0 12px;
-        color: $default-color;
-        text-align: left;
-        @include md {
-          width: 100%;
-        }
-
-        &:focus {
-          border: 2px solid #eeeeee;
-        }
-      }
-
-      input::placeholder {
-        border: 0;
-        padding-left: 0;
-      }
-    }
-
-    .form-checkbox {
-      @extend %clearfix;
-
-      input {
-        display: none;
-      }
-
-      .checkbox-style {
-        float: none;
-        position: relative;
-        padding-right: 0;
-        width: 33.333%;
-        margin-bottom: 20px;
-        @include md {
-          float: left;
-        };
-      }
-
-      .checkbox-style label.checkbox {
-        padding-left: 40px;
-        margin: 0;
-      }
-
-      .checkbox-style .checkbox > span {
-        border: 1px solid #232e48;
-        display: inline-block;
-        left: 0;
-        width: 21px;
-        height: 21px;
-        position: absolute;
-        background: #fff;
-        pointer-events: none;
-      }
-
-      .checkbox-style .checkbox > span i {
-        opacity: 0;
-      }
-
-      .checkbox-style .checkbox > input:checked + span i {
-        opacity: 1;
-      }
-    }
-
-    .popup-menu {
-      display: none;
-
-      ul {
-        margin: 0;
-        padding: 0;
-        max-height: 150px;
-        overflow-y: auto;
-
-        li {
-          border-bottom: 1px solid #eeeeee;
-
-          &:first-child {
-            border-top: 1px solid #eeeeee;
-          }
-
-          span {
-            cursor: pointer;
-            display: block;
-            @include font-size(12px);
-            line-height: 1.4;
-            padding: 8px 12px;
-            color: $default-color;
-
-            &.active,
-            &:focus,
-            &:hover {
-              background-color: #eeeeee;
-            }
-          }
-        }
-      }
-
-      .popup-content-input {
-        overflow-y: auto;
-        position: absolute;
-        background: #fff;
-        z-index: 999;
-        width: 100%;
-        //border-top: 3px solid #000;
-        //margin-top: 10px;
-        box-shadow: 35.4px 35.4px 90px 0 rgba(0, 0, 0, 0.15);
-        padding-top: 13px;
-        @include mobile {
-          width: 100%;
-        }
-
-        &:after {
-          content: '';
-          top: 2px;
-          width: 0;
-          left: 48%;
-          position: absolute;
-          height: 0;
-          border-left: 5px solid transparent;
-          border-right: 5px solid transparent;
-          border-bottom: 9px solid black;
-        }
-
-        &:before {
-          content: "";
-          position: absolute;
-          height: 5px;
-          border-bottom: 4px solid #000;
-          top: 8px;
-          left: 0;
-          width: 100%;
-        }
-      }
-    }
-  }
-
-  button {
-    background: #c5ad6c;
-    color: #fefefe;
-    border: none;
-    height: 46px;
-    width: 100%;
-  }
-
-  input,
-  input::placeholder {
-    font-family: $primary-font;
-    background-size: 6px;
-    background-repeat: no-repeat;
-    cursor: pointer;
-    border-radius: 4px;
-    margin: 0;
-    height: 46px;
-    border: 2px solid #eeeeee;
-    @include font-size(12px);
-    letter-spacing: 0.9px;
-    padding: 0 11px;
-    color: $default-color;
-    margin-bottom: 15px;
-
-    &:focus {
-      border: 2px solid #eeeeee;
-    }
-  }
-
-  input::placeholder {
-    border: 0;
-    padding-left: 0;
-  }
-
-  #venue-booking-tab .date-picker-venue-rpf {
-    //@extend %clearfix;
-    float: left;
-    //width: 380px;
-    position: relative;
-    // @include mobile {
-    //   float: none;
-    //   width: 100%;
-    // }
-    padding-bottom: 20px;
-    // @include md {
-    //   float: left;
-    //   margin-right: 9px;
-    //   width: auto;
-    //   padding-bottom: 0;
-    // }
-    width: 100%;
-    @include md {
-      width: auto;
-    };
-
-    label {
-      //padding: 5px 10px;
-    }
-
-    .date-picker-tab1-container,
-    .date-picker-tab3-container {
-      width: 100%;
-      position: relative;
-      @include md {
-        //width: 360px;
-      }
-    }
-
-    .endDateContainer,
-    .startDateContainer {
-      float: left;
-      width: 100%;
-      @include mobile {}
-      @include md {
-        margin-right: 11px;
-        width: 160px;
-      };
-    }
-
-    .startDateContainer {
-      margin-bottom: 15px;
-      @include md {
-        margin-bottom: 0;
-      }
-    }
-
-    .endDate,
-    .startDate {
-      font-family: $primary-font;
-      @include font-size(12px);
-      line-height: 2.5;
-      letter-spacing: 0.9px;
-      text-align: left;
-      color: $default-color;
-      border: 2px solid #eeeeee;
-      border-radius: 4px;
-      height: 46px;
-      line-height: 66px;
-      padding-top: 8px;
-      // background: url("../icons/calendar-interface-symbol-tool.svg") 10% center no-repeat;
-      // padding-left: 45px;
-      // background-size: 20px;
-      //width: 164px;
-      @include mobile {
-        width: 100%;
-        background: none;
-        padding-left: 15px;
-      }
-
-      span.date_at,
-      span.date_to {
-        @extend .icon;
-        @extend .sprite-calender_pc;
-
-        &:before {
-          display: block;
-          background-image: none;
-          height: auto;
-        }
-        @include md {
-          float: left;
-          padding: 0 10px;
-          // background-image: url("../svg/sprite.svg");
-          // background-repeat: no-repeat;
-          // background-size: 42.6em 346.4em;
-          // background-position: 0.4em -72.7em;
-          //background: url("../icons/calendar-interface-symbol-tool.svg") 10% center no-repeat;
-          // padding-left: 45px;
-          // float: left;
-          // @-moz-document url-prefix() {
-          //   background-position: 0.4em -20.8em;
-          //   background-size: 42.6em 282.4em;
-          // }
-          &:before {
-            background-image: url("../svg/sprite.svg");
-            margin-left: 5px;
-            width: 28px;
-            height: 20px;
-            margin: 7px 0;
-            float: left;
-            display: inline-block;
-          }
-        }
-      }
-
-
-      .day,
-      .month,
-      .year {
-        @include md {
-          display: inline;
-        }
-      }
-
-      .day {
-        @include font-size(35px);
-        margin: 6px 6px 0 0;
-        float: left;
-        // @include mobile {
-        //   font-size: 45px;
-        //   float: left;
-        //   margin: 6px 10px 0 0;
-        // }
-        @include md {
-           @include font-size(12px);
-          float: none;
-          margin: 0;
-        }
-      }
-
-      .dayoftheweek {
-        @include font-size(12px);
-        opacity: 0.5;
-        color: rgba(0, 0, 0, 0.5);
-      }
-    }
-
-    .daysFromTo .dayoftheweek {
-      display: none;
-    }
-
-    .daysFromTo {
-      font-family: $primary-font;
-      @include font-size(12px);
-      letter-spacing: normal;
-      text-align: center;
-      color: rgba(0, 0, 0, 0.6);
-    }
-
-    .values {
-      @extend %clearfix;
-      position: relative;
-      @include mobile {
-        clear: both;
-      }
-
-      .clear,
-      .to,
-      .value {
-        margin: 0 5px;
-        display: block;
-        line-height: 14px;
-        text-align: left;
-      }
-
-      .to {
-        float: left;
-        padding-top: 25px;
-        //margin-right: 11px;
-        vertical-align: middle;
-        color: #d3d3d3;
-      }
-
-      .value {
-        span {
-          cursor: pointer;
-        }
-
-        &.active span {
-          color: #3399cc;
-        }
-
-        input {
-          opacity: 0;
-        }
-      }
-    }
-
-    .calendar-backdrop {
-      display: none;
-      opacity: 0.5;
-      height: 100vh;
-      width: 100vw;
-      background: $primary-bg;
-      left: 0;
-      position: fixed;
-      top: 0;
-      z-index: 99998;
-    }
-
-    .calendar {
-      display: none;
-      width: 700px;
-      height: 430px;
-      margin: 0;
-      background: $secondary-color;
-      text-align: center;
-      overflow: hidden;
-      top: 85px;
-      left: 0;
-      z-index: 99999;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      box-sizing: border-box;
-      transition-duration: 0.5s;
-      position: absolute;
-      box-shadow: 35.4px 35.4px 90px 0 rgba(0, 0, 0, 0.15);
-      //border-top: 2px solid #000;
-      // top: 50%;
-      // left: 50%;
-      // margin-top: -283px;
-      // margin-left: -350px;
-      @include mobile {
-        width: 320px;
-      }
-
-      &:after {
-        content: '';
-        top: -18px;
-        width: 0;
-        left: -170px;
-        @include mobile {
-          left: 0;
-        }
-        position: relative;
-        height: 0;
-        border-left: 5px solid transparent;
-        border-right: 5px solid transparent;
-        border-bottom: 9px solid black;
-      }
-
-      &:before {
-        content: "";
-        position: absolute;
-        height: 5px;
-        border-bottom: 4px solid #000;
-        top: 7px;
-        left: 0;
-        width: 100%;
-      }
-    }
-
-    &.active .calendar {
-      display: block;
-    }
-
-    .calendar {
-      .clear {
-        width: 16px;
-        height: 16px;
-        margin: 0 auto;
-        cursor: pointer;
-      }
-
-      .button-next,
-      .button-prev {
-        position: absolute;
-        top: 20px;
-        z-index: 3;
-        width: 36px;
-        height: 29px;
-        padding: 8px;
-        cursor: pointer;
-        box-sizing: border-box;
-        background-size: 15px;
-        background-position: 50% 50%;
-        background-repeat: no-repeat;
-      }
-
-      .button-prev {
-        background-image: url("../icons/prev.svg");
-        left: 20px;
-      }
-
-      .button-next {
-        background-image: url("../icons/next.svg");
-        right: 20px;
-      }
-
-      .close {
-        position: absolute;
-        top: 0;
-        width: 15px;
-        left: 50%;
-      }
-
-      .calendarContainer {
-        position: absolute;
-        top: 0;
-        left: -292px;
-        z-index: 2;
-        float: left;
-        text-align: left;
-        padding-top: 15px;
-
-        table {
-          display: inline-block;
-          vertical-align: top;
-          width: 304px;
-          @include mobile {
-            width: 285px;
-          }
-          margin: 10px;
-          padding: 0;
-          border-collapse: collapse;
-          border-spacing: 0;
-          text-align: center;
-
-          caption {
-            border-bottom: 2px solid $default-color;
-            font-family: $primary-font;
-            @include font-size(14px);
-            line-height: 2.14;
-            letter-spacing: 1.1px;
-            text-align: center;
-            color: $default-color;
-            padding-bottom: 12px;
-          }
-
-          th {
-            width: 37px;
-            @include font-size(14px);
-            line-height: 20px;
-            box-sizing: border-box;
-            padding: 0;
-            font-family: $primary-font;
-            text-align: center;
-            color: $default-color;
-            padding: 10px 0;
-            border: none;
-          }
-
-          td {
-            width: 40px;
-            height: 40px;
-            @include font-size(15px);
-            line-height: 33px;
-            box-sizing: border-box;
-            padding: 0;
-            text-align: center;
-            border: none;
-            border: 5px solid $secondary-color;
-
-            span {
-              display: block;
-              border: 1px solid #eeeeee;
-            }
-
-            &.valid {
-              cursor: pointer;
-
-              &:hover {
-                background: #cccccc;
-              }
-            }
-
-            &.today {
-              color: #666;
-            }
-
-            &.inactive {
-              color: #ccc;
-            }
-
-            &.valid {
-              &.hovered,
-              &.intermediate,
-              &.intermediate-hover {
-                background: #eeeeee;
-                color: $default-color;
-              }
-
-              &.hovered,
-              &.intermediate-hover {
-                color: $default-color;
-              }
-
-              &.end,
-              &.start {
-                background: $primary-bg;
-                color: $secondary-color;
-              }
-            }
-          }
-        }
-      }
-
-      .bottomLayer {
-        position: absolute;
-        bottom: 20px;
-        left: 0;
-        display: block;
-        width: 100%;
-
-        .day,
-        .month,
-        .year {
-          display: inline;
-        }
-
-        .days {
-          opacity: 0.6;
-          font-family: $primary-font;
-          @include font-size(14px);
-          letter-spacing: normal;
-          text-align: center;
-          color: rgba(0, 0, 0, 0.6);
-        }
-
-        .nights {
-          height: 13px;
-          font-family: $primary-font;
-          @include font-size(14px);
-          letter-spacing: normal;
-          text-align: center;
-          color: $default-color;
-          margin: 0 0 10px;
-        }
-
-        .closePopup {
-          opacity: 1;
-          width: 320px;
-          background-color: #c5ad6c;
-          margin: 0 auto;
-          padding: 25px 0;
-          @include font-size(14px);
-          letter-spacing: 2.8px;
-          text-align: center;
-          color: $secondary-color;
-          cursor: pointer;
-        }
-      }
     }
   }
 }

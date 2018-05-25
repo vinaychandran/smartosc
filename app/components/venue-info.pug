@@ -25,17 +25,17 @@
             div.slick-slide
                 img(src='/assets/narita/images/room-slider1.jpg')
         .venue-slider-count
-            span.number 1 
+            span.number 1
             | / 12
 section.about-venue-info
     h3 TOGETHER IN  STYLE
-    p のイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさをもつ青いそら、あうつくしい森で飾られたモリーオ市あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら 
+    p のイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさをもつ青いそら、あうつくしい森で飾られたモリーオ市あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
 .room-info-container.venue-info-container
     .room-overview.venue-overview
         h5 会場概要
         .venue-facilities
             ul
-                li 立食時の人数目安 
+                li 立食時の人数目安
                     span 〜1200人
                 li 着席時の人数目安
                     span 〜600人
@@ -46,7 +46,7 @@ section.about-venue-info
                     span 432㎡
                 li 面天井高積
                     span 4m
-            .btn.btn-download 
+            .btn.btn-download
                 span フロアマップのPDFを ダウンロード
                 i.mys-arrow-left.white
         .venue-layout
@@ -75,49 +75,58 @@ section.about-venue-info
                     img(src='/assets/narita/images/layout.jpg')
                 .tabs-content
                     img(src='/assets/narita/images/layout.jpg')
+
         .meeting-details
-            table
-                thead
-                    tr
-                        th(colspan='5') 会議形式の場合
-                        th(colspan='3') 宴会形式の場合                      
-                tbody
-                    tr
-                        td シアター
-                        td スクール
-                        td 口の字
-                        td コの字
-                        td 島
-                        td 立食
-                        td 着席（正餐）
-                        td 着席（ビュッフェ）
-                    tr
-                        td 480
-                        td 288
-                        td 108
-                        td 84
-                        td 144 （6x24）
-                        td 350
-                        td 280
-                        td 200
+            .meeting-details-container
+              .column-one
+                h6 会議形式の場合
+                div
+                  span シアター
+                  span 480
+                div
+                  span スクール
+                  span 288
+                div
+                  span 口の字
+                  span 108
+                div
+                  span 口の字
+                  span 84
+                div
+                  span 島
+                  span 144 （6x24）
+              .column-two
+                h6 宴会形式の場合
+                div
+                  span 立食
+                  span 350
+                div
+                  span 着席
+                  span 280
+                div
+                  span 着席
+                  span 200
+
         .price-details
-            table
-                thead
-                    tr
-                        th(colspan='5') 料金                     
-                tbody
-                    tr
-                        td 2時間
-                        td 終日
-                        td 延長（1時間）
-                        td 宴会 2時間
-                        td 展示会 終日
-                    tr
-                        td ￥130,000
-                        td ￥650,000
-                        td ￥650,000
-                        td ￥45,000
-                        td ￥780,000
+          .price-details-container
+            .column-one
+              h6 料金
+              div
+                span 2時間
+                span ￥130,000
+              div
+                span 終日
+                span ￥650,000
+              div
+                span 延長（1時間）
+                span ￥650,000
+              div
+                span 宴会 2時間
+                span ￥45,000
+              div
+                span 展示会 終日
+                span ￥780,000
+
         .venue-links
             .links
                 a(href="#") FAQ
@@ -163,8 +172,8 @@ section.venues-list-wrap.venues-popup
                             .size 3m
                         li
                             span 面積
-                            .size 
-                                | 立食時  〜1200人 
+                            .size
+                                | 立食時  〜1200人
                                 br
                                 | 着席時  〜600人
                     a.see-more(href="#" data-show-rooms="room-full-info")
@@ -184,8 +193,8 @@ section.venues-list-wrap.venues-popup
                             .size 3m
                         li
                             span 面積
-                            .size 
-                                | 立食時  〜1200人 
+                            .size
+                                | 立食時  〜1200人
                                 br
                                 | 着席時  〜600人
                     a.see-more(href="#" data-show-rooms="room-full-info")
@@ -205,10 +214,9 @@ section.venues-list-wrap.venues-popup
                             .size 3m
                         li
                             span 面積
-                            .size 
-                                | 立食時  〜1200人 
+                            .size
+                                | 立食時  〜1200人
                                 br
                                 | 着席時  〜600人
                     a.see-more(href="#" data-show-rooms="room-full-info")
                         span もっと見る
-					

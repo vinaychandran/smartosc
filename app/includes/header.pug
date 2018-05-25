@@ -1,108 +1,143 @@
 header
-	.header-left
-		.logo
-			a(href="#")
-				img(src='../assets/narita/images/logo_pc.svg', alt='')
-	nav.top-menu.visible-desktop
-		ul
-			li
-				a(href="#") オファー
-			li
-				a(href="#") ギャラリー
-			li
-				a(href="#") ルーム
-			li
-				a(href="#") アクセス
-			li
-				a(href="#") レストラン
-			li
-				a(href="#") 会議・宴会
-	.header-right
-		.top-cta.visible-desktop
-			a.phone(href="#")
-				i.icon.sprite-phone
-				span 03-3434-3939
-			.choose-lang
-				.selected-lang
-					| Language
-				ul
-					li
-						a.active(href="#")
-							i.icon-png.icon-flag-jp 
-							| 日本語
-					li
-						a(href="#")
-							i.icon-png.icon-flag-en
-							| English
-					li
-						a(href="#")
-							i.icon-png.icon-flag-kr
-							| 한국어
-					li
-						a(href="#")
-							i.icon-png.icon-flag-cn
-							| 簡体中文
-					li
-						a(href="#")
-							i.icon-png.icon-flag-cn
-							| 簡体中文
-		.sign-in
-			.icon.sprite-account_pc
-			p.visible-desktop アカウント
-		a.mobile-phone.visible-device(href="#")
-			i.icon.sprite-phone-mobile
-		#hamburger.hamburger
-			<span></span>
-			<span></span>
-			<span></span>
+  .header-left
+    .logo
+      a(href='#')
+        img(src='../assets/narita/images/logo_pc.svg', alt='')
+  nav.top-menu.visible-desktop
+    ul
+      li
+        a(href='#') オファー
+      li
+        a(href='#') ギャラリー
+      li
+        a(href='#') ルーム
+      li
+        a(href='#') アクセス
+      li
+        a(href='#') レストラン
+      li
+        a(href='#') 会議・宴会
+  .header-right
+    .top-cta.visible-desktop
+      a.phone(href='#')
+        i.icon.sprite-phone
+        span 03-3434-3939
+      .choose-lang
+        .selected-lang Language
+        ul
+          li
+            a.active(href='#')
+              i.icon-png.icon-flag-jp  
+              | 日本語
+          li
+            a(href='#')
+              i.icon-png.icon-flag-en
+              | English
+          li
+            a(href='#')
+              i.icon-png.icon-flag-kr
+              | 한국어
+          li
+            a(href='#')
+              i.icon-png.icon-flag-cn
+              | 簡体中文
+          li
+            a(href='#')
+              i.icon-png.icon-flag-cn
+              | 簡体中文
+    .sign-in(data-show-id='login-form')
+      .icon.sprite-account_pc
+      p.visible-desktop アカウント
+    a.mobile-phone.visible-device(href='#')
+      i.icon.sprite-phone-mobile
+    #hamburger.hamburger
+      span
+      span
+      span
+    #rfp-form1.row.rfp-form-details(data-basiclightbox='', data-id='login-form')
+      #loginForm.tabs
+        ul.tabs-header
+          li
+            a.tabs-title(href='#') お部屋
+          li
+            a.tabs-title(href='#') レストラン
+        #loginForm1.tabs-content
+          form#rfpForm1(name='login-form')
+            section.email
+              .input-showtext
+                input#email.form-control(name='email', type='text', placeholder='または', required='required')
+            section.fname
+              .input-showtext
+                input#fname.form-control(name='fname', type='text', placeholder='姓', required='required')
+            section.lname
+              .input-showtext
+                input#lname.form-control(name='lname', type='text', placeholder='名', required='required')
+            section.password
+              .input-showtext
+                input#password.form-control(name='password', type='text', placeholder='パスワード', required='required')
+            p 「登録」をクリックすることで、
+            |         サービス利用規約と個人情報保護ポリシーに同意したことになります。
+            p
+            .submit-button
+              button.submitRfpForm(name='button', type='button', value='空室を検索') 登録する
+        #loginForm2.tabs-content
+          form#rfpForm1(name='signup-form')
+            section.email
+              .input-showtext
+                input#email.form-control(name='email', type='text', placeholder='または', required='required')
+            section.password
+              .input-showtext
+                input#password.form-control(name='password', type='text', placeholder='パスワード', required='required')
+            p パスワードをお忘れですか
+            .submit-button
+              button.submitRfpForm(name='button', type='button', value='空室を検索') 登録する
 nav#sideNav.side-navigation
-	ul.side-menu.visible-desktop
-		li
-			a(href="#") オファー
-		li
-			a(href="#") ギャラリー
-		li
-			a(href="#") ルーム
-		li
-			a(href="#") アクセス
-		li
-			a(href="#") レストラン
-		li
-			a(href="#") 会議・宴会
-	ul.side-menu.visible-device
-		li
-			a(href="#") オファー
-		li
-			a(href="#") ギャラリー
-		li
-			a(href="#") ルーム
-		li
-			a(href="#") アクセス
-		li
-			a(href="#") レストラン
-		li
-			a(href="#") 会議・宴会
-	.choose-lang.visible-device
-		.selected-lang
-			| Language
-		ul
-			li
-				a.active(href="#")
-					i.icon-png.icon-flag-jp 
-					| 日本語
-			li
-				a(href="#")
-					i.icon-png.icon-flag-en
-					| English
-			li
-				a(href="#")
-					i.icon-png.icon-flag-kr
-					| 한국어
-			li
-				a(href="#")
-					i.icon-png.icon-flag-cn
-					| 簡体中文
-			li
-				a(href="#")
-					i.icon-png.icon-flag-cn
-					| 簡体中文
+  ul.side-menu.visible-desktop
+    li
+      a(href='#') オファー
+    li
+      a(href='#') ギャラリー
+    li
+      a(href='#') ルーム
+    li
+      a(href='#') アクセス
+    li
+      a(href='#') レストラン
+    li
+      a(href='#') 会議・宴会
+  ul.side-menu.visible-device
+    li
+      a(href='#') オファー
+    li
+      a(href='#') ギャラリー
+    li
+      a(href='#') ルーム
+    li
+      a(href='#') アクセス
+    li
+      a(href='#') レストラン
+    li
+      a(href='#') 会議・宴会
+  .choose-lang.visible-device
+    .selected-lang Language
+    ul
+      li
+        a.active(href='#')
+          i.icon-png.icon-flag-jp  
+          | 日本語
+      li
+        a(href='#')
+          i.icon-png.icon-flag-en
+          | English
+      li
+        a(href='#')
+          i.icon-png.icon-flag-kr
+          | 한국어
+      li
+        a(href='#')
+          i.icon-png.icon-flag-cn
+          | 簡体中文
+      li
+        a(href='#')
+          i.icon-png.icon-flag-cn
+          | 簡体中文

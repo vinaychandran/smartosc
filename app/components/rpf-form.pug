@@ -1,0 +1,154 @@
+#rfp-form(data-basicLightbox data-id="rfp-form" class=" row rfp-form-details")
+  .errors
+  form(id='rpfForm' name="rpfForm")
+    h5 Planning your meeting of event
+      p Free quotation - Please fill out the form below
+    section.firstname
+      label First Name
+      .input-showtext
+        input.form-control(id='fname' name= "fname" type='text', placeholder='First Name' required)
+    section.lastname
+      label Last Name
+      .input-showtext
+        input.form-control(id='lname' type='text', placeholder='Last Name' name='lname' required)
+    section.companyname
+      label Company Name
+      .input-showtext
+        input.form-control(id='company' type='text', placeholder='Company Name' name='company' required)
+    section.email
+      label Email Address
+      .input-showtext
+        input.form-control(id='email' type='text', placeholder='Email Address' name='email' required)
+    section.phone
+      label Phone Number
+      .input-showtext
+        input.form-control(id='mobile' type='number', placeholder='Phone Number' name='mobile' required)
+    h5.meeting Meeting / Event Information
+    section.event
+      label Event / Meeting Name
+      .input-showtext
+        input.form-control(id='meeting' type='text', placeholder='Event / Meeting Name' name='meeting' required)
+    section.attendees
+      label Nr. Attendees
+      .input-showtext
+        input.form-control(id='attendees' type='number', placeholder='Nr. Attendees' name='mobile' required)
+    #venue-booking-tab
+      .date-picker-venue-rpf
+        .date-picker-tab1-container
+          .values
+            .startDateContainer
+              label Start Date
+              .startDate
+                .value.date_at
+                  span.date_at
+                  input#date_at.date_at(type='hidden')
+            //.to ~
+            .endDateContainer
+              label End Date
+              .endDate
+                .value.date_to
+                  span.date_to
+                  input#date_to.date_to(type='hidden')
+          //.calendar-backdrop
+          .calendar
+            //img.clear(src='/assets/narita/images/clear.svg' )
+            .button.button-prev
+            .button.button-next
+            .calendarContainer
+            .bottomLayer
+              span.daysFromTo 2018年00月00日 金曜日 ~ 2018年00月00日 金曜日
+              .nights 10 金曜日
+              //.button.closePopup &#x5B8C;&#x4E86;
+      section.guestrooms
+        .form-group
+          label Guest Rooms
+          .input-showtext
+            button(name='button', type='button', value='空室を検索') Rooms
+            .popup-menu
+              .popup-content-input
+                ul.cities
+                  li
+                    span(target='Hokkaido', names='Hokkaido') 1
+                  li
+                    span(target='Okinawa', names='Okinawa') 2
+                  li
+                    span(target='Tochigi', names='Tochigi') 3
+                  li
+                    span(target='Tokyo', names='Tokyo') 4
+      section.duration
+        .form-group
+          label Duration
+          .input-showtext
+            button(name='button', type='button', value='空室を検索') Duration
+            .popup-menu
+              .popup-content-input
+                ul.cities
+                  li
+                    span(target='Hokkaido', names='Hokkaido') All Day
+                  li
+                    span(target='Okinawa', names='Okinawa') Item name item
+
+    section.typeofevent
+      .form-group
+        label Type of Event
+        .input-showtext
+          button(name='button', type='button', value='空室を検索') Trade show
+          .popup-menu
+            .popup-content-input
+              ul.cities
+                li
+                  span(target='Hokkaido', names='Hokkaido') Party
+                li
+                  span(target='Okinawa', names='Okinawa') Meeting
+                li
+                  span(target='Tochigi', names='Tochigi') Conference
+                li
+                  span(target='Tokyo', names='Tokyo') Others
+    section.onedayevent
+      .form-group
+        label 1Day Event
+    section
+      .form-group.food-beverage
+        .form-checkbox
+          label.form-label Check applicable food and beverage needs
+          .checkbox-style
+            label.checkbox
+              input.form-control(type='checkbox' id='food' name="food" value="breakfast" required)
+              span
+                i.icon.sprite-checked_sp
+              |	Breakfast
+          .checkbox-style
+            label.checkbox
+              input.form-control(type='checkbox' name="food" value="Lunch")
+              span
+                i.icon.sprite-checked_sp
+              |	Lunch
+          .checkbox-style
+            label.checkbox
+              input.form-control(type='checkbox' name="food" value="Dinner")
+              span
+                i.icon.sprite-checked_sp
+              |	Dinner
+          .checkbox-style
+            label.checkbox
+              input.form-control(type='checkbox' name="food" value="Reception")
+              span
+                i.icon.sprite-checked_sp
+              |	Reception
+          .checkbox-style
+            label.checkbox
+              input.form-control(type='checkbox' name="food" value="Others")
+              span
+                i.icon.sprite-checked_sp
+              |	Others
+    label Please tell us about your other / Audio Visual requirements:
+    .input-showtext.details
+      textarea.form-control(type='text',  placeholder='', cols='40', rows='8', name='mobile')
+    section.attachFile
+      label.fileLabel Attach File
+      input.form-control(type='file')
+    p Free Quotation - We will call you within 24H
+    .find-button
+
+      button(name='button', type='button', value='空室を検索' class='submitRfpForm') Submit my RPF
+    p By submiting this RFP, you are agreeing with our Terms and Conditions and Privacy Statement.

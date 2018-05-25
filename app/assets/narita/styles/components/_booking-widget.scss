@@ -155,927 +155,931 @@
     }
   }
 
-  #booking-tab1,
-  #booking-tab2,
-  #booking-tab3 {
-    @extend %clearfix;
 
-    .promo-code {
-      float: left;
+}
+
+#booking-tab1,
+#booking-tab2,
+#booking-tab3,
+#venue-booking-tab  {
+  @extend %clearfix;
+
+  .promo-code {
+    float: left;
+    margin: 0;
+    width: 100%;
+    padding-bottom: 20px;
+    @include md {
+      width: auto;
+      margin-right: 11px;
+      padding: 0;
+    }
+
+    .form-group {
       margin: 0;
       width: 100%;
-      padding-bottom: 20px;
       @include md {
-        width: auto;
-        margin-right: 11px;
-        padding: 0;
+        width: 200px;
       }
 
-      .form-group {
-        margin: 0;
-        width: 100%;
-        @include md {
-          width: 200px;
-        }
+      label {
+        font-family: $secondary-font;
+        @include font-size(14px);
+        font-weight: 500;
+        letter-spacing: 1.1px;
+        text-align: left;
+        color: $default-color;
+        padding: 5px 10px;
+      }
 
-        label {
-          font-family: $secondary-font;
-          @include font-size(14px);
-          font-weight: 500;
-          letter-spacing: 1.1px;
-          text-align: left;
+      .input-showtext {
+        position: relative;
+
+        input,
+        input::placeholder {
+          font-family: $primary-font;
+          background-size: 6px;
+          background-repeat: no-repeat;
+          cursor: pointer;
+          border-radius: 4px;
+          margin: 0;
+          height: 66px;
+          border: 2px solid #eeeeee;
+          @include font-size(12px);
+          letter-spacing: 0.9px;
+          padding: 0 11px;
           color: $default-color;
-          padding: 5px 10px;
+
+          &:focus {
+            border: 2px solid #eeeeee;
+          }
         }
 
-        .input-showtext {
-          position: relative;
+        input::placeholder {
+          border: 0;
+          padding-left: 0;
+        }
+      }
+    }
+  }
 
-          input,
-          input::placeholder {
-            font-family: $primary-font;
-            background-size: 6px;
-            background-repeat: no-repeat;
-            cursor: pointer;
-            border-radius: 4px;
-            margin: 0;
-            height: 66px;
-            border: 2px solid #eeeeee;
-            @include font-size(12px);
-            letter-spacing: 0.9px;
-            padding: 0 11px;
-            color: $default-color;
+  .date-picker-tab1,
+  .date-picker-tab2-single,
+  .date-picker-tab3,
+  .date-picker-venue-rpf {
+    float: none;
+    width: 100%;
+    position: relative;
+    // @include mobile {
+    //   float: none;
+    //   width: 100%;
+    // }
+    padding-bottom: 20px;
+    @include md {
+      float: left;
+      margin-right: 9px;
+      width: auto;
+      padding-bottom: 0;
+    }
 
-            &:focus {
-              border: 2px solid #eeeeee;
-            }
+    label {
+      padding: 5px 10px;
+    }
+
+    .date-picker-tab1-container,
+    .date-picker-tab3-container {
+      border: 2px solid #eeeeee;
+      border-radius: 4px;
+      width: 100%;
+      position: relative;
+      @include md {
+        width: 360px;
+      }
+    }
+
+    .endDateContainer,
+    .startDateContainer {
+      float: left;
+      margin-right: 6px;
+      width: 160px;
+      @include mobile {
+        margin-right: 0;
+        width: 46%;
+      }
+    }
+
+    .endDate,
+    .startDate {
+      font-family: $primary-font;
+      @include font-size(12px);
+      line-height: 2.5;
+      letter-spacing: 0.9px;
+      text-align: left;
+      color: $default-color;
+      //border: 2px solid #eeeeee;
+      height: 62px;
+      line-height: 66px;
+      // background: url("../icons/calendar-interface-symbol-tool.svg") 10% center no-repeat;
+      // padding-left: 45px;
+      // background-size: 20px;
+      //width: 164px;
+      @include mobile {
+        width: 100%;
+        background: none;
+        padding-left: 15px;
+      }
+      //padding-top: 18px;
+      @include md {
+        padding-top: 0;
+      };
+
+      span.date_at,
+      span.date_to {
+        @extend .icon;
+        @extend .sprite-calender_pc;
+
+        &:before {
+          display: block;
+          background-image: none;
+        }
+        @include md {
+          float: left;
+          padding: 15px 10px;
+          // background-image: url("../svg/sprite.svg");
+          // background-repeat: no-repeat;
+          // background-size: 42.6em 346.4em;
+          // background-position: 0.4em -72.7em;
+          //background: url("../icons/calendar-interface-symbol-tool.svg") 10% center no-repeat;
+          // padding-left: 45px;
+          // float: left;
+          // @-moz-document url-prefix() {
+          //   background-position: 0.4em -20.8em;
+          //   background-size: 42.6em 282.4em;
+          // }
+          &:before {
+            background-image: url("../svg/sprite.svg");
+            margin-left: 5px;
+            width: 28px;
+            margin: 7px 0;
+            float: left;
+            display: inline-block;
           }
+        }
+      }
 
-          input::placeholder {
-            border: 0;
-            padding-left: 0;
-          }
+      .day,
+      .month,
+      .year {
+        @include md {
+          display: inline;
+        }
+      }
+
+      .day {
+        @include font-size(45px);
+        margin: 6px 6px 0 0;
+        float: left;
+        // @include mobile {
+        //   font-size: 45px;
+        //   float: left;
+        //   margin: 6px 10px 0 0;
+        // }
+        @include md {
+           @include font-size(12px);
+          float: none;
+          margin: 0;
+        }
+      }
+
+      .dayoftheweek {
+        @include font-size(12px);
+        opacity: 0.5;
+        color: rgba(0, 0, 0, 0.5);
+      }
+    }
+
+    .daysFromTo .dayoftheweek {
+      display: none;
+    }
+
+    .daysFromTo {
+      font-family: $primary-font;
+      @include font-size(12px);
+      letter-spacing: normal;
+      text-align: center;
+      color: rgba(0, 0, 0, 0.6);
+    }
+
+    .values {
+      @extend %clearfix;
+      position: relative;
+      @include mobile {
+        clear: both;
+      }
+
+      .clear,
+      .to,
+      .value {
+        margin: 0 5px;
+        display: block;
+        line-height: 14px;
+        text-align: left;
+      }
+
+      .to {
+        float: left;
+        padding-top: 25px;
+        //margin-right: 11px;
+        vertical-align: middle;
+        color: #d3d3d3;
+      }
+
+      .value {
+        span {
+          cursor: pointer;
+        }
+
+        &.active span {
+          color: #3399cc;
+        }
+
+        input {
+          opacity: 0;
         }
       }
     }
 
-    .date-picker-tab1,
-    .date-picker-tab2-single,
-    .date-picker-tab3 {
-      float: none;
-      width: 100%;
-      position: relative;
-      // @include mobile {
-      //   float: none;
-      //   width: 100%;
-      // }
-      padding-bottom: 20px;
-      @include md {
-        float: left;
-        margin-right: 9px;
-        width: auto;
-        padding-bottom: 0;
+    .calendar {
+      display: none;
+      width: 700px;
+      height: 430px;
+      margin: 0;
+      background: $secondary-color;
+      text-align: center;
+      overflow: hidden;
+      top: 65px;
+      left: 0;
+      z-index: 99999;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      box-sizing: border-box;
+      transition-duration: 0.5s;
+      position: absolute;
+      box-shadow: 35.4px 35.4px 90px 0 rgba(0, 0, 0, 0.15);
+      //border-top: 2px solid #000;
+      // top: 50%;
+      // left: 50%;
+      // margin-top: -283px;
+      // margin-left: -350px;
+      @include mobile {
+        width: 320px;
       }
 
-      label {
-        padding: 5px 10px;
-      }
-
-      .date-picker-tab1-container,
-      .date-picker-tab3-container {
-        border: 2px solid #eeeeee;
-        border-radius: 4px;
-        width: 100%;
+      &:after {
+        content: '';
+        top: -18px;
+        width: 0;
+        left: -170px;
+        @include mobile {
+          left: 0;
+        }
         position: relative;
-        @include md {
-          width: 360px;
-        }
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-bottom: 9px solid black;
       }
 
-      .endDateContainer,
-      .startDateContainer {
+      &:before {
+        content: "";
+        position: absolute;
+        height: 5px;
+        border-bottom: 4px solid #000;
+        top: 7px;
+        left: 0;
+        width: 100%;
+      }
+    }
+
+    &.active .calendar {
+      display: block;
+    }
+
+    .calendar {
+      .clear {
+        width: 16px;
+        height: 16px;
+        margin: 0 auto;
+        cursor: pointer;
+      }
+
+      .button-next,
+      .button-prev {
+        position: absolute;
+        top: 20px;
+        z-index: 3;
+        width: 36px;
+        height: 29px;
+        padding: 8px;
+        cursor: pointer;
+        box-sizing: border-box;
+        background-size: 15px;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+      }
+
+      .button-prev {
+        background-image: url("../icons/prev.svg");
+        left: 20px;
+      }
+
+      .button-next {
+        background-image: url("../icons/next.svg");
+        right: 20px;
+      }
+
+      .close {
+        position: absolute;
+        top: 0;
+        width: 15px;
+        left: 50%;
+      }
+
+      .calendarContainer {
+        position: absolute;
+        top: 0;
+        left: -292px;
+        z-index: 2;
         float: left;
-        margin-right: 6px;
-        width: 160px;
-        @include mobile {
-          margin-right: 0;
-          width: 46%;
-        }
-      }
-
-      .endDate,
-      .startDate {
-        font-family: $primary-font;
-        @include font-size(12px);
-        line-height: 2.5;
-        letter-spacing: 0.9px;
         text-align: left;
-        color: $default-color;
-        //border: 2px solid #eeeeee;
-        height: 62px;
-        line-height: 66px;
-        // background: url("../icons/calendar-interface-symbol-tool.svg") 10% center no-repeat;
-        // padding-left: 45px;
-        // background-size: 20px;
-        //width: 164px;
-        @include mobile {
-          width: 100%;
-          background: none;
-          padding-left: 15px;
-        }
-        //padding-top: 18px;
-        @include md {
-          padding-top: 0;
-        };
+        padding-top: 15px;
 
-        span.date_at,
-        span.date_to {
-          @extend .icon;
-          @extend .sprite-calender_pc;
-
-          &:before {
-            display: block;
-            background-image: none;
+        table {
+          display: inline-block;
+          vertical-align: top;
+          width: 304px;
+          @include mobile {
+            width: 285px;
           }
-          @include md {
-            float: left;
-            padding: 15px 10px;
-            // background-image: url("../svg/sprite.svg");
-            // background-repeat: no-repeat;
-            // background-size: 42.6em 346.4em;
-            // background-position: 0.4em -72.7em;
-            //background: url("../icons/calendar-interface-symbol-tool.svg") 10% center no-repeat;
-            // padding-left: 45px;
-            // float: left;
-            // @-moz-document url-prefix() {
-            //   background-position: 0.4em -20.8em;
-            //   background-size: 42.6em 282.4em;
-            // }
-            &:before {
-              background-image: url("../svg/sprite.svg");
-              margin-left: 5px;
-              width: 28px;
-              margin: 7px 0;
-              float: left;
-              display: inline-block;
+          margin: 10px;
+          padding: 0;
+          border-collapse: collapse;
+          border-spacing: 0;
+          text-align: center;
+
+          caption {
+            border-bottom: 2px solid $default-color;
+            font-family: $primary-font;
+            @include font-size(14px);
+            line-height: 2.14;
+            letter-spacing: 1.1px;
+            text-align: center;
+            color: $default-color;
+            padding-bottom: 12px;
+          }
+
+          th {
+            width: 37px;
+            @include font-size(14px);
+            line-height: 20px;
+            box-sizing: border-box;
+            padding: 0;
+            font-family: $primary-font;
+            text-align: center;
+            color: $default-color;
+            padding: 10px 0;
+            border: none;
+          }
+
+          td {
+            width: 40px;
+            height: 40px;
+            @include font-size(15px);
+            line-height: 33px;
+            box-sizing: border-box;
+            padding: 0;
+            text-align: center;
+            border: none;
+            border: 5px solid $secondary-color;
+
+            span {
+              display: block;
+              border: 1px solid #eeeeee;
+            }
+
+            &.valid {
+              cursor: pointer;
+
+              &:hover {
+                background: #cccccc;
+              }
+            }
+
+            &.today {
+              color: #666;
+            }
+
+            &.inactive {
+              color: #ccc;
+            }
+
+            &.valid {
+              &.hovered,
+              &.intermediate,
+              &.intermediate-hover {
+                background: #eeeeee;
+                color: $default-color;
+              }
+
+              &.hovered,
+              &.intermediate-hover {
+                color: $default-color;
+              }
+
+              &.end,
+              &.start {
+                background: $primary-bg;
+                color: $secondary-color;
+              }
             }
           }
         }
+      }
+
+      .bottomLayer {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        display: block;
+        width: 100%;
 
         .day,
         .month,
         .year {
-          @include md {
-            display: inline;
-          }
+          display: inline;
         }
 
-        .day {
-          @include font-size(45px);
-          margin: 6px 6px 0 0;
-          float: left;
-          // @include mobile {
-          //   font-size: 45px;
-          //   float: left;
-          //   margin: 6px 10px 0 0;
-          // }
-          @include md {
-             @include font-size(12px);
-            float: none;
-            margin: 0;
-          }
-        }
-
-        .dayoftheweek {
-          @include font-size(12px);
-          opacity: 0.5;
-          color: rgba(0, 0, 0, 0.5);
-        }
-      }
-
-      .daysFromTo .dayoftheweek {
-        display: none;
-      }
-
-      .daysFromTo {
-        font-family: $primary-font;
-        @include font-size(12px);
-        letter-spacing: normal;
-        text-align: center;
-        color: rgba(0, 0, 0, 0.6);
-      }
-
-      .values {
-        @extend %clearfix;
-        position: relative;
-        @include mobile {
-          clear: both;
-        }
-
-        .clear,
-        .to,
-        .value {
-          margin: 0 5px;
-          display: block;
-          line-height: 14px;
-          text-align: left;
-        }
-
-        .to {
-          float: left;
-          padding-top: 25px;
-          //margin-right: 11px;
-          vertical-align: middle;
-          color: #d3d3d3;
-        }
-
-        .value {
-          span {
-            cursor: pointer;
-          }
-
-          &.active span {
-            color: #3399cc;
-          }
-
-          input {
-            opacity: 0;
-          }
-        }
-      }
-
-      .calendar {
-        display: none;
-        width: 700px;
-        height: 430px;
-        margin: 0;
-        background: $secondary-color;
-        text-align: center;
-        overflow: hidden;
-        top: 65px;
-        left: 0;
-        z-index: 99999;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        box-sizing: border-box;
-        transition-duration: 0.5s;
-        position: absolute;
-        box-shadow: 35.4px 35.4px 90px 0 rgba(0, 0, 0, 0.15);
-        //border-top: 2px solid #000;
-        // top: 50%;
-        // left: 50%;
-        // margin-top: -283px;
-        // margin-left: -350px;
-        @include mobile {
-          width: 320px;
-        }
-
-        &:after {
-          content: '';
-          top: -18px;
-          width: 0;
-          left: -170px;
-          @include mobile {
-            left: 0;
-          }
-          position: relative;
-          height: 0;
-          border-left: 5px solid transparent;
-          border-right: 5px solid transparent;
-          border-bottom: 9px solid black;
-        }
-
-        &:before {
-          content: "";
-          position: absolute;
-          height: 5px;
-          border-bottom: 4px solid #000;
-          top: 7px;
-          left: 0;
-          width: 100%;
-        }
-      }
-
-      &.active .calendar {
-        display: block;
-      }
-
-      .calendar {
-        .clear {
-          width: 16px;
-          height: 16px;
-          margin: 0 auto;
-          cursor: pointer;
-        }
-
-        .button-next,
-        .button-prev {
-          position: absolute;
-          top: 20px;
-          z-index: 3;
-          width: 36px;
-          height: 29px;
-          padding: 8px;
-          cursor: pointer;
-          box-sizing: border-box;
-          background-size: 15px;
-          background-position: 50% 50%;
-          background-repeat: no-repeat;
-        }
-
-        .button-prev {
-          background-image: url("../icons/prev.svg");
-          left: 20px;
-        }
-
-        .button-next {
-          background-image: url("../icons/next.svg");
-          right: 20px;
-        }
-
-        .close {
-          position: absolute;
-          top: 0;
-          width: 15px;
-          left: 50%;
-        }
-
-        .calendarContainer {
-          position: absolute;
-          top: 0;
-          left: -292px;
-          z-index: 2;
-          float: left;
-          text-align: left;
-          padding-top: 15px;
-
-          table {
-            display: inline-block;
-            vertical-align: top;
-            width: 304px;
-            @include mobile {
-              width: 285px;
-            }
-            margin: 10px;
-            padding: 0;
-            border-collapse: collapse;
-            border-spacing: 0;
-            text-align: center;
-
-            caption {
-              border-bottom: 2px solid $default-color;
-              font-family: $primary-font;
-              @include font-size(14px);
-              line-height: 2.14;
-              letter-spacing: 1.1px;
-              text-align: center;
-              color: $default-color;
-              padding-bottom: 12px;
-            }
-
-            th {
-              width: 37px;
-              @include font-size(14px);
-              line-height: 20px;
-              box-sizing: border-box;
-              padding: 0;
-              font-family: $primary-font;
-              text-align: center;
-              color: $default-color;
-              padding: 10px 0;
-              border: none;
-            }
-
-            td {
-              width: 40px;
-              height: 40px;
-              @include font-size(15px);
-              line-height: 33px;
-              box-sizing: border-box;
-              padding: 0;
-              text-align: center;
-              border: none;
-              border: 5px solid $secondary-color;
-
-              span {
-                display: block;
-                border: 1px solid #eeeeee;
-              }
-
-              &.valid {
-                cursor: pointer;
-
-                &:hover {
-                  background: #cccccc;
-                }
-              }
-
-              &.today {
-                color: #666;
-              }
-
-              &.inactive {
-                color: #ccc;
-              }
-
-              &.valid {
-                &.hovered,
-                &.intermediate,
-                &.intermediate-hover {
-                  background: #eeeeee;
-                  color: $default-color;
-                }
-
-                &.hovered,
-                &.intermediate-hover {
-                  color: $default-color;
-                }
-
-                &.end,
-                &.start {
-                  background: $primary-bg;
-                  color: $secondary-color;
-                }
-              }
-            }
-          }
-        }
-
-        .bottomLayer {
-          position: absolute;
-          bottom: 20px;
-          left: 0;
-          display: block;
-          width: 100%;
-
-          .day,
-          .month,
-          .year {
-            display: inline;
-          }
-
-          .days {
-            opacity: 0.6;
-            font-family: $primary-font;
-            @include font-size(14px);
-            letter-spacing: normal;
-            text-align: center;
-            color: rgba(0, 0, 0, 0.6);
-          }
-
-          .nights {
-            height: 13px;
-            font-family: $primary-font;
-            @include font-size(14px);
-            letter-spacing: normal;
-            text-align: center;
-            color: $default-color;
-            margin: 0 0 10px;
-          }
-
-          .closePopup {
-            opacity: 1;
-            width: 320px;
-            background-color: #c5ad6c;
-            margin: 0 auto;
-            padding: 25px 0;
-            @include font-size(14px);
-            letter-spacing: 2.8px;
-            text-align: center;
-            color: $secondary-color;
-            cursor: pointer;
-          }
-        }
-      }
-    }
-
-    .date-picker-tab2-single,
-    .date-picker-tab3 {
-      @include mobile {
-        clear: both;
-        //padding: 20px 0;
-      }
-    }
-
-    .people {
-      float: left;
-      width: 100%;
-      padding-bottom: 20px;
-      margin-right: 0;
-      position: relative;
-      @include md {
-        width: 200px;
-        padding: 0;
-        margin-right: 11px;
-      }
-
-      .people-list {
-        @extend .icon;
-        @extend .sprite-people_pc;
-        font-family: $primary-font;
-        background-size: 6px;
-        background-repeat: no-repeat;
-        cursor: pointer;
-        border-radius: 4px;
-        margin: 0;
-        width: 100%;
-        height: 66px;
-        border: 2px solid #eeeeee;
-        @include font-size(12px);
-        line-height: 2.5;
-        letter-spacing: 0.9px;
-        color: $default-color;
-        //padding: 15px 0;
-        &:before {
-          float: left;
-          margin: 22px 10px 22px 15px;
-        }
-        @include md {
-          width: 200px;
-        }
-
-        p {
-          float: left;
-          margin: 0;
-          padding: 13px 0;
-          // background-image: url("../svg/sprite.svg");
-          // background-repeat: no-repeat;
-          // background-size: 32.5em 210em;
-          // background-position: 0.5em -139.4em;
-          //padding-left: 15px;
-          line-height: 1.4em;
-          // @-moz-document url-prefix() {
-          //   background-position: 0.5em -142.4em;
-          // }
-        }
-
-        span {
-          display: block;
-          opacity: 0.5;
+        .days {
+          opacity: 0.6;
           font-family: $primary-font;
-          @include font-size(12px);
-          letter-spacing: 0.9px;
-          text-align: left;
-          color: rgba(0, 0, 0, 0.5);
+          @include font-size(14px);
+          letter-spacing: normal;
+          text-align: center;
+          color: rgba(0, 0, 0, 0.6);
         }
-      }
 
-      label {
-        padding: 5px 10px;
-      }
+        .nights {
+          height: 13px;
+          font-family: $primary-font;
+          @include font-size(14px);
+          letter-spacing: normal;
+          text-align: center;
+          color: $default-color;
+          margin: 0 0 10px;
+        }
 
-      .children label,
-      .grown-up label,
-      .room label {
-        padding: 25px 10px;
-      }
-    }
-
-    .find-button {
-      float: none;
-      width: 100%;
-      clear: both;
-      padding: 0;
-      @include md {
-        float: left;
-        width: auto;
-        clear: none;
-      }
-
-      label {
-        text-decoration: underline;
-        background: url("../icons/forma-1.svg") left center;
-        background-repeat: no-repeat;
-        padding: 5px 10px 5px 20px;
-        clear: both;
-      }
-
-      button {
-        background: #c5ad6c;
-        color: #fefefe;
-        border: none;
-        height: 66px;
-        width: 100%;
-        @include md {
-          width: 182px;
+        .closePopup {
+          opacity: 1;
+          width: 320px;
+          background-color: #c5ad6c;
+          margin: 0 auto;
+          padding: 25px 0;
+          @include font-size(14px);
+          letter-spacing: 2.8px;
+          text-align: center;
+          color: $secondary-color;
+          cursor: pointer;
         }
       }
     }
   }
 
-  #booking-tab2,
-  #booking-tab3 {
-    .number-of-people,
-    .room-locations,
-    .shop,
-    .time-selection {
-      float: none;
+  .date-picker-tab2-single,
+  .date-picker-tab3 {
+    @include mobile {
+      clear: both;
+      //padding: 20px 0;
+    }
+  }
+
+  .people {
+    float: left;
+    width: 100%;
+    padding-bottom: 20px;
+    margin-right: 0;
+    position: relative;
+    @include md {
+      width: 200px;
+      padding: 0;
+      margin-right: 11px;
+    }
+
+    .people-list {
+      @extend .icon;
+      @extend .sprite-people_pc;
+      font-family: $primary-font;
+      background-size: 6px;
+      background-repeat: no-repeat;
+      cursor: pointer;
+      border-radius: 4px;
       margin: 0;
       width: 100%;
-      padding-bottom: 20px;
-      @include md {
-        width: auto;
+      height: 66px;
+      border: 2px solid #eeeeee;
+      @include font-size(12px);
+      line-height: 2.5;
+      letter-spacing: 0.9px;
+      color: $default-color;
+      //padding: 15px 0;
+      &:before {
         float: left;
-        margin-right: 11px;
-        padding-bottom: 0;
+        margin: 22px 10px 22px 15px;
       }
-
-      .form-group {
-        margin: 0;
-        width: 100%;
-        @include md {
-          width: 142px;
-        }
-
-        label {
-          font-family: $secondary-font;
-          @include font-size(14px);
-          font-weight: 500;
-          letter-spacing: 1.1px;
-          text-align: left;
-          color: $default-color;
-          padding: 5px 10px;
-        }
-
-        .input-showtext {
-          position: relative;
-
-          &:after {
-            content: '';
-            position: absolute;
-            right: 15%;
-            top: 45%;
-            width: 0;
-            cursor: pointer;
-            height: 0;
-            border-left: 3px solid transparent;
-            border-right: 3px solid transparent;
-            border-top: 5px solid $default-color;
-            clear: both;
-          }
-
-          button,
-          input,
-          input::placeholder {
-            font-family: $primary-font;
-            background-size: 6px;
-            background-repeat: no-repeat;
-            cursor: pointer;
-            border-radius: 4px;
-            margin: 0;
-            height: 66px;
-            width: 100%;
-            background: none;
-            border: none;
-            border: 2px solid #eeeeee;
-            @include font-size(12px);
-            letter-spacing: 0.9px;
-            padding: 0 20px;
-            color: $default-color;
-            text-align: left;
-            @include md {
-              width: 140px;
-            }
-
-            &:focus {
-              border: 2px solid #eeeeee;
-            }
-          }
-
-          input::placeholder {
-            border: 0;
-            padding-left: 0;
-          }
-        }
-
-        .popup-menu {
-          display: none;
-
-          ul {
-            margin: 0;
-            padding: 0;
-            max-height: 150px;
-            overflow-y: auto;
-
-            li {
-              border-bottom: 1px solid #eeeeee;
-
-              &:first-child {
-                border-top: 1px solid #eeeeee;
-              }
-
-              span {
-                cursor: pointer;
-                display: block;
-                @include font-size(12px);
-                line-height: 1.4;
-                padding: 8px 12px;
-                color: $default-color;
-
-                &.active,
-                &:focus,
-                &:hover {
-                  background-color: #eeeeee;
-                }
-              }
-            }
-          }
-
-          .popup-content-input {
-            overflow-y: auto;
-            position: absolute;
-            background: #fff;
-            z-index: 999;
-            width: 142px;
-            //border-top: 3px solid #000;
-            //margin-top: 10px;
-            box-shadow: 35.4px 35.4px 90px 0 rgba(0, 0, 0, 0.15);
-            padding-top: 13px;
-            @include mobile {
-              width: 100%;
-            }
-
-            &:after {
-              content: '';
-              top: 2px;
-              width: 0;
-              left: 48%;
-              position: absolute;
-              height: 0;
-              border-left: 5px solid transparent;
-              border-right: 5px solid transparent;
-              border-bottom: 9px solid black;
-            }
-
-            &:before {
-              content: "";
-              position: absolute;
-              height: 5px;
-              border-bottom: 4px solid #000;
-              top: 8px;
-              left: 0;
-              width: 100%;
-            }
-          }
-        }
-      }
-    }
-
-    .date-picker-tab2-single {
-      .date-picker-tab2-single-container {
-        @extend %clearfix;
-        border: 2px solid #eeeeee;
-        border-radius: 4px;
-        width: 100%;
-        position: relative;
-        @include md {
-          width: 308px;
-        }
-
-        .calendar {
-          height: 340px;
-        }
-
-        .values {
-          float: left;
-
-          .startDateContainer {
-            width: 160px;
-
-            .startDate {
-              width: auto;
-              height: 62px;
-              // background: url("../icons/calendar-interface-symbol-tool.svg") 5% center no-repeat;
-              // padding-left: 35px;
-              // background-size: 20px;
-              border: 0;
-              @include mobile {
-                background: none;
-                padding-left: 15px;
-              }
-              @include md {
-                width: 181px;
-              }
-
-              .value {
-                //border-right: 2px solid #eeeeee;
-                padding-right: 20px;
-              }
-            }
-          }
-        }
-      }
-    }
-    // .people {
-    //   margin-right: 20px;
-    // }
-    .shop {
-      //margin-right: 58px;
-      @include mobile {
-        margin-right: 0;
-      }
-
-      .form-group {
-        width: 100%;
-        @include md {
-          width: 290px;
-        }
-
-        .input-showtext {
-          button {
-            width: 100%;
-            @include md {
-              width: 290px;
-            }
-          }
-
-          .popup-content-input {
-            width: 100%;
-            @include md {
-              width: 290px;
-            }
-          }
-        }
-      }
-    }
-
-    .time-selection {
-      margin: 0;
-      width: 50%;
-      //clear: both;
-      float: right;
-      padding-bottom: 0;
       @include md {
-        clear: none;
-        //float: none;
-        width: 135px;
+        width: 200px;
       }
 
-      .popup-content-input {
-        margin-top: 2px;
+      p {
+        float: left;
+        margin: 0;
+        padding: 13px 0;
+        // background-image: url("../svg/sprite.svg");
+        // background-repeat: no-repeat;
+        // background-size: 32.5em 210em;
+        // background-position: 0.5em -139.4em;
+        //padding-left: 15px;
+        line-height: 1.4em;
+        // @-moz-document url-prefix() {
+        //   background-position: 0.5em -142.4em;
+        // }
       }
 
-      .form-group {
-        width: auto;
+      span {
+        display: block;
+        opacity: 0.5;
+        font-family: $primary-font;
+        @include font-size(12px);
+        letter-spacing: 0.9px;
+        text-align: left;
+        color: rgba(0, 0, 0, 0.5);
+      }
+    }
 
-        .input-showtext {
-          button,
-          input,
-          input::placeholder {
-            border: 0;
-            border-left: 1px solid #eeeeee;
-            font-family: Lato;
-            font-size: 18px;
-            letter-spacing: 1.4px;
-            text-align: center;
-            color: #000000;
-            height: 42px;
-            margin: 10px 0;
-            padding-right: 30px;
+    label {
+      padding: 5px 10px;
+    }
 
-            &:focus {
-              border: 0;
-              border-left: 1px solid #eeeeee;
-            }
+    .children label,
+    .grown-up label,
+    .room label {
+      padding: 25px 10px;
+    }
+  }
+
+  .find-button {
+    float: none;
+    width: 100%;
+    clear: both;
+    padding: 0;
+    @include md {
+      float: left;
+      width: auto;
+      clear: none;
+    }
+
+    label {
+      text-decoration: underline;
+      background: url("../icons/forma-1.svg") left center;
+      background-repeat: no-repeat;
+      padding: 5px 10px 5px 20px;
+      clear: both;
+    }
+
+    button {
+      background: #c5ad6c;
+      color: #fefefe;
+      border: none;
+      height: 66px;
+      width: 100%;
+      @include md {
+        width: 182px;
+      }
+    }
+  }
+}
+
+#booking-tab2,
+#booking-tab3 {
+  .number-of-people,
+  .room-locations,
+  .shop,
+  .time-selection {
+    float: none;
+    margin: 0;
+    width: 100%;
+    padding-bottom: 20px;
+    @include md {
+      width: auto;
+      float: left;
+      margin-right: 11px;
+      padding-bottom: 0;
+    }
+
+    .form-group {
+      margin: 0;
+      width: 100%;
+      @include md {
+        width: 142px;
+      }
+
+      label {
+        font-family: $secondary-font;
+        @include font-size(14px);
+        font-weight: 500;
+        letter-spacing: 1.1px;
+        text-align: left;
+        color: $default-color;
+        padding: 5px 10px;
+      }
+
+      .input-showtext {
+        position: relative;
+
+        &:after {
+          content: '';
+          position: absolute;
+          right: 15%;
+          top: 45%;
+          width: 0;
+          cursor: pointer;
+          height: 0;
+          border-left: 3px solid transparent;
+          border-right: 3px solid transparent;
+          border-top: 5px solid $default-color;
+          clear: both;
+        }
+
+        button,
+        input,
+        input::placeholder {
+          font-family: $primary-font;
+          background-size: 6px;
+          background-repeat: no-repeat;
+          cursor: pointer;
+          border-radius: 4px;
+          margin: 0;
+          height: 66px;
+          width: 100%;
+          background: none;
+          border: none;
+          border: 2px solid #eeeeee;
+          @include font-size(12px);
+          letter-spacing: 0.9px;
+          padding: 0 20px;
+          color: $default-color;
+          text-align: left;
+          @include md {
+            width: 140px;
           }
+
+          &:focus {
+            border: 2px solid #eeeeee;
+          }
+        }
+
+        input::placeholder {
+          border: 0;
+          padding-left: 0;
         }
       }
 
       .popup-menu {
+        display: none;
+
+        ul {
+          margin: 0;
+          padding: 0;
+          max-height: 150px;
+          overflow-y: auto;
+
+          li {
+            border-bottom: 1px solid #eeeeee;
+
+            &:first-child {
+              border-top: 1px solid #eeeeee;
+            }
+
+            span {
+              cursor: pointer;
+              display: block;
+              @include font-size(12px);
+              line-height: 1.4;
+              padding: 8px 12px;
+              color: $default-color;
+
+              &.active,
+              &:focus,
+              &:hover {
+                background-color: #eeeeee;
+              }
+            }
+          }
+        }
+
         .popup-content-input {
-          //  width: 100px!important;
-          ul li {
-            font-family: Lato;
+          overflow-y: auto;
+          position: absolute;
+          background: #fff;
+          z-index: 999;
+          width: 142px;
+          //border-top: 3px solid #000;
+          //margin-top: 10px;
+          box-shadow: 35.4px 35.4px 90px 0 rgba(0, 0, 0, 0.15);
+          padding-top: 13px;
+          @include mobile {
+            width: 100%;
+          }
+
+          &:after {
+            content: '';
+            top: 2px;
+            width: 0;
+            left: 48%;
+            position: absolute;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-bottom: 9px solid black;
+          }
+
+          &:before {
+            content: "";
+            position: absolute;
+            height: 5px;
+            border-bottom: 4px solid #000;
+            top: 8px;
+            left: 0;
+            width: 100%;
           }
         }
       }
     }
   }
 
-  #booking-tab1,
-  #booking-tab3 {
-    .room-locations {
-      margin-right: 11px;
+  .date-picker-tab2-single {
+    .date-picker-tab2-single-container {
+      @extend %clearfix;
+      border: 2px solid #eeeeee;
+      border-radius: 4px;
+      width: 100%;
+      position: relative;
+      @include md {
+        width: 308px;
+      }
 
-      .form-group {
-        width: 100%;
-        @include md {
-          width: 200px;
-        }
+      .calendar {
+        height: 340px;
+      }
 
-        .input-showtext {
-          button {
-            width: 100%;
+      .values {
+        float: left;
+
+        .startDateContainer {
+          width: 160px;
+
+          .startDate {
+            width: auto;
+            height: 62px;
+            // background: url("../icons/calendar-interface-symbol-tool.svg") 5% center no-repeat;
+            // padding-left: 35px;
+            // background-size: 20px;
+            border: 0;
+            @include mobile {
+              background: none;
+              padding-left: 15px;
+            }
             @include md {
-              width: 200px;
+              width: 181px;
+            }
+
+            .value {
+              //border-right: 2px solid #eeeeee;
+              padding-right: 20px;
             }
           }
+        }
+      }
+    }
+  }
+  // .people {
+  //   margin-right: 20px;
+  // }
+  .shop {
+    //margin-right: 58px;
+    @include mobile {
+      margin-right: 0;
+    }
 
-          .popup-content-input {
-            width: 100%;
-            @include md {
-              width: 200px;
-            }
+    .form-group {
+      width: 100%;
+      @include md {
+        width: 290px;
+      }
+
+      .input-showtext {
+        button {
+          width: 100%;
+          @include md {
+            width: 290px;
+          }
+        }
+
+        .popup-content-input {
+          width: 100%;
+          @include md {
+            width: 290px;
+          }
+        }
+      }
+    }
+  }
+
+  .time-selection {
+    margin: 0;
+    width: 50%;
+    //clear: both;
+    float: right;
+    padding-bottom: 0;
+    @include md {
+      clear: none;
+      //float: none;
+      width: 135px;
+    }
+
+    .popup-content-input {
+      margin-top: 2px;
+    }
+
+    .form-group {
+      width: auto;
+
+      .input-showtext {
+        button,
+        input,
+        input::placeholder {
+          border: 0;
+          border-left: 1px solid #eeeeee;
+          font-family: Lato;
+          font-size: 18px;
+          letter-spacing: 1.4px;
+          text-align: center;
+          color: #000000;
+          height: 42px;
+          margin: 10px 0;
+          padding-right: 30px;
+
+          &:focus {
+            border: 0;
+            border-left: 1px solid #eeeeee;
+          }
+        }
+      }
+    }
+
+    .popup-menu {
+      .popup-content-input {
+        //  width: 100px!important;
+        ul li {
+          font-family: Lato;
+        }
+      }
+    }
+  }
+}
+
+#booking-tab1,
+#booking-tab3 {
+  .room-locations {
+    margin-right: 11px;
+
+    .form-group {
+      width: 100%;
+      @include md {
+        width: 200px;
+      }
+
+      .input-showtext {
+        button {
+          width: 100%;
+          @include md {
+            width: 200px;
+          }
+        }
+
+        .popup-content-input {
+          width: 100%;
+          @include md {
+            width: 200px;
           }
         }
       }

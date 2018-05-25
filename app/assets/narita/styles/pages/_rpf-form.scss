@@ -1,0 +1,398 @@
+.rfp-form-details {
+  background: #fff;
+  padding: 30px;
+}
+
+#rfp-form {
+  width: 98vw;
+  overflow-y: scroll;
+  height: 87vh;
+
+  #rpfForm {
+    margin-bottom: 0;
+  }
+  @include md {
+    width: 734px;
+    height: 95vh;
+  }
+
+  h5,
+  p {
+    margin-bottom: 15px;
+    text-align: center;
+
+    &.meeting {
+      clear: both;
+      padding-top: 20px;
+    }
+  }
+
+  .attendees,
+  .email,
+  .event,
+  .firstname,
+  .lastname,
+  .onedayevent,
+  .phone,
+  .typeofevent {
+    @include md {
+      width: 50%;
+      float: left;
+      padding-right: 5%;
+    };
+  }
+
+  .attendees,
+  .lastname,
+  .onedayevent,
+  .phone {
+    @include md {
+      padding-right: 0;
+    }
+  }
+
+  .event,
+  .typeofevent {
+    @include md {
+      width: 75%;
+    }
+  }
+
+  .attendees,
+  .onedayevent {
+    @include md {
+      width: 25%;
+    }
+  }
+
+  .onedayevent {
+    @include md {
+      padding-top: 40px;
+    }
+  }
+
+  .attachFile {
+    input[type=file] {
+      border: none;
+      height: auto;
+      padding: 0;
+    }
+  }
+
+  .companyname {
+    clear: both;
+  }
+
+  .duration,
+  .guestrooms {
+    @extend %clearfix;
+    @include md {
+      float: left;
+      width: 160px;
+    }
+  }
+
+  .guestrooms {
+    @include md {
+      margin-right: 11px;
+    }
+  }
+
+  .form-group {
+    clear: both;
+    margin: 0;
+    width: 100%;
+    margin-bottom: 15px;
+    @include md {
+      width: 100%;
+    }
+
+    .input-showtext {
+      position: relative;
+
+      &:after {
+        content: '';
+        position: absolute;
+        right: 5%;
+        top: 45%;
+        width: 0;
+        cursor: pointer;
+        height: 0;
+        border-left: 3px solid transparent;
+        border-right: 3px solid transparent;
+        border-top: 5px solid $default-color;
+        clear: both;
+      }
+
+      button,
+      input,
+      input::placeholder {
+        font-family: $primary-font;
+        background-size: 6px;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        border-radius: 4px;
+        margin: 0;
+        height: 46px;
+        width: 100%;
+        background: none;
+        border: none;
+        border: 2px solid #eeeeee;
+        @include font-size(12px);
+        letter-spacing: 0.9px;
+        padding: 0 12px;
+        color: $default-color;
+        text-align: left;
+        @include md {
+          width: 100%;
+        }
+
+        &:focus {
+          border: 2px solid #eeeeee;
+        }
+      }
+
+      input::placeholder {
+        border: 0;
+        padding-left: 0;
+      }
+    }
+
+    .form-checkbox {
+      @extend %clearfix;
+
+      input {
+        display: none;
+      }
+
+      .checkbox-style {
+        float: none;
+        position: relative;
+        padding-right: 0;
+        width: 33.333%;
+        margin-bottom: 20px;
+        @include md {
+          float: left;
+        };
+      }
+
+      .checkbox-style label.checkbox {
+        padding-left: 40px;
+        margin: 0;
+      }
+
+      .checkbox-style .checkbox > span {
+        border: 1px solid #232e48;
+        display: inline-block;
+        left: 0;
+        width: 21px;
+        height: 21px;
+        position: absolute;
+        background: #fff;
+        pointer-events: none;
+      }
+
+      .checkbox-style .checkbox > span i {
+        opacity: 0;
+      }
+
+      .checkbox-style .checkbox > input:checked + span i {
+        opacity: 1;
+      }
+    }
+
+    .popup-menu {
+      display: none;
+
+      ul {
+        margin: 0;
+        padding: 0;
+        max-height: 150px;
+        overflow-y: auto;
+
+        li {
+          border-bottom: 1px solid #eeeeee;
+
+          &:first-child {
+            border-top: 1px solid #eeeeee;
+          }
+
+          span {
+            cursor: pointer;
+            display: block;
+            @include font-size(12px);
+            line-height: 1.4;
+            padding: 8px 12px;
+            color: $default-color;
+
+            &.active,
+            &:focus,
+            &:hover {
+              background-color: #eeeeee;
+            }
+          }
+        }
+      }
+
+      .popup-content-input {
+        overflow-y: auto;
+        position: absolute;
+        background: #fff;
+        z-index: 999;
+        width: 100%;
+        //border-top: 3px solid #000;
+        //margin-top: 10px;
+        box-shadow: 35.4px 35.4px 90px 0 rgba(0, 0, 0, 0.15);
+        padding-top: 13px;
+        @include mobile {
+          width: 100%;
+        }
+
+        &:after {
+          content: '';
+          top: 2px;
+          width: 0;
+          left: 48%;
+          position: absolute;
+          height: 0;
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+          border-bottom: 9px solid black;
+        }
+
+        &:before {
+          content: "";
+          position: absolute;
+          height: 5px;
+          border-bottom: 4px solid #000;
+          top: 8px;
+          left: 0;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  button {
+    background: #c5ad6c;
+    color: #fefefe;
+    border: none;
+    height: 46px;
+    width: 100%;
+  }
+
+  input,
+  input::placeholder {
+    font-family: $primary-font;
+    background-size: 6px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 0;
+    height: 46px;
+    border: 2px solid #eeeeee;
+    @include font-size(12px);
+    letter-spacing: 0.9px;
+    padding: 0 11px;
+    color: $default-color;
+    margin-bottom: 15px;
+
+    &:focus {
+      border: 2px solid #eeeeee;
+    }
+  }
+
+  input::placeholder {
+    border: 0;
+    padding-left: 0;
+  }
+
+  #venue-booking-tab .date-picker-venue-rpf {
+    float: left;
+    position: relative;
+    padding-bottom: 20px;
+    width: 100%;
+    @include md {
+      width: auto;
+    };
+
+    label {
+      padding: 0;
+    }
+
+    .date-picker-tab1-container {
+      width: 100%;
+      border: 0;
+      position: relative;
+    }
+
+    .endDateContainer,
+    .startDateContainer {
+      float: left;
+      width: 100%;
+      @include mobile {}
+      @include md {
+        margin-right: 0;
+        width: 160px;
+      };
+    }
+
+    .startDateContainer {
+      margin-bottom: 15px;
+      @include md {
+        margin-right: 11px;
+        margin-bottom: 0;
+      }
+    }
+
+    .endDate,
+    .startDate {
+      font-family: $primary-font;
+      @include font-size(12px);
+      line-height: 2.5;
+      letter-spacing: 0.9px;
+      text-align: left;
+      color: $default-color;
+      border: 2px solid #eeeeee;
+      border-radius: 4px;
+      height: 46px;
+      line-height: 66px;
+      padding-top: 8px;
+      @include mobile {
+        width: 100%;
+        background: none;
+        padding-left: 15px;
+      }
+
+      span.date_at,
+      span.date_to {
+        @extend .icon;
+        @extend .sprite-calender_pc;
+
+        &:before {
+          display: block;
+          background-image: none;
+          height: auto;
+        }
+        @include md {
+          float: left;
+          padding: 0 10px;
+
+          &:before {
+            background-image: url("../svg/sprite.svg");
+            margin-left: 5px;
+            width: 28px;
+            height: 20px;
+            margin: 7px 0;
+            float: left;
+            display: inline-block;
+          }
+        }
+      }
+    }
+
+    .calendar {
+      top: 75px;
+    }
+  }
+}

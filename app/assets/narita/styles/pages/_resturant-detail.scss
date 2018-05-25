@@ -1,0 +1,300 @@
+.resturant-detail-menu-wrap{
+  overflow: hidden;
+}
+.resturant-detail-cta-wrap{ 
+  @include md {
+    float: right;
+  }
+  .btn{
+    display: inline-block;
+    padding: 15px 40px;
+    width: 50%;
+    @include md {
+      padding: 20px 50px;
+      width: auto;
+    }
+  }
+  .cta{
+    @include font-size(18px);
+    display: block;
+    width: 50%;
+    float: left;
+    padding: 14px 10px 0;
+    width: auto;
+    i{
+      display: block;
+      float: left;
+      margin-right: 10px;
+    }
+    @include md {
+      display: inline-block;
+      @include font-size(24px);
+      padding: 0 20px;
+      line-height: 61px;
+    }
+  }
+  .rating-wrap{
+    display: none;
+    line-height: 1;
+    padding-top: 8px;
+    @include md {
+      display: block;
+      float: left;
+    }
+    .review-count{
+      @include font-size(13.6px);  
+      color: rgba(0, 0, 0, 0.6);      
+      letter-spacing: 1.6px;
+      margin-bottom: 5px;
+    }
+    .rating-units {
+      float: left;
+    }
+    .rating-unit{
+      width: 20px;
+      height: 20px;
+      display: inline-block; 
+      background: #eeeeee;
+      border-radius: 10px;
+      margin: 0 2px;
+      position: relative;
+      .icon{
+        position: absolute;
+        left: 5px;
+        top: 4px;
+      }
+      &.is-full{
+        background: #c5ad6c;
+      }
+    }
+    .rating-number{
+      display: block;
+      float: left;
+      margin: 0 15px 0 10px;
+      margin-top: -5px;
+      span{
+        @include font-size(24px);
+      }
+    }
+  }  
+}
+
+.resturant-detail-menu {
+  background: #fafafa;
+  clear: both;
+  @include md {
+    float: left;
+    padding-left: 70px;
+    background: #fff;
+    clear:none;
+  }
+
+  ul {
+    margin: 0;
+  }
+
+  li {
+    @include md {
+      float: left;
+      line-height: 60px;
+    }
+
+    a {
+      @include font-size(14px);
+      display: block;
+      letter-spacing: 1.6px;
+      text-align: center;
+      padding: 20px 30px;
+      border-bottom: 1px solid #eeeeee;
+      @include md {
+        padding: 0 25px 0 10px;
+        text-align: left;
+        border-bottom: 0;
+      }
+
+      i {
+        border: solid black;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+        float: right;
+        @include md {
+          border: none;
+        }
+      }
+
+      .down {
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+      }
+    }
+  }
+}
+
+.resturant-timing-wrap{
+  background: linear-gradient(#fafafa, #ffffff 5%);
+  padding: 60px 0 0;
+  text-align: center;
+  h2.higlight span{
+    background: #fff;
+  }
+  .resturant-timing{
+    max-width: 940px;
+    margin:0 auto;
+    background: #fff;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    background: #fff;
+  }
+  .timings{
+    width: 33.33%;
+    float: left; 
+    padding: 50px 25px;
+    position: relative;
+    &:before{ 
+      content:"";
+      width: 1px;
+      height: 70px;
+      background: #eeeeee;
+      right: 0;
+      top: 50%;
+      margin-top: -35px;
+      position: absolute;
+    }
+    &:last-child{
+      &:before{
+        display: none;
+      }
+    }
+  }
+  .slot{
+    letter-spacing: 2.8px;
+    color: #000000;
+    line-height: 1;
+  }
+  .time{
+    @include font-size(24px);
+    letter-spacing: 0.6px;
+    color: #000000;
+    font-weight: 700;
+    padding: 25px 0;
+  }
+  .lo{
+    opacity: 0.6;
+    color: rgba(0, 0, 0, 0.6);
+    line-height: 1;
+  }
+}
+
+.resturamt-food-wrap{
+  padding-top: 140px;
+  background: #fafafa;
+  margin-top: -70px;
+}
+
+.resturant-detail-slider{
+  .inner-page-slider-info{
+    padding-bottom: 25px; 
+    .slider-count{
+      float: none;
+      text-align: center;
+       line-height: initial;
+    }
+  }
+}
+
+.resturants-detail-list{
+  overflow: hidden; 
+  padding: 80px 0;
+  text-align: center; 
+  background: #fafafa;
+  h2 {
+    margin-bottom: 40px;    
+  }
+  ul{
+    margin:0;
+    padding: 0;
+  }
+  li{
+    float: left;
+    position: relative;
+    margin-bottom: 160px;
+    @include md {
+      margin-bottom: 72px;
+    }    
+    &:nth-child(even){
+      float: right; 
+      
+    }
+    &:last-child{
+      margin-bottom: 70px;        
+    }
+  }
+  .resturant-list-info{
+    background: #fff;
+    padding: 40px;      
+    opacity: 0.95;
+    color: #000;
+    text-align: center;
+    box-shadow: 14.1px 14.1px 90px 0 rgba(0, 0, 0, 0.2);
+    position: absolute;
+    padding: 40px 25px  25px;
+    bottom: -90px;
+    left: 20px; 
+    right: 20px;
+    @include md { 
+      bottom: -25px;
+      max-width: 297;
+      left: 30px;
+      
+      text-align: left;
+    }
+    h2{
+      @include font-size(20px);
+      letter-spacing: 0.5px;
+      font-family: 'YuMin';
+      margin:0 0 25px;
+      text-align: center;
+      @include md {
+        @include font-size(20px);
+        margin:0 0 35px;
+      }
+    } 
+    .see-more {
+      text-align: center;
+      position: relative;
+      margin-top: 20px;
+      display: block;
+
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background-color: #000;
+        top: 8px;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background-color: #000;
+        top: 10px;
+      }
+
+      span {
+        background: #fff;
+        font-weight: 700;
+        color: #c5ad6c;
+        padding: 0 35px;
+        position: relative;
+        z-index: 1;
+      }
+    }
+  }     
+}

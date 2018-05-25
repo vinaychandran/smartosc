@@ -179,59 +179,7 @@
 .resturant-page-booking{
   background-color: #fafafa; 
   padding: 45px 0 30px;  
-  text-align: center;
-  h2{
-    margin:0 10px;
-    line-height: 1;
-    padding: 0 65px;
-    @include font-size(16px);
-    font-weight: 500;
-    color: #000;
-    position: relative;   
-    display: inline-block;
-    @include md {
-      margin-bottom: 30px;
-      @include font-size(24px);
-    }
-    span{
-      background: #fafafa;
-      padding: 0 20px;
-      position: relative;
-      z-index: 1;
-    } 
-    i{
-      position: absolute;
-      width: 15px;
-      height: 15px;
-      transform: rotate(45deg);
-      background: #000;
-      left: 0;
-      top: 2px;
-      &:last-child{
-        left: auto;
-        right: 0;
-      }
-    }
-    &:before {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background-color: #000;
-      top: 8px;
-    }
-
-    &:after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background-color: #000;
-      top: 10px;
-    }    
-  }
+  text-align: center;  
   .booking-widget{
     max-width: 1060px;
     margin:0 auto; 

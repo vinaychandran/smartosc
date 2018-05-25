@@ -20,19 +20,17 @@
 @import "components/video-player";
 @import "components/home-concept";
 @import "components/home-gallery";
-@import "components/review"; 
+@import "components/review";
 @import "components/google-map";
 @import "components/modal-lightbox";
-@import "components/footer"; 
-        
+@import "components/footer";
 
-// @import "en-EN";
-
-// Pages
-@import "pages/homepage";  
-@import "pages/gallerypage";  
-@import "pages/rooms";    
-@import "pages/venue"; 
-@import "pages/resturants"; 
-@import "components/inner-page-slider";   
+@import "pages/homepage";
+@import "components/inner-page-slider";
 @import "components/inner-page-menu-box";
+@import "pages/gallerypage";
+@import "pages/rooms";
+@import "pages/venue";
+@import "pages/rpf-form"; 
+@import "pages/resturants";
+@import "pages/resturant-detail";
