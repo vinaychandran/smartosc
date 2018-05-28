@@ -120,16 +120,17 @@ body.modal-open{
     display: none;
 }
 
-.btn { 
+.btn,button { 
     @include button-bg($secondary-bg, $secondary-color);
     @include font-size(14px);
     text-decoration:none;    
-    cursor: pointer;    
+    cursor: pointer;     
     padding: 20px 50px; 
     text-align: center;  
     font-family: 'YuGo';
     letter-spacing: 1.1px;
     font-weight: 700;
+    border:0;
     @include md {
         padding: 30px 50px; 
     }

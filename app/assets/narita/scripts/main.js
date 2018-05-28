@@ -54,15 +54,13 @@ const FE = {
                 tabLink.addEventListener('click', FE.global.openTab);
             }
         },
-        //ToDo modal
-        // openModalTab: (e) => {
-        //     let tab = e.target.hash;
-        //     let id = document.querySelector('.basicLightbox--visible ' + tab);
-
-        //     let tabElem = document.querySelector(".tabs-content");
-        //     tabElem.classList.add('hideTab');
-        //     id.classList.add('showTab');
-        // },
+        openModalTab: (element) => {
+            var tabs = new Tabs({
+                elem: element,
+                isModal: true,
+                open: 0
+            });
+        },
         openTab: (e) => {
             if (document.getElementById('tabs-header') !== null)
                 document.getElementById('tabs-header').style.display = 'block';
@@ -243,28 +241,30 @@ const FE = {
         },
 
         scroll: () => {
-            const scroll = new SmoothScroll('.scroll', { speed: 2000, offset: 180,
-                before: function (anchor, toggle) {
+            const scroll = new SmoothScroll('.scroll', {
+                speed: 2000,
+                offset: 180,
+                before: function(anchor, toggle) {
                     console.log(toggle.className.split(' ')[0]);
                     [].forEach.call(
                         anchor.querySelectorAll('.tabs-title'),
-                        function (el) {
-                            if (el.classList.contains('tabs-title-active')) {                    
+                        function(el) {
+                            if (el.classList.contains('tabs-title-active')) {
                                 el.classList.remove('tabs-title-active');
                             }
                         }
                     );
                     [].forEach.call(
                         anchor.querySelectorAll('.tabs-content'),
-                        function (el) {
+                        function(el) {
                             el.style.display = 'none';
                         }
-                    );                    
-                    if(toggle.className.split(' ')[0] == 'guestPhotos') {                            
-                        anchor.querySelectorAll('.tabs-title')[1].classList.add('tabs-title-active');                        
-                        anchor.querySelectorAll('.tabs-content')[1].style.display = 'block';                        
-                    } else if(toggle.className.split(' ')[0] == 'hotelPhotos') {   
-                        anchor.querySelectorAll('.tabs-title')[0].classList.add('tabs-title-active');                        
+                    );
+                    if (toggle.className.split(' ')[0] == 'guestPhotos') {
+                        anchor.querySelectorAll('.tabs-title')[1].classList.add('tabs-title-active');
+                        anchor.querySelectorAll('.tabs-content')[1].style.display = 'block';
+                    } else if (toggle.className.split(' ')[0] == 'hotelPhotos') {
+                        anchor.querySelectorAll('.tabs-title')[0].classList.add('tabs-title-active');
                         anchor.querySelectorAll('.tabs-content')[0].style.display = 'block';
                     }
                 }
@@ -347,7 +347,7 @@ const FE = {
                         FE.global.sliderImage('.gallery-nav', 1, false, true);
                         $('.gallery-nav').slick('slickGoTo', SlideNumber, true);
                         FE.global.submitForm();
-                        FE.global.tabs('loginForm');
+                        FE.global.openModalTab('loginForm');
                     },
                     afterClose: (instance) => {
                         $('.gallery-nav').slick('unslick');
@@ -363,7 +363,7 @@ const FE = {
             if (isReset && !isEmail) {
                 document.getElementById('reset').click();
             }
-            if (isReset && isEmail) {
+            if (isEmail) {
                 document.getElementById('reset-mail').click();
             }
         },
@@ -384,12 +384,13 @@ const FE = {
                     className: 'roomPopup',
                     closable: true,
                     beforeShow: (instance) => {
-                        $('body').addClass('modal-open');                       
+                        $('body').addClass('modal-open');
                     },
                     afterShow: (instance) => {
                         FE.global.sliderImage('.roomPopup .room-info-slider', 1, false, true);
-                        FE.global.tabs('layout-tabs');
-                        let checkSlider = true;                        
+                        //FE.global.tabs('layout-tabs');
+                        FE.global.openModalTab('layout-tabs');
+                        let checkSlider = true;
                     },
                     beforeClose: (instance) => {
                         $('.roomPopup .room-info-slider').slick('unslick');
@@ -667,7 +668,6 @@ const FE = {
             FE.global.tabs('gallery-tabs');
             FE.global.tabs('booking-tabs');
             FE.global.tabs('layout-tabs');
-            FE.global.tabs('loginForm');
             FE.global.tabs('resturant-tabs');
             FE.global.instaFeed();
             FE.global.googleMap();

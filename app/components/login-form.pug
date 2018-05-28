@@ -2,9 +2,9 @@
       #loginForm.tabs
         ul.tabs-header#userForm
           li
-            a.tabs-title(href='#loginForm2') お部屋
+            a#userLogin.tabs-title(href='#loginForm2' onclick="FE.global.openModalTab('loginForm2')") お部屋
           li
-            a.tabs-title(href='#loginForm1') レストラン
+            a#userSignup.tabs-title(href='#loginForm1' onclick="FE.global.openModalTab('loginForm1')") レストラン
         #loginForm2.tabs-content
           #facebook-login
           #google-login
@@ -16,7 +16,7 @@
           form#login(name='login-form')
             section.email
               .input-showtext
-                input#email.form-control(name='email', type='text', placeholder='または', required='required')
+                input#l-email.form-control(name='l-email', type='text', placeholder='または', required='required')
             section.password
               .input-showtext
                 input#password.form-control(name='password', type='text', placeholder='パスワード', required='required')
@@ -51,10 +51,10 @@
                 input#s-email.form-control(name='email', type='text', placeholder='または', required='required')
             section.fname
               .input-showtext
-                input#fname.form-control(name='fname', type='text', placeholder='姓', required='required')
+                input#s-fname.form-control(name='fname', type='text', placeholder='姓', required='required')
             section.lname
               .input-showtext
-                input#lname.form-control(name='lname', type='text', placeholder='名', required='required')
+                input#s-lname.form-control(name='lname', type='text', placeholder='名', required='required')
             section.password
               .input-showtext
                 input#s-password.form-control(name='password', type='text', placeholder='パスワード', required='required')

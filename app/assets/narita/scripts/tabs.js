@@ -13,17 +13,26 @@
  * @param {number} [options.open = 0] - Render the tabs with this item open
  */
 var Tabs = function(options) {
-    var elem         = document.getElementById(options.elem);
-    if(elem) {
-        
-        var open         = options.open || 0,
-            titleClass   = 'tabs-title',
-            activeClass  = 'tabs-title-active',
+    var isModal = options.isModal;
+    var elem;
+
+    let lightBoxId = '.basicLightbox';
+    if (isModal) {
+        elem = document.querySelector(lightBoxId + ' #' + options.elem);
+    } else {
+        elem = document.getElementById(options.elem);
+    }
+
+    if (elem) {
+
+        var open = options.open || 0,
+            titleClass = 'tabs-title',
+            activeClass = 'tabs-title-active',
             contentClass = 'tabs-content',
-            tabsNum      = elem.querySelectorAll('.' + titleClass).length;
-            
+            tabsNum = elem.querySelectorAll('.' + titleClass).length;
+
         render();
-        
+
         /**
          * Initial rendering of the tabs.
          */
@@ -31,7 +40,7 @@ var Tabs = function(options) {
             elem.addEventListener('click', onClick);
 
             var init = (n == null) ? checkTab(open) : checkTab(n);
-    
+
             for (var i = 0; i < tabsNum; i++) {
                 elem.querySelectorAll('.' + titleClass)[i].setAttribute('data-index', i);
                 if (i === init) openTab(i);
@@ -48,7 +57,7 @@ var Tabs = function(options) {
             e.preventDefault();
             openTab(e.target.getAttribute('data-index'));
         }
-        
+
         /**
          * Hide all tabs and re-set tab titles.
          */
@@ -56,12 +65,12 @@ var Tabs = function(options) {
             [].forEach.call(elem.querySelectorAll('.' + contentClass), function(item) {
                 item.style.display = 'none';
             });
-            
+
             [].forEach.call(elem.querySelectorAll('.' + titleClass), function(item) {
                 item.className = removeClass(item.className, activeClass);
             });
         }
-        
+
         /**
          * Utility function to remove the open class from tab titles.
          *
@@ -81,7 +90,7 @@ var Tabs = function(options) {
         function checkTab(n) {
             return (n < 0 || isNaN(n) || n > tabsNum) ? 0 : n;
         }
-        
+
         /**
          * Opens a tab by index.
          * 
@@ -97,7 +106,7 @@ var Tabs = function(options) {
             elem.querySelectorAll('.' + titleClass)[i].className += ' ' + activeClass;
             elem.querySelectorAll('.' + contentClass)[i].style.display = '';
 
-            if(document.getElementById('tablink') && document.getElementById('tabs-header')) {
+            if (document.getElementById('tablink') && document.getElementById('tabs-header')) {
                 document.getElementById('tablink').innerText = elem.querySelectorAll('.' + titleClass)[i].text;
                 document.getElementById('tablink').classList.remove('opened');
                 if (window.innerWidth <= 768) {
