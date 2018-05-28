@@ -54,6 +54,15 @@ const FE = {
                 tabLink.addEventListener('click', FE.global.openTab);
             }
         },
+        //ToDo modal
+        // openModalTab: (e) => {
+        //     let tab = e.target.hash;
+        //     let id = document.querySelector('.basicLightbox--visible ' + tab);
+
+        //     let tabElem = document.querySelector(".tabs-content");
+        //     tabElem.classList.add('hideTab');
+        //     id.classList.add('showTab');
+        // },
         openTab: (e) => {
             if (document.getElementById('tabs-header') !== null)
                 document.getElementById('tabs-header').style.display = 'block';
@@ -109,6 +118,26 @@ const FE = {
             if (document.querySelector(lightBoxId + ' .bookingForm')) {
                 document.querySelector(lightBoxId + ' .bookingForm').addEventListener('click', function() {
                     FE.global.checkValidationRules(lightBoxId + ' form#bookingForm');
+                });
+            }
+            if (document.querySelector(lightBoxId + ' .submitSignup')) {
+                document.querySelector(lightBoxId + ' .submitSignup').addEventListener('click', function() {
+                    FE.global.checkValidationRules(lightBoxId + ' form#signup');
+                });
+            }
+            if (document.querySelector(lightBoxId + ' .submitLogin')) {
+                document.querySelector(lightBoxId + ' .submitLogin').addEventListener('click', function() {
+                    FE.global.checkValidationRules(lightBoxId + ' form#login');
+                });
+            }
+            if (document.querySelector(lightBoxId + ' .reset-form')) {
+                document.querySelector(lightBoxId + ' .reset-form').addEventListener('click', function() {
+                    FE.global.checkValidationRules(lightBoxId + ' form#reset-form');
+                });
+            }
+            if (document.querySelector(lightBoxId + ' .send-email')) {
+                document.querySelector(lightBoxId + ' .send-email').addEventListener('click', function() {
+                    FE.global.checkValidationRules(lightBoxId + ' form#reset-user-pwd');
                 });
             }
         },
@@ -214,7 +243,32 @@ const FE = {
         },
 
         scroll: () => {
-            const scroll = new SmoothScroll('.scroll', { speed: 2000 });
+            const scroll = new SmoothScroll('.scroll', { speed: 2000, offset: 180,
+                before: function (anchor, toggle) {
+                    console.log(toggle.className.split(' ')[0]);
+                    [].forEach.call(
+                        anchor.querySelectorAll('.tabs-title'),
+                        function (el) {
+                            if (el.classList.contains('tabs-title-active')) {                    
+                                el.classList.remove('tabs-title-active');
+                            }
+                        }
+                    );
+                    [].forEach.call(
+                        anchor.querySelectorAll('.tabs-content'),
+                        function (el) {
+                            el.style.display = 'none';
+                        }
+                    );                    
+                    if(toggle.className.split(' ')[0] == 'guestPhotos') {                            
+                        anchor.querySelectorAll('.tabs-title')[1].classList.add('tabs-title-active');                        
+                        anchor.querySelectorAll('.tabs-content')[1].style.display = 'block';                        
+                    } else if(toggle.className.split(' ')[0] == 'hotelPhotos') {   
+                        anchor.querySelectorAll('.tabs-title')[0].classList.add('tabs-title-active');                        
+                        anchor.querySelectorAll('.tabs-content')[0].style.display = 'block';
+                    }
+                }
+            });
         },
 
         pageScroll: () => {
@@ -269,13 +323,18 @@ const FE = {
                 }
             });
         },
+        resetForm: () => {
+            document.getElementById('resetUser').click();
+        },
+        closeForm: () => {
+            //TODO close functionality
+            //document.getElementById('resetUser').click();
+        },
         lightBox: (datepicker) => {
             const getTargetHTML = function(elem) {
                 const id = elem.getAttribute('data-show-id')
                 const target = document.querySelector(`[data-id="${ id }"]`)
                 return target.outerHTML
-
-
             }
             document.querySelectorAll('[data-show-id]').forEach(function(elem) {
                 const html = getTargetHTML(elem);
@@ -288,6 +347,7 @@ const FE = {
                         FE.global.sliderImage('.gallery-nav', 1, false, true);
                         $('.gallery-nav').slick('slickGoTo', SlideNumber, true);
                         FE.global.submitForm();
+                        FE.global.tabs('loginForm');
                     },
                     afterClose: (instance) => {
                         $('.gallery-nav').slick('unslick');
@@ -295,6 +355,17 @@ const FE = {
                 }).show
             })
 
+        },
+        resetUserDetails: () => {
+            let url = new URL(window.location.href);
+            let isReset = url.searchParams.get("reset");
+            let isEmail = url.searchParams.get("email");
+            if (isReset && !isEmail) {
+                document.getElementById('reset').click();
+            }
+            if (isReset && isEmail) {
+                document.getElementById('reset-mail').click();
+            }
         },
         lightBoxRoom: () => {
             const getTargetHTML = function(elem) {
@@ -313,11 +384,12 @@ const FE = {
                     className: 'roomPopup',
                     closable: true,
                     beforeShow: (instance) => {
-                        $('body').addClass('modal-open');
+                        $('body').addClass('modal-open');                       
                     },
                     afterShow: (instance) => {
                         FE.global.sliderImage('.roomPopup .room-info-slider', 1, false, true);
-                        let checkSlider = true;
+                        FE.global.tabs('layout-tabs');
+                        let checkSlider = true;                        
                     },
                     beforeClose: (instance) => {
                         $('.roomPopup .room-info-slider').slick('unslick');
@@ -447,7 +519,7 @@ const FE = {
 
         filterRooms: (targetElement) => {
             if (isMobile && (document.getElementById('room-types') !== null)) {
-                document.getElementById('room-types').style.display = 'none';                
+                document.getElementById('room-types').style.display = 'none';
             }
             if (isMobile && (document.getElementById('venue-types') !== null)) {
                 document.getElementById('venue-types').style.display = 'none';
@@ -496,19 +568,19 @@ const FE = {
         filter: (targetElement) => {
             // get all of our list items
             let itemsToFilter = document.querySelectorAll('.itemsToFilter li');
-              
+
             //setup click event handlers on our checkboxes
             let checkBoxes = document.querySelectorAll('.filterSection li input');
-              
+
             for (let i = 0; i < checkBoxes.length; i++) {
                 checkBoxes[i].addEventListener('click', filterItems, false);
                 //checkBoxes[i].checked = true;
             }
-              
+
             // the event handler!
             function filterItems(e) {
                 var clickedItem = e.target;
-                  
+
                 if (clickedItem.checked == true) {
                     hideOrShowItems(clickedItem.value, 'hideItem', 'showItem');
                 } else if (clickedItem.checked == false) {
@@ -517,25 +589,25 @@ const FE = {
                     // deal with the indeterminate state if needed
                 }
             }
-              
+
             // add or remove classes to show or hide our content
             function hideOrShowItems(itemType, classToRemove, classToAdd) {
                 for (var i = 0; i < itemsToFilter.length; i++) {
                     var currentItem = itemsToFilter[i];
-                      
+
                     if (currentItem.getAttribute('data-type') == itemType) {
                         removeClass(currentItem, classToRemove);
                         addClass(currentItem, classToAdd);
                     }
                 }
             }
-              
+
             //
             // Helper functions for adding and removing class values
             //
             function addClass(element, classToAdd) {
                 var currentClassValue = element.className;
-                    
+
                 if (currentClassValue.indexOf(classToAdd) == -1) {
                     if ((currentClassValue == null) || (currentClassValue === '')) {
                         element.className = classToAdd;
@@ -544,24 +616,24 @@ const FE = {
                     }
                 }
             }
-                    
+
             function removeClass(element, classToRemove) {
                 var currentClassValue = element.className;
-              
+
                 if (currentClassValue == classToRemove) {
                     element.className = '';
                     return;
                 }
-              
+
                 var classValues = currentClassValue.split(' ');
                 var filteredList = [];
-              
-                for (var i = 0 ; i < classValues.length; i++) {
+
+                for (var i = 0; i < classValues.length; i++) {
                     if (classToRemove != classValues[i]) {
                         filteredList.push(classValues[i]);
                     }
                 }
-              
+
                 element.className = filteredList.join(' ');
             }
         },
@@ -595,6 +667,8 @@ const FE = {
             FE.global.tabs('gallery-tabs');
             FE.global.tabs('booking-tabs');
             FE.global.tabs('layout-tabs');
+            FE.global.tabs('loginForm');
+            FE.global.tabs('resturant-tabs');
             FE.global.instaFeed();
             FE.global.googleMap();
             FE.global.scroll();
@@ -606,6 +680,7 @@ const FE = {
             FE.global.showCheckBoxAction();
             FE.global.lightBox(true);
             FE.global.lightBoxRoom();
+            FE.global.resetUserDetails();
             FE.global.clickOutside('fade', '.input-showtext .form-control', '.input-showtext .popup-menu');
             FE.global.clickOutside('fade', '.people-list-popup', '.popup-wrap.popup-create');
             FE.global.autocomplatePopup();
@@ -633,7 +708,7 @@ $(function() {
 });
 
 $(window).load(function() {
-    FE.global.loaded(); 
+    FE.global.loaded();
 });
 
 $(window).resize(function() {

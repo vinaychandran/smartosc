@@ -1,3 +1,9 @@
+.resturant-detail-page{
+  background: #fafafa;
+  .inner-page-slider-wrap{
+    background: #fafafa;
+  }
+}
 .resturant-detail-menu-wrap{
   overflow: hidden;
 }
@@ -209,6 +215,9 @@
   padding: 80px 0;
   text-align: center; 
   background: #fafafa;
+  @include md {
+    padding: 80px 0 50px;
+  }
   h2 {
     margin-bottom: 40px;    
   }
@@ -247,7 +256,7 @@
       bottom: -25px;
       max-width: 297;
       left: 30px;
-      
+      right: auto;
       text-align: left;
     }
     h2{
@@ -266,7 +275,7 @@
       position: relative;
       margin-top: 20px;
       display: block;
-
+      cursor: pointer;
       &:before {
         content: "";
         position: absolute;

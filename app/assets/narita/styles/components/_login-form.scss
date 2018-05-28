@@ -1,0 +1,251 @@
+#user-form {
+    background: #fff;
+    height: 80vh;
+    p {
+        &.forgot-pwd {
+            text-align: center;
+            font-family: YuGo;
+            font-size: 12px;
+            font-weight: 500;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 2.5;
+            letter-spacing: 0.9px;
+            color: #000000;
+        }
+        &.form-text {
+            font-size: 12px;
+            font-weight: 500;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.83;
+            letter-spacing: 0.9px;
+            text-align: left;
+            color: rgba(0, 0, 0, 0.6);
+            margin-left: 42px;
+        }
+        a {
+            text-decoration: underline;
+        }
+        &.border {
+            width: 200px;
+            height: 1px;
+            border-radius: 0.5px;
+            background-color: #eeeeee;
+            float: left;
+            margin-left: 42px;
+            margin-top: 13px;
+            &.left {
+                margin-right: 15px;
+            }
+            &.right {
+                margin-left: 15px;
+            }
+        }
+        &.border-text {
+            float: left;
+            font-size: 14px;
+            font-weight: 500;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 2.14;
+            letter-spacing: 1.1px;
+            text-align: left;
+            color: rgba(0, 0, 0, 0.5);
+        }
+    }
+    #userForm {
+        margin: 0 auto;
+        padding: 0;
+        width: 100%;
+        margin-bottom: 39px;
+        li {
+            width: 50%;
+            margin: 0;
+            padding: 0;
+            a {
+                text-align: center;
+                padding: 20px 0 20px 0px;
+                color: #a7a7a7;
+                font-size: 16px;
+                background-color: #eeeeee;
+                &.tabs-title-active {
+                    background-color: #fff;
+                }
+                &:before {
+                    display: none;
+                }
+                &:after {
+                    display: none;
+                }
+            }
+        }
+    }
+    #facebook-login {
+        background: url(../images/dummy.png) no-repeat;
+        width: 476px;
+        height: 60px;
+        margin: 0 42px 18px 42px;
+    }
+    #google-login {
+        background: url(../images/dummy.png) no-repeat;
+        width: 476px;
+        height: 60px;
+        margin: 0 42px 18px 42px;
+    }
+    #yahoo-login {
+        background: url(../images/dummy.png) no-repeat;
+        width: 476px;
+        height: 60px;
+        margin: 0 42px 18px 42px;
+    }
+    .input-showtext {
+        width: 476px;
+        margin: 0 auto;
+    }
+    input {
+        width: 476px;
+        height: 66px;
+        padding-left: 21px;
+    }
+    #fname {
+        width: 48%;
+        float: left;
+        margin-right: 9px;
+    }
+    #lname {
+        width: 48%;
+        margin-left: 9px;
+    }
+    .submit-button {
+        width: 476px;
+        margin: 0 auto;
+        button {
+            width: 476px;
+            height: 66px;
+            color: #fff;
+            background-color: #c5ad6c;
+        }
+    }
+}
+
+.basicLightbox--visible {
+    overflow: auto;
+    //background: rgba(0, 0, 0, 0.5);
+}
+
+#loginForm {
+    height: auto;
+    background: #fff;
+}
+
+#reset-form,
+#reset-pwd-form {
+    background: #fff;
+    .input-showtext {
+        margin: 0 42px 18px 42px;
+    }
+    p {
+        opacity: 0.6;
+        font-family: YuGo;
+        font-size: 12px;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.83;
+        letter-spacing: 0.9px;
+        text-align: left;
+        color: rgba(0, 0, 0, 0.6);
+        margin: 0 42px 0 42px;
+        &.header {
+            font-family: YuGo;
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 1.5;
+            letter-spacing: normal;
+            text-align: left;
+            color: #000000;
+            margin: 46px 42px 46px 42px;
+        }
+        &.header-text {
+            font-size: 14px;
+            font-weight: 500;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 2.14;
+            letter-spacing: normal;
+            text-align: left;
+            color: #000000;
+        }
+    }
+    input {
+        width: 476px;
+        height: 66px;
+        padding-left: 21px;
+        &#mail {
+            margin-top: 45px;
+        }
+    }
+    .submit-button {
+        width: 476px;
+        margin: 0 auto;
+        margin-top: 25px;
+        button {
+            width: 476px;
+            height: 66px;
+            color: #fff;
+            background-color: #c5ad6c;
+        }
+    }
+    .reset-button {
+        display: inline;
+        //width: 50%;
+        margin: 0 auto;
+        //margin-top: 25px;
+        button {
+            width: 248px;
+            height: 66px;
+            color: #fff;
+            background-color: #c5ad6c;
+        }
+    }
+    .back-button {
+        float: left;
+        margin: 20px 82px 27px 42px;
+        a {
+            font-size: 14px;
+            font-weight: 500;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 2.14;
+            letter-spacing: 1.1px;
+            text-align: left;
+            color: #000000;
+        }
+    }
+}
+
+#reset-details {
+    background: #fff;
+    padding: 42px;
+    p {
+        font-size: 14px;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 2.14;
+        letter-spacing: normal;
+        text-align: left;
+        color: #000000;
+        &.header {
+            font-size: 20px;
+            font-weight: bold;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.5;
+            letter-spacing: normal;
+            text-align: left;
+            color: #000000;
+        }
+    }
+}

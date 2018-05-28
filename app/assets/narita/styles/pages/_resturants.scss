@@ -205,3 +205,146 @@
     } 
   }
 }
+
+.resturant-detail-popup {
+  .room-info-header {
+    span {
+      @include font-size(24px);
+      font-weight: bold;
+      letter-spacing: 0.6px;
+      line-height: 90px;
+      margin-left: 30px;
+    }
+    .phone-number {
+      float: right;
+      padding-left: 0;
+      padding-right: 20px;
+      i {
+        @include font-size(17px);
+      }
+    }
+  }
+}
+
+.resturant-details-tabs {
+  .container {
+    .tabs {
+      padding: 120px 0 78px 0;
+      ul {
+        li {
+          a {
+            @include font-size(16px);
+            letter-spacing: 3.2px;
+            font-weight: normal;
+            text-transform: uppercase;
+          }
+        }
+      }
+      .tabs-content {
+        .menu-images {
+          @extend %clearfix;
+          .col-1-2 {
+            float: left;
+            &:last-of-type {
+              float: right;
+            }
+          }
+        }
+        .menu-details {
+          background: $default-bg;
+          padding: 50px 40px;
+          margin-top: 20px;
+          .menu-title {
+            @include font-size(34px);
+            font-family: 'Lato';
+            line-height: 20px;
+            letter-spacing: 6.8px;
+            font-weight: normal;
+            padding: 40px 0;
+            border-top: 1px solid $default-color;
+            border-bottom: 2px solid $default-color;
+            margin: 0;
+          }
+          .sub-menu-title {
+            @include font-size(20px);
+            line-height: 31px;
+            font-weight: bold;
+            padding: 20px 0;
+            border-bottom: 1px solid $default-color;
+          }
+          .menu-items {
+            @extend %clearfix;
+            margin-top: 20px;
+            border-bottom: 2px solid $default-color;
+            padding-bottom: 20px;
+            .menu {
+              @extend %clearfix;
+              width: 50%;
+              float: left;
+              padding-right: 30px;
+              &:last-of-type {
+                padding-left: 30px;
+                border-left: 1px solid $default-color;
+              }
+              ul {
+                @extend %clearfix;
+                li {
+                  @extend %clearfix;
+                  font-weight: bold;
+                  line-height: 20px;
+                  padding: 20px 0;
+                  .menu-item-name {
+                    @include font-size(14px);
+                    float: left;
+                    margin: 0;
+                    span {
+                      @include font-size(12px);
+                      display: block;
+                      font-weight: normal;
+                      padding-top: 10px;
+                    }
+                  }
+                  .menu-price {
+                    @include font-size(20px);
+                    float: right;
+                    font-family: 'Lato';
+                  }
+                }
+              }
+            }
+          }
+          .other-items {
+            ul {
+              li {
+                padding: 30px 0;
+                .other-item-name {
+                  @include font-size(14px);
+                  margin: 0;
+                  span {
+                    @include font-size(12px);
+                    display: block;
+                    font-weight: normal;
+                    padding-top: 10px;
+                  }
+                }
+              }
+            }
+          } 
+          .warning-messages-list {
+            @extend %clearfix;
+            .warning-message {
+              font-family: 'YuMin';
+              @include font-size(14px);
+              width: 25%;
+              padding: 30px 0;
+              border-top: 2px solid $default-color;
+              float: left;
+              margin-right: 30px;
+              line-height: 30px;
+            }
+          }         
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,132 @@
+extends ../layouts/default
+
+block append content
+	.attractions-main-page
+		section.main-banner
+			picture.banner-image
+				source(media='(min-width: 768px)', srcset='/assets/narita/images/resturant/resturant-banner.jpg')
+				img(src='/assets/narita/images/resturant/resturant-banner-mobile.jpg')
+			.banner-text
+				h1 レストラン
+		section.about-attractions-info
+			h3 大空の飛行機を眺め、豊潤な食事を
+			p 翔び立つ飛行機、空港のまばゆい夜景 - 刻々と変化する雄大な長めが寄り添い、3つの飲食店と1つのバーで食事を味わう豊潤な一時を。
+		section.attractions-list
+			.container
+				ul
+				li
+					picture
+						source(media='(min-width: 768px)', srcset='/assets/narita/images/resturant/attractions.png')
+						img(src='/assets/narita/images/resturant/resturant1-mobile.jpg')
+					.resturant-list-info.attraction-list-info
+						.number 01
+						h2 レストラン「ガーデニア」
+						p 春には埋め、空きにはもみじが色づき、四季折々の顔を見せる日本庭園に心を洗われながら、和洋中そろうブッフェに色彩豊かな味わいと遊ぶ、高雅な食の体験を。
+						.business-hours
+							h6 営業時間
+							p
+								span 朝食
+								| 7:00 ~ 9:30
+							p
+								span 朝食
+								| 7:00 ~ 9:30
+							p
+								span 朝食
+								| 7:00 ~ 9:30
+						.contact
+							h6 お問い合わせ
+							p 000-0000-0000
+						.see-more
+							span もっと見る
+				li
+					picture
+						source(media='(min-width: 768px)', srcset='/assets/narita/images/resturant/resturant2.jpg')
+						img(src='/assets/narita/images/resturant/resturant2-mobile.jpg')
+					.resturant-list-info.attraction-list-info
+						.number 02
+						h2 レストラン「ガーデニア」
+						p 春には埋め、空きにはもみじが色づき、四季折々の顔を見せる日本庭園に心を洗われながら、和洋中そろうブッフェに色彩豊かな味わいと遊ぶ、高雅な食の体験を。
+						.business-hours
+							h6 営業時間
+							p
+								span 朝食
+								| 7:00 ~ 9:30
+							p
+								span 朝食
+								| 7:00 ~ 9:30
+							p
+								span 朝食
+								| 7:00 ~ 9:30
+						.contact
+							h6 お問い合わせ
+							p 000-0000-0000
+						.see-more
+							span もっと見る
+				li
+					picture
+						source(media='(min-width: 768px)', srcset='/assets/narita/images/resturant/resturant3.jpg')
+						img(src='/assets/narita/images/resturant/resturant3-mobile.jpg')
+					.resturant-list-info.attraction-list-info
+						.number 03
+						h2 レストラン「ガーデニア」
+						p 春には埋め、空きにはもみじが色づき、四季折々の顔を見せる日本庭園に心を洗われながら、和洋中そろうブッフェに色彩豊かな味わいと遊ぶ、高雅な食の体験を。
+						.business-hours
+							h6 営業時間
+							p
+								span 朝食
+								| 7:00 ~ 9:30
+							p
+								span 朝食
+								| 7:00 ~ 9:30
+							p
+								span 朝食
+								| 7:00 ~ 9:30
+						.contact
+							h6 お問い合わせ
+							p 000-0000-0000
+						.see-more
+							span もっと見る
+				li
+					picture
+						source(media='(min-width: 768px)', srcset='/assets/narita/images/resturant/resturant4.jpg')
+						img(src='/assets/narita/images/resturant/resturant4-mobile.jpg')
+					.resturant-list-info.attraction-list-info
+						.number 04
+						h2 レストラン「ガーデニア」
+						p 春には埋め、空きにはもみじが色づき、四季折々の顔を見せる日本庭園に心を洗われながら、和洋中そろうブッフェに色彩豊かな味わいと遊ぶ、高雅な食の体験を。
+						.business-hours
+							h6 営業時間
+							p
+								span 朝食
+								| 7:00 ~ 9:30
+							p
+								span 朝食
+								| 7:00 ~ 9:30
+							p
+								span 朝食
+								| 7:00 ~ 9:30
+						.contact
+							h6 お問い合わせ
+							p 000-0000-0000
+						.see-more
+							span もっと見る
+		section.attractions-page-booking
+			h2
+				span 今すぐメールニュース登録で10%Off!
+			.booking-widget
+				#booking-tab2.tabs-content
+					.promo-code.name
+						section
+							.form-group
+								label.form-label(for='') プロモコード
+								.input-showtext
+									input.form-control(type='text', placeholder='プロモコード)')
+					.promo-code.email
+						section
+							.form-group
+								label.form-label(for='') プロモコード
+								.input-showtext
+									input.form-control(type='text', placeholder='プロモコード)')
+					.find-button
+						label 最低価格保証
+						button(name='submit', type='submit', value='空室を検索') 空室を検索
