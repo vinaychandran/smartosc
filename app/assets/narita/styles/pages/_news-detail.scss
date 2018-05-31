@@ -1,0 +1,23 @@
+.news-detail-banner{
+    
+    @include md {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; 
+      z-index: 1;
+    }
+}
+
+#experience-content-padder{
+
+}
+
+.news-detail-content{     
+    @include md {
+      margin: 0 0 0 auto;
+      padding: 50px 45px 100px;
+      width: 470px; 
+    }
+}

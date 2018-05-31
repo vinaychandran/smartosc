@@ -34,7 +34,6 @@
   .attractions-list {
     overflow: hidden;
 
-
     ul {
       margin: 0;
       padding: 0;
@@ -44,22 +43,23 @@
       @extend %clearfix;
       //display: block;
       //position: relative;
-
       img {
         width: 680px;
         height: auto;
         position: static;
+        margin-top: -40px;
       }
-
       @include md {
         margin-bottom: 200px;
         //float: left;
         list-style: none;
+
         .attraction-list-info {
           margin-top: 105px;
         }
 
-        img{
+        img {
+          margin-top: 0;
           position: absolute;
         }
 
@@ -70,7 +70,7 @@
 
           img {
             float: right;
-             right:0;
+            right: 0;
           }
         }
 
@@ -98,25 +98,38 @@
       .attraction-list-info {
         @extend %clearfix;
         background: #fff;
-        padding: 40px;
-        opacity: 0.95;
         color: #000;
         text-align: center;
+        margin: 20px 20px 0;
+        padding: 20px;
         position: relative;
-        margin-top: 100px;
-        .number{
-            font-family: Lato;
-          font-size: 100px;
-          position: absolute;
-          right:59px;
-          top: -30px;
+        top: -70px;
+        box-shadow: 14.1px 14.1px 90px 0 rgba(0, 0, 0, 0.2);
+        @include md {
+          opacity: 0.95;
+          margin: 0;
+          padding: 40px;
+          top: 0;
+          margin-top: 100px;
+        };
+
+        .number {
+          font-family: Lato;
+          padding-bottom: 20px;
+          font-size: 40px;
+          @include md {
+            font-family: Lato-B;
+            position: absolute;
+            right: 59px;
+            top: -30px;
+            font-size: 100px;
+          };
         }
         @include md {
           //position: absolute;
           padding: 80px 60px;
           //top: 100px;
           max-width: 500px;
-          box-shadow: 14.1px 14.1px 90px 0 rgba(0, 0, 0, 0.2);
           text-align: left;
         }
 
@@ -153,6 +166,7 @@
 
         .business-hours {
           margin-bottom: 25px;
+          text-align: left;
           @include md {
             display: block;
             float: left;
@@ -172,6 +186,7 @@
         }
 
         .contact {
+          text-align: left;
           @include md {
             display: block;
             float: left;
@@ -187,11 +202,11 @@
         .see-more {
           text-align: center;
           position: relative;
-          margin-top: 50px;
+          margin-top: 30px;
           display: block;
           width: 100%;
           float: left;
-          margin-bottom: 80px;
+          margin-bottom: 30px;
           @include md {
             margin-top: 60px;
             margin-bottom: 0;
@@ -230,6 +245,17 @@
     }
   }
 
+  .location {
+    h6 {
+      @include font-size(20px);
+      text-align: center;
+      padding: 30px;
+      @include md {
+         @include font-size(24px);
+      };
+    }
+  }
+
   .attractions-page-booking {
     background-color: #fafafa;
     padding: 45px 0 30px;
@@ -238,7 +264,7 @@
     h2 {
       margin: 0 10px;
       line-height: 1;
-      padding: 0 65px;
+      padding: 20px 0;
       @include font-size(16px);
       font-weight: 500;
       color: #000;
@@ -251,7 +277,6 @@
 
       span {
         background: #fafafa;
-        padding: 0 20px;
         //position: relative;
         z-index: 1;
       }
@@ -291,21 +316,50 @@
 
     .booking-widget {
       max-width: 880px;
-      margin: 0 auto;
+      border: 20px solid #f5f5f5;
       position: static;
       height: auto;
       padding-bottom: 0;
       text-align: left;
+      @include md {
+        border: 0;
+        margin: 0 auto;
+      }
 
       .tabs-content {
         height: auto;
-        background-color: #fafafa;
+        padding: 20px;
+        background-color: #fff;
         @include md {
-          background-color: #fff;
+          padding: 35px 55px;
+          //background-color: #fff;
+        }
+
+        label {
+          clear: both;
+          text-align: center;
+          padding: 15px 0;
+
+          &:first-child {
+            padding-top: 0 0 30px 0;
+          }
+
+          &:last-child {
+            padding: 0;
+            @include md {
+              padding: 30px 0 0;
+            };
+          }
         }
       }
 
       #booking-tab2 {
+        .thankyou {
+          height: 66px;
+          margin: 0;
+          display: none;
+        }
+
         .shop .form-group {
           @include md {
             width: 275px;
@@ -333,6 +387,8 @@
 
         .find-button {
           button {
+            height: auto;
+            padding: 22px 0;
             width: 100%;
             @include md {
               width: 204px;

@@ -113,7 +113,36 @@ var Tabs = function(options) {
                     document.getElementById('tabs-header').style.display = 'none';
                 }
             }
+            setTimeout(function() {
+                sliderImage('.inner-page-slider', 1, false, true), 500
+            });
 
+
+        }
+
+        function sliderImage(slider, slideToShow, dots, arrows) {
+            $(slider).slick('unslick');
+            $(slider).each(function() {
+                let imgIndex, sliderImageCount;
+                sliderImageCount = $(this).children().length;
+                $(this).slick({
+                    slidesToShow: slideToShow,
+                    slidesToScroll: 1,
+                    dots: dots,
+                    arrows: arrows,
+                    lazyLoad: 'progressive'
+                });
+                imgIndex = $(this).find('.slider-content').index();
+                console.log(sliderImageCount);
+                $(this).on('init reInit afterChange', function(event, slick, currentSlide, nextSlide) {
+                    if (currentSlide !== undefined) {
+                        $('.slider-count .number').text(currentSlide + 1);
+                        $('.room-info-slider-thumb img').removeClass('active');
+                        let thumbnailSlide = currentSlide + 1
+                        $('.room-info-slider-thumb img:nth-child(' + thumbnailSlide + ')').addClass('active');
+                    }
+                });
+            });
         }
 
         /**

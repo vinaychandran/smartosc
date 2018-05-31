@@ -1,0 +1,12 @@
+extends ../layouts/default
+
+block append content
+	.news-detail-banner-wrap
+		.news-detail-banner#news-banner
+			picture
+				source(media='(min-width: 768px)', srcset='/assets/narita/images/news-detail/banner-desktop.jpg')
+				img(src='/assets/narita/images/homebanner-mobile.jpg')
+	#experience-content-padder
+	.news-detail-content#news-content
+		include ../components/home-video-slider.pug
+		include ../components/home-review.pug		

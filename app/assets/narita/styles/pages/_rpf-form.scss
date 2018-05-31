@@ -1,25 +1,44 @@
 .rfp-form-details {
   background: #fff;
-  padding: 30px;
+
+}
+.closeBtn{
+  float: right;
+  width: 94px;
+height: 94px;
+background-color: #000000;
 }
 
 #rfp-form {
-  width: 98vw;
+
+
   overflow-y: scroll;
-  height: 87vh;
+
+  //height: 87vh;
 
   #rpfForm {
+    padding: 0 73px 73px 73px;
+    clear: both;
     margin-bottom: 0;
   }
   @include md {
-    width: 734px;
-    height: 95vh;
+    width: 800px;
+    //margin-top: 74px;
+    // height: 95vh;
+    height: 100vh;
+    //margin-top: 74px;
   }
 
   h5,
   p {
-    margin-bottom: 15px;
-    text-align: center;
+    font-family: 'YuGo';
+    @include font-size(24px);
+    font-weight: bold;
+
+    line-height: 1.04;
+    letter-spacing: 0.6px;
+    text-align: center;;
+    padding-bottom: 20px;
 
     &.meeting {
       clear: both;
@@ -27,12 +46,16 @@
     }
   }
 
+  p{
+     @include font-size(14px);
+      line-height: 1.43;
+      padding-bottom: 40px;
+  }
   .attendees,
   .email,
   .event,
   .firstname,
   .lastname,
-  .onedayevent,
   .phone,
   .typeofevent {
     @include md {
@@ -44,7 +67,6 @@
 
   .attendees,
   .lastname,
-  .onedayevent,
   .phone {
     @include md {
       padding-right: 0;
@@ -58,18 +80,17 @@
     }
   }
 
-  .attendees,
-  .onedayevent {
+  .attendees {
     @include md {
       width: 25%;
     }
   }
 
-  .onedayevent {
-    @include md {
-      padding-top: 40px;
-    }
-  }
+  // .onedayevent {
+  //   @include md {
+  //     padding-top: 40px;
+  //   }
+  // }
 
   .attachFile {
     input[type=file] {
@@ -88,7 +109,7 @@
     @extend %clearfix;
     @include md {
       float: left;
-      width: 160px;
+      width: 150px;
     }
   }
 
@@ -98,11 +119,16 @@
     }
   }
 
+  .food-beverage{
+    line-height: 2.14;
+  letter-spacing: 1.1px;
+  }
+
   .form-group {
     clear: both;
     margin: 0;
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
     @include md {
       width: 100%;
     }
@@ -133,7 +159,7 @@
         cursor: pointer;
         border-radius: 4px;
         margin: 0;
-        height: 46px;
+        height: 66px;
         width: 100%;
         background: none;
         border: none;
@@ -169,7 +195,7 @@
         float: none;
         position: relative;
         padding-right: 0;
-        width: 33.333%;
+        //width: 20%;
         margin-bottom: 20px;
         @include md {
           float: left;
@@ -177,7 +203,7 @@
       }
 
       .checkbox-style label.checkbox {
-        padding-left: 40px;
+        padding-left: 28px;
         margin: 0;
       }
 
@@ -277,8 +303,9 @@
     background: #c5ad6c;
     color: #fefefe;
     border: none;
-    height: 46px;
+    height: 66px;
     width: 100%;
+    padding: 0;
   }
 
   input,
@@ -289,13 +316,13 @@
     cursor: pointer;
     border-radius: 4px;
     margin: 0;
-    height: 46px;
+    height: 66px;
     border: 2px solid #eeeeee;
     @include font-size(12px);
     letter-spacing: 0.9px;
     padding: 0 11px;
     color: $default-color;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 
     &:focus {
       border: 2px solid #eeeeee;
@@ -305,6 +332,27 @@
   input::placeholder {
     border: 0;
     padding-left: 0;
+  }
+
+  .textarea{
+    height: 256px;
+  }
+
+  .footer{
+    line-height: 2.14;
+  letter-spacing: 1.1px;
+   @include font-size(14px);
+   text-align: left;
+   padding-bottom: 20px;
+  span{
+    font-size: 10px;
+    text-align: left;
+    display: block;
+ @include font-size(10px);
+ line-height: 2;
+ letter-spacing: 0.8px;
+
+  }
   }
 
   #venue-booking-tab .date-picker-venue-rpf {
@@ -355,9 +403,9 @@
       color: $default-color;
       border: 2px solid #eeeeee;
       border-radius: 4px;
-      height: 46px;
+      height: 66px;
       line-height: 66px;
-      padding-top: 8px;
+      padding-top: 15px;
       @include mobile {
         width: 100%;
         background: none;

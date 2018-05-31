@@ -214,11 +214,17 @@
       letter-spacing: 0.6px;
       line-height: 90px;
       margin-left: 30px;
+      float: left;
     }
     .phone-number {
-      float: right;
+      float: left;
       padding-left: 0;
-      padding-right: 20px;
+      padding-left: 20px;
+      @include md {
+        float: right;
+        padding-right: 20px;
+        padding-left: 0;
+      }
       i {
         @include font-size(17px);
       }
@@ -226,12 +232,33 @@
   }
 }
 
+.resturant-name {
+  @include font-size(20px);
+  font-weight: bold;
+  letter-spacing: 0.6px;
+  text-align: center;
+  line-height: 25px;
+  padding: 20px;
+}
+
 .resturant-details-tabs {
   .container {
     .tabs {
-      padding: 120px 0 78px 0;
+      padding: 30px 0 78px 0;
+      @include lg {
+        padding: 120px 0 78px 0;
+      }
       ul {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+        @include sm {
+          width: 62%;
+        }
         li {
+          display: inline-block;
+          float: none;
+          margin-bottom: 20px;
           a {
             @include font-size(16px);
             letter-spacing: 3.2px;
@@ -241,62 +268,113 @@
         }
       }
       .tabs-content {
+        margin: 0 20px;
+        @include sm {
+          margin: 0;
+        }
         .menu-images {
           @extend %clearfix;
           .col-1-2 {
-            float: left;
+            margin-bottom: 10px;
+            width: 100%;
+            float: none;
+            img {
+              width: 100%;
+            }
+            @include md {
+              float: left; 
+              width: 49%;             
+            }
             &:last-of-type {
-              float: right;
+              float: none;
+              @include md {
+                float: right;              
+              }
             }
           }
         }
         .menu-details {
           background: $default-bg;
-          padding: 50px 40px;
+          padding: 50px 20px;
           margin-top: 20px;
+          @include sm {
+            padding: 50px 40px;
+          }
           .menu-title {
-            @include font-size(34px);
+            @include font-size(24px);
             font-family: 'Lato';
             line-height: 20px;
             letter-spacing: 6.8px;
             font-weight: normal;
-            padding: 40px 0;
+            padding: 20px 0;
             border-top: 1px solid $default-color;
             border-bottom: 2px solid $default-color;
             margin: 0;
+            @include sm {
+              @include font-size(34px);
+              padding: 40px 0;
+            }
           }
           .sub-menu-title {
-            @include font-size(20px);
+            @include font-size(16px);
             line-height: 31px;
             font-weight: bold;
             padding: 20px 0;
             border-bottom: 1px solid $default-color;
+            @include sm {
+              @include font-size(20px);
+            }
           }
           .menu-items {
             @extend %clearfix;
             margin-top: 20px;
             border-bottom: 2px solid $default-color;
-            padding-bottom: 20px;
+            @include sm {
+              padding-bottom: 20px;
+            }            
             .menu {
               @extend %clearfix;
-              width: 50%;
-              float: left;
-              padding-right: 30px;
+              @include sm {                
+                width: 50%;
+                float: left;
+                padding-right: 30px;
+              }              
               &:last-of-type {
-                padding-left: 30px;
-                border-left: 1px solid $default-color;
+                @include sm {
+                  padding-left: 30px;
+                  border-left: 1px solid $default-color;
+                }  
+                ul {
+                  margin-bottom: 0;
+                  li {
+                    &:last-of-type {
+                      border-bottom: none;
+                    }
+                  }
+                }             
               }
               ul {
                 @extend %clearfix;
+                text-align: left;
+                width: 100%;
                 li {
                   @extend %clearfix;
                   font-weight: bold;
                   line-height: 20px;
+                  margin-bottom: 0;
                   padding: 20px 0;
+                  width: 100%;
+                  border-bottom: 1px solid $default-color;
+                  @include sm {
+                    padding: 20px 0;
+                    border-bottom: 0;
+                  }
                   .menu-item-name {
-                    @include font-size(14px);
-                    float: left;
-                    margin: 0;
+                    @include font-size(14px);                    
+                    @include sm {
+                      float: left;
+                      margin: 0;
+                    }
                     span {
                       @include font-size(12px);
                       display: block;
@@ -305,9 +383,12 @@
                     }
                   }
                   .menu-price {
-                    @include font-size(20px);
-                    float: right;
+                    @include font-size(20px);                    
                     font-family: 'Lato';
+                    margin-bottom: 0;
+                    @include sm {
+                      float: right;
+                    }
                   }
                 }
               }
@@ -316,7 +397,17 @@
           .other-items {
             ul {
               li {
-                padding: 30px 0;
+                padding: 20px 0;
+                margin-bottom: 0;
+                text-align: left;
+                border-bottom: 1px solid $default-color;
+                &:last-of-type {
+                  border-bottom: none;
+                }
+                @include sm {
+                  padding: 30px 0;
+                  border-bottom: none;
+                }
                 .other-item-name {
                   @include font-size(14px);
                   margin: 0;
@@ -334,13 +425,15 @@
             @extend %clearfix;
             .warning-message {
               font-family: 'YuMin';
-              @include font-size(14px);
-              width: 25%;
+              @include font-size(14px);              
               padding: 30px 0;
-              border-top: 2px solid $default-color;
-              float: left;
-              margin-right: 30px;
+              border-top: 2px solid $default-color;                            
               line-height: 30px;
+              @include sm {
+                width: 25%;
+                float: left;
+                margin-right: 30px;
+              }
             }
           }         
         }

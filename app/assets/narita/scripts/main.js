@@ -310,7 +310,7 @@ const FE = {
                 if (!container.is(e.target) && container.has(e.target).length === 0) {
                     switch (method) {
                         case 'fade':
-                            $(targetElement).stop().fadeOut(300);
+                            $(targetElement).stop().fadeOut(100);
                             break;
                         case 'slide':
                             $(targetElement).stop().slideUp();
@@ -348,6 +348,7 @@ const FE = {
                         $('.gallery-nav').slick('slickGoTo', SlideNumber, true);
                         FE.global.submitForm();
                         FE.global.openModalTab('loginForm');
+                        FE.global.openModalTab('resturant-tabs');
                     },
                     afterClose: (instance) => {
                         $('.gallery-nav').slick('unslick');
@@ -390,6 +391,7 @@ const FE = {
                         FE.global.sliderImage('.roomPopup .room-info-slider', 1, false, true);
                         //FE.global.tabs('layout-tabs');
                         FE.global.openModalTab('layout-tabs');
+                        FE.global.openModalTab('resturant-tabs');
                         let checkSlider = true;
                     },
                     beforeClose: (instance) => {
@@ -410,7 +412,7 @@ const FE = {
         autocomplatePopup: () => {
             $(document).on('click', '.input-showtext button', function() {
                 if ($(this).parents('#header-search-popup').length == 1) {} else {
-                    $(this).parents('.input-showtext').find('.popup-menu').fadeIn();
+                    $(this).parents('.input-showtext').find('.popup-menu').show();
                 }
             });
             $(document).on('focus', '.input-showtext button', function() {
@@ -442,6 +444,11 @@ const FE = {
                 popup.find('.grown-up .input-showtext button').text('0人');
                 popup.find('.children .input-showtext button').text('0人');
                 popup.find('.room .input-showtext button').text('0人');
+            });
+            $(document).on('click', '.submitSubscribeForm', function(e) {
+              if(FE.global.checkValidationRules('#subscribeForm'))
+                { $('.submitSubscribeForm').closest('form').hide();
+                $('.subscribe .thankyou').show();}
             });
         },
         itemShowHide: () => {
@@ -668,7 +675,7 @@ const FE = {
             FE.global.tabs('gallery-tabs');
             FE.global.tabs('booking-tabs');
             FE.global.tabs('layout-tabs');
-            FE.global.tabs('resturant-tabs');
+            //FE.global.tabs('resturant-tabs');
             FE.global.instaFeed();
             FE.global.googleMap();
             FE.global.scroll();
@@ -694,11 +701,44 @@ const FE = {
             FE.global.pageScroll();
             FE.global.sliderImage('.inner-page-slider', 1, false, true);
             FE.global.submitForm();
+            
         },
         resize: function resize() {
             //Functions inside loaded execute when window resize
             FE.global.lazyLoad();
         }
+        
+    },
+
+    news: {
+        newsScroll: () => {
+            if (!isMobile) {
+                let element = document.getElementById('news-banner');
+                let content = document.getElementById('news-content');
+                let blockHeight = element.offsetHeight + 100;
+                let imgWidth = element.offsetWidth; 
+                let imgMinWidth = imgWidth  - content.offsetWidth;
+                document.getElementById('experience-content-padder').style.height = blockHeight + 'px';  
+
+                function scrollNews() {
+                    let scrollTopPos = $(document).scrollTop();
+                    let scrollChangePx =  Math.floor(scrollTopPos);
+                    let zoomedWidth = imgWidth - scrollChangePx;
+                    if (zoomedWidth > imgMinWidth){
+                        $('#news-banner').css('width', zoomedWidth);
+                    }else{
+                        $('#news-banner').css('width', imgMinWidth);
+                    }
+                };
+                $(window).scroll(function () {
+                    scrollNews();
+                });
+                scrollNews();
+            }
+        },
+        loaded: function loaded() {
+            FE.news.newsScroll();
+        }    
     }
 }
 
@@ -708,7 +748,10 @@ $(function() {
 });
 
 $(window).load(function() {
+   window.scrollTo(0, 0);
     FE.global.loaded();
+    FE.news.loaded();
+
 });
 
 $(window).resize(function() {

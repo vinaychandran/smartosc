@@ -1,50 +1,52 @@
 #rfp-form(data-basicLightbox data-id="rfp-form" class=" row rfp-form-details")
   .errors
+  a.closeBtn(href="#")
+    i.icon.sprite-close_black_sp
   form(id='rpfForm' name="rpfForm")
-    h5 Planning your meeting of event
-      p Free quotation - Please fill out the form below
+    h5 宴会＆会議に関するお問合せ
+    p 下記の項目にご記入いただき、改めてご連絡をさせていただきます。
     section.firstname
-      label First Name
+      label 姓
       .input-showtext
-        input.form-control(id='fname' name= "fname" type='text', placeholder='First Name' required)
+        input.form-control(id='fname' name= "fname" type='text', placeholder='' required)
     section.lastname
-      label Last Name
+      label 名
       .input-showtext
-        input.form-control(id='lname' type='text', placeholder='Last Name' name='lname' required)
+        input.form-control(id='lname' type='text', placeholder='' name='lname' required)
     section.companyname
-      label Company Name
+      label 法人名・団体名
       .input-showtext
-        input.form-control(id='company' type='text', placeholder='Company Name' name='company' required)
-    section.email
-      label Email Address
+        input.form-control(id='company' type='text', placeholder='' name='company' required)
+    section.companyname
+      label メールアドレス
       .input-showtext
-        input.form-control(id='email' type='text', placeholder='Email Address' name='email' required)
-    section.phone
-      label Phone Number
+        input.form-control(id='company' type='text', placeholder='' name='company' required)
+    section.companyname
+      label ご連絡先のお電話番号
       .input-showtext
-        input.form-control(id='mobile' type='number', placeholder='Phone Number' name='mobile' required)
-    h5.meeting Meeting / Event Information
+        input.form-control(id='company' type='text', placeholder='' name='company' required)
+    h5.meeting イベント情報
     section.event
-      label Event / Meeting Name
+      label イベント名
       .input-showtext
-        input.form-control(id='meeting' type='text', placeholder='Event / Meeting Name' name='meeting' required)
+        input.form-control(id='meeting' type='text', placeholder='' name='meeting' required)
     section.attendees
-      label Nr. Attendees
+      label ご利用人数
       .input-showtext
-        input.form-control(id='attendees' type='number', placeholder='Nr. Attendees' name='mobile' required)
+        input.form-control(id='attendees' type='number', placeholder='' name='mobile' required)
     #venue-booking-tab
       .date-picker-venue-rpf
         .date-picker-tab1-container
           .values
             .startDateContainer
-              label Start Date
+              label 開始日
               .startDate
                 .value.date_at
                   span.date_at
                   input#date_at.date_at(type='hidden')
             //.to ~
             .endDateContainer
-              label End Date
+              label 終了日
               .endDate
                 .value.date_to
                   span.date_to
@@ -61,7 +63,7 @@
               //.button.closePopup &#x5B8C;&#x4E86;
       section.guestrooms
         .form-group
-          label Guest Rooms
+          label 客室数
           .input-showtext
             button(name='button', type='button', value='空室を検索') Rooms
             .popup-menu
@@ -77,7 +79,7 @@
                     span(target='Tokyo', names='Tokyo') 4
       section.duration
         .form-group
-          label Duration
+          label ご利用時間
           .input-showtext
             button(name='button', type='button', value='空室を検索') Duration
             .popup-menu
@@ -90,9 +92,9 @@
 
     section.typeofevent
       .form-group
-        label Type of Event
+        label 目的
         .input-showtext
-          button(name='button', type='button', value='空室を検索') Trade show
+          button(name='button', type='button', value='') 選択してください
           .popup-menu
             .popup-content-input
               ul.cities
@@ -104,51 +106,52 @@
                   span(target='Tochigi', names='Tochigi') Conference
                 li
                   span(target='Tokyo', names='Tokyo') Others
-    section.onedayevent
+    //section.onedayevent
       .form-group
         label 1Day Event
     section
       .form-group.food-beverage
         .form-checkbox
-          label.form-label Check applicable food and beverage needs
+          label.form-label パーティ料理、お弁当をお届けするケータリング。お飲物やサービスに至までお客様のご要望に応じてお手伝いさせていただきます。
           .checkbox-style
             label.checkbox
               input.form-control(type='checkbox' id='food' name="food" value="breakfast" required)
               span
                 i.icon.sprite-checked_sp
-              |	Breakfast
+              |	朝食　　　　
           .checkbox-style
             label.checkbox
               input.form-control(type='checkbox' name="food" value="Lunch")
               span
                 i.icon.sprite-checked_sp
-              |	Lunch
+              |	ランチ　　　　
           .checkbox-style
             label.checkbox
               input.form-control(type='checkbox' name="food" value="Dinner")
               span
                 i.icon.sprite-checked_sp
-              |	Dinner
+              |	夕食　　　　
           .checkbox-style
             label.checkbox
               input.form-control(type='checkbox' name="food" value="Reception")
               span
                 i.icon.sprite-checked_sp
-              |	Reception
+              |	受付　　　　
           .checkbox-style
             label.checkbox
               input.form-control(type='checkbox' name="food" value="Others")
               span
                 i.icon.sprite-checked_sp
-              |	Others
-    label Please tell us about your other / Audio Visual requirements:
-    .input-showtext.details
-      textarea.form-control(type='text',  placeholder='', cols='40', rows='8', name='mobile')
+              |	その他
     section.attachFile
-      label.fileLabel Attach File
+      label.fileLabel ファイルを添付する
       input.form-control(type='file')
-    p Free Quotation - We will call you within 24H
+    label 会場の設備の要望をご記入ください。
+    .input-showtext.details
+      textarea.form-control.textarea(type='text',  placeholder='', cols='40', rows='8', name='mobile')
     .find-button
-
-      button(name='button', type='button', value='空室を検索' class='submitRfpForm') Submit my RPF
-    p By submiting this RFP, you are agreeing with our Terms and Conditions and Privacy Statement.
+      button(name='button', type='button', value='' class='submitRfpForm') 送信する
+    p.footer 会議・宴会に関するお問い合わせ・資料請求 ご返答は速やかにおこなうよう心掛けておりますが、 内容や状況によりお時間がかかる場合もございます。 お急ぎの場合は、大変お手数ではございますがお電話にてご連絡ください。
+    p.footer
+      span 本お問合せフォームの送信後、当社の利用規約および
+      span 個人情報保護ポリシーに関する声明に同意したことになります。

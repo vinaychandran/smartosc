@@ -2,7 +2,8 @@ footer {
   background: $footer-bg;
   color: $secondary-color; 
   padding: 30px 0; 
-
+  position: relative;
+  z-index: 1;
   @include sm {
     padding: 65px 0 50px; 
   } 

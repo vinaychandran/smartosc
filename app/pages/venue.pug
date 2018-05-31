@@ -2,6 +2,21 @@ extends ../layouts/default
 
 block append content
 	.venue-page
+		section.inner-page-mobile-menu
+			.menu-gradient
+			ul
+				li
+					a(href="#") 会場一覧
+						i.down
+				li
+					a(href="#") ギャラリー
+						i.down
+				li
+					a(href="#") ケータリングメニュー
+						i.down
+				li
+					a(href="#") 所在地 
+						i.down
 		section.main-banner
 			picture.banner-image
 				source(media='(min-width: 768px)', srcset='/assets/narita/images/venue-banner.jpg')
@@ -28,7 +43,7 @@ block append content
 				.btn.pdf-download PDFをダウンロード
 					i.icon.sprite-download
 				.btn.rfp-form(data-show-id='rfp-form') お問い合わせ
-			.inner-menu
+			.inner-menu.hidden-xs
 				ul
 					li
 						a(href="#") 会場一覧
