@@ -1,0 +1,263 @@
+.pool-info {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    position: relative;
+    .content-wrapper {
+        flex-basis: 100%;
+        max-width: 374px;
+        margin: 120px 0 150px 251px;
+        h3 {
+            font-family: YuGo;
+            font-size: 24px;
+            font-weight: bold;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.67;
+            letter-spacing: 0.6px;
+            text-align: left;
+            color: #000000;
+        }
+        p {
+            font-size: 14px;
+            font-weight: 500;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 2;
+            letter-spacing: 1.4px;
+            text-align: left;
+            color: #333333;
+            margin-top: 50px;
+        }
+    }
+    .content-image {
+        position: absolute;
+        top: -100px;
+        right: 150px;
+    }
+    .pool-image {
+        margin-bottom: 60px;
+    }
+}
+
+#pool-full-info {
+    overflow-x: hidden;
+    .header {
+        font-family: Lato;
+        font-size: 32px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        /* line-height: 0.97; */
+        letter-spacing: normal;
+        text-align: left;
+        color: #333333;
+        margin-left: 34px;
+    }
+    .cancel {
+        float: right;
+        margin-right: 94px;
+        margin-right: 55px;
+        background-color: #eeeeee;
+        color: #ffffff;
+        font-size: 14px;
+        font-size: 0.875rem;
+        font-family: 'YuGo';
+        padding: 39px 80px;
+        line-height: 1;
+        font-family: YuGo;
+        font-size: 16px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        /* line-height: 2.06; */
+        letter-spacing: 1.6px;
+        text-align: left;
+        color: #010101;
+    }
+    .book-room {
+        margin: 0;
+    }
+    .pool-header {
+        font-family: Lato;
+        font-size: 32px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 0.97;
+        letter-spacing: normal;
+        text-align: left;
+        color: #333333;
+        margin: 34px 0 0 34px;
+    }
+    a.text {
+        float: right;
+        background-color: #c5ad6c;
+        color: #ffffff;
+        font-size: 14px;
+        font-size: 0.875rem;
+        font-family: 'YuGo';
+        padding: 39px 80px;
+        line-height: 1;
+        background-color: #eeeeee;
+        font-family: YuGo;
+        font-size: 16px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        /* line-height: 2.06; */
+        letter-spacing: 1.6px;
+        text-align: left;
+        color: #010101;
+    }
+}
+
+.promo-content {
+    background-color: #fafafa;
+    padding-bottom: 100px;
+    .promo-text {
+        position: absolute;
+        top: 0;
+        background-color: #ffffff;
+        padding: 15px 47px;
+        font-family: YuGo;
+        font-size: 14px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 2.14;
+        letter-spacing: 1.1px;
+        text-align: left;
+        color: #000000;
+    }
+    .see-more {
+        cursor: pointer;
+        text-align: center;
+        position: relative;
+        margin-top: 19px;
+        display: block;
+        width: 100%;
+        float: left;
+        span {
+            background: #fafafa;
+            font-weight: 700;
+            color: #c5ad6c;
+            padding: 0 35px;
+            position: relative;
+            z-index: 1;
+        }
+        &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background-color: #000;
+            top: 8px;
+        }
+        &:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background-color: #000;
+            top: 10px;
+        }
+    }
+    h3 {
+        font-family: YuGo;
+        font-size: 24px;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.25;
+        letter-spacing: normal;
+        text-align: center;
+        color: #000000;
+        padding: 62px 0 40px 0;
+    }
+    ul {
+        li {
+            position: relative;
+        }
+        // margin: 0 150px;
+        max-width: 1140px;
+        margin: 0 auto;
+        .header {
+            font-family: YuGo;
+            font-size: 14px;
+            font-weight: 500;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 4.07;
+            letter-spacing: 1.7px;
+            text-align: left;
+            color: #333333;
+            text-align: center;
+        }
+        .content {
+            font-family: YuMin;
+            font-size: 14px;
+            font-weight: 500;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 2;
+            letter-spacing: 1.4px;
+            text-align: justify;
+            color: #333333;
+            //margin: 0 19px 0 18px;
+            max-width: 299px;
+            margin: 0 auto;
+        }
+    }
+}
+
+.border-line {
+    height: 1px;
+    background-color: #eeeeee;
+    max-width: 1140px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.contact {
+    position: relative;
+    .banner-text {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: center;
+        color: #fff;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.terms {
+    padding-bottom: 86px;
+    .row {
+        max-width: 1140px;
+        margin: 0 auto;
+        .col {
+            max-width: 498px;
+        }
+        h3,
+        li {
+            &.bold {
+                font-weight: bold;
+                line-height: 3;
+            }
+            font-family: YuGo;
+            font-size: 14px;
+            font-weight: 500;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.93;
+            letter-spacing: 1.7px;
+            text-align: left;
+            color: #333333;
+        }
+    }
+}

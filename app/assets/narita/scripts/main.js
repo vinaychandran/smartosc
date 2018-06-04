@@ -123,6 +123,11 @@ const FE = {
                     FE.global.checkValidationRules(lightBoxId + ' form#signup');
                 });
             }
+            if (document.querySelector('.submitProfile')) {
+                document.querySelector('.submitProfile').addEventListener('click', function() {
+                    FE.global.checkValidationRules('form#profile-form');
+                });
+            }
             if (document.querySelector(lightBoxId + ' .submitLogin')) {
                 document.querySelector(lightBoxId + ' .submitLogin').addEventListener('click', function() {
                     FE.global.checkValidationRules(lightBoxId + ' form#login');
@@ -221,22 +226,49 @@ const FE = {
         },
 
         googleMap: () => {
-            let selectorMapElement = document.getElementById('gmap_canvas');
-            if (typeof(selectorMapElement) != 'undefined' && selectorMapElement != null) {
-                let latlng = new google.maps.LatLng(35.784248, 140.351513);
+            let mapElem = document.querySelector('.attractions-list');
+            //Attractions page map - TODO this if condition needs to be removed and aligned to match all pages
+            if (mapElem !== null) {
+                var inputs = mapElem.getElementsByTagName('li');
+                let selectorMapElement = document.getElementById('gmap_canvas');
+                if (typeof(selectorMapElement) != 'undefined' && selectorMapElement != null) {
+                    let latlng = new google.maps.LatLng(12.9716, 77.5946);
+                    let myOptions = {
+                        zoom: 13,
+                        center: latlng,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP
+                    };
+                    let marker;
+                    let map = new google.maps.Map(selectorMapElement, myOptions);
+                    for (var i = 0; i < inputs.length; i += 1) {
+                        console.log(inputs[i].dataset.lat, inputs[i].dataset.long)
+                        marker = new google.maps.Marker({
+                            position: new google.maps.LatLng(inputs[i].dataset.lat, inputs[i].dataset.long),
+                            title: 'Hotel Mystays',
+                            icon: '../assets/narita/images/marker-icon.png',
+                            map: map
+                        });
+                    }
+                }
+            } else {
+                //Home page
+                let selectorMapElement = document.getElementById('gmap_canvas');
+                if (typeof(selectorMapElement) != 'undefined' && selectorMapElement != null) {
+                    let latlng = new google.maps.LatLng(35.784248, 140.351513);
 
-                let myOptions = {
-                    zoom: 16,
-                    center: latlng,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP
-                };
-                let map = new google.maps.Map(selectorMapElement, myOptions);
-                let marker = new google.maps.Marker({
-                    position: latlng,
-                    title: 'Hotel Mystays',
-                    icon: '../assets/narita/images/marker-icon.png',
-                    map: map
-                });
+                    let myOptions = {
+                        zoom: 16,
+                        center: latlng,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP
+                    };
+                    let map = new google.maps.Map(selectorMapElement, myOptions);
+                    let marker = new google.maps.Marker({
+                        position: latlng,
+                        title: 'Hotel Mystays',
+                        icon: '../assets/narita/images/marker-icon.png',
+                        map: map
+                    });
+                }
             }
         },
 
@@ -330,7 +362,7 @@ const FE = {
             //TODO close functionality
             //document.getElementById('resetUser').click();
         },
-        lightBox: (datepicker) => {
+        lightBox: () => {
             const getTargetHTML = function(elem) {
                 const id = elem.getAttribute('data-show-id')
                 const target = document.querySelector(`[data-id="${ id }"]`)
@@ -368,11 +400,14 @@ const FE = {
                 document.getElementById('reset-mail').click();
             }
         },
+        lighBoxPool: () => {
+            alert(1);
+        },
         lightBoxRoom: () => {
             const getTargetHTML = function(elem) {
                 const id = elem.getAttribute('data-show-rooms')
                 const target = document.querySelector(`[data-id="${ id }"]`)
-                return target.outerHTML
+                return (target) ? target.outerHTML : '';
             }
             document.querySelectorAll('[data-show-rooms]').forEach(function(elem) {
                 const html = getTargetHTML(elem);
@@ -410,30 +445,30 @@ const FE = {
             });
         },
         autocomplatePopup: () => {
-            $(document).on('click', '.input-showtext button', function() {
+            $(document).on('click', '.input-custom button', function() {
                 if ($(this).parents('#header-search-popup').length == 1) {} else {
-                    $(this).parents('.input-showtext').find('.popup-menu').show();
+                    $(this).parents('.input-custom').find('.popup-menu').show();
                 }
             });
-            $(document).on('focus', '.input-showtext button', function() {
+            $(document).on('focus', '.input-custom button', function() {
                 //$(this).blur();
                 $(this).next().find('li span').on('click', function() {
-                    $(this).parents('.input-showtext').find('button').text($(this).text());
-                    $(this).parents('.input-showtext').find('button').focus();
+                    $(this).parents('.input-custom').find('button').text($(this).text());
+                    $(this).parents('.input-custom').find('button').focus();
                 });
             });
 
-            $(document).on('click', '.input-showtext .popup-content-input ul li span', function() {
-                $(this).parents('.input-showtext').find(' .popup-content-input ul li span').removeClass('active');
+            $(document).on('click', '.input-custom .popup-content-input ul li span', function() {
+                $(this).parents('.input-custom').find(' .popup-content-input ul li span').removeClass('active');
                 $(this).addClass('active');
-                //$(this).parents('.input-showtext').find('input').attr('href', $(this).parent().attr('data-link')).focus();
-                $(this).parents('.input-showtext').find('.popup-menu').fadeOut();
-                $(this).parents('.input-showtext').removeClass('focus');
+                //$(this).parents('.input-custom').find('input').attr('href', $(this).parent().attr('data-link')).focus();
+                $(this).parents('.input-custom').find('.popup-menu').fadeOut();
+                $(this).parents('.input-custom').removeClass('focus');
             });
             $(document).on('click', '.people-list-popup .btn-group .done', function(e) {
                 var popup = $(this).parents('.popup-wrap');
                 console.log(popup);
-                let getText = '大人' + popup.find('.grown-up .input-showtext button').text() + ' 名, 子供' + popup.find('.children .input-showtext button').text() + ' 名 <span>' + popup.find('.room .input-showtext button').text() + ' 部屋 </span>';
+                let getText = '大人' + popup.find('.grown-up .input-custom button').text() + ' 名, 子供' + popup.find('.children .input-custom button').text() + ' 名 <span>' + popup.find('.room .input-custom button').text() + ' 部屋 </span>';
                 $('.people .people-list p').html(getText);
                 popup.css('display', 'none');
                 e.preventDefault();
@@ -441,14 +476,15 @@ const FE = {
             $(document).on('click', '.people-list-popup .btn-group .clear', function(e) {
                 e.preventDefault();
                 var popup = $(this).parents('.people-list-popup')
-                popup.find('.grown-up .input-showtext button').text('0人');
-                popup.find('.children .input-showtext button').text('0人');
-                popup.find('.room .input-showtext button').text('0人');
+                popup.find('.grown-up .input-custom button').text('0人');
+                popup.find('.children .input-custom button').text('0人');
+                popup.find('.room .input-custom button').text('0人');
             });
             $(document).on('click', '.submitSubscribeForm', function(e) {
-              if(FE.global.checkValidationRules('#subscribeForm'))
-                { $('.submitSubscribeForm').closest('form').hide();
-                $('.subscribe .thankyou').show();}
+                if (FE.global.checkValidationRules('#subscribeForm')) {
+                    $('.submitSubscribeForm').closest('form').hide();
+                    $('.subscribe .thankyou').show();
+                }
             });
         },
         itemShowHide: () => {
@@ -488,7 +524,9 @@ const FE = {
         bookingWidgetClick: () => {
             if ($(window).width() > 768) {
                 if (window.pageYOffset <= sticky) {
-                    $('html, body').animate({ scrollTop: sticky }, 500);
+                    $('html, body').animate({
+                        scrollTop: sticky
+                    }, 500);
                 }
             }
         },
@@ -509,7 +547,10 @@ const FE = {
                 _y += el.offsetTop - el.scrollTop;
                 el = el.offsetParent;
             }
-            return { top: _y, left: _x };
+            return {
+                top: _y,
+                left: _x
+            };
         },
 
         closeHamburger: (box, targetElement, targetElement1) => {
@@ -661,8 +702,27 @@ const FE = {
             });
         },
 
+        bindAccordion: function(event){
+			$('.accordion-content').hide();
+			$('.accordion-title').on(event, function(){
+				var $item = $(this).parents('.accordion-item');
+
+				if ( !$item.is('.is-active') ) {
+					$('.accordion-item').removeClass('is-active');
+					$item.addClass('is-active');
+					$('.accordion-content').slideUp();
+					$item.find('.accordion-content').slideDown();
+				} else {
+					$item.find('.accordion-content').slideUp();
+					$item.removeClass('is-active');
+				}
+				return false;
+
+			});			
+		},
+
         init: () => {
-            FE.global.lazyLoad();
+            FE.global.lazyLoad();           
         },
 
         loaded: function loaded() {
@@ -675,7 +735,7 @@ const FE = {
             FE.global.tabs('gallery-tabs');
             FE.global.tabs('booking-tabs');
             FE.global.tabs('layout-tabs');
-            //FE.global.tabs('resturant-tabs');
+            FE.global.tabs('profile-tabs');
             FE.global.instaFeed();
             FE.global.googleMap();
             FE.global.scroll();
@@ -688,7 +748,7 @@ const FE = {
             FE.global.lightBox(true);
             FE.global.lightBoxRoom();
             FE.global.resetUserDetails();
-            FE.global.clickOutside('fade', '.input-showtext .form-control', '.input-showtext .popup-menu');
+            FE.global.clickOutside('fade', '.input-custom .form-control', '.input-custom .popup-menu');
             FE.global.clickOutside('fade', '.people-list-popup', '.popup-wrap.popup-create');
             FE.global.autocomplatePopup();
             FE.global.itemShowHide();
@@ -701,44 +761,45 @@ const FE = {
             FE.global.pageScroll();
             FE.global.sliderImage('.inner-page-slider', 1, false, true);
             FE.global.submitForm();
-            
+            FE.global.bindAccordion('click');
+
         },
         resize: function resize() {
             //Functions inside loaded execute when window resize
             FE.global.lazyLoad();
         }
-        
+
     },
 
     news: {
         newsScroll: () => {
-            if (!isMobile) {
+            if (!isMobile && document.getElementById('news-banner')!=null) {
                 let element = document.getElementById('news-banner');
                 let content = document.getElementById('news-content');
-                let blockHeight = element.offsetHeight + 100;
-                let imgWidth = element.offsetWidth; 
-                let imgMinWidth = imgWidth  - content.offsetWidth;
-                document.getElementById('experience-content-padder').style.height = blockHeight + 'px';  
-
-                function scrollNews() {
-                    let scrollTopPos = $(document).scrollTop();
-                    let scrollChangePx =  Math.floor(scrollTopPos);
-                    let zoomedWidth = imgWidth - scrollChangePx;
-                    if (zoomedWidth > imgMinWidth){
-                        $('#news-banner').css('width', zoomedWidth);
-                    }else{
-                        $('#news-banner').css('width', imgMinWidth);
-                    }
-                };
-                $(window).scroll(function () {
-                    scrollNews();
-                });
-                scrollNews();
+               // let blockHeight = element.offsetHeight + 100;
+                let imgWidth = element.offsetWidth;
+                let imgMinWidth = imgWidth - content.offsetWidth;
+                //document.getElementById('experience-content-padder').style.height = blockHeight + 'px';
+                $('#news-banner').css('width', imgMinWidth);    
+                // function scrollNews() {
+                //     let scrollTopPos = $(document).scrollTop();
+                //     let scrollChangePx = Math.floor(scrollTopPos);
+                //     let zoomedWidth = imgWidth - scrollChangePx;
+                //     if (zoomedWidth > imgMinWidth) {
+                //         $('#news-banner').css('width', zoomedWidth);
+                //     } else {
+                //         $('#news-banner').css('width', imgMinWidth);
+                //     }
+                // };
+                // $(window).scroll(function() {
+                //     scrollNews();
+                // });
+                // scrollNews();
             }
         },
         loaded: function loaded() {
             FE.news.newsScroll();
-        }    
+        }
     }
 }
 
@@ -748,7 +809,7 @@ $(function() {
 });
 
 $(window).load(function() {
-   window.scrollTo(0, 0);
+    window.scrollTo(0, 0);
     FE.global.loaded();
     FE.news.loaded();
 

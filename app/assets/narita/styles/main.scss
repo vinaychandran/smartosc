@@ -4,10 +4,11 @@
 @import "base/mixins";
 @import "base/base";
 @import "base/sprite";
-@import "sprite1";
+@import "base/sprite1";
 @import "base/helpers";
 // Common
 @import "base/common";
+@import "pages/forms";
 // Components
 @import "components/header";
 @import "components/banner";
@@ -23,6 +24,7 @@
 @import "components/modal-lightbox";
 @import "components/footer";
 @import "components/login-form";
+@import "components/pool-info";
 @import "pages/homepage";
 @import "components/inner-page-slider";
 @import "components/inner-page-menu-box";
@@ -33,4 +35,8 @@
 @import "pages/resturants";
 @import "pages/attractions";
 @import "pages/resturant-detail";
-@import "pages/news-detail"; 
+@import "pages/account";
+@import "pages/news-detail";
+@import "pages/pool";
+@import "pages/news-form";
+@import "pages/bestprice";

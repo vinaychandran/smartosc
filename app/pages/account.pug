@@ -1,0 +1,94 @@
+extends ../layouts/default
+
+block append content
+  section.profile
+    .wrapper
+      h2 アカウント設定
+      .tabs#profile-tabs
+        ul.tabs-header.open-tabs#tabs-header
+          li.tabs-title アカウント情報
+          li.tabs-title プロモーションコード
+        .tabs-content
+          #facebook-login
+          #google-login
+          #yahoo-login
+          .border-line
+          .form-header
+            p
+            p.text1 個人情報
+            p.text2 *は必須項目です
+          form#profile-form
+            .row
+              .col1
+                label プロフィール写真
+                .row
+                  .user-image
+                    input(type="file" name="pic" accept="image/*")
+              .col2
+                label お名前*
+                .row.right
+                  input.col-166(id='p-name' type='text', placeholder='姓' required)
+                .row
+                  input.col-166(id='p-lname' type='text', placeholder='名' required)
+                label お名前（英語）*
+                .row.right
+                  input.col-166(id='p-Lname' type='text', placeholder='Last name' required)
+                .row
+                  input.col-166(id='p-fname' type='text', placeholder='First name' required)
+            .row
+                .col1.text.right
+                  p.top パソコンからファイルを
+                  p.bottom アップロード
+                .col2.up-text
+                  label 性別
+                  input(id='p-1' type='text', placeholder='選択する' required)
+            .row
+                .col2.right
+                  label メールアドレス
+                  input.col-295(id='p-2' type='text', placeholder='選択する' required) 
+                .col2
+                  label 携帯番号
+                  input.col-295(id='p-3' type='text', placeholder='選択する' required)
+            .row
+                label 生年月日
+                .col2.right
+                  input(id='p-4' type='text', placeholder='選択する' required) 
+                .col2.right
+                  input(id='p-5' type='text', placeholder='選択する' required)
+                .col2
+                  input(id='p-6' type='text', placeholder='選択する' required)
+            .row
+                label 出身国
+                .col2
+                  input(type='text', placeholder='出身国')
+            .row         
+                .col2.right
+                  label 郵便番号
+                  input.col-166(type='text', placeholder='郵便番号') 
+                .col2.right
+                  label 都道府県
+                  input.col-166(type='text', placeholder='都道府県')
+                .col2
+                  label 市区町村
+                  input.col-166(type='text', placeholder='市区町村')
+            .row         
+                .col2
+                  label 住所
+                  input.col-600(type='text', placeholder='住所')
+            .row         
+                .col2
+                  button.submitProfile(type='button') 保存する 
+        .tabs-content
+          .row.promo-coupon
+            .col.col-1-2.selected
+              h3  メンバー限定5%OFF
+              p あのイーハトーヴォのすきとおった風、夏でも底に。
+              button(type='button')  選択しています 
+          
+            .col.col-1-2
+              h3  メンバー限定5%OFF
+              p あのイーハトーヴォのすきとおった風、夏でも底に。
+              button(type='button')  選択しています
+    include ../components/breadcrumb.pug
+        
+

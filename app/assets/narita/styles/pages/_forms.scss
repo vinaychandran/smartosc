@@ -1,0 +1,193 @@
+.input-custom {
+  position: relative;
+
+  input,
+  input::placeholder {
+    font-family: $primary-font;
+    background-size: 6px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 0;
+    height: 66px;
+    border: 2px solid #eeeeee;
+    @include font-size(12px);
+    letter-spacing: 0.9px;
+    padding: 0 11px;
+    color: $default-color;
+
+    &:focus {
+      border: 2px solid #eeeeee;
+    }
+  }
+
+  input::placeholder {
+    border: 0;
+    padding-left: 0;
+  }
+}
+
+.dropdown-custom {
+  margin: 0;
+  display: inline;
+
+  .input-custom {
+    position: relative;
+    @extend %clearfix;
+    float: left;
+    width: 100%;
+
+    &:after {
+      content: '';
+      position: absolute;
+      right: 15px;
+      top: 45%;
+      width: 0;
+      cursor: pointer;
+      height: 0;
+      border-left: 3px solid transparent;
+      border-right: 3px solid transparent;
+      border-top: 5px solid $default-color;
+      clear: both;
+    }
+
+    button,
+    input,
+    input::placeholder {
+      font-family: $primary-font;
+      background-size: 6px;
+      background-repeat: no-repeat;
+      cursor: pointer;
+      border-radius: 4px;
+      margin: 0;
+      height: 66px;
+      border: 2px solid #eeeeee;
+      @include font-size(12px);
+      letter-spacing: 0.9px;
+      padding: 0 11px;
+      color: $default-color;
+
+      &:focus {
+        border: 2px solid #eeeeee;
+      }
+    }
+
+    button {
+      width: 100%;
+      background: none;
+      text-align: left;
+    }
+
+    input::placeholder {
+      border: 0;
+      padding-left: 0;
+    }
+  }
+
+  .popup-menu {
+    display: none;
+
+    ul {
+      margin: 0;
+      padding: 0;
+
+      li {
+        border-bottom: 1px solid #eeeeee;
+
+        &:first-child {
+          border-top: 1px solid #eeeeee;
+        }
+
+        span {
+          cursor: pointer;
+          display: block;
+          @include font-size(12px);
+          line-height: 1.4;
+          padding: 8px 12px;
+          color: $default-color;
+
+          &.active,
+          &:focus,
+          &:hover {
+            background-color: #eeeeee;
+          }
+        }
+      }
+    }
+
+    .popup-content-input {
+      overflow-y: auto;
+      position: absolute;
+      background: #fff;
+      z-index: 999;
+      width: 100%;
+      padding-top: 13px;
+      box-shadow: 35.4px 35.4px 90px 0 rgba(0, 0, 0, 0.15);
+
+      &:after {
+        content: '';
+        top: 2px;
+        width: 0;
+        left: 48%;
+        position: absolute;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-bottom: 9px solid black;
+      }
+
+      &:before {
+        content: "";
+        position: absolute;
+        height: 5px;
+        border-bottom: 3px solid #000;
+        top: 8px;
+        left: 0;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.checkbox-custom {
+  input {
+    display: none;
+  }
+  float: none;
+  position: relative;
+  padding-right: 0;
+  float: left;
+
+  label.checkbox {
+    padding: 0 0 0 8px !important;
+
+    margin: 0;
+  }
+
+  .checkbox > span {
+    border: 1px solid #232e48;
+    display: inline-block;
+    left: 0;
+    width: 21px;
+    height: 21px;
+    position: absolute;
+    background: #fff;
+    pointer-events: none;
+
+  }
+
+  .checkbox > span i {
+    opacity: 0;
+  }
+
+  .checkbox > input:checked + span i {
+    opacity: 1;
+  }
+}
+
+.textarea-custom{
+  border: 2px solid #eeeeee;
+  &:focus{
+    border: 2px solid #eeeeee;
+  }
+}

@@ -256,7 +256,7 @@
     }
   }
 
-  .attractions-page-booking {
+  .subscribe {
     background-color: #fafafa;
     padding: 45px 0 30px;
     text-align: center;
@@ -280,38 +280,6 @@
         //position: relative;
         z-index: 1;
       }
-      // i{
-      //   position: absolute;
-      //   width: 15px;
-      //   height: 15px;
-      //   transform: rotate(45deg);
-      //   background: #000;
-      //   left: 0;
-      //   top: 2px;
-      //   &:last-child{
-      //     left: auto;
-      //     right: 0;
-      //   }
-      // }
-      // &:before {
-      //   content: "";
-      //   position: absolute;
-      //   left: 0;
-      //   right: 0;
-      //   height: 1px;
-      //   background-color: #000;
-      //   top: 8px;
-      // }
-      //
-      // &:after {
-      //   content: "";
-      //   position: absolute;
-      //   left: 0;
-      //   right: 0;
-      //   height: 1px;
-      //   background-color: #000;
-      //   top: 10px;
-      // }
     }
 
     .booking-widget {
@@ -332,7 +300,6 @@
         background-color: #fff;
         @include md {
           padding: 35px 55px;
-          //background-color: #fff;
         }
 
         label {

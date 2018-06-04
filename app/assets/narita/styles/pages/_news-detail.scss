@@ -1,8 +1,7 @@
-.news-detail-banner{
-    
+.news-detail-banner{    
     @include md {
       position: fixed;
-      top: 0;
+      top: 94px;
       left: 0;
       width: 100%;
       height: 100%; 
@@ -14,10 +13,133 @@
 
 }
 
-.news-detail-content{     
-    @include md {
-      margin: 0 0 0 auto;
-      padding: 50px 45px 100px;
-      width: 470px; 
+.news-detail-content{ 
+  text-align: center; 
+  @include md {
+    margin: 0 0 0 auto;
+    padding: 200px 45px 100px; 
+    width: 560px; 
+  } 
+  .news-detail-about{
+    padding-bottom: 100px;
+  }
+  .event-type{
+    .icon{
+      display: inline-block;
+      margin-right: 15px;
     }
+    line-height: 2.14;
+    letter-spacing: 1.1px;
+  }
+  h1{
+    @include font-size(24px);
+    line-height: 1.25;
+    letter-spacing: 1.8px;
+    font-weight: 500;
+    margin: 20px 0;
+  } 
+  .date{
+
+  }
+  .news-content{
+    padding-bottom: 40px;
+    .btn{
+      display: inline-block;
+    }
+  }
+  h2{
+    @include font-size(20px);
+    line-height: 1.5;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+    max-width: 300px;
+    margin: 0 auto 30px;
+    position: relative;
+    padding-bottom: 30px;
+    &:after{
+      content:"";
+      position: absolute;
+      bottom: 0;     
+      width: 60px;
+      height: 2px;
+      background: #000;
+      left: 50%;
+      margin-left: -30px;
+    }
+  } 
+  p{
+    @include font-size(14px);
+    line-height: 2.14;
+    letter-spacing: 1.1px;
+    text-align: left;
+    margin-bottom: 50px;
+  }  
+  img{
+    display: block;
+    margin-bottom: 20px;
+    width: 100%;
+    height: auto;
+  }
+  h6{
+    @include font-size(14px);
+    font-weight: 700;
+    text-align: left; 
+  }
+  .open-details{
+    padding: 20px 50px;
+    width: 45%;
+    background-color: #eeeeee;
+    color: #000000;
+    letter-spacing: 1.4px;
+    float: left;
+  }
+  .course-application{
+    padding: 20px 50px;
+    width: 45%;
+    letter-spacing: 1.4px;
+    float: right;
+  }
+  .btns-wrap{
+    overflow: hidden;
+    padding-top: 10px;
+    span{
+      display: none;
+      &.active{
+        display: inline-block;
+        margin-right: 8px;
+      }
+    }
+  }
+  .news-content-highlight{
+    background-color: #fafafa;
+    padding: 40px 45px;
+    color: #000;
+    div{
+      display: flex;
+      justify-content:space-between;
+    }
+    .btn{
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
+}
+
+.news-related-wrap{
+  border-top: 2px solid #000;  
+  h3{
+    margin: 30px 0 40px;
+    @include font-size(14px);
+    letter-spacing: 1.1px;
+  }
+  h4{
+    @include font-size(20px);
+    font-weight: 500;
+    margin-top: 35px;
+  }
+  .see-more{
+    max-width: 300px;
+    margin: 35px auto 60px; 
+    float: none;
+  }
 }
