@@ -28,7 +28,44 @@ block append content
 					span.open.active + 
 					span.close -
 					| 詳細を開く
-				.btn.course-application(data-show-id='news-form') 講座お申し込み
+				.btn.course-application(data-show-id='news-form').hidden-xs 講座お申し込み
+			.news-content-details-wrap
+				.news-content-details
+					.table-row
+						.table-item 開催時間
+						.table-item ［午前コース］
+							br
+							| 10：30～12：30（受付 10：00～）
+							br
+							| ［午後コース］
+							br
+							| 13：30～15：30（受付 13：00～） 
+					.table-row
+						.table-item 開催時間
+						.table-item ￥11,080（材料費、税金含む）
+					.table-row
+						.table-item 開催時間
+						.table-item エコール ド ロイヤル
+							br
+							| （ウエストウイング2階）
+					.table-row
+						.table-item 開催時間
+						.table-item ［午前コース］
+							br
+							| 10：30～12：30（受付 10：00～）
+							br
+							| ［午後コース］
+							br
+							| 13：30～15：30（受付 13：00～）	
+				.callout-wrap
+					h5 お申込み・お問い合わせ
+					.btn 講座お申し込み
+					.callout-content エコール ド ロイヤル事務局
+					.ph （06）6441-2938
+					.callout-content 受付時間 9：30～17：00 
+						br
+						| 日祝休み
+			.btn.course-application(data-show-id='news-form').visible-xs 講座お申し込み 
 		.news-content
 			img(src='/assets/narita/images/news-detail/1.jpg')
 			h2 甲州＆信州のワインと出会える 体験型ワインリゾート
@@ -48,7 +85,7 @@ block append content
 						| ワインを食を愉しむレストラン
 						br
 						br
-						| ワイン体験 03. 
+						| ワイン体験 03.  
 						br
 						| 始めてでも安心の豊富なワイン体験
 						br
@@ -69,7 +106,7 @@ block append content
 						| お問い合わせ
 						br
 						| TEL.0551-36-5200（9:00～19:00）					
-				.btn 01. 季節を感じるワインステイ
+				.btn(data-show-id='news-form') 01. 季節を感じるワインステイ
 				.btn 02. ワインを食を愉しむレストラン
 				.btn 03. 始めてでも安心の豊富なワイン体験
 		.news-related-wrap

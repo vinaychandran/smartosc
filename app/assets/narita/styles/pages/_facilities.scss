@@ -1,0 +1,259 @@
+.facilities-main-page {
+    .main-banner {
+        box-shadow: -3px 53px 81px rgba(0, 0, 0, 0.2);
+    }
+    .facilities-menu {
+        background: $default-bg;
+        padding: 25px 60px 25px 35px;
+        display: none;
+        margin: -29px auto 10px;
+        position: relative;
+        @include md {
+            display: table;
+        }
+        ul {
+            li {
+                float: left;
+                padding: 0 40px;
+                position: relative;
+                a {
+                    @include font-size(13.6px);
+                    letter-spacing: 1.6px;
+                    font-weight: bold;
+                    i {
+                        border: solid black;
+                        border-width: 0 2px 2px 0;
+                        display: inline-block;
+                        padding: 3px;
+                        transform: rotate(45deg);
+                        position: absolute;
+                        right: 23px;
+                        top: 5px;
+                    }
+                }
+            }
+        }
+    }
+    .facilities-info {
+        background: $default-bg;
+        max-width: none;
+        .container {
+            max-width: 960px;
+            h3 {
+                @include font-size(20px);
+                line-height: 48px;
+            }
+        }        
+    }
+    .design-info {
+        background: #fff;
+        padding-top: 10px;
+        @include md {
+            background: #fafafa;
+        }
+        img {
+            width: 100%;
+        }
+        .container {
+            .design-content {
+                background: $default-bg;
+                margin: -50px 0 0 0;
+                padding: 20px;
+                @include md {
+                    width: 50%;
+                    float: left;
+                    padding: 95px 70px;
+                    margin: -170px 0 0 0;
+                }
+                h2 {
+                    @include font-size(20px);
+                    font-weight: 600;
+                    line-height: 33px;
+                    color: #141414;
+                    margin: 0;
+                    padding-bottom: 20px;
+                    letter-spacing: 0.7px;
+                    text-align: center;
+                    @include md {
+                        @include font-size(24px);
+                        font-weight: 600;
+                        padding-bottom: 40px;
+                    }
+                }
+                p {
+                    @include font-size(14px);
+                    font-weight: 500;
+                    line-height: 28px;
+                    letter-spacing: 1.4px;
+                }
+            }
+            .design-img {
+                width: 50%;
+                float: left;
+                margin-top: 136px;
+                background: #fff;
+                padding-bottom: 120px;
+                display: none;
+                @include md {
+                    display: block;
+                }
+            }
+        }
+    }
+    .facilities-list-wrap {
+        background: #fafafa;
+        padding: 60px 10px 20px;
+        @include md {
+            padding: 0;
+        }
+        .container {
+            background: none;
+            padding-bottom: 20px;
+            .venue-list {
+                margin-bottom: 40px;
+                .facility-short-info {
+                    @include font-size(14px);
+                    line-height: 20px;
+                    padding-bottom: 40px;
+                    @include md {
+                        padding-bottom: 80px;
+                    }
+                    h6 {
+                        font-weight: bold;
+                    }
+                    p {
+                        font-weight: 500;
+                        margin: 0;
+                        padding-bottom: 20px;
+                    }
+                    .timings {
+                        border-top: 1px solid #f1f3ee;
+                        padding: 20px 0 10px 0;
+                        h3 {
+                            @include font-size(14px);
+                            line-height: 26px;
+                            font-weight: bold;
+                            padding-bottom: 10px;
+                        }
+                        span {
+                            display: block;
+                            @include font-size(14px);
+                            line-height: 20px;
+                            font-weight: 500;
+                        }
+                    }
+                }
+            }            
+            .amusement-list {
+                display: none;
+                @include md {
+                    display: flex;
+                }
+                .amusement-info {
+                    text-align: center;
+                    position: relative;
+                    h6 {
+                        @include font-size(20px);
+                        line-height: 20px;
+                        font-weight: bold;
+                        float: none;
+                        text-align: center;
+                        margin-bottom: 30px;
+                    }
+                    p {
+                        font-family: 'YuMin';
+                        @include font-size(14px);
+                        line-height: 28px;
+                        font-weight: 500;
+                        letter-spacing: 1.4px;
+                    }
+                    .room-more {
+                        width: 80%;
+                    }
+                }
+            }
+        }
+    }
+    .promo-content {
+        background: $default-bg;
+        ul {
+            li {
+                margin-bottom: 20px;
+                @include md {
+
+                }
+                img {
+                    width: 100%;
+                }
+                .content {
+                    padding-top: 30px;
+                }
+            }
+        }
+    }
+}
+
+.facilities-detail-popup {
+    .room-info-header {
+        background: #fafafa;
+    }
+}
+
+.facilities-info-header {
+    max-width: 880px;
+    margin: 30px auto 0;
+    padding: 0 20px;
+    p {
+        @include font-size(14px);
+        line-height: 28px;
+        letter-spacing: 1.4px;
+        font-weight: 500;
+        text-align: center;
+    }
+    h2 {
+        @include font-size(36px);
+        line-height: 20px;
+        font-weight: bold;
+        text-align: center;
+        border-bottom: 2px solid #000;
+        padding-bottom: 30px;
+    }
+}
+
+.facilities-info-images {
+    .col {
+        margin-bottom: 20px;
+    }
+}
+
+.facilities-info-content {
+    max-width: 880px;
+    margin: 30px auto 60px;
+    padding: 55px;
+    background: $default-bg;
+    p {
+        @include font-size(14px);
+        line-height: 28px;
+        letter-spacing: 1.4px;
+        font-weight: 500;
+    }
+    .facilities-buttons {
+        @extend %clearfix;
+        display: table;
+        margin: 60px auto 0;        
+        .btn {
+            padding: 20px 80px;
+            margin: 0 20px;
+            position: relative;
+            display: block;
+            margin-bottom: 20px;
+            @include md {
+                display: inline;
+            }
+            i {
+                right: 20px;
+                top: 45%;
+            }
+        }
+    }
+}
