@@ -116,8 +116,6 @@ var Tabs = function(options) {
             setTimeout(function() {
                 sliderImage('.inner-page-slider', 1, false, true), 500
             });
-
-
         }
 
         function sliderImage(slider, slideToShow, dots, arrows) {

@@ -113,6 +113,11 @@ const FE = {
                     FE.global.checkValidationRules(lightBoxId + ' form#rpfForm');
                 });
             }
+            if (document.querySelector(lightBoxId + ' .submitNewsForm')) {
+                document.querySelector(lightBoxId + ' .submitNewsForm').addEventListener('click', function() {
+                    FE.global.checkValidationRules(lightBoxId + ' form#newsForm');
+                });
+            }
             if (document.querySelector(lightBoxId + ' .bookingForm')) {
                 document.querySelector(lightBoxId + ' .bookingForm').addEventListener('click', function() {
                     FE.global.checkValidationRules(lightBoxId + ' form#bookingForm');
@@ -718,11 +723,11 @@ const FE = {
 				}
 				return false;
 
-			});			
+			});
 		},
 
         init: () => {
-            FE.global.lazyLoad();           
+            FE.global.lazyLoad();
         },
 
         loaded: function loaded() {
@@ -795,6 +800,20 @@ const FE = {
                 $(window).scroll(function() {
                     scrollNews();
                 });
+                $('#news-banner').css('width', imgMinWidth);
+                // function scrollNews() {
+                //     let scrollTopPos = $(document).scrollTop();
+                //     let scrollChangePx = Math.floor(scrollTopPos);
+                //     let zoomedWidth = imgWidth - scrollChangePx;
+                //     if (zoomedWidth > imgMinWidth) {
+                //         $('#news-banner').css('width', zoomedWidth);
+                //     } else {
+                //         $('#news-banner').css('width', imgMinWidth);
+                //     }
+                // };
+                // $(window).scroll(function() {
+                //     scrollNews();
+                // });
                 // scrollNews();
             }
             $(document).on('click', '.open-details', function() {

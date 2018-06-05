@@ -1,54 +1,69 @@
 .pool-info {
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    position: relative;
+    float: none;
+    width: 100%;
+    @include md {
+        float: left;
+        width: 50%;
+    }
+    ;
     .content-wrapper {
-        flex-basis: 100%;
-        max-width: 374px;
-        margin: 120px 0 150px 251px;
+        @include md {
+            padding: 20% 12% 20% 28%;
+        }
+        ;
+        padding: 10% 10% 0;
         h3 {
             font-family: YuGo;
-            font-size: 24px;
+            @include font-size(24px);
             font-weight: bold;
-            font-style: normal;
-            font-stretch: normal;
             line-height: 1.67;
             letter-spacing: 0.6px;
             text-align: left;
-            color: #000000;
+            color: $default-color;
         }
         p {
-            font-size: 14px;
+            @include font-size(14px);
             font-weight: 500;
-            font-style: normal;
-            font-stretch: normal;
             line-height: 2;
             letter-spacing: 1.4px;
             text-align: left;
-            color: #333333;
+            color: $primary-color;
             margin-top: 50px;
         }
     }
-    .content-image {
-        position: absolute;
+}
+
+.content-image-right {
+    position: relative;
+    top: 0;
+    right: 5%;
+    float: right;
+    width: 45%;
+    @include md {
+        width: auto;
         top: -100px;
-        right: 150px;
     }
-    .pool-image {
-        margin-bottom: 60px;
+    ;
+}
+
+.pool-image {
+    position: relative;
+    width: 75%;
+    top: -30px;
+    @include md {
+        position: static;
+        width: auto;
+        padding-bottom: 60px;
     }
+    ;
 }
 
 #pool-full-info {
     overflow-x: hidden;
     .header {
         font-family: Lato;
-        font-size: 32px;
+        @include font-size(32px);
         font-weight: bold;
-        font-style: normal;
-        font-stretch: normal;
-        /* line-height: 0.97; */
         letter-spacing: normal;
         text-align: left;
         color: #333333;
@@ -60,17 +75,12 @@
         margin-right: 55px;
         background-color: #eeeeee;
         color: #ffffff;
-        font-size: 14px;
-        font-size: 0.875rem;
+        @include font-size(16px);
         font-family: 'YuGo';
         padding: 39px 80px;
         line-height: 1;
         font-family: YuGo;
-        font-size: 16px;
         font-weight: bold;
-        font-style: normal;
-        font-stretch: normal;
-        /* line-height: 2.06; */
         letter-spacing: 1.6px;
         text-align: left;
         color: #010101;
@@ -80,12 +90,9 @@
     }
     .pool-header {
         font-family: Lato;
-        font-size: 32px;
+        @include font-size(32px);
         font-weight: bold;
-        font-style: normal;
-        font-stretch: normal;
         line-height: 0.97;
-        letter-spacing: normal;
         text-align: left;
         color: #333333;
         margin: 34px 0 0 34px;
@@ -94,18 +101,13 @@
         float: right;
         background-color: #c5ad6c;
         color: #ffffff;
-        font-size: 14px;
-        font-size: 0.875rem;
+        @include font-size(16px);
         font-family: 'YuGo';
         padding: 39px 80px;
         line-height: 1;
         background-color: #eeeeee;
         font-family: YuGo;
-        font-size: 16px;
         font-weight: bold;
-        font-style: normal;
-        font-stretch: normal;
-        /* line-height: 2.06; */
         letter-spacing: 1.6px;
         text-align: left;
         color: #010101;
@@ -121,10 +123,8 @@
         background-color: #ffffff;
         padding: 15px 47px;
         font-family: YuGo;
-        font-size: 14px;
+        @include font-size(14px);
         font-weight: bold;
-        font-style: normal;
-        font-stretch: normal;
         line-height: 2.14;
         letter-spacing: 1.1px;
         text-align: left;
@@ -167,29 +167,23 @@
     }
     h3 {
         font-family: YuGo;
-        font-size: 24px;
+        @include font-size(24px);
         font-weight: 500;
-        font-style: normal;
-        font-stretch: normal;
         line-height: 1.25;
-        letter-spacing: normal;
         text-align: center;
         color: #000000;
-        padding: 62px 0 40px 0;
+        padding: 62px 0 40px;
     }
     ul {
         li {
             position: relative;
         }
-        // margin: 0 150px;
         max-width: 1140px;
         margin: 0 auto;
         .header {
             font-family: YuGo;
-            font-size: 14px;
+            @include font-size(14px);
             font-weight: 500;
-            font-style: normal;
-            font-stretch: normal;
             line-height: 4.07;
             letter-spacing: 1.7px;
             text-align: left;
@@ -198,15 +192,12 @@
         }
         .content {
             font-family: YuMin;
-            font-size: 14px;
+            @include font-size(14px);
             font-weight: 500;
-            font-style: normal;
-            font-stretch: normal;
             line-height: 2;
             letter-spacing: 1.4px;
             text-align: justify;
             color: #333333;
-            //margin: 0 19px 0 18px;
             max-width: 299px;
             margin: 0 auto;
         }
@@ -217,9 +208,7 @@
     height: 1px;
     background-color: #eeeeee;
     max-width: 1140px;
-    margin: 0 auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin: 50px auto;
 }
 
 .contact {
@@ -250,10 +239,8 @@
                 line-height: 3;
             }
             font-family: YuGo;
-            font-size: 14px;
+            @include font-size(14px);
             font-weight: 500;
-            font-style: normal;
-            font-stretch: normal;
             line-height: 1.93;
             letter-spacing: 1.7px;
             text-align: left;

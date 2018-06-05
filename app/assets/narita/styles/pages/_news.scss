@@ -1,0 +1,102 @@
+.news-main-page-wrap{
+  padding: 115px 0 0;
+  @include md {
+    padding: 200px 0 0;
+  }
+  h1{
+    @include font-size(24px);
+    font-weight: 500;
+    text-align: center;
+    margin: 0 0 35px;
+  }
+  .news-types{
+    margin: 0 0 40px;
+    padding: 0;    
+    width: 100%;   
+    white-space: nowrap;
+    overflow: auto;
+    @include md {
+      display: flex;
+      border-top: 1px solid #eeeeee;
+      border-bottom: 1px solid #eeeeee;
+      margin: 0 0 60px;
+    }
+    li {      
+      text-align: center; 
+      position: relative;
+      display: inline-block;
+      @include md {
+        flex-grow: 1; 
+        float: none;
+      }
+      a {
+        @include font-size(14px);
+        font-family: 'YuGo';
+        line-height: 1.43;
+        letter-spacing: 1.4px;
+        font-weight: 500;
+        display: block;
+        position: relative;
+        cursor: pointer;   
+        padding: 5px 15px;      
+        @include md {
+          padding: 20px 5px;
+          border-bottom: 1px solid transparent;
+          &.selected{
+            background: #fafafa;
+            border-bottom: 1px solid #000;
+          }
+        }
+      }
+    } 
+  }
+  .news-list{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin: 0 0 30px;
+    li{
+      width: 100%;
+      background: #fff;
+      margin-bottom: 40px;
+      display: list-item;
+      animation: all 0.3s ease;
+      box-shadow: 14.1px 14.1px 90px 0 rgba(0, 0, 0, 0.1);            
+      @include md {
+        width: calc(100% / 3 - 23px);
+      }
+      &.show-item {
+        display: list-item;
+        animation: bounceList 0.3s;
+      }
+      .image-wrap{
+        position: relative;
+      }
+      .news-tag{
+        background: #fff;
+        position: absolute;
+        padding: 10px 15px;
+        right: 4px;
+        bottom: 4px;
+        @include font-size(12px);
+        line-height: 1;
+      }
+      .room-short-info{
+        padding: 30px 25px;
+      }
+      .date{
+        line-height: 2;
+        letter-spacing: 1.4px;
+      }
+      h6{
+        @include font-size(15px);
+        line-height: 1.75;
+        letter-spacing: 1.6px;
+        font-weight: 700;
+      }
+      .see-more{
+        margin: 30px 0;
+      }
+    }
+  }
+}
