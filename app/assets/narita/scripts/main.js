@@ -697,10 +697,8 @@ const FE = {
                 console.log($(this));
 
                 if ($(this).is(':checked')) {
-                    console.log('clciked');
                     //$('.food-beverage .sprite-checked_sp').show();
                 } else {
-                    console.log('un clciked');
                     // $('.food-beverage .sprite-checked_sp').hide();
                 }
 
@@ -726,13 +724,11 @@ const FE = {
 			});
 		},
 
-        filterNews: (targetElement) => {           
-            
-
+        filterNews: (targetElement) => { 
             function showFilterRoom(el) {
                 const type = el.getAttribute('data-news-type');
                 const className = 'show';
-                const classNa = 'selected';                
+                const classNa = 'selected';
                 document.querySelectorAll('[data-news]').forEach(function(e) {
                     let string = e.getAttribute('data-news');
                     if (e.classList) {
@@ -816,14 +812,14 @@ const FE = {
 
     news: {
         newsScroll: () => {
-            if (!isMobile && document.getElementById('news-banner')!=null) {
+            if (!isIpad && document.getElementById('news-banner')!=null) {
                 let element = document.getElementById('news-banner');
                 let content = document.getElementById('news-content');
                // let blockHeight = element.offsetHeight + 100;
                 let imgWidth = element.offsetWidth;
                 let imgMinWidth = imgWidth - content.offsetWidth;
                 //document.getElementById('experience-content-padder').style.height = blockHeight + 'px';
-                $('#news-banner').css('width', imgMinWidth);    
+                $('#news-banner').css('width', imgMinWidth);
                 function scrollNews() {
                     // let scrollTopPos = $(document).scrollTop();
                     // let scrollChangePx = Math.floor(scrollTopPos);
@@ -834,11 +830,10 @@ const FE = {
                     //     $('#news-banner').css('width', imgMinWidth);
                     // }
                     $('#news-banner').css('width', imgMinWidth);    
-                };
+                };                
                 $(window).scroll(function() {
                     scrollNews();
                 });
-                $('#news-banner').css('width', imgMinWidth);
                 // function scrollNews() {
                 //     let scrollTopPos = $(document).scrollTop();
                 //     let scrollChangePx = Math.floor(scrollTopPos);

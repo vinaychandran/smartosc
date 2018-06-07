@@ -192,7 +192,7 @@
         padding: 5px 10px;
       }
 
-      .input-showtext {
+      .input-custom {
         position: relative;
 
         input,
@@ -802,13 +802,13 @@
         padding: 5px 10px;
       }
 
-      .input-showtext {
+      .input-custom {
         position: relative;
 
         &:after {
           content: '';
           position: absolute;
-          right: 15%;
+          right: 20px;
           top: 45%;
           width: 0;
           cursor: pointer;
@@ -945,7 +945,7 @@
         float: left;
 
         .startDateContainer {
-          width: 160px;
+          width: 148px;
 
           .startDate {
             width: auto;
@@ -986,7 +986,7 @@
         width: 290px;
       }
 
-      .input-showtext {
+      .input-custom {
         button {
           width: 100%;
           @include md {
@@ -1023,7 +1023,7 @@
     .form-group {
       width: auto;
 
-      .input-showtext {
+      .input-custom {
         button,
         input,
         input::placeholder {
@@ -1068,7 +1068,7 @@
         width: 200px;
       }
 
-      .input-showtext {
+      .input-custom {
         button {
           width: 100%;
           @include md {
@@ -1193,7 +1193,7 @@
           display: block;
         }
 
-        .input-showtext {
+        .input-custom {
           position: relative;
           @extend %clearfix;
           float: left;

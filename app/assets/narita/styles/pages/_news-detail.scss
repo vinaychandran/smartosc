@@ -1,5 +1,5 @@
 .news-detail-banner{    
-    @include md {
+    @include desktop {
       position: fixed;
       top: 94px;
       left: 0;
@@ -17,10 +17,14 @@
   text-align: center; 
   padding: 40px 0;
   @include md {
-    margin: 0 0 0 auto;
-    padding: 200px 45px 100px; 
+    margin: 0 auto; 
+    padding: 40px 45px; 
     width: 560px; 
   } 
+  @include desktop {
+    padding: 200px 45px 100px; 
+    margin: 0 0 0 auto;
+  }
   .news-detail-about{
     padding-bottom: 75px;
     @include md {

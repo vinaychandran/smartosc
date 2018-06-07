@@ -35,7 +35,7 @@
     margin:0;
     padding: 0;
   }
-  li{    
+  li{
     position: relative;
     @include md {
       margin-bottom: 100px;
@@ -57,13 +57,13 @@
       }
       &:nth-child(odd){
         .resturant-list-info{
-          left: -120px; 
+          left: -120px;
         }
       }
     }
     .resturant-list-info{
       background: #fff;
-      padding: 40px;      
+      padding: 40px;
       opacity: 0.95;
       color: #000;
       text-align: center;
@@ -103,8 +103,8 @@
           margin-bottom: 20px;
         }
       }
-      .business-hours{  
-        margin-bottom: 25px;      
+      .business-hours{
+        margin-bottom: 25px;
         @include md {
           display: block;
           float: left;
@@ -112,7 +112,7 @@
         }
         p{
           line-height: 1.79;
-          letter-spacing: 0.7px; 
+          letter-spacing: 0.7px;
           margin:0;
         }
         span{
@@ -120,7 +120,7 @@
           display: inline-block;
         }
       }
-      .contact{        
+      .contact{
         @include md {
           display: block;
           float: left;
@@ -130,38 +130,38 @@
           @include font-size(24px);
           letter-spacing: 0.4px;
         }
-      }      
+      }
     }
-  }  
+  }
 }
 
 .resturant-page-booking{
-  background-color: #fafafa; 
-  padding: 45px 0 30px;  
-  text-align: center;  
+  background-color: #fafafa;
+  padding: 45px 0 30px;
+  text-align: center;
   .booking-widget{
     max-width: 1060px;
-    margin:0 auto; 
+    margin:0 auto;
     position: static;
-    height: auto; 
+    height: auto;
     padding-bottom: 0;
     text-align: left;
     .tabs-content{
       height: auto;
-      background-color: #fafafa; 
+      background-color: #fafafa;
       @include md {
         background-color: #fff;
       }
     }
     #booking-tab2 .shop .form-group{
-     
-      @include md { 
+
+      @include md {
          width: 275px;
       }
-      .input-showtext button{
+      .input-custom button{
         width: 100%;
       }
-    } 
+    }
   }
 }
 
@@ -241,13 +241,13 @@
               width: 100%;
             }
             @include md {
-              float: left; 
-              width: 49%;             
+              float: left;
+              width: 49%;
             }
             &:last-of-type {
               float: none;
               @include md {
-                float: right;              
+                float: right;
               }
             }
           }
@@ -290,19 +290,19 @@
             border-bottom: 2px solid $default-color;
             @include sm {
               padding-bottom: 20px;
-            }            
+            }
             .menu {
               @extend %clearfix;
-              @include sm {                
+              @include sm {
                 width: 50%;
                 float: left;
                 padding-right: 30px;
-              }              
+              }
               &:last-of-type {
                 @include sm {
                   padding-left: 30px;
                   border-left: 1px solid $default-color;
-                }  
+                }
                 ul {
                   margin-bottom: 0;
                   li {
@@ -310,7 +310,7 @@
                       border-bottom: none;
                     }
                   }
-                }             
+                }
               }
               ul {
                 @extend %clearfix;
@@ -329,7 +329,7 @@
                     border-bottom: 0;
                   }
                   .menu-item-name {
-                    @include font-size(14px);                    
+                    @include font-size(14px);
                     @include sm {
                       float: left;
                       margin: 0;
@@ -342,7 +342,7 @@
                     }
                   }
                   .menu-price {
-                    @include font-size(20px);                    
+                    @include font-size(20px);
                     font-family: 'Lato';
                     margin-bottom: 0;
                     @include sm {
@@ -379,14 +379,14 @@
                 }
               }
             }
-          } 
+          }
           .warning-messages-list {
             @extend %clearfix;
             .warning-message {
               font-family: 'YuMin';
-              @include font-size(14px);              
+              @include font-size(14px);
               padding: 30px 0;
-              border-top: 2px solid $default-color;                            
+              border-top: 2px solid $default-color;
               line-height: 30px;
               @include sm {
                 width: 25%;
@@ -394,7 +394,7 @@
                 margin-right: 30px;
               }
             }
-          }         
+          }
         }
       }
     }
