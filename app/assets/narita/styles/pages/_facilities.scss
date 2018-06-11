@@ -1,6 +1,6 @@
 .facilities-main-page {
     .main-banner {
-        box-shadow: -3px 53px 81px rgba(0, 0, 0, 0.2);
+        box-shadow: -3px 28px 81px rgba(0, 0, 0, 0.2);
     }
     .facilities-menu {
         background: $default-bg;
@@ -38,10 +38,11 @@
         background: $default-bg;
         max-width: none;
         .container {
-            max-width: 960px;
+            max-width: 666px;
             h3 {
                 @include font-size(20px);
                 line-height: 48px;
+                margin-bottom: 20px;
             }
         }        
     }
@@ -73,7 +74,7 @@
                     margin: 0;
                     padding-bottom: 20px;
                     letter-spacing: 0.7px;
-                    text-align: center;
+                    text-align: left;
                     @include md {
                         @include font-size(24px);
                         font-weight: 600;
@@ -115,9 +116,6 @@
                     @include font-size(14px);
                     line-height: 20px;
                     padding-bottom: 40px;
-                    @include md {
-                        padding-bottom: 80px;
-                    }
                     h6 {
                         font-weight: bold;
                     }
@@ -176,9 +174,18 @@
     }
     .promo-content {
         background: $default-bg;
+        h4 {
+            text-align: center;
+            @include font-size(24px);
+            font-weight: 500;
+            font-family: 'YuGo';
+            margin: 60px 0 40px 0;
+        }
         ul {
+            margin-bottom: 0;
             li {
                 margin-bottom: 20px;
+                padding-bottom: 0;
                 @include md {
 
                 }
@@ -211,26 +218,51 @@
         text-align: center;
     }
     h2 {
-        @include font-size(36px);
+        @include font-size(24px);
         line-height: 20px;
         font-weight: bold;
         text-align: center;
         border-bottom: 2px solid #000;
         padding-bottom: 30px;
+        @include md {
+            @include font-size(36px);
+        }
     }
 }
 
 .facilities-info-images {
-    .col {
-        margin-bottom: 20px;
-    }
+    .container {
+        overflow: scroll;
+        @include xs {
+            overflow: auto;
+        }
+        .row {
+            width: 200%;
+            @include xs {
+                width: auto;
+            }
+            .col {
+                margin-bottom: 20px;
+                width: 49%;
+                padding: 0 6px;
+                @include xs {
+                    width: 50%;
+                    padding: 0 20px;
+                }
+            }
+        }
+    }    
 }
 
 .facilities-info-content {
     max-width: 880px;
-    margin: 30px auto 60px;
-    padding: 55px;
+    padding: 20px;
     background: $default-bg;
+    margin: 0 20px;
+    @include md {
+        padding: 55px;
+        margin: 0 auto 60px;
+    }
     p {
         @include font-size(14px);
         line-height: 28px;
@@ -240,15 +272,21 @@
     .facilities-buttons {
         @extend %clearfix;
         display: table;
-        margin: 60px auto 0;        
+        margin: 20px auto 0;   
+        width: 100%;    
+        @include md {
+            margin: 60px auto 0; 
+            width: auto;
+        } 
         .btn {
             padding: 20px 80px;
-            margin: 0 20px;
+            margin: 0;
             position: relative;
             display: block;
             margin-bottom: 20px;
             @include md {
                 display: inline;
+                margin: 0 20px;
             }
             i {
                 right: 20px;

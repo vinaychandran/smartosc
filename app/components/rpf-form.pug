@@ -162,7 +162,11 @@
       .col.col-1-2
         label 会場の設備の要望をご記入ください。
       .col.attachFile.col-1-2
-        input.form-control(type='file')
+        label.custom-file-upload(for='file-upload')
+          i.fa.fa-paperclip
+          |  ファイルを添付する
+        input#file-upload(type='file')
+
 
     .row
       .col

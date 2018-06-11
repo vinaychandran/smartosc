@@ -103,3 +103,12 @@ $basicLightbox__timing: ease !default;
   display: none !important;
 
 }
+
+
+body[data-form="news-form"], body[data-form="rfp-form"]{
+  .basicLightbox{
+    &:after{
+      display: none;
+    }
+  }
+}

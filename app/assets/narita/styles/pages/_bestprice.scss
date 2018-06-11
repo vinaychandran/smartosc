@@ -11,16 +11,22 @@
             font-weight: 500;
             line-height: 30px;
             text-align: center;
-            margin: 30px 0 40px 0;
+            margin: 20px 0 40px 0;
+            @include md {
+                margin: 30px 0 40px 0;
+            }
         }
         .bestprice-banner {
             background: url('../images/bestprice/banner.png') no-repeat;
             background-size: cover;
-            padding: 95px 20px;            
+            padding: 35px 20px 15px 20px;            
             color: $secondary-color;
             background-position: top;
             @include md {
                 padding: 95px 0;
+            }
+            .container {
+                max-width: 800px;
             }
             h4 {
                 @include font-size(16px);
@@ -48,19 +54,17 @@
             line-height: 30px;
             padding: 40px 0 15px 0;
             text-align: center;
-            @include md {
-                padding: 40px 0 45px 0;
-            }
         }
         ul {
             margin-bottom: 30px;
             .accordion-item {                
-                cursor: pointer;
-                .container {                    
+                cursor: pointer;                
+                .container {     
+                    max-width: 800px;               
                     .accordion-title {  
                         @extend %clearfix;    
-                        border-bottom: 1px solid #ccc; 
-                        padding: 20px 0;  
+                        border-bottom: 1px solid #eee; 
+                        padding: 20px 0;                          
                         @include md {
                             padding: 0;
                         }                                      
@@ -109,13 +113,19 @@
                                 padding-right: 15px;
                             }
                             i {
-                                transform: rotate(90deg);
+                                transform: rotate(45deg);
                                 transition: 0.4s;
                                 position: absolute;
-                                right: -6px;
+                                right: -14px;
+                                border: solid black;
+                                border-width: 0 2px 2px 0;
+                                display: inline-block;
+                                padding: 3px;
+                                top: 15%;   
                                 @include md {
-                                    right: -18px;
-                                }
+                                    top: 43%;
+                                    right: -6px;
+                                }                             
                             }
                             &.box {
                                 color: $secondary-color;
@@ -185,8 +195,16 @@
                 }
                 &.is-active {
                     i {
-                        transform: rotate(-90deg) !important;
+                        transform: rotate(-132deg) !important;
                     }
+                }
+                &:last-of-type {
+                    .accordion-title {  
+                        border-bottom: 0; 
+                        @include md {
+                            border-bottom: 1px solid #eee; 
+                        }
+                    }                           
                 }
             }
         }

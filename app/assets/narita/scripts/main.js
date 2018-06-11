@@ -61,6 +61,12 @@ const FE = {
                 open: 0
             });
         },
+        loadFile: (event) => {
+
+            var output = document.getElementById('preview');
+            output.src = URL.createObjectURL(event.target.files[0]);
+
+        },
         openTab: (e) => {
             if (document.getElementById('tabs-header') !== null)
                 document.getElementById('tabs-header').style.display = 'block';
@@ -165,7 +171,7 @@ const FE = {
                 console.log(sliderImageCount);
                 $(this).on('init reInit afterChange', function(event, slick, currentSlide, nextSlide) {
                     if (currentSlide !== undefined) {
-                        $('.slider-count .number').text(currentSlide + 1);
+                        $(this).closest('.slick-slider').next().find('.number').text(currentSlide + 1);
                         $('.room-info-slider-thumb img').removeClass('active');
                         let thumbnailSlide = currentSlide + 1
                         $('.room-info-slider-thumb img:nth-child(' + thumbnailSlide + ')').addClass('active');
@@ -386,12 +392,25 @@ const FE = {
                         FE.global.submitForm();
                         FE.global.openModalTab('loginForm');
                         FE.global.openModalTab('resturant-tabs');
+                        //alert(1);
+                    },
+                    beforeShow: (instance) => {
+                        let body = document.body;
+                        body.dataset.form = elem.getAttribute('data-show-id');
                     },
                     afterClose: (instance) => {
                         $('.gallery-nav').slick('unslick');
                     }
                 }).show
             })
+            $(document).on('click', '.basicLightbox .closeBtn', function() {
+                $('.basicLightbox').removeClass('basicLightbox--visible')
+                setTimeout(() => {
+                    $('.basicLightbox').remove();
+                    //$('.roomPopup .room-info-slider').slick('unslick');
+                    $('body').removeClass('modal-open');
+                }, 410)
+            });
 
         },
         resetUserDetails: () => {
@@ -404,9 +423,6 @@ const FE = {
             if (isEmail) {
                 document.getElementById('reset-mail').click();
             }
-        },
-        lighBoxPool: () => {
-            alert(1);
         },
         lightBoxRoom: () => {
             const getTargetHTML = function(elem) {
@@ -441,6 +457,7 @@ const FE = {
                 }).show
             })
             $(document).on('click', '.room-detail .close-room', function() {
+                $('.roomPopup .room-info-slider').slick('unslick');
                 $('.roomPopup').removeClass('basicLightbox--visible')
                 setTimeout(() => {
                     $('.roomPopup').remove();
@@ -583,7 +600,9 @@ const FE = {
                 const type = el.getAttribute('data-room-type');
                 const className = 'show';
                 const classNa = 'selected';
-                document.getElementById('tablink').innerText = el.text;
+                if (isMobile && (document.getElementById('tablink') !== null)) {
+                    document.getElementById('tablink').innerText = el.text;
+                }
                 if (isMobile && (document.getElementById('room-types') !== null)) {
                     document.getElementById('room-types').style.display = 'none';
                 }
@@ -705,26 +724,26 @@ const FE = {
             });
         },
 
-        bindAccordion: function(event){
-			$('.accordion-content').hide();
-			$('.accordion-title').on(event, function(){
-				var $item = $(this).parents('.accordion-item');
+        bindAccordion: function(event) {
+            $('.accordion-content').hide();
+            $('.accordion-title').on(event, function() {
+                var $item = $(this).parents('.accordion-item');
 
-				if ( !$item.is('.is-active') ) {
-					$('.accordion-item').removeClass('is-active');
-					$item.addClass('is-active');
-					$('.accordion-content').slideUp();
-					$item.find('.accordion-content').slideDown();
-				} else {
-					$item.find('.accordion-content').slideUp();
-					$item.removeClass('is-active');
-				}
-				return false;
+                if (!$item.is('.is-active')) {
+                    $('.accordion-item').removeClass('is-active');
+                    $item.addClass('is-active');
+                    $('.accordion-content').slideUp();
+                    $item.find('.accordion-content').slideDown();
+                } else {
+                    $item.find('.accordion-content').slideUp();
+                    $item.removeClass('is-active');
+                }
+                return false;
 
-			});
-		},
+            });
+        },
 
-        filterNews: (targetElement) => { 
+        filterNews: (targetElement) => {
             function showFilterRoom(el) {
                 const type = el.getAttribute('data-news-type');
                 const className = 'show';
@@ -801,25 +820,29 @@ const FE = {
             FE.global.submitForm();
             FE.global.bindAccordion('click');
             FE.global.filterNews();
-
+            FE.global.sliderImage('.single-room-wrap .room-info-slider', 1, false, true);
         },
         resize: function resize() {
             //Functions inside loaded execute when window resize
             FE.global.lazyLoad();
+            FE.global.datePickerInit('.date-picker-tab1', 'ja', false);
+            FE.global.datePickerInit('.date-picker-tab2-single', 'ja', true);
+            FE.global.datePickerInit('.date-picker-tab3', 'ja', false);
         }
 
     },
 
     news: {
         newsScroll: () => {
-            if (!isIpad && document.getElementById('news-banner')!=null) {
+            if (!isIpad && document.getElementById('news-banner') != null) {
                 let element = document.getElementById('news-banner');
                 let content = document.getElementById('news-content');
-               // let blockHeight = element.offsetHeight + 100;
+                // let blockHeight = element.offsetHeight + 100;
                 let imgWidth = element.offsetWidth;
                 let imgMinWidth = imgWidth - content.offsetWidth;
                 //document.getElementById('experience-content-padder').style.height = blockHeight + 'px';
                 $('#news-banner').css('width', imgMinWidth);
+
                 function scrollNews() {
                     // let scrollTopPos = $(document).scrollTop();
                     // let scrollChangePx = Math.floor(scrollTopPos);
@@ -829,8 +852,8 @@ const FE = {
                     // } else {
                     //     $('#news-banner').css('width', imgMinWidth);
                     // }
-                    $('#news-banner').css('width', imgMinWidth);    
-                };                
+                    $('#news-banner').css('width', imgMinWidth);
+                };
                 $(window).scroll(function() {
                     scrollNews();
                 });

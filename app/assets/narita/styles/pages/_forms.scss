@@ -153,26 +153,24 @@
     display: none;
   }
   float: none;
-  position: relative;
+  position: absolute;
   padding-right: 0;
   float: left;
 
   label.checkbox {
-    padding: 0 0 0 8px !important;
-
+    padding: 0 0 0 28px !important;
     margin: 0;
   }
 
   .checkbox > span {
-    border: 1px solid #232e48;
+    border: 1px solid #eeeeee;
     display: inline-block;
     left: 0;
     width: 21px;
     height: 21px;
     position: absolute;
-    background: #fff;
+    background: #eeeeee;
     pointer-events: none;
-
   }
 
   .checkbox > span i {
@@ -184,9 +182,10 @@
   }
 }
 
-.textarea-custom{
+.textarea-custom {
   border: 2px solid #eeeeee;
-  &:focus{
+
+  &:focus {
     border: 2px solid #eeeeee;
   }
 }

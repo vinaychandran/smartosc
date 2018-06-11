@@ -63,7 +63,7 @@
           position: absolute;
         }
 
-        &:nth-child(even) {
+        &:nth-child(odd) {
           .attraction-list-info {
             float: left;
           }
@@ -74,7 +74,7 @@
           }
         }
 
-        &:nth-child(odd) {
+        &:nth-child(even) {
           .attraction-list-info {
             float: right;
           }
@@ -84,16 +84,6 @@
           }
         }
       }
-      @include lg {
-        .attraction-list-info {
-          //right: -120px;
-        }
-        // &:nth-child(odd) {
-        //   .attraction-list-info {
-        //     left: -120px;
-        //   }
-        // }
-      }
 
       .attraction-list-info {
         @extend %clearfix;
@@ -101,7 +91,7 @@
         color: #000;
         text-align: center;
         margin: 20px 20px 0;
-        padding: 20px;
+        padding: 0 20px;
         position: relative;
         top: -70px;
         box-shadow: 14.1px 14.1px 90px 0 rgba(0, 0, 0, 0.2);
@@ -115,13 +105,13 @@
 
         .number {
           font-family: Lato;
-          padding-bottom: 20px;
           font-size: 40px;
+          line-height: 2;
           @include md {
             font-family: Lato-B;
             position: absolute;
-            right: 59px;
-            top: -30px;
+            right: 60px;
+            top: -120px;
             font-size: 100px;
           };
         }
@@ -158,19 +148,22 @@
           @include font-size(14px);
           line-height: 1.79;
           letter-spacing: 2.8px;
-          margin-bottom: 10px;
+          padding-bottom: 5px;
           @include md {
             margin-bottom: 20px;
           }
         }
 
         .business-hours {
-          margin-bottom: 25px;
+          margin-bottom: 20px;
+          padding-bottom: 20px;
           text-align: left;
+          border-bottom: 1px solid #eeeeee;
           @include md {
             display: block;
             float: left;
             margin-bottom: 0;
+            border-bottom: 0;
           }
 
           p {
@@ -190,12 +183,13 @@
           @include md {
             display: block;
             float: left;
-            padding-left: 25px;
+            padding-left: 50px;
           }
 
           p {
             @include font-size(24px);
             letter-spacing: 0.4px;
+            margin: 0;
           }
         }
 
@@ -249,7 +243,7 @@
     h6 {
       @include font-size(20px);
       text-align: center;
-      padding: 30px;
+      padding-bottom: 40px;
       @include md {
          @include font-size(24px);
       };
@@ -257,21 +251,23 @@
   }
 
   .subscribe {
+    @extend %clearfix;
     background-color: #fafafa;
-    padding: 45px 0 30px;
+    padding: 0;
     text-align: center;
 
     h2 {
       margin: 0 10px;
       line-height: 1;
-      padding: 20px 0;
+      padding: 45px 0;
       @include font-size(16px);
       font-weight: 500;
       color: #000;
       position: relative;
       display: inline-block;
       @include md {
-        margin-bottom: 30px;
+        padding: 47px 0 37px;
+        //margin-bottom: 30px;
         @include font-size(24px);
       }
 
@@ -282,9 +278,19 @@
       }
     }
 
+    #subscribeForm {
+      background: #fff;
+      padding: 20px;
+      @include md {
+        background: none;
+        padding: 0;
+        margin: 0;
+      };
+    }
+
     .booking-widget {
       max-width: 880px;
-      border: 20px solid #f5f5f5;
+      //border: 20px solid #f5f5f5;
       position: static;
       height: auto;
       padding-bottom: 0;
@@ -292,14 +298,17 @@
       @include md {
         border: 0;
         margin: 0 auto;
+        background: #fff;
+        margin-bottom: 41px;
       }
 
       .tabs-content {
         height: auto;
-        padding: 20px;
-        background-color: #fff;
+        padding: 0 20px;
+        background: none;
+        //background-color: #fff;
         @include md {
-          padding: 35px 55px;
+          padding: 0 55px;
         }
 
         label {
@@ -308,13 +317,17 @@
           padding: 15px 0;
 
           &:first-child {
-            padding-top: 0 0 30px 0;
+            padding: 0 0 30px;
+            @include md {
+              padding: 45px 0 35px;
+            };
           }
 
           &:last-child {
-            padding: 0;
+            @extend %clearfix;
+            padding: 30px 20px 0;
             @include md {
-              padding: 30px 0 0;
+              padding: 45px 0 35px;
             };
           }
         }
@@ -322,9 +335,12 @@
 
       #booking-tab2 {
         .thankyou {
-          height: 66px;
+          padding: 0 0 45px;
           margin: 0;
           display: none;
+          @include md {
+            padding: 45px 0;
+          };
         }
 
         .shop .form-group {
@@ -365,5 +381,12 @@
         }
       }
     }
+  }
+
+  .map-container .btn-map {
+    display: none;
+    @include md {
+      display: block;
+    };
   }
 }

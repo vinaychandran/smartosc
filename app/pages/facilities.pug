@@ -42,7 +42,8 @@ block append content
                 h3 TOGETHER IN  STYLE
                 p あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
         section.design-info
-            img.lazy(data-src='/assets/narita/images/facilities/1.jpg')
+            source(media='(min-width: 768px)', srcset='/assets/narita/images/facilities/1.jpg')
+            img(src='/assets/narita/images/facilities/1.jpg') 
             .container
                 .design-content
                     h2 ELEGANTLY REFINED AND SUMPTUOUSLY DESIGNED
@@ -183,20 +184,21 @@ block append content
                                 .btn.room-more.popup(data-show-rooms="facilities-full-info") もっと見る
                                     i.mys-arrow-left.white
         section.promo-content
-            h3 サービスについて
-            ul.row
-                li.col.col-1-3
-                    source(media='(min-width: 356px)', srcset='/assets/narita/images/facilities/service1.jpg')
-                    img(src='/assets/narita/images/facilities/service1.jpg')
-                    .content あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさをもつ青いそら
-                li.col.col-1-3
-                    source(media='(min-width: 356px)', srcset='/assets/narita/images/facilities/service2.jpg')
-                    img(src='/assets/narita/images/facilities/service2.jpg')
-                    .content あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさをもつ青いそら
-                li.col.col-1-3
-                    source(media='(min-width: 356px)', srcset='/assets/narita/images/facilities/service3.png')
-                    img(src='/assets/narita/images/facilities/service3.png')
-                    .content あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさをもつ青いそら
+            h4 サービスについて
+            .container
+                ul.row
+                    li.col.col-1-3
+                        source(media='(min-width: 356px)', srcset='/assets/narita/images/facilities/service1.jpg')
+                        img(src='/assets/narita/images/facilities/service1.jpg')
+                        .content あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさをもつ青いそら
+                    li.col.col-1-3
+                        source(media='(min-width: 356px)', srcset='/assets/narita/images/facilities/service2.jpg')
+                        img(src='/assets/narita/images/facilities/service2.jpg')
+                        .content あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさをもつ青いそら
+                    li.col.col-1-3
+                        source(media='(min-width: 356px)', srcset='/assets/narita/images/facilities/service3.png')
+                        img(src='/assets/narita/images/facilities/service3.png')
+                        .content あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさをもつ青いそら
         include ../components/breadcrumb.pug
     #facilities-full-info(data-basicLightbox data-id="facilities-full-info" class="room-detail facilities-detail-popup")
         .room-info-header 

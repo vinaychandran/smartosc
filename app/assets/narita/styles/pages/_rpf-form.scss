@@ -14,7 +14,6 @@
     };
   }
 }
-
 // .basicLightbox__placeholder {
 //   @include md {
 //     position: absolute;
@@ -87,7 +86,7 @@
 
     &.meeting {
       clear: both;
-      padding-top: 20px;
+      padding-top: 40px;
     }
   }
 
@@ -118,7 +117,7 @@
     padding: 0 15px;
 
     .col {
-      padding: 0 20px 20px 0;
+      padding: 0 20px 40px 0;
       width: 30%;
       @include md {
         width: 20%;
@@ -127,22 +126,18 @@
   }
 
   .attachFile {
-    @extend %clearfix;
-    padding: 30px 0 10px;
-    text-align: left;
-    @include md {
-      text-align: right;
-    };
-
-    label {
-      float: none;
+    input[type="file"] {
+      display: none;
     }
 
-    input[type=file] {
-      border: none;
-      height: auto;
-      margin: 0;
-      padding: 0;
+    .custom-file-upload {
+      float: left;
+      display: inline-block;
+      padding: 30px 0 10px;
+      cursor: pointer;
+      @include md{
+        float: right;
+      };
     }
   }
 
@@ -302,7 +297,10 @@
 
     button {
       padding: 25px 50px;
-      width: 320px;
+      width: 100%;
+      @include md {
+        width: 320px;
+      };
     }
   }
 
