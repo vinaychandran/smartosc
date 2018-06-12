@@ -303,8 +303,7 @@
 
       span.date_at,
       span.date_to {
-        @extend .icon;
-        @extend .sprite-calender_pc;
+        @extend .icon-calender;
 
         &:before {
           display: block;

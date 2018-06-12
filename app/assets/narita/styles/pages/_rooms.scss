@@ -536,6 +536,14 @@ ul.rooms-list{
         border-bottom: 1px solid #000;
       }
     }
+    i{
+      @include font-size(18px);      
+    }
+    .icon-download{
+      &:before{
+        color: #000;
+      }
+    }
   }
 }
 
@@ -545,6 +553,7 @@ ul.rooms-list{
     display: flex;
     justify-content:space-between;  
     flex-wrap:  wrap;
+    align-items:center;
     @include md {
       border-bottom: 1px solid rgba(0,0,0,0.1);
       padding: 40px 50px 40px 0;
@@ -553,6 +562,8 @@ ul.rooms-list{
       border-bottom: 1px solid rgba(0,0,0,0.1);
       width: 50%;
       padding: 15px 5px;
+      display: flex;
+      align-items: center;
       @include md {
         border-bottom: 0;
         width: 25%;
@@ -561,6 +572,9 @@ ul.rooms-list{
         padding-left: 15px;
         @include font-size(12px);
         font-family: 'YuGo';
+      }
+      i{
+        @include font-size(29px);
       }
     }
   }

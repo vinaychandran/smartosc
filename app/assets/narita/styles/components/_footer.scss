@@ -50,6 +50,7 @@ footer {
       display: inline-block;
       margin-right: 20px;  
       cursor:pointer;
+      @include font-size(36px); 
     }
   }   
 }

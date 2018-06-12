@@ -205,25 +205,26 @@ body.modal-open{
 } 
 
 
-.icon-png{
-    display: inline-block;
-}
+// .icon-png{
+//     display: inline-block;
+// }
 
-.icon-flag-en {
-  @include sprite($flag-en);  
-}
+// .icon-flag-en {
+//   @include sprite($flag-en);  
+// }
 
-.icon-flag-jp {
-  @include sprite($flag-jp);  
-}
+// .icon-flag-jp {
+//   @include sprite($flag-jp);  
+// }
 
-.icon-flag-kr {
-  @include sprite($flag-kr);  
-}
-
-
-.icon-flag-cn {
-  @include sprite($flag-ch);   
-}
+// .icon-flag-kr {
+//   @include sprite($flag-kr);  
+// }
 
 
+// .icon-flag-cn {
+//   @include sprite($flag-ch);   
+// }
+
+
+ 

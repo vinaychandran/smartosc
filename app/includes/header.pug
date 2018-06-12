@@ -20,36 +20,49 @@ header
   .header-right
     .top-cta.visible-desktop
       a.phone(href='#')
-        i.icon.sprite-phone
+        i.icon-phone
         span 03-3434-3939
       .choose-lang
         .selected-lang Language
         ul
           li
             a.active(href='#')
-              i.icon-png.icon-flag-jp  
+              span.icon-flag_jp
+                span.path1
+                span.path2
               | 日本語
           li
             a(href='#')
-              i.icon-png.icon-flag-en
+              span.icon-flag_en
+                span.path1
+                span.path2
+                span.path3 
               | English
           li
             a(href='#')
-              i.icon-png.icon-flag-kr
+              span.icon-flag_ch
+                span.path1
+                span.path2
               | 한국어
           li
             a(href='#')
-              i.icon-png.icon-flag-cn
+              span.icon-flag_kr
+                span.path1
+                span.path2
+                span.path3
+                span.path4 
               | 簡体中文
           li
             a(href='#')
-              i.icon-png.icon-flag-cn
+              span.icon-flag_jp
+                span.path1
+                span.path2
               | 簡体中文
     .sign-in(data-show-id='login-form')
-      .icon.sprite-account_pc
+      .icon-login
       p.visible-desktop アカウント
     a.mobile-phone.visible-device(href='#')
-      i.icon.sprite-phone-mobile
+      i.icon-phone
     #hamburger.hamburger
       span
       span
@@ -87,22 +100,35 @@ nav#sideNav.side-navigation
     ul
       li
         a.active(href='#')
-          i.icon-png.icon-flag-jp  
+          span.icon-flag_jp
+            span.path1
+            span.path2
           | 日本語
       li
         a(href='#')
-          i.icon-png.icon-flag-en
+          span.icon-flag_en
+            span.path1
+            span.path2
+            span.path3 
           | English
       li
         a(href='#')
-          i.icon-png.icon-flag-kr
+          span.icon-flag_ch
+            span.path1
+            span.path2
           | 한국어
       li
         a(href='#')
-          i.icon-png.icon-flag-cn
+          span.icon-flag_kr
+            span.path1
+            span.path2
+            span.path3
+            span.path4 
           | 簡体中文
       li
         a(href='#')
-          i.icon-png.icon-flag-cn
+          span.icon-flag_jp
+            span.path1
+            span.path2
           | 簡体中文
 include ../components/reset-form.pug

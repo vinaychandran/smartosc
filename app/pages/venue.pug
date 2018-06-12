@@ -38,10 +38,10 @@ block append content
 		section.inner-menu-wrap
 			.inner-links-right
 				.inner-phone
-					i.icon.sprite-tel_sp
+					i.icon-phone
 					| 000-0000-0000
 				.btn.pdf-download PDFをダウンロード
-					i.icon.sprite-download
+					i.icon-download
 				.btn.rfp-form(data-show-id='rfp-form') お問い合わせ
 			.inner-menu.hidden-xs
 				ul
@@ -308,8 +308,9 @@ block append content
 				.slider-count
 					span.number 1
 					|  / 6
-				.btn PDFをダウンロード
-				a.faq-link(href="#") FAQ
+				.btn PDFをダウンロード 
+					i.icon-download
+				a.faq-link(href="#") FAQ					
 			include ../components/inner-page-food-menu.pug
 		section.location
 			.section-title
@@ -339,10 +340,10 @@ block append content
 	#room-full-info(data-basicLightbox data-id="room-full-info" class="room-detail")
 		.room-info-header
 			.phone-number
-				i.icon.sprite-tel_sp
+				i.icon-phone
 				| 000-0000-0000
 			a(href="#").book-room
 				| お問い合わせ
 			.close-room
-				| x
+				span.icon-close
 		include ../components/venue-info.pug

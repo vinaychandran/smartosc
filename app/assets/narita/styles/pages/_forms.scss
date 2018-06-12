@@ -175,6 +175,7 @@
 
   .checkbox > span i {
     opacity: 0;
+    @include font-size(20px);
   }
 
   .checkbox > input:checked + span i {

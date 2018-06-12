@@ -75,6 +75,13 @@
     width: 50%;
     text-align: center;
     padding-top: 14px;
+    i{
+      @include font-size(20px);
+      padding-right: 10px;
+      &:before{
+        color: #000;
+      }
+    }
     @include md {
        @include font-size(24px);
       display: inline-block;
@@ -100,6 +107,9 @@
     margin-right: -5px;
     height: 61px;
     display: none;
+    i{
+      padding-left: 10px;
+    }
     @include md {
       display: inline-block;
     }
@@ -320,14 +330,18 @@ ul.venue-types {
       vertical-align: middle;
       background: #eee;
       cursor: pointer;
+      position: relative;
     }
 
     input[type="checkbox"]:checked + label span {
-      @extend .icon;
-      @extend .sprite-checked_pc;
+      @extend .icon-checked;
 
       &:before {
-        margin-left: 2px;
+        @extend .use-iconmoon;
+        @include font-size(18px);
+        position: absolute;
+        left: 4px;
+        top: 4px;
       }
     }
   }
@@ -477,8 +491,11 @@ ul.venue-list {
   }
 
   i {
-    @include font-size(13px);
+    @include font-size(18px);
     margin-right: 10px;
+    &:before{
+      color: #000;
+    }
   }
 }
 

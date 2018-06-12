@@ -124,8 +124,8 @@
                 line-height: 1.4;
             }
         }
-        i{
-            @include font-size(10px);
+        .icon-like{
+            @include font-size(25px);
         }
     }
     .review-each-wrap{        

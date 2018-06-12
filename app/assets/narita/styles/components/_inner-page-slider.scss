@@ -77,6 +77,9 @@
 
   .btn {
     margin:10px 0;
+    i{
+      padding-left: 10px;
+    }
     @include md {
       float: right;
     }

@@ -58,6 +58,7 @@
     text-align: center;
     font-family: $primary-font;
     font-weight: bold;
+    margin: 0 -10px;
     @include md {
       display: none;
     }
@@ -88,6 +89,11 @@
     }
   }
 
+  #booking-tabs{
+     @include mobile{
+      margin: 0 -10px;
+    }    
+  }
   .tabs-header {
     @extend %clearfix;
     display: block;
@@ -285,7 +291,6 @@
       //width: 164px;
       @include mobile {
         width: 100%;
-        background: none;
         padding-left: 15px;
       }
       //padding-top: 18px;
@@ -294,13 +299,17 @@
       };
 
       span.date_at,
-      span.date_to {
-        @extend .icon;
-        @extend .sprite-calender_pc;
-
+      span.date_to {        
+        @extend .icon-calender;
         &:before {
           display: block;
-          background-image: none;
+          @include font-size(20px);   
+          @extend .use-iconmoon;  
+          @include mobile {
+           content:'';
+           width: 18px;
+           height: 18px;
+          }      
         }
         @include md {
           float: left;
@@ -317,10 +326,9 @@
           //   background-size: 42.6em 282.4em;
           // }
           &:before {
-            background-image: url("../svg/sprite.svg");
             margin-left: 5px;
             width: 28px;
-            margin: 7px 0;
+            margin: 2px 0;
             float: left;
             display: inline-block;
           }
@@ -476,26 +484,23 @@
       .button-next,
       .button-prev {
         position: absolute;
-        top: 20px;
+        top: 30px;
         z-index: 3;
         width: 36px;
         height: 29px;
-        padding: 8px;
         cursor: pointer;
-        box-sizing: border-box;
-        background-size: 15px;
-        background-position: 50% 50%;
-        background-repeat: no-repeat;
+        @extend .use-iconmoon;
+        color: #000;
       }
 
       .button-prev {
-        background-image: url("../icons/prev.svg");
+        @extend .icon-prev;
         left: 20px;
       }
 
       .button-next {
-        background-image: url("../icons/next.svg");
-        right: 20px;
+        @extend .icon-next;
+        right: 30px;
       }
 
       .close {
@@ -675,8 +680,7 @@
     }
 
     .people-list {
-      @extend .icon;
-      @extend .sprite-people_pc;
+      @extend .icon-people;
       font-family: $primary-font;
       background-size: 6px;
       background-repeat: no-repeat;
@@ -692,8 +696,10 @@
       color: $default-color;
       //padding: 15px 0;
       &:before {
+        @extend .use-iconmoon;
         float: left;
-        margin: 22px 10px 22px 15px;
+        margin: 18px 10px 22px 15px;
+        font-size: 27px;
       }
       @include md {
         width: 200px;

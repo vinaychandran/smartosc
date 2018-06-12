@@ -73,18 +73,16 @@ header{
 
 
 .mobile-phone{
-  @include tablet {
-    display: block!important;
-  }
+	@include tablet {
+	display: block!important;
+	}
 	float: left;
 	padding:18px 19px;
 	border-right:1px solid rgba(255,255,255,0.2);
+	@include font-size(20px);
 }
 
-.sign-in{
-  @include tablet {
-    display: block!important;
-  }
+.sign-in{  
 	float: left;
 	padding:17px 20px;
 	border-left:1px solid rgba(255,255,255,0.2);
@@ -93,17 +91,19 @@ header{
 		padding: 25px 15px 25px;
 		border-left:0;
 	}
-  @include tablet {
-    padding:17px 20px;
-  }
-	.icon{
+	@include tablet {
+	    padding:17px 20px;
+	    display: block!important;
+	}
+	.icon-login{
 		width: 20px;
     	margin: 0 auto;
+    	font-size: 20px;
 	}
 	p{
-    @include tablet {
-      display: none!important;
-    }
+	    @include tablet {
+	      display: none!important;
+	    }
 		line-height: 1;
 		margin:10px 0 0;
 		font-family: 'YuGo';
@@ -120,9 +120,9 @@ header{
 	@include md {
 		margin: 38px 35px;
 	}
-  @include tablet {
-    margin: 20px 15px;
-  }
+	@include tablet {
+	   margin: 20px 15px;
+	}
     span {
 		display: block;
 		position: absolute;
@@ -233,19 +233,21 @@ header{
 			padding: 19px 25px 19px 75px;
 			font-family: 'YuGo';
 			line-height: 20px;
-			i{
+			> span{
 				position: absolute;
 				left: 25px;
+				top: 50%;
+				transform: translateY(-50%);
+				font-size: 29px;
 			}
 			&.active{
 				background-color: #eeeeee;
-				@extend .icon;
-				@extend .sprite-checked_pc;
+				@extend .icon-checked;
 				&:before{					
 				    position: absolute;
 				    right: 35px;
 				    top: 40%;
-				    font-size: 10px;
+				    @extend .use-iconmoon;
 				}
 			}
 		}
