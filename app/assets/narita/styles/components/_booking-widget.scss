@@ -39,7 +39,7 @@
       height: 80px;
       padding: 10px 60px;
       @include tablet {
-        padding: 10px 25px;
+        padding: 10px 5px;
       }
 
       label {
@@ -92,7 +92,7 @@
   #booking-tabs{
      @include mobile{
       margin: 0 -10px;
-    }    
+    }
   }
   .tabs-header {
     @extend %clearfix;
@@ -151,13 +151,12 @@
   .tabs-content {
     @extend %clearfix;
     background: $secondary-color;
-    height: 196px;
-    padding: 50px 60px;
+    padding: 40px 60px;
     @include mobile {
       padding: 20px;
     }
     @include tablet {
-      padding: 25px;
+      padding: 25px 5px;
     }
   }
 
@@ -180,51 +179,51 @@
       margin-right: 11px;
       padding: 0;
     }
+  }
 
-    .form-group {
-      margin: 0;
-      width: 100%;
-      @include md {
-        width: 200px;
-      }
+  label {
+    font-family: $secondary-font;
+    @include font-size(14px);
+    font-weight: 500;
+    letter-spacing: 1.1px;
+    text-align: left;
+    color: $default-color;
+    padding: 5px 10px;
+  }
 
-      label {
-        font-family: $secondary-font;
-        @include font-size(14px);
-        font-weight: 500;
-        letter-spacing: 1.1px;
-        text-align: left;
+  .form-group {
+    margin: 0;
+    width: 100%;
+    @include md {
+      width: 200px;
+    }     
+
+    .input-custom {
+      position: relative;
+
+      input,
+      input::placeholder {
+        font-family: $primary-font;
+        background-size: 6px;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        border-radius: 4px;
+        margin: 0;
+        height: 66px;
+        border: 2px solid #eeeeee;
+        @include font-size(12px);
+        letter-spacing: 0.9px;
+        padding: 0 11px;
         color: $default-color;
-        padding: 5px 10px;
+        font-weight: 700;
+        &:focus {
+          border: 2px solid #eeeeee;
+        }
       }
 
-      .input-custom {
-        position: relative;
-
-        input,
-        input::placeholder {
-          font-family: $primary-font;
-          background-size: 6px;
-          background-repeat: no-repeat;
-          cursor: pointer;
-          border-radius: 4px;
-          margin: 0;
-          height: 66px;
-          border: 2px solid #eeeeee;
-          @include font-size(12px);
-          letter-spacing: 0.9px;
-          padding: 0 11px;
-          color: $default-color;
-
-          &:focus {
-            border: 2px solid #eeeeee;
-          }
-        }
-
-        input::placeholder {
-          border: 0;
-          padding-left: 0;
-        }
+      input::placeholder {
+        border: 0;
+        padding-left: 0;
       }
     }
   }
@@ -289,27 +288,33 @@
       // padding-left: 45px;
       // background-size: 20px;
       //width: 164px;
+      font-weight: 700;
       @include mobile {
         width: 100%;
         padding-left: 15px;
       }
       //padding-top: 18px;
+      padding: 20px 10px;
       @include md {
         padding-top: 0;
       };
 
       span.date_at,
-      span.date_to {        
+      span.date_to {
+        @extend %clearfix;
         @extend .icon-calender;
         &:before {
-          display: block;
-          @include font-size(20px);   
-          @extend .use-iconmoon;  
-          @include mobile {
-           content:'';
-           width: 18px;
-           height: 18px;
-          }      
+          display: none;
+          @include md{
+            display: block;
+          };
+          @include font-size(20px);
+          @extend .use-iconmoon;
+          // @include mobile {
+          //  content:'';
+          //  width: 18px;
+          //  height: 18px;
+          // }
         }
         @include md {
           float: left;
@@ -372,10 +377,11 @@
 
     .daysFromTo {
       font-family: $primary-font;
-      @include font-size(12px);
+      @include font-size(14px);
       letter-spacing: normal;
       text-align: center;
       color: rgba(0, 0, 0, 0.6);
+      font-weight: 700;
     }
 
     .values {
@@ -491,16 +497,18 @@
         cursor: pointer;
         @extend .use-iconmoon;
         color: #000;
+        font-weight: bold;
+        @include font-size(12px);
       }
 
       .button-prev {
         @extend .icon-prev;
-        left: 20px;
+        left: 30px;
       }
 
       .button-next {
         @extend .icon-next;
-        right: 30px;
+        right: 40px;
       }
 
       .close {
@@ -541,6 +549,7 @@
             text-align: center;
             color: $default-color;
             padding-bottom: 12px;
+            font-weight: 700;
           }
 
           th {
@@ -554,19 +563,20 @@
             color: $default-color;
             padding: 10px 0;
             border: none;
+            font-weight: 700;
           }
 
           td {
             width: 40px;
             height: 40px;
-            @include font-size(15px);
+            @include font-size(14px);
             line-height: 33px;
             box-sizing: border-box;
             padding: 0;
             text-align: center;
             border: none;
             border: 5px solid $secondary-color;
-
+            font-family: 'Lato-B';
             span {
               display: block;
               border: 1px solid #eeeeee;
@@ -641,6 +651,7 @@
           text-align: center;
           color: $default-color;
           margin: 0 0 10px;
+          font-weight: 700;
         }
 
         .closePopup {
@@ -695,6 +706,7 @@
       letter-spacing: 0.9px;
       color: $default-color;
       //padding: 15px 0;
+      font-weight: 700;
       &:before {
         @extend .use-iconmoon;
         float: left;
@@ -739,6 +751,8 @@
     .grown-up label,
     .room label {
       padding: 25px 10px;
+      font-weight: 700;
+      font-family: 'YuGo';
     }
   }
 
@@ -747,6 +761,7 @@
     width: 100%;
     clear: both;
     padding: 0;
+
     @include md {
       float: left;
       width: auto;
@@ -754,11 +769,12 @@
     }
 
     label {
-      text-decoration: underline;
-      background: url("../icons/forma-1.svg") left center;
-      background-repeat: no-repeat;
       padding: 5px 10px 5px 20px;
       clear: both;
+    }
+
+    span{
+      text-decoration: underline;
     }
 
     button {
@@ -767,7 +783,9 @@
       border: none;
       height: 66px;
       width: 100%;
+      margin: 0; 
       @include md {
+        padding: 0;
         width: 182px;
       }
     }
@@ -882,7 +900,7 @@
               line-height: 1.4;
               padding: 8px 12px;
               color: $default-color;
-
+              font-weight: 700;
               &.active,
               &:focus,
               &:hover {
@@ -1273,7 +1291,7 @@
                 line-height: 1.4;
                 padding: 8px 12px;
                 color: $default-color;
-
+                font-weight: 700;
                 &.active,
                 &:focus,
                 &:hover {
@@ -1323,7 +1341,7 @@
 
   .input-popup {
     border: 2px solid #eeeeee;
-    padding: 33px;
+    padding: 25px 30px;
     margin-bottom: 20px;
 
     .title {
@@ -1334,11 +1352,13 @@
       text-align: left;
       color: $default-color;
       margin-bottom: 12px;
+      font-weight:700;
     }
 
     ul li {
       @include font-size(12px);
       list-style: disc;
+      font-weight: 700;
     }
   }
 
@@ -1346,6 +1366,7 @@
     button {
       margin: 0;
       border: none;
+      line-height: 1;
     }
 
     .clear {
@@ -1354,6 +1375,7 @@
       cursor: pointer;
       background-color: #eeeeee;
       float: left;
+      color: #000;
       @include md {
         width: 190px;
       }

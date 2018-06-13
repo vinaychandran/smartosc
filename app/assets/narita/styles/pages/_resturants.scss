@@ -224,7 +224,7 @@
         position: relative;
         @include sm {
           overflow: auto;
-        }        
+        }
         ul {
           width: 310%;
           text-align: left;
@@ -239,8 +239,8 @@
           }
           li {
             display: inline-block;
-            float: none;  
-            margin-bottom: 6px;          
+            float: none;
+            margin-bottom: 6px;
             @include sm {
               margin-bottom: 20px;
             }
@@ -252,7 +252,7 @@
             }
           }
         }
-      }            
+      }
       .tabs-content {
         margin: 0 10px;
         @include sm {
@@ -289,7 +289,7 @@
                 }
               }
             }
-          }          
+          }
         }
         .menu-details {
           background: $default-bg;

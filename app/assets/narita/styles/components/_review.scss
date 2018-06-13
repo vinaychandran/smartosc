@@ -15,9 +15,9 @@
         margin: 0;
     } 
     h5{
-        @include font-size(18px);
+        @include font-size(16px);
         font-family: 'YuGo';
-        font-weight: 500;
+        font-weight: 700;
         margin-bottom: 15px;  
         text-align: center;   
         @include md {
@@ -33,7 +33,9 @@
         line-height: 1.86; 
         @include font-size(14px);
         font-family: 'YuMin';
+        line-height: 2;
         letter-spacing: 1.4px;
+        opacity: 0.8;
         @include md {
             padding-top: 35px;
         }
@@ -161,6 +163,7 @@
             @include font-size(14px);
             font-family: 'YuGo';
             letter-spacing: 1.4px;
+            font-weight: 700;
         }  
         i{
             @include font-size(32px);  

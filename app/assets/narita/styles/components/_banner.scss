@@ -10,14 +10,7 @@
 }
 
 .main-banner {
-    position: relative;
-    padding-top: 56px;
-    @include md {
-        padding-top: 94px;
-    }
-    @include tablet {
-      padding-top: 56px;
-    }
+    position: relative;    
     .banner-image{
         img{
             width: 100%;
@@ -37,10 +30,10 @@
             letter-spacing: 3.8px;
             text-align: center;
             margin: 0 0 15px;
-            @include font-size(32px);
+            @include font-size(24px); 
             @include md {
                 margin: 0 0 20px;
-                @include font-size(40px);
+                @include font-size(32px);
             }
         }
         span {
@@ -67,23 +60,37 @@
         }
     }
     .photos-link {
-        @include center(vertical);
+        position: absolute;
+        top: 54px;
         right: 0;
+        @include md {
+            @include center(vertical);
+        }
         a {
             @include font-size(10px);
             background: $default-bg;
             font-family: 'Lato-B';
             line-height: 1;
-            letter-spacing: 0.1px;
-            text-transform: uppercase;
-            padding: 15px 20px;
-            display: block;
-            margin-bottom: 1px;
+            letter-spacing: 0.1px;            
+            padding: 8px;            
             text-align: left;
-            color: rgba(0, 0, 0, 0.6);
+            float: left;
+            margin-left: 1px;
+            @include md {
+                padding: 15px 20px;
+                display: flex;
+                align-items: center;
+                float: none;
+                margin-bottom: 1px;
+                text-transform: uppercase;
+            }
+        }
+        i{
+            @include font-size(19px);
         }
         span{
-            margin-right: 5px;
+            margin-left: 5px;
+            color: rgba(0, 0, 0, 0.6);
         }
     }
     .photos-link-mobile {

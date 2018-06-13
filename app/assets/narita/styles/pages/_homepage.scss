@@ -2,12 +2,18 @@
 .booking-widget {
   padding-bottom: 100px;
   @include md {
-    padding-bottom: 50px;
+    padding-bottom: 25px;
   }
 }
 
 .home-slider {
-  padding: 100px 0;
+  padding: 60px 0 100px;
+  .container{
+    padding: 0;
+    @include md {
+      padding: 0 10px;
+    }
+  }
   @include md {
     padding: 0 0 100px 0;
   }
@@ -37,13 +43,16 @@
   }
 
   h4 {
-   font-family: 'Lato';
-    @include font-size(16px);
+    font-family: 'Lato-B';
+    @include font-size(14px);
     letter-spacing: 3.1px;
     text-align: center;
     color: #141414;
-    padding-bottom: 36px;
+    padding-bottom: 30px;
     position: relative;
+    @include md {
+      @include font-size(16px);
+    }
   }
   .show-more {
     display: inline-block;
@@ -55,11 +64,11 @@
     color: #141414;
     padding-right: 30px;
     position: absolute;
-    right: 65px;
+    right: 55px;
     top: 0;
     i{
       right: 0;
-      top: 0;
+      top: 3px;
       position: absolute;
     }
   }
@@ -75,6 +84,7 @@
     margin: -24px auto 0;
     position: relative;
     font-family: 'Lato-B';
+    color: #000000;
     @include md {
       @include font-size(12px);
     }
@@ -87,9 +97,12 @@
     text-decoration: underline;
     padding: 10px 25px;
     font-family: 'YuMin';
+    margin-top: 10px;
+    text-underline-position: under;
+    line-height: 1.64;
     @include md {
       padding: 0 65px 0 0;
-    };
+    }
   }
 }
 
@@ -107,6 +120,12 @@
 .home-slider-video{
   text-align: center;
   margin-bottom: 40px;
+  .container{
+    padding: 0;
+    @include md {
+      padding: 0 10px;
+    }
+  }
 
   // #video {
   //   display: none;
@@ -164,6 +183,8 @@
       text-align: center;
       padding: 10px 20px;
       line-height: 1;
+      text-transform: uppercase;
+      white-space: nowrap;
 
     }
   }

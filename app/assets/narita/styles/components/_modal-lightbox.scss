@@ -17,11 +17,11 @@ $basicLightbox__timing: ease !default;
   height: 100vh;
   background: $basicLightbox__background;
   opacity: .01; // Start with .01 to avoid the repaint that happens from 0 to .01
- // transition: opacity $basicLightbox__duration $basicLightbox__timing;
   z-index: $basicLightbox__zIndex;
   will-change: opacity;
-  &:after{
-    content:"X";
+  @extend .icon-close;
+  @extend .use-iconmoon;
+  &:before{   
     position: fixed;
     right: 25px;
     top: 5px;
@@ -31,7 +31,7 @@ $basicLightbox__timing: ease !default;
     text-align: center;
     line-height: 50px; 
     cursor: pointer;
-    font-size: 20px;
+    font-size: 20px;    
   }
 
   &--visible {

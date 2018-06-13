@@ -116,6 +116,13 @@
           padding-bottom: 0;
         };
 
+        img{
+          width: 100%;
+          @include md {
+            width: auto;
+          }
+        }
+
         .header {
           font-family: YuGo;
           @include font-size(14px);
