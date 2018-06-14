@@ -5,8 +5,11 @@ const browserSync = require('browser-sync').create();
 const del = require('del');
 const wiredep = require('wiredep').stream;
 const runSequence = require('run-sequence');
-const svgSprite = require("gulp-svg-sprites");
-const spritesmith = require('gulp.spritesmith');
+var replace = require('gulp-replace');
+
+// const svgSprite = require("gulp-svg-sprites");
+// const spritesmith = require('gulp.spritesmith');
+var args = require('yargs').argv;
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
@@ -14,206 +17,208 @@ const reload = browserSync.reload;
 var dev = true;
 
 gulp.task('views', () => {
-  return gulp.src('app/**/*.pug')
-    .pipe($.plumber())
-    .pipe($.pug({pretty: true}))
-    .pipe(gulp.dest('.tmp'))
-    .pipe(reload({stream: true}));
+    return gulp.src('app/**/*.pug')
+        .pipe($.plumber())
+        .pipe($.pug({ pretty: true }))
+        .pipe(gulp.dest('.tmp'))
+        .pipe(reload({ stream: true }));
 });
 
-
-
-
 gulp.task('styles', () => {
-  return gulp.src('app/assets/narita/styles/**/*.scss')
-    .pipe($.plumber())
-    .pipe($.sourcemaps.init())
-    .pipe($.sass.sync({
-      outputStyle: 'expanded',
-      precision: 10,
-      includePaths: ['.']
-    }).on('error', $.sass.logError))
-    .pipe($.autoprefixer({browsers: ['> 1%', 'last 2 versions', 'Firefox ESR']}))
-    .pipe($.sourcemaps.write())
-    .pipe(gulp.dest('.tmp/assets/narita/styles'))
-    .pipe(reload({stream: true}));
+    var locale = args.locale;
+    console.log('locale >>>' + locale);
+    var bowerPath = args.locale;
+    return gulp.src('app/assets/narita/styles/**/*.scss')
+        .pipe(replace('$locale', locale))
+        //.pipe(header('$bowerPath: ' + bowerPath + ';\n'))
+        .pipe($.plumber())
+        .pipe($.sourcemaps.init())
+        .pipe($.sass.sync({
+            outputStyle: 'expanded',
+            precision: 10,
+            includePaths: ['.']
+        }).on('error', $.sass.logError))
+        .pipe($.autoprefixer({ browsers: ['> 1%', 'last 2 versions', 'Firefox ESR'] }))
+        .pipe($.sourcemaps.write())
+        .pipe(gulp.dest('.tmp/assets/narita/styles'))
+        .pipe(reload({ stream: true }));
+
 });
 
 gulp.task('scripts', () => {
-  return gulp.src('app/assets/narita/scripts/**/*.js')
-    .pipe($.plumber())
-    .pipe($.sourcemaps.init())
-    .pipe($.babel())
-    .pipe($.sourcemaps.write('.'))
-    .pipe(gulp.dest('.tmp/assets/narita/scripts'))
-    .pipe(reload({stream: true}));
+    return gulp.src('app/assets/narita/scripts/**/*.js')
+        .pipe($.plumber())
+        .pipe($.sourcemaps.init())
+        .pipe($.babel())
+        .pipe($.sourcemaps.write('.'))
+        .pipe(gulp.dest('.tmp/assets/narita/scripts'))
+        .pipe(reload({ stream: true }));
 });
 
 function lint(files, options) {
-  return gulp.src(files)
-    .pipe($.eslint({ fix: true }))
-    .pipe(reload({stream: true, once: true}))
-    .pipe($.eslint.format())
-    .pipe($.if(!browserSync.active, $.eslint.failAfterError()));
+    return gulp.src(files)
+        .pipe($.eslint({ fix: true }))
+        .pipe(reload({ stream: true, once: true }))
+        .pipe($.eslint.format())
+        .pipe($.if(!browserSync.active, $.eslint.failAfterError()));
 }
 
 gulp.task('lint', () => {
-  return lint('app/assets/narita/scripts/**/*.js')
-    .pipe(gulp.dest('app/assets/narita/scripts'));
+    return lint('app/assets/narita/scripts/**/*.js')
+        .pipe(gulp.dest('app/assets/narita/scripts'));
 });
 gulp.task('lint:test', () => {
-  return lint('test/spec/**/*.js')
-    .pipe(gulp.dest('test/spec'));
+    return lint('test/spec/**/*.js')
+        .pipe(gulp.dest('test/spec'));
 });
 
 gulp.task('html', ['views', 'styles', 'scripts'], () => {
-  return gulp.src(['app/**/*.html', '.tmp/**/*.html'])
-    .pipe($.useref({searchPath: ['.tmp', 'app', '.']}))
-    .pipe($.if('*.js', $.uglify()))
-    .pipe($.if('*.css', $.cssnano({safe: true, autoprefixer: false})))
-    .pipe($.if('*.html', $.htmlmin({collapseWhitespace: true})))
-    .pipe(gulp.dest('dist'));
+    return gulp.src(['app/**/*.html', '.tmp/**/*.html'])
+        .pipe($.useref({ searchPath: ['.tmp', 'app', '.'] }))
+        .pipe($.if('*.js', $.uglify()))
+        .pipe($.if('*.css', $.cssnano({ safe: true, autoprefixer: false })))
+        .pipe($.if('*.html', $.htmlmin({ collapseWhitespace: true })))
+        .pipe(gulp.dest('dist'));
 });
 
 gulp.task('html-dev', ['views', 'styles', 'scripts'], () => {
-  return gulp.src(['app/**/*.html', '.tmp/**/*.html'])
-    .pipe($.useref({searchPath: ['.tmp', 'app', '.']}))
-    .pipe($.if('*.js', $.uglify({
-      mangle: false,
-      compress: false,
-      output: { beautify: true }
-    }
-      )))
-    .pipe($.if('*.css', $.cssnano({safe: true, autoprefixer: false})))
-    .pipe(gulp.dest('dist'));
+    return gulp.src(['app/**/*.html', '.tmp/**/*.html'])
+        .pipe($.useref({ searchPath: ['.tmp', 'app', '.'] }))
+        .pipe($.if('*.js', $.uglify({
+            mangle: false,
+            compress: false,
+            output: { beautify: true }
+        })))
+        .pipe($.if('*.css', $.cssnano({ safe: true, autoprefixer: false })))
+        .pipe(gulp.dest('dist'));
 });
 
 gulp.task('images', () => {
-  return gulp.src('app/assets/narita/images/**/*')
-    .pipe($.cache($.imagemin()))
-    .pipe(gulp.dest('dist/assets/narita/images'));
+    return gulp.src('app/assets/narita/images/**/*')
+        .pipe($.cache($.imagemin()))
+        .pipe(gulp.dest('dist/assets/narita/images'));
 });
 
 
-gulp.task('sprite', function () {
-    return gulp.src('app/assets/narita/icons/*.svg')
-        .pipe(svgSprite({
-            selector: "sprite-%f",
-            cssFile: "styles/base/_sprite.scss",
-            padding:10
-        }))
-        .pipe(gulp.dest("app/assets/narita/"));
-});
+// gulp.task('sprite', function () {
+//     return gulp.src('app/assets/narita/icons/*.svg')
+//         .pipe(svgSprite({
+//             selector: "sprite-%f",
+//             cssFile: "styles/base/_sprite.scss",
+//             padding:10
+//         }))
+//         .pipe(gulp.dest("app/assets/narita/"));
+// });
 
-gulp.task('sprite-png', function () {
-  var spriteData = gulp.src('app/assets/narita/icons/*.png').pipe(spritesmith({
-    imgName: 'sprite.png',
-    cssName: '_sprite1.scss'
-  }));
-  return spriteData.pipe(gulp.dest('app/assets/narita/styles/'));
-});
+// gulp.task('sprite-png', function () {
+//   var spriteData = gulp.src('app/assets/narita/icons/*.png').pipe(spritesmith({
+//     imgName: 'sprite.png',
+//     cssName: '_sprite1.scss'
+//   }));
+//   return spriteData.pipe(gulp.dest('app/assets/narita/styles/'));
+// });
 gulp.task('fonts', () => {
-  return gulp.src(require('main-bower-files')('**/*.{eot,svg,ttf,woff,woff2}', function (err) {})
-    .concat('app/assets/narita/fonts/**/*'))
-    .pipe($.if(dev, gulp.dest('.tmp/assets/narita/fonts'), gulp.dest('dist/assets/narita/fonts')));
+    return gulp.src(require('main-bower-files')('**/*.{eot,svg,ttf,woff,woff2}', function(err) {})
+            .concat('app/assets/narita/fonts/**/*'))
+        .pipe($.if(dev, gulp.dest('.tmp/assets/narita/fonts'), gulp.dest('dist/assets/narita/fonts')));
 });
 
 gulp.task('extras', () => {
-  return gulp.src([
-    'app/*',
-    '!app/*.html',
-    '!app/*.pug'
-  ], {
-    dot: true
-  }).pipe(gulp.dest('dist'));
+    return gulp.src([
+        'app/*',
+        '!app/*.html',
+        '!app/*.pug'
+    ], {
+        dot: true
+    }).pipe(gulp.dest('dist'));
 });
 
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 
 gulp.task('serve', () => {
-  runSequence(['clean', 'wiredep'], ['views', 'styles', 'scripts', 'fonts', 'sprite', 'sprite-png'], () => {
-    browserSync.init({
-      notify: false,
-      port: 9001,
-      server: {
-        baseDir: ['.tmp', 'app'],
-        routes: {
-          '/bower_components': 'bower_components'
-        }
-      }
+    runSequence(['clean', 'wiredep'], ['views', 'styles', 'scripts', 'fonts'], () => {
+        browserSync.init({
+            notify: false,
+            port: 9001,
+            server: {
+                baseDir: ['.tmp', 'app'],
+                routes: {
+                    '/bower_components': 'bower_components'
+                }
+            }
+        });
+
+        gulp.watch([
+            'app/**/*.html',
+            'app/assets/narita/images/**/*',
+            '.tmp/assets/narita/fonts/**/*'
+        ]).on('change', reload);
+
+        gulp.watch('app/**/*.pug', ['views']);
+        gulp.watch('app/assets/narita/styles/**/*.scss', ['styles']);
+        gulp.watch('app/assets/narita/scripts/**/*.js', ['scripts']);
+        gulp.watch('app/assets/narita/fonts/**/*', ['fonts']);
+        gulp.watch('bower.json', ['wiredep', 'fonts']);
     });
-
-    gulp.watch([
-      'app/**/*.html',
-      'app/assets/narita/images/**/*',
-      '.tmp/assets/narita/fonts/**/*'
-    ]).on('change', reload);
-
-    gulp.watch('app/**/*.pug', ['views']);
-    gulp.watch('app/assets/narita/styles/**/*.scss', ['styles']);
-    gulp.watch('app/assets/narita/scripts/**/*.js', ['scripts']);
-    gulp.watch('app/assets/narita/fonts/**/*', ['fonts']);
-    gulp.watch('bower.json', ['wiredep', 'fonts']);
-  });
 });
 
 gulp.task('serve:dist', ['default'], () => {
-  browserSync.init({
-    notify: false,
-    port: 9001,
-    server: {
-      baseDir: ['dist']
-    }
-  });
+    browserSync.init({
+        notify: false,
+        port: 9001,
+        server: {
+            baseDir: ['dist']
+        }
+    });
 });
 
 gulp.task('serve:test', ['scripts'], () => {
-  browserSync.init({
-    notify: false,
-    port: 9001,
-    ui: false,
-    server: {
-      baseDir: 'test',
-      routes: {
-        '/scripts': '.tmp/assets/narita/scripts',
-        '/bower_components': 'bower_components'
-      }
-    }
-  });
+    browserSync.init({
+        notify: false,
+        port: 9001,
+        ui: false,
+        server: {
+            baseDir: 'test',
+            routes: {
+                '/scripts': '.tmp/assets/narita/scripts',
+                '/bower_components': 'bower_components'
+            }
+        }
+    });
 
-  gulp.watch('app/assets/narita/scripts/**/*.js', ['scripts']);
-  gulp.watch(['test/spec/**/*.js', 'test/index.html']).on('change', reload);
-  gulp.watch('test/spec/**/*.js', ['lint:test']);
+    gulp.watch('app/assets/narita/scripts/**/*.js', ['scripts']);
+    gulp.watch(['test/spec/**/*.js', 'test/index.html']).on('change', reload);
+    gulp.watch('test/spec/**/*.js', ['lint:test']);
 });
 
 // inject bower components
 gulp.task('wiredep', () => {
-  gulp.src('app/assets/narita/styles/*.scss')
-    .pipe($.filter(file => file.stat && file.stat.size))
-    .pipe(wiredep({
-      ignorePath: /^(\.\.\/)+/
-    }))
-    .pipe(gulp.dest('app/assets/narita/styles'));
+    gulp.src('app/assets/narita/styles/*.scss')
+        .pipe($.filter(file => file.stat && file.stat.size))
+        .pipe(wiredep({
+            ignorePath: /^(\.\.\/)+/
+        }))
+        .pipe(gulp.dest('app/assets/narita/styles'));
 
-  gulp.src('app/layouts/default.pug')
-    .pipe(wiredep({
-      exclude: ['vanilla-lazyload'],
-      ignorePath: /^(\.\.\/)*\.\./
-    }))
-    .pipe(gulp.dest('app/layouts'));
+    gulp.src('app/layouts/default.pug')
+        .pipe(wiredep({
+            exclude: ['vanilla-lazyload'],
+            ignorePath: /^(\.\.\/)*\.\./
+        }))
+        .pipe(gulp.dest('app/layouts'));
 });
 
-gulp.task('build', ['lint', 'html', 'images', 'fonts', /*'extras'*/], () => {
-  return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
+gulp.task('build', ['lint', 'html', 'images', 'fonts', /*'extras'*/ ], () => {
+    return gulp.src('dist/**/*').pipe($.size({ title: 'build', gzip: true }));
 });
 
-gulp.task('build-dev', ['lint', 'html-dev', 'images', 'fonts', /*'extras'*/], () => {
-  return gulp.src('dist/**/*').pipe($.size({title: 'build-dev', gzip: false}));
+gulp.task('build-dev', ['lint', 'html-dev', 'images', 'fonts', /*'extras'*/ ], () => {
+    return gulp.src('dist/**/*').pipe($.size({ title: 'build-dev', gzip: false }));
 });
 
 gulp.task('default', () => {
-  return new Promise(resolve => {
-    dev = false;
-    runSequence(['clean', 'wiredep'], 'build', resolve);
-  });
+    return new Promise(resolve => {
+        dev = false;
+        runSequence(['clean', 'wiredep'], 'build', resolve);
+    });
 });

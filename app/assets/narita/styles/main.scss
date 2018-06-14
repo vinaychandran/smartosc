@@ -1,5 +1,5 @@
 // Core
-@import "jp";
+@import "locale/$locale";
 @import "base/variables";
 @import "base/normalize";
 @import "base/mixins";
@@ -7,11 +7,9 @@
 // @import "base/sprite";
 // @import "base/sprite1";
 @import "base/helpers";
-
 // Common
 @import "base/common";
 @import "pages/forms";
-
 // Components
 @import "components/iconmoon";
 @import "components/header";

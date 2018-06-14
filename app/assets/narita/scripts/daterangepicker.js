@@ -6,7 +6,7 @@
 
         var days, dateLocale, opts;
 
-        if (opts.locale === 'zh-TW') {
+        if (opts.locale === 'tw') {
             days = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
             dateLocale = {
                 months: ['一月', '二月', '三月', '四月', '五月', '六月',
@@ -37,7 +37,7 @@
                 yearSuffix: '년'
             }
             opts.l = dateLocale;
-        } else if (opts.locale === 'zh-CN') {
+        } else if (opts.locale === 'cn') {
 
             days = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
             dateLocale = {

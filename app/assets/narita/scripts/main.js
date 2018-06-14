@@ -371,7 +371,7 @@ const FE = {
                 // elem.onclick = basicLightbox.create(html).show;
                 elem.onclick = basicLightbox.create(html, {
                     afterShow: (instance) => {
-                        FE.global.datePickerInit('.date-picker-venue-rpf', 'ja', false)
+                        FE.global.datePickerInit('.date-picker-venue-rpf', false)
                         let SlideNumber = elem.getAttribute('data-slide')
                         FE.global.lazyLoad();
                         FE.global.sliderImage('.gallery-nav', 1, false, true);
@@ -540,7 +540,9 @@ const FE = {
             }
         },
 
-        datePickerInit: (container, locale, single) => {
+        datePickerInit: (container, single) => {
+            let locale = document.getElementById('locale');
+            locale = locale.getAttribute('data-lang');
             $.DateRangePicker({
                 container: container,
                 singleDatePicker: single,
@@ -798,10 +800,10 @@ const FE = {
             FE.global.itemShowHide();
             FE.global.filterRooms('room-types');
             FE.global.filter('venue-types');
-            FE.global.datePickerInit('.date-picker-tab1', 'ja', false);
-            FE.global.datePickerInit('.date-picker-tab2-single', 'ja', true);
-            FE.global.datePickerInit('.date-picker-tab3', 'ja', false);
-            FE.global.datePickerInit('.basicLightbox--visible .date-picker-venue-rpf', 'ja', false);
+            FE.global.datePickerInit('.date-picker-tab1', false);
+            FE.global.datePickerInit('.date-picker-tab2-single', true);
+            FE.global.datePickerInit('.date-picker-tab3', false);
+            FE.global.datePickerInit('.basicLightbox--visible .date-picker-venue-rpf', false);
             FE.global.pageScroll();
             FE.global.sliderImage('.inner-page-slider', 1, false, true);
             FE.global.submitForm();
@@ -812,9 +814,9 @@ const FE = {
         resize: function resize() {
             //Functions inside loaded execute when window resize
             FE.global.lazyLoad();
-            FE.global.datePickerInit('.date-picker-tab1', 'ja', false);
-            FE.global.datePickerInit('.date-picker-tab2-single', 'ja', true);
-            FE.global.datePickerInit('.date-picker-tab3', 'ja', false);
+            FE.global.datePickerInit('.date-picker-tab1', false);
+            FE.global.datePickerInit('.date-picker-tab2-single', true);
+            FE.global.datePickerInit('.date-picker-tab3', false);
         }
 
     },

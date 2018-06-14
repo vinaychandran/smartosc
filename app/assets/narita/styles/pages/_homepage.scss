@@ -56,7 +56,7 @@
   }
   .show-more {
     display: inline-block;
-    font-family: 'YuGo';
+    font-family: $go-semibold;
     @include font-size(14px);
     font-weight: 500;
     letter-spacing: 1.1px;
@@ -84,6 +84,7 @@
     margin: -24px auto 0;
     position: relative;
     font-family: 'Lato-B';
+    letter-spacing: 1.1px;
     color: #000000;
     @include md {
       @include font-size(12px);
@@ -96,10 +97,11 @@
     @include font-size(14px);
     text-decoration: underline;
     padding: 10px 25px;
-    font-family: 'YuMin';
+    font-family: $mi-regular;
     margin-top: 10px;
     text-underline-position: under;
     line-height: 1.64;
+    font-weight: 500;
     @include md {
       padding: 0 65px 0 0;
     }
