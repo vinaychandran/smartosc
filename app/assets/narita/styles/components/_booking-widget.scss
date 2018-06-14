@@ -36,7 +36,6 @@
     }
 
     .tabs-content {
-      height: 80px;
       padding: 10px 60px;
       @include tablet {
         padding: 10px 5px;
@@ -44,20 +43,20 @@
 
       label {
         margin-bottom: 9px;
-        display: none;
+        display: none!important;
       }
     }
 
     + .home-slider {
-      padding-top: 232px;
+      padding-top: 150px;
     }
   }
 
   .booking-title {
     @extend %clearfix;
     text-align: center;
-    font-family: $primary-font;
-    font-weight: bold;
+    font-family: $go-bold;
+    font-weight: 700;
     margin: 0 -10px;
     @include md {
       display: none;
@@ -117,7 +116,7 @@
         text-align: center;
         padding: 14px 0;
         opacity: 0.4;
-        font-family: $primary-font;
+        font-family: $go-bold;
         @include font-size(14px);
         letter-spacing: 1.1px;
         color: $default-color;
@@ -171,18 +170,17 @@
 
   .promo-code {
     float: left;
-    margin: 0;
+    margin-bottom: 20px;
     width: 100%;
-    padding-bottom: 20px;
     @include md {
       width: auto;
       margin-right: 11px;
-      padding: 0;
+      margin-bottom: 0;
     }
   }
 
   label {
-    font-family: $secondary-font;
+    font-family: $mi-semibold;
     @include font-size(14px);
     font-weight: 500;
     letter-spacing: 1.1px;
@@ -196,14 +194,14 @@
     width: 100%;
     @include md {
       width: 200px;
-    }     
+    }
 
     .input-custom {
-      position: relative;
+      position: relative;     
 
       input,
       input::placeholder {
-        font-family: $primary-font;
+        font-family: $go-bold;
         background-size: 6px;
         background-repeat: no-repeat;
         cursor: pointer;
@@ -275,7 +273,7 @@
 
     .endDate,
     .startDate {
-      font-family: $primary-font;
+      font-family: $go-bold;
       @include font-size(12px);
       line-height: 2.5;
       letter-spacing: 0.9px;
@@ -376,7 +374,7 @@
     }
 
     .daysFromTo {
-      font-family: $primary-font;
+      font-family: $go-bold;
       @include font-size(14px);
       letter-spacing: normal;
       text-align: center;
@@ -542,7 +540,7 @@
 
           caption {
             border-bottom: 2px solid $default-color;
-            font-family: $primary-font;
+            font-family: $go-bold;
             @include font-size(14px);
             line-height: 2.14;
             letter-spacing: 1.1px;
@@ -558,7 +556,7 @@
             line-height: 20px;
             box-sizing: border-box;
             padding: 0;
-            font-family: $primary-font;
+            font-family: $go-bold;
             text-align: center;
             color: $default-color;
             padding: 10px 0;
@@ -636,16 +634,17 @@
 
         .days {
           opacity: 0.6;
-          font-family: $primary-font;
+          font-family: $go-bold;
           @include font-size(14px);
           letter-spacing: normal;
           text-align: center;
           color: rgba(0, 0, 0, 0.6);
+          font-weight: 700;
         }
 
         .nights {
           height: 13px;
-          font-family: $primary-font;
+          font-family: $go-bold;
           @include font-size(14px);
           letter-spacing: normal;
           text-align: center;
@@ -692,7 +691,7 @@
 
     .people-list {
       @extend .icon-people;
-      font-family: $primary-font;
+      font-family: $go-bold;
       background-size: 6px;
       background-repeat: no-repeat;
       cursor: pointer;
@@ -735,7 +734,7 @@
       span {
         display: block;
         opacity: 0.5;
-        font-family: $primary-font;
+        font-family: $go-bold;
         @include font-size(12px);
         letter-spacing: 0.9px;
         text-align: left;
@@ -752,7 +751,8 @@
     .room label {
       padding: 25px 10px;
       font-weight: 700;
-      font-family: 'YuGo';
+      font-family: $go-bold;
+      display: block !important;
     }
   }
 
@@ -771,6 +771,10 @@
     label {
       padding: 5px 10px 5px 20px;
       clear: both;
+      &.visible-device{
+        text-align: center;
+        padding-top: 20px;
+      }
     }
 
     span{
@@ -783,7 +787,7 @@
       border: none;
       height: 66px;
       width: 100%;
-      margin: 0; 
+      margin: 0;
       @include md {
         padding: 0;
         width: 182px;
@@ -798,7 +802,7 @@
   .room-locations,
   .shop,
   .time-selection {
-    float: none;
+    float: left;
     margin: 0;
     width: 100%;
     padding-bottom: 20px;
@@ -827,8 +831,11 @@
       }
 
       .input-custom {
-        position: relative;
+        position: relative;        
 
+        @include md {
+          padding: 0;
+        }
         &:after {
           content: '';
           position: absolute;
@@ -962,7 +969,7 @@
       }
 
       .calendar {
-        height: 340px;
+        height: 375px;
       }
 
       .values {
@@ -1034,7 +1041,7 @@
     //clear: both;
     float: right;
     padding-bottom: 0;
-    @include md {
+    @include md { 
       clear: none;
       //float: none;
       width: 135px;
@@ -1048,6 +1055,8 @@
       width: auto;
 
       .input-custom {
+        margin-bottom: 0;
+
         button,
         input,
         input::placeholder {
@@ -1205,7 +1214,7 @@
         display: inline;
 
         label {
-          font-family: $secondary-font;
+          font-family: $mi-semibold;
           @include font-size(14px);
           font-weight: 500;
           font-style: normal;
@@ -1228,6 +1237,7 @@
             position: absolute;
             right: 25%;
             top: 45%;
+
             width: 0;
             cursor: pointer;
             height: 0;
@@ -1240,7 +1250,7 @@
           button,
           input,
           input::placeholder {
-            font-family: $primary-font;
+            font-family: $go-bold;
             background-size: 6px;
             background-repeat: no-repeat;
             cursor: pointer;
@@ -1346,7 +1356,7 @@
 
     .title {
       @include font-size(14px);
-      font-family: $primary-font;
+      font-family: $go-bold;
       line-height: 2.14;
       letter-spacing: normal;
       text-align: left;
@@ -1414,7 +1424,7 @@
 
   input,
   input::placeholder {
-    font-family: $primary-font;
+    font-family: $go-bold;
     background-size: 6px;
     background-repeat: no-repeat;
     cursor: pointer;

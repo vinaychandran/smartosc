@@ -3,7 +3,7 @@ section.booking-widget.visible-desktop#booking-widget
     div.booking-title.visible-mobile
       p 空室検索
       a.close-booking
-        i.icon-close 
+        i.icon-close
     .tabs#booking-tabs
       ul.tabs-header
         li
@@ -113,10 +113,13 @@ section.booking-widget.visible-desktop#booking-widget
               .input-custom
                 input.form-control(type='text', placeholder='プロモコード)')
         .find-button
-          label 
-            i.icon-info 
+          label.visible-desktop
+            i.icon-info
             span 最低価格保証
           button(name='submit', type='submit', value='空室を検索') 空室を検索
+          label.visible-device
+            i.icon-info
+            span 最低価格保証
       #booking-tab2.tabs-content(onclick='FE.global.bookingWidgetClick()')
         .number-of-people
           section
@@ -186,10 +189,13 @@ section.booking-widget.visible-desktop#booking-widget
                         li
                           span(target='Tokyo', names='Tokyo') 大人2名
         .find-button
-          label 
-            i.icon-info 
+          label.visible-desktop
+            i.icon-info
             span 最低価格保証
           button(name='submit', type='submit', value='空室を検索'  data-show-id='show-restaurant') 空室を検索
+          label.visible-device
+            i.icon-info
+            span 最低価格保証
         #show-restaurant(data-basicLightbox data-id="show-restaurant" class=" row restaurant-detail")
           .errors
           form(id='bookingForm' name="bookingForm")
@@ -323,7 +329,10 @@ section.booking-widget.visible-desktop#booking-widget
                       button.clear クリア
                       button.done 完了
         .find-button
-          label 
-            i.icon-info 
+          label.visible-desktop
+            i.icon-info
             span 最低価格保証
           button(name='submit', type='submit', value='空室を検索') 空室を検索
+          label.visible-device
+            i.icon-info
+            span 最低価格保証

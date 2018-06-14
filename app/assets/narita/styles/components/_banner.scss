@@ -17,14 +17,14 @@
             height: auto;
         }
     }
-    .banner-text {
+    .banner-text { 
         @include center(vertical);
         text-align: center;
         color: $secondary-color;
         width: 100%;
         text-align: center;
         h1 {
-            font-family: 'YuMin';
+            font-family: $mi-regular; 
             font-weight: 500;
             line-height: 1;
             letter-spacing: 3.8px;
@@ -111,8 +111,8 @@
         bottom: 14px;
         a {
             @include font-size(12px);
-            font-family: $primary-font;
-            font-weight: bold;
+            font-family: $go-semibold;
+            font-weight: 700;
             line-height: 1.25;
             letter-spacing: 4.6px;
             display: block;

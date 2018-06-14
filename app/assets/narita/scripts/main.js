@@ -240,33 +240,34 @@ const FE = {
 
             let selectorMapElement = document.getElementById('gmap_canvas');
             var map;
-            map = new google.maps.Map(document.getElementById('gmap_canvas'), {
-                zoom: 13,
-                center: new google.maps.LatLng(selectorMapElement.dataset.lat, selectorMapElement.dataset.lan),
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            });
-            let mapMarker = [{
-                position: new google.maps.LatLng(selectorMapElement.dataset.lat, selectorMapElement.dataset.lan),
-                icon: selectorMapElement.dataset.src
-            }];
-            let mapElem = (document.querySelector('.attractions-list')) ? document.querySelector('.attractions-list') : '';
-            var inputs = (mapElem) ? mapElem.getElementsByTagName('li') : '';
-            if (inputs.length) {
-                for (var i = 0; i < inputs.length; i += 1) {
-                    mapMarker.push({
-                        position: new google.maps.LatLng(inputs[i].dataset.lat, inputs[i].dataset.long),
-                        icon: inputs[i].dataset.src
-                    })
-                }
+            if(selectorMapElement){
+              map = new google.maps.Map(document.getElementById('gmap_canvas'), {
+                  zoom: 13,
+                  center: new google.maps.LatLng(selectorMapElement.dataset.lat, selectorMapElement.dataset.lan),
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+              });
+              let mapMarker = [{
+                  position: new google.maps.LatLng(selectorMapElement.dataset.lat, selectorMapElement.dataset.lan),
+                  icon: selectorMapElement.dataset.src
+              }];
+              let mapElem = (document.querySelector('.attractions-list')) ? document.querySelector('.attractions-list') : '';
+              var inputs = (mapElem) ? mapElem.getElementsByTagName('li') : '';
+              if (inputs.length) {
+                  for (var i = 0; i < inputs.length; i += 1) {
+                      mapMarker.push({
+                          position: new google.maps.LatLng(inputs[i].dataset.lat, inputs[i].dataset.long),
+                          icon: inputs[i].dataset.src
+                      })
+                  }
+              }
+              mapMarker.forEach(function(list) {
+                  var marker = new google.maps.Marker({
+                      position: list.position,
+                      icon: list.icon,
+                      map: map
+                  });
+              });
             }
-            mapMarker.forEach(function(list) {
-                var marker = new google.maps.Marker({
-                    position: list.position,
-                    icon: list.icon,
-                    map: map
-                });
-            });
-
         },
 
         scroll: () => {

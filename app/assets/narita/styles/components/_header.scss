@@ -46,7 +46,7 @@ header{
 				@include font-size(14px);
 				color: $secondary-color;
 				padding: 0 20px;
-				font-family: 'YuGo';
+				font-family: $go-bold;
 				font-weight: 700;
 			}
 		}
@@ -110,7 +110,7 @@ header{
 	    }
 		line-height: 1;
 		margin:10px 0 0;
-		font-family: 'YuGo';
+		font-family: $go-bold;
 		font-weight: 700;
 	}
 }
@@ -236,7 +236,7 @@ header{
 			position: relative;
 			display: block;
 			padding: 19px 25px 19px 75px;
-			font-family: 'YuGo';
+			font-family: $go-semibold;
 			line-height: 20px;
 			> span{
 				position: absolute;

@@ -370,7 +370,7 @@
                     }
 
                     container.find('span.date_to').html(getDateLocale(date_to_));
-                    container.find('span.daysFromTo').html(getDateLocale(date_at_) + ' (Month) ~ ' + getDateLocale(date_to_) + ' (Month)');
+                    container.find('span.daysFromTo').html(getDateLocale(date_at_) + ' ~ ' + getDateLocale(date_to_));
 
                     var date1 = new Date(date_at_);
                     var date2 = new Date(date_to_);
