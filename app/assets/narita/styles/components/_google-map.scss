@@ -40,8 +40,7 @@
     li{
       @include font-size(14px);
       margin-bottom: 10px;
-      font-family: $secondary-font;
-      font-family: 'YuMin';
+      font-family: $mi-regular;
     }
   } 
   .contact-us-info{
@@ -62,14 +61,14 @@
 .airpot-stop-info{
   h6{
     margin-bottom: 20px;
-    font-family: 'YuGo';
+    font-family: $go-bold;
   }
   ul{
     margin-bottom: 0;
     li{
       @include font-size(12px);
       margin-bottom: 5px;
-      font-family: 'YuGo';
+      font-family: $go-semibold;
       letter-spacing: 1.1px;
     }
   }

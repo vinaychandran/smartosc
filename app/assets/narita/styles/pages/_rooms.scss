@@ -1,6 +1,6 @@
 .about-rooms-wrap{
   .about-rooms-info{
-    max-width: 660px;
+    max-width: 700px;
     margin: 0 auto;
     padding: 60px 30px;
     text-align: center;
@@ -15,7 +15,7 @@
     }
     p{
       @include font-size(14px);
-      font-family: 'YuMin'; 
+      font-family: $mi-regular; 
        line-height: 2;
        margin: 0;
     }
@@ -32,7 +32,7 @@
     text-align: center;
     @include font-size(20px);
     font-weight: 500; 
-    font-family: 'YuMin';
+    font-family: $mi-regular;
     margin-bottom: 30px;
   }
 }
@@ -48,7 +48,7 @@ ul.room-types{
     }
     a {
       @include font-size(14px);
-      font-family: 'YuGo';
+      font-family: $go-bold;
       line-height: 1.43;
       letter-spacing: 1.4px;
       font-weight: 700;
@@ -105,6 +105,7 @@ ul.rooms-list{
     transition: all 1s ease;
     opacity: 0;
     animation: all 0.3s; 
+    position: relative;
     .room-short-info{
       padding: 27px 20px 20px;
       width: 100%;
@@ -125,7 +126,7 @@ ul.rooms-list{
   }  
   h6{      
     @include font-size(16px);
-    font-family: 'YuGo';
+    font-family: $go-bold;
     text-align: center;
     margin-bottom: 15px;
     @include sm {
@@ -170,7 +171,7 @@ ul.rooms-list{
     }
     li{ 
       @include font-size(14px);
-      font-family: 'YuGo';
+      font-family: $go-semibold;
       width: 100%;
       padding: 15px 0;
       border-bottom: 1px solid #f1f3ee;
@@ -181,6 +182,7 @@ ul.rooms-list{
       span{
         float: right;
         font-weight: 700;
+        font-family: $go-bold;
       }
     }
   }    
@@ -215,7 +217,7 @@ ul.rooms-list{
   padding: 20px 0;
   @include font-size(12px);
   color: $primary-color;
-  font-family: 'YuGo';
+  font-family: $go-semibold;
   @include sm {
     padding: 30px 0;
   }  
@@ -291,7 +293,7 @@ ul.rooms-list{
     span{
       @include font-size(14px);  
       padding-right: 20px;   
-      font-family: 'YuGo';
+      font-family: $go-semibold;
       font-weight: 500; 
       display: none;
       @include sm {
@@ -329,9 +331,10 @@ ul.rooms-list{
     background-color: #c5ad6c;
     color: #ffffff;
     @include font-size(14px);
-    font-family: 'YuGo';
+    font-family: $go-semibold;
     padding: 21px 25px 20px;
     line-height: 1;
+    font-weight: 500;
     @include sm {
       margin-right: 94px;
       padding: 39px 80px;
@@ -352,7 +355,7 @@ ul.rooms-list{
   }
   h2{
     @include font-size(18px);
-    font-family: 'YuMin';
+    font-family: $mi-regular;
     font-weight: 500;
     margin-top: 0;
     margin-bottom: 10px;
@@ -363,7 +366,7 @@ ul.rooms-list{
   }
   .room-quick-info{
     @include font-size(12px);
-    font-family: 'YuMin';
+    font-family: $mi-regular;
     opacity: 0.5;
     padding-bottom: 40px;
     @include sm {
@@ -380,7 +383,7 @@ ul.rooms-list{
     right: 20px;
     bottom: 15px;
     @include font-size(12px);
-    font-family: 'YuGo';
+    font-family: $go-semibold;
     color: $secondary-color;
     display: none;
     @include sm {
@@ -393,7 +396,7 @@ ul.rooms-list{
       display: block !important;  
       top: 50%;
       transform: translateY(-50%);
-    }
+    } 
   }
   .slick-next{
     right: -28px;
@@ -478,20 +481,23 @@ ul.rooms-list{
     } 
     .time{
       @include font-size(14px);
-      font-family: 'YuGo';
-      margin-bottom: 10px;
+      font-family: $go-semibold;
+      margin-bottom: 15px;
+      font-weight: 500;
       span{
-        float: right; 
-        
+        float: right;         
         @include font-size(15px);         
-         font-weight: 700;
+        font-weight: 700;
+        font-family: go-bold;
       }
     }
     .note{
-      font-family: 'YuGo';
+      font-family: $go-semibold;
       @include font-size(10px);
       margin-top: 10px;
       letter-spacing: 0.6px;
+      font-weight: 500;
+      line-height: 1.7;
     }
   }
   .room-tags{
@@ -512,7 +518,8 @@ ul.rooms-list{
       @include font-size(12px);
       letter-spacing: 2.4px; 
       margin-bottom: 10px;
-      font-family: 'YuGo';
+      font-family: $go-semibold;
+      font-weight: 500;
     }
   }
   .room-downloads{
@@ -527,13 +534,15 @@ ul.rooms-list{
       margin: 0;
     }
     li{
-      font-family: 'YuGo'; 
-      line-height: 2.83;
+      font-family: $go-semibold; 
+      font-weight: 500;
+      margin-bottom: 20px;
+      display: flex;
       span{
         @include font-size(12px);
         margin-left: 8px;
         letter-spacing: 2.4px;
-        border-bottom: 1px solid #000;
+        border-bottom: 1px solid rgba(0,0,0,0.4);
       }
     }
     i{
@@ -571,7 +580,8 @@ ul.rooms-list{
       span{
         padding-left: 15px;
         @include font-size(12px);
-        font-family: 'YuGo';
+        font-family: $go-bold;
+        font-weight: 700;
       }
       i{
         @include font-size(29px);
@@ -590,7 +600,7 @@ ul.rooms-list{
   h3{
     @include font-size(16px);
     font-weight: 500;
-    font-family: 'YuMin';
+    font-family: $mi-regular;
     letter-spacing: 1.5px;
     margin-bottom: 35px;
     @include md {
@@ -604,7 +614,7 @@ ul.rooms-list{
     max-width: 645px;
     margin:0 auto 60px;
     line-height: 1.8;
-    font-family: 'YuMin'; 
+    font-family: $mi-regular; 
     @include font-size(14px);
     @include md {
       margin:0 auto 75px;
@@ -624,7 +634,8 @@ ul.rooms-list{
   h4{
     @include font-size(14px);
     margin-bottom: 25px;
-    font-family: 'YuGo';  
+    font-family: $go-bold;
+    font-weight: 700;  
   }
   .strech{
     margin: 0 -35px 40px;
@@ -679,5 +690,21 @@ ul.rooms-list{
     margin-bottom: 0;
     padding-top: 120px; 
     padding-bottom: 80px;
+  }
+}
+
+.ribbon{
+  position: absolute;
+  right: 3px;
+  top: 3px;
+  font-family: $go-bold;
+  font-weight: 700;
+  color: #fff;
+  padding: 15px 30px;
+  &.red{
+    background: #a61f1f;
+  }
+  &.blue{
+    background: #232e48;
   }
 }

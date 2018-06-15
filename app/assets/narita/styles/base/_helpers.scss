@@ -128,10 +128,10 @@ body.modal-open{
     cursor: pointer;
     padding: 20px 50px;
     text-align: center;
-    font-family: 'YuGo';
+    font-family: $go-semibold;
     letter-spacing: 1.1px;
     font-weight: 700;
-    border:0;
+    border:0; 
     @include md {
         padding: 30px 50px;
     }

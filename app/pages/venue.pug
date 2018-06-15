@@ -47,20 +47,16 @@ block append content
 				ul
 					li
 						a(href="#") 会場一覧
-							span
-								i.down
+							i.down
 					li
 						a(href="#") ギャラリー
-							span
-								i.down
+							i.down
 					li
 						a(href="#") ケータリングメニュー
-							span
-								i.down
+							i.down
 					li
 						a(href="#") 所在地
-							span
-								i.down
+							i.down
 		include ../components/rpf-form.pug
 		section.about-venue-info
 			h3 TOGETHER IN  STYLE
@@ -316,7 +312,7 @@ block append content
 			.section-title
 				h2 所在地
 			.map-container
-				#gmap_canvas
+				#gmap_canvas(data-lat='12.9316' data-lan='77.7946' data-src='../assets/narita/images/marker-icon.png')
 				.map-info-wrap
 					h3 HOW TO FIND US
 					ul

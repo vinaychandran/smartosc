@@ -22,7 +22,7 @@ footer {
     li{       
       a{
         color: $secondary-color;
-        font-family:$primary-font;
+        font-family:$go-semibold;
         @include font-size(12px);
         font-weight: $medium;
       }
@@ -67,7 +67,7 @@ footer {
         padding: 15px 0;
         border-bottom: 1px solid rgba(255,2555,255,0.1); 
         position: relative; 
-        font-family: 'YuGo'; 
+        font-family: $go-semibold; 
         letter-spacing: 1.2px;    
         @include sm {
           float: left;     
@@ -114,7 +114,7 @@ footer {
       margin-right: 30px;      
       a{
         @include font-size(10px);
-        font-family: 'YuGo'; 
+        font-family: $go-semibold; 
         letter-spacing: 1px; 
         line-height: 2.6;
         display: block;
@@ -137,7 +137,7 @@ footer {
         margin-right: 30px;
       }
       a{
-        font-family: 'YuGo'; 
+        font-family: $go-semibold; 
         letter-spacing: 1.2px;
       }
     }

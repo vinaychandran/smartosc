@@ -45,9 +45,9 @@
                 @include center(both);
                 @include font-size(18px);
                 color: $secondary-color;
-                font-family:$primary-font;                
+                font-family:$go-semibold;                
                 font-weight: $medium;
-                width: 35%;
+                width: 35%; 
                 .insta-likes {
                     float: left;
                 }
@@ -134,12 +134,12 @@
 
 #tablink {
     @include font-size(12px);
-    font-family: 'YuGo';
+    font-family: $go-bold;
     font-weight: 700;
     margin: 0 20px 20px 20px;
     text-align: center;
     display: block;
-    padding: 20px;
+    padding: 16px 20px;
     border: 2px solid #000;
     position: relative;
     @include sm {
