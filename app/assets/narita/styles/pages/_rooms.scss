@@ -15,23 +15,23 @@
     }
     p{
       @include font-size(14px);
-      font-family: $mi-regular; 
+      font-family: $mi-regular;
        line-height: 2;
        margin: 0;
     }
-  }    
-} 
+  }
+}
 
-.rooms-list-wrap{ 
-  background-color: #fafafa; 
-  padding: 60px 10px 20px; 
+.rooms-list-wrap{
+  background-color: #fafafa;
+  padding: 60px 10px 20px;
   @include md {
     padding: 80px 0;
   }
   h4{
     text-align: center;
     @include font-size(20px);
-    font-weight: 500; 
+    font-weight: 500;
     font-family: $mi-regular;
     margin-bottom: 30px;
   }
@@ -41,7 +41,7 @@ ul.room-types{
     display: table;
     margin: 0 auto 40px;
   }
-  li {    
+  li {
     @include sm {
       float: left;
       padding: 0 20px;
@@ -57,13 +57,13 @@ ul.room-types{
       display: block;
       position: relative;
       margin: 8px 0;
-      cursor: pointer; 
+      cursor: pointer;
       @include sm {
         text-align: left;
         margin: 0;
       }
       &.selected {
-        color: $default-color;
+        color: $default-color;;
         &:after {
           @include sm {
             content: "";
@@ -77,34 +77,34 @@ ul.room-types{
         &:before {
           @include sm {
             content: '';
-            width: 0; 
-            height: 0; 
+            width: 0;
+            height: 0;
             position: absolute;
             bottom: -6px;
             left: 50%;
             margin-left: -4px;
             border-left: 6px solid transparent;
-            border-right: 6px solid transparent;          
-            border-top: 6px solid $default-color;
+            border-right: 6px solid transparent;
+            border-top: 6px solid $default-color;;
           }
         }
-      }      
+      }
     }
-  } 
+  }
 }
 
 ul.rooms-list{
   display: flex;
   flex-flow: row wrap;
-  justify-content:space-between;  
+  justify-content:space-between;
   > li{
     width: 100%;
-    background:$default-bg; 
-    margin-bottom: 110px; 
+    background:$default-bg;
+    margin-bottom: 110px;
     display: none;
     transition: all 1s ease;
     opacity: 0;
-    animation: all 0.3s; 
+    animation: all 0.3s;
     position: relative;
     .room-short-info{
       padding: 27px 20px 20px;
@@ -112,19 +112,19 @@ ul.rooms-list{
       float: left;
       box-shadow: 14.1px 14.1px 90px 0 rgba(0, 0, 0, 0.1);
       @include sm {
-        padding: 27px 50px 20px; 
+        padding: 27px 50px 20px;
       }
-    }  
+    }
     &.show{
       display: block;
-      animation: bounceList 0.3s; 
+      animation: bounceList 0.3s;
       opacity: 1;
-    } 
+    }
     @include sm {
       width: 48%;
-    }   
-  }  
-  h6{      
+    }
+  }
+  h6{
     @include font-size(16px);
     font-family: $go-bold;
     text-align: center;
@@ -150,26 +150,26 @@ ul.rooms-list{
     margin-top: 25px;
     border-top: 1px solid #f1f3ee;
     width: 100%;
-    padding: 0 0 50px; 
+    padding: 0 0 50px;
     float: left;
     position: relative;
-    @include sm { 
+    @include sm {
       padding-top: 25px;
     }
-    ul{      
-      
-      @include sm { 
+    ul{
+
+      @include sm {
         width: 50%;
-        float: left; 
-        padding-right:50px; 
+        float: left;
+        padding-right:50px;
         border-right: 1px solid #f1f3ee;
         &:nth-child(2) {
           border-right: 0px;
           padding-left: 30px;
-        } 
+        }
       }
     }
-    li{ 
+    li{
       @include font-size(14px);
       font-family: $go-semibold;
       width: 100%;
@@ -185,15 +185,15 @@ ul.rooms-list{
         font-family: $go-bold;
       }
     }
-  }    
-}  
+  }
+}
 .room-more{
   position: absolute;
   bottom: -60px;
   width: 100%;
   .mys-arrow-left{
     @include center(vertical);
-    right: 30px; 
+    right: 30px;
   }
 }
 
@@ -211,7 +211,7 @@ ul.rooms-list{
      transform: scale(1);
   }
 }
-         
+
 
 .breadcrumb{
   padding: 20px 0;
@@ -220,14 +220,14 @@ ul.rooms-list{
   font-family: $go-semibold;
   @include sm {
     padding: 30px 0;
-  }  
+  }
   span{
     width: 4px;
     height: 4px;
     border-width: 1px 1px 0 0;
     border-style: solid;
     margin: 0 15px;
-    border-color: #000;
+    border-color: $default-color;
     vertical-align: middle;
     box-sizing: border-box;
     transform: rotate(45deg);
@@ -238,37 +238,37 @@ ul.rooms-list{
 .roomPopup{
   background:#fafafa;
   overflow: auto;
-  display: block; 
+  display: block;
   transform: scale(1);
   opacity: 0;
   transition: opacity ;
   &:after{
     display: none;
-  } 
+  }
   .basicLightbox__placeholder{
     transition: scale(1) ;
   }
   &.basicLightbox--visible{
      opacity: 1;
     animation: roomPop 1s ease; /* IE 10+, Fx 29+ */
-   
+
   }
 }
 
 
 @keyframes roomPop {
-  0%   { 
+  0%   {
     top: -5%;
-    opacity: 1; 
-  }  
-  100% { 
-    top: 0;  
-    opacity: 1;  
+    opacity: 1;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
   }
 }
 
 // #room-full-info{
-//   padding-top: 55px;  
+//   padding-top: 55px;
 //   @include sm {
 //     padding-top: 94px;
 //   }
@@ -279,7 +279,7 @@ ul.rooms-list{
   top: 0;
   left: 0;
   right: 0;
-  background: $secondary-color;
+  background: $secondary-color;;
   z-index: 99;
   height: 55px;
   .room-price{
@@ -288,26 +288,26 @@ ul.rooms-list{
     padding-left: 15px;
     font-family: 'Lato-B';
     float: left;
-    line-height: 50px; 
+    line-height: 50px;
     font-weight: 700;
     span{
-      @include font-size(14px);  
-      padding-right: 20px;   
+      @include font-size(14px);
+      padding-right: 20px;
       font-family: $go-semibold;
-      font-weight: 500; 
+      font-weight: 500;
       display: none;
       @include sm {
         display: inline-block;
       }
     }
     @include sm {
-      line-height: 85px; 
-      @include font-size(32px); 
+      line-height: 85px;
+      @include font-size(32px);
       height: 94px;
     }
   }
   .close-room{
-    color: $secondary-color;
+    color: $secondary-color;;
     background:$primary-bg;
     width: 55px;
     height: 55px;
@@ -329,7 +329,7 @@ ul.rooms-list{
     float: right;
     margin-right: 55px;
     background-color: #c5ad6c;
-    color: #ffffff;
+    color: $secondary-color;
     @include font-size(14px);
     font-family: $go-semibold;
     padding: 21px 25px 20px;
@@ -393,10 +393,10 @@ ul.rooms-list{
   .slick-next, .slick-prev{
     display: none !important;
     @include sm {
-      display: block !important;  
+      display: block !important;
       top: 50%;
       transform: translateY(-50%);
-    } 
+    }
   }
   .slick-next{
     right: -28px;
@@ -409,7 +409,7 @@ ul.rooms-list{
 .room-info-slider{
   //padding:0 25px;
   .slick-list{
-    padding:0 25px; 
+    padding:0 25px;
     @include sm {
       padding: 0;
     }
@@ -426,7 +426,7 @@ ul.rooms-list{
   display: none;
   padding: 10px 0;
   @include md {
-    display: flex; 
+    display: flex;
     flex-wrap:wrap;
     justify-content: space-between;
   }
@@ -441,10 +441,10 @@ ul.rooms-list{
 }
 
 .room-overview{
-  background: #fff;
+  background: $secondary-color;
   padding: 40px 20px;
   text-align: left;
-  margin: 20px 15px;  
+  margin: 20px 15px;
   @include sm {
     margin: 0 0 30px;
     padding: 75px 55px;
@@ -454,16 +454,16 @@ ul.rooms-list{
     font-weight: 500;
     line-height: 1.25;
     letter-spacing: 3.2px;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid $default-color;
     padding-bottom: 15px;
     text-align: center;
   }
-  
+
 }
 
-.room-highlight-wrap{  
+.room-highlight-wrap{
   padding: 30px 0 0;
-  
+
   @include md {
     display: flex;
     flex-direction: row;
@@ -478,15 +478,15 @@ ul.rooms-list{
       max-width: 210px;
       padding-bottom: 0;
       border-bottom: 0px;
-    } 
+    }
     .time{
       @include font-size(14px);
       font-family: $go-semibold;
       margin-bottom: 15px;
       font-weight: 500;
       span{
-        float: right;         
-        @include font-size(15px);         
+        float: right;
+        @include font-size(15px);
         font-weight: 700;
         font-family: go-bold;
       }
@@ -506,17 +506,17 @@ ul.rooms-list{
       max-width: 210px;
       padding: 0;
       border-bottom: 0px;
-    } 
+    }
     ul{
       margin: 0;
     }
     li{
       display: inline-block;
-      border: 1px solid #000;
+      border: 1px solid $default-color;
       padding: 5px 15px;
-      margin-right: 10px; 
+      margin-right: 10px;
       @include font-size(12px);
-      letter-spacing: 2.4px; 
+      letter-spacing: 2.4px;
       margin-bottom: 10px;
       font-family: $go-semibold;
       font-weight: 500;
@@ -526,15 +526,15 @@ ul.rooms-list{
     padding: 0 0 25px;
     border-bottom: 1px solid rgba(0,0,0,0.1);
     @include md {
-      max-width: 210px; 
+      max-width: 210px;
       border-bottom: 0;
       padding: 0;
-    } 
+    }
     ul{
       margin: 0;
     }
     li{
-      font-family: $go-semibold; 
+      font-family: $go-semibold;
       font-weight: 500;
       margin-bottom: 20px;
       display: flex;
@@ -542,15 +542,15 @@ ul.rooms-list{
         @include font-size(12px);
         margin-left: 8px;
         letter-spacing: 2.4px;
-        border-bottom: 1px solid rgba(0,0,0,0.4);
+        border-bottom: 1px solid $default-color;
       }
     }
     i{
-      @include font-size(18px);      
+      @include font-size(18px);
     }
     .icon-download{
       &:before{
-        color: #000;
+        color: $default-color;
       }
     }
   }
@@ -560,7 +560,7 @@ ul.rooms-list{
   ul{
     margin: 0;
     display: flex;
-    justify-content:space-between;  
+    justify-content:space-between;
     flex-wrap:  wrap;
     align-items:center;
     @include md {
@@ -591,7 +591,7 @@ ul.rooms-list{
 }
 
 .room-features{
-  background:#fff;
+  background:$secondary-color;
   padding: 50px 20px 20px;
   margin: 0 15px;
   @include md {
@@ -614,7 +614,7 @@ ul.rooms-list{
     max-width: 645px;
     margin:0 auto 60px;
     line-height: 1.8;
-    font-family: $mi-regular; 
+    font-family: $mi-regular;
     @include font-size(14px);
     @include md {
       margin:0 auto 75px;
@@ -624,8 +624,8 @@ ul.rooms-list{
   .separator{
     width: 150px;
     margin:0 auto 60px;
-    height: 1px; 
-    background:#1b1b1b; 
+    height: 1px;
+    background:#1b1b1b;
     display: none;
     @include md {
       display: block;
@@ -635,7 +635,7 @@ ul.rooms-list{
     @include font-size(14px);
     margin-bottom: 25px;
     font-family: $go-bold;
-    font-weight: 700;  
+    font-weight: 700;
   }
   .strech{
     margin: 0 -35px 40px;
@@ -688,7 +688,7 @@ ul.rooms-list{
   .room-info-container{
     margin-top: 0;
     margin-bottom: 0;
-    padding-top: 120px; 
+    padding-top: 120px;
     padding-bottom: 80px;
   }
 }

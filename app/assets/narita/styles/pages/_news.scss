@@ -53,7 +53,7 @@
             margin-left: -4px;
             border-left: 4px solid transparent;
             border-right: 4px solid transparent;
-            border-top: 4px solid #000;
+            border-top: 4px solid $default-color;
           }
           &:after {
             content: "";
@@ -69,7 +69,7 @@
           border-bottom: 1px solid transparent;
           &.selected{
             background: #fafafa;
-            border-bottom: 1px solid #000;
+            border-bottom: 1px solid $default-color;
             &:before{
               display: none;
             }
@@ -91,7 +91,7 @@
     }
     li{
       width: 100%;
-      background: #fff;
+      background: $secondary-color;
       margin-bottom: 40px;
       display: none;
       animation: all 0.3s ease;
@@ -114,7 +114,7 @@
         }
       }
       .news-tag{
-        background: #fff;
+        background: $secondary-color;
         position: absolute;
         padding: 10px 15px;
         right: 4px;

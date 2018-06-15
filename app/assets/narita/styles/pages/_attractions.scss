@@ -90,8 +90,8 @@
 
       .attraction-list-info {
         @extend %clearfix;
-        background: #fff;
-        color: #000;
+        background: $secondary-color;
+        color: $default-color;
         text-align: center;
         margin: 20px 20px 0;
         padding: 0 20px;
@@ -215,7 +215,7 @@
             left: 0;
             right: 0;
             height: 1px;
-            background-color: #000;
+            background-color: $default-color;
             top: 8px;
           }
 
@@ -225,12 +225,12 @@
             left: 0;
             right: 0;
             height: 1px;
-            background-color: #000;
+            background-color: $default-color;
             top: 10px;
           }
 
           span {
-            background: #fff;
+            background: $secondary-color;
             font-weight: 700;
             color: #c5ad6c;
             padding: 0 35px;
@@ -265,7 +265,7 @@
       padding: 45px 0;
       @include font-size(16px);
       font-weight: 500;
-      color: #000;
+      color: $default-color;
       position: relative;
       display: inline-block;
       @include md {
@@ -282,7 +282,7 @@
     }
 
     #subscribeForm {
-      background: #fff;
+      background: $secondary-color;
       padding: 20px;
       @include md {
         background: none;
@@ -301,7 +301,7 @@
       @include md {
         border: 0;
         margin: 0 auto;
-        background: #fff;
+        background: $secondary-color;
         margin-bottom: 41px;
       }
 
@@ -309,7 +309,7 @@
         height: auto;
         padding: 0 20px;
         background: none;
-        //background-color: #fff;
+        //background-color: $secondary-color;
         @include md {
           padding: 0 55px;
         }

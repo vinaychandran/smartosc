@@ -76,7 +76,7 @@
   .date {
     @include font-size(10px);
     text-align: center;
-    background: #fff;
+    background: $secondary-color;
     padding: 15px 22px;
     display: block;
     line-height: 1;
@@ -85,7 +85,7 @@
     position: relative;
     font-family: 'Lato-B';
     letter-spacing: 1.1px;
-    color: #000000;
+    color: $default-color;
     @include md {
       @include font-size(12px);
     }

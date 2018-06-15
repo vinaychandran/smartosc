@@ -28,6 +28,7 @@ h2.higlight{
     display: inline-block;
     text-align: center;
     text-decoration: none;
+    font-family: $go-semibold; 
     @include md {
       margin-bottom: 30px;
       @include font-size(24px);

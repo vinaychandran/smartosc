@@ -34,7 +34,7 @@
         font-weight: bold;
         line-height: 1.67;
         text-align: left;
-        color: $default-color;
+        color: $default-color;;
         padding: 0 20px;
         @include md {
           padding: 0;
@@ -101,7 +101,7 @@
       font-family: YuGo;
       @include font-size(24px);
       font-weight: 500;
-      color: #000;
+      color: $default-color;
       line-height: 1.25;
     }
 
@@ -177,7 +177,7 @@
           line-height: 1.67;
           letter-spacing: 0.6px;
           text-align: left;
-          color: #000000;
+          color: $default-color;
         }
 
         p {
@@ -283,7 +283,7 @@
     top: 50%;
     transform: translateY(-50%);
     text-align: center;
-    color: #fff;
+    color: $secondary-color;
     width: 100%;
     text-align: center;
   }
@@ -302,7 +302,7 @@
 }
 
   .header {
-    background: #fff;
+    background: $secondary-color;
 width: 100%;
 margin: 0;
 text-align: center;
@@ -334,7 +334,7 @@ font-family: YuGo;
 
   float: left;
     background-color: #eeeeee;
-    color: #ffffff;
+    color: $secondary-color;
     font-size: 14px;
 
     font-family: 'YuGo';
@@ -381,7 +381,7 @@ text-align: center;
   a.text {
     float: right;
     background-color: #c5ad6c;
-    color: #ffffff;
+    color: $secondary-color;
     font-size: 14px;
     font-size: 0.875rem;
     font-family: 'YuGo';

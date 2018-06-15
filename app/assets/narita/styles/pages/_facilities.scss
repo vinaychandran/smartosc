@@ -47,7 +47,7 @@
         }        
     }
     .design-info {
-        background: #fff;
+        background: $secondary-color;
         padding-top: 10px;
         @include md {
             background: #fafafa;
@@ -92,7 +92,7 @@
                 width: 50%;
                 float: left;
                 margin-top: 136px;
-                background: #fff;
+                background: $secondary-color;
                 padding-bottom: 120px;
                 display: none;
                 @include md {
@@ -222,7 +222,7 @@
         line-height: 20px;
         font-weight: bold;
         text-align: center;
-        border-bottom: 2px solid #000;
+        border-bottom: 2px solid $default-color;
         padding-bottom: 30px;
         @include md {
             @include font-size(36px);

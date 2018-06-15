@@ -15,14 +15,14 @@ block append content
 					a(href="#") ケータリングメニュー
 						i.down
 				li
-					a(href="#") 所在地 
+					a(href="#") 所在地
 						i.down
 		section.main-banner
 			picture.banner-image
 				source(media='(min-width: 768px)', srcset='/assets/narita/images/resturant/resturant-banner.jpg')
-				img(src='/assets/narita/images/resturant/resturant-banner-mobile.jpg') 
+				img(src='/assets/narita/images/resturant/resturant-banner-mobile.jpg')
 			.banner-text
-				h1  レストラン 「ガーデニア」 
+				h1  レストラン 「ガーデニア」
 		section.resturant-detail-menu-wrap
 			.resturant-detail-cta-wrap
 				.rating-wrap
@@ -38,11 +38,11 @@ block append content
 							i.icon-star
 						span.rating-unit
 					.rating-number
-						span 4 
-						| / 5				
-				.cta 
+						span 4
+						| / 5
+				.cta
 					i.icon-phone
-					span 000-0000-0000	
+					span 000-0000-0000
 				.btn 予約する
 			.resturant-detail-menu.hidden-xs
 				ul
@@ -50,19 +50,24 @@ block append content
 						a(href="#" data-show-rooms="room-full-info") 会場一覧
 								span
 									i.down
-					li 
+					li
 						a(href="#") ギャラリー
 								span
 									i.down
-					li 
+					li
 						a(href="#") ケータリングメニュー
 								span
 									i.down
-					li 
+					li
 						a(href="#") 所在地
 								span
 									i.down
 		section.resturant-timing-wrap
+
+			p 
+				| 翔び立つ飛行機、空港のまばゆい夜景 - 刻々と変化する雄大な長めが寄り添い、 
+				br
+				| 3つの飲食店と1つのバーで食事を味わう豊潤な一時を。
 			h2.higlight 
 				i
 				span 営業時間
@@ -70,20 +75,23 @@ block append content
 			.resturant-timing
 				.timings
 					.slot 朝食
-					.time 7:00 ~ 9:30
-					.lo LO 9:00
+					.time-wrap
+						.time 7:00 ~ 9:30
+						.lo LO 9:00
 				.timings
 					.slot 朝食
-					.time 7:00 ~ 9:30
-					.lo LO 9:00
+					.time-wrap
+						.time 7:00 ~ 9:30
+						.lo LO 9:00
 				.timings
 					.slot 朝食
-					.time 7:00 ~ 9:30
-					.lo LO 9:00
+					.time-wrap
+						.time 7:00 ~ 9:30
+						.lo LO 9:00
 		section.resturamt-food-wrap
 			include ../components/inner-page-food-menu.pug
 		section.inner-page-slider-wrap.resturant-detail-slider
-			h2.higlight 
+			h2.higlight
 				i
 				span 営業時間
 				i
@@ -99,27 +107,9 @@ block append content
 					li
 						a.tabs-title(href='#') デコール
 				.tabs-content
-					.inner-page-slider.container 
-						div.slick-slide
-							img(src='/assets/narita/images/venue-slider/venue-slider1.jpg')  
-						div.slick-slide
-							img(src='/assets/narita/images/venue-slider/venue-slider2.jpg')
-						div.slick-slide
-							img(src='/assets/narita/images/venue-slider/venue-slider3.jpg')
+					.inner-page-slider.container
 						div.slick-slide
 							img(src='/assets/narita/images/venue-slider/venue-slider1.jpg')
-						div.slick-slide
-							img(src='/assets/narita/images/venue-slider/venue-slider2.jpg')
-						div.slick-slide
-							img(src='/assets/narita/images/venue-slider/venue-slider3.jpg')
-					.inner-page-slider-info.container
-						.slider-count
-							span.number 1
-							|  / 6	
-				.tabs-content
-					.inner-page-slider.container 
-						div.slick-slide
-							img(src='/assets/narita/images/venue-slider/venue-slider1.jpg')  
 						div.slick-slide
 							img(src='/assets/narita/images/venue-slider/venue-slider2.jpg')
 						div.slick-slide
@@ -135,9 +125,9 @@ block append content
 							span.number 1
 							|  / 6
 				.tabs-content
-					.inner-page-slider.container 
+					.inner-page-slider.container
 						div.slick-slide
-							img(src='/assets/narita/images/venue-slider/venue-slider1.jpg')  
+							img(src='/assets/narita/images/venue-slider/venue-slider1.jpg')
 						div.slick-slide
 							img(src='/assets/narita/images/venue-slider/venue-slider2.jpg')
 						div.slick-slide
@@ -153,9 +143,9 @@ block append content
 							span.number 1
 							|  / 6
 				.tabs-content
-					.inner-page-slider.container 
+					.inner-page-slider.container
 						div.slick-slide
-							img(src='/assets/narita/images/venue-slider/venue-slider1.jpg')  
+							img(src='/assets/narita/images/venue-slider/venue-slider1.jpg')
 						div.slick-slide
 							img(src='/assets/narita/images/venue-slider/venue-slider2.jpg')
 						div.slick-slide
@@ -169,15 +159,33 @@ block append content
 					.inner-page-slider-info.container
 						.slider-count
 							span.number 1
-							|  / 6	
+							|  / 6
+				.tabs-content
+					.inner-page-slider.container
+						div.slick-slide
+							img(src='/assets/narita/images/venue-slider/venue-slider1.jpg')
+						div.slick-slide
+							img(src='/assets/narita/images/venue-slider/venue-slider2.jpg')
+						div.slick-slide
+							img(src='/assets/narita/images/venue-slider/venue-slider3.jpg')
+						div.slick-slide
+							img(src='/assets/narita/images/venue-slider/venue-slider1.jpg')
+						div.slick-slide
+							img(src='/assets/narita/images/venue-slider/venue-slider2.jpg')
+						div.slick-slide
+							img(src='/assets/narita/images/venue-slider/venue-slider3.jpg')
+					.inner-page-slider-info.container
+						.slider-count
+							span.number 1
+							|  / 6
 		section.location
 			.section-title
-				h2.higlight 
+				h2.higlight
 					i
 					span 営業時間
 					i
 			.map-container
-				#gmap_canvas
+				#gmap_canvas(data-lat='12.9316' data-lan='77.7946' data-src='../assets/narita/images/marker-icon.png')
 				.map-info-wrap
 					h3 HOW TO FIND US
 					ul
@@ -186,20 +194,20 @@ block append content
 						li 駅や空港からはタクシーもご利用いただけます。
 					.contact-us-info
 						.phone
-							|ご予約の 
+							|ご予約の
 							br
 							|お問い合わせ
 							span 000-0000-0000
 						.phone
-							|ご予約の 
+							|ご予約の
 							br
 							|お問い合わせ
 							span 000-0000-0000
-				.btn.btn-map GOOGLE MAPで見る 
+				.btn.btn-map GOOGLE MAPで見る
 					i.mys-arrow-left.white
 		section.resturants-detail-list
 			.large-container
-				h2.higlight 
+				h2.higlight
 					i
 					span その他のレストラン
 					i
@@ -213,30 +221,30 @@ block append content
 					li
 						img(src='/assets/narita/images/resturant/resturant-small2.jpg')
 						.resturant-list-info
-							h2 レストラン「ガーデニア」						
-							a.see-more 
+							h2 レストラン「ガーデニア」
+							a.see-more
 								span もっと見る
 					li
 						img(src='/assets/narita/images/resturant/resturant-small3.jpg')
 						.resturant-list-info
-							h2 レストラン「ガーデニア」						
-							a.see-more 
+							h2 レストラン「ガーデニア」
+							a.see-more
 								span もっと見る
 					li
 						img(src='/assets/narita/images/resturant/resturant-small4.jpg')
 						.resturant-list-info
-							h2 レストラン「ガーデニア」						
-							a.see-more 
-								span もっと見る		
+							h2 レストラン「ガーデニア」
+							a.see-more
+								span もっと見る
 		include ../components/breadcrumb.pug
 	#room-full-info(data-basicLightbox data-id="room-full-info" class="room-detail resturant-detail-popup")
-		.room-info-header 
+		.room-info-header
 			span.visible-desktop レストラン「ガーデニア」			
 			a(href="#").book-room
 				| 予約する
 			.close-room
 				i.icon-close
 			.phone-number
-				i.icon-phone 
+				i.icon-phone
 				| 000-0000-0000
 		include ../components/resturant-info.pug

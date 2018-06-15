@@ -71,7 +71,7 @@
       bottom: 0;     
       width: 60px;
       height: 2px;
-      background: #000;
+      background: $default-color;
       left: 50%;
       margin-left: -30px;
     }
@@ -105,7 +105,7 @@
   .open-details{
     padding: 20px 50px;    
     background-color: #eeeeee;
-    color: #000000;
+    color: $default-color;
     letter-spacing: 1.4px;    
     display: block;
     margin:0 15px;
@@ -141,7 +141,7 @@
   .news-content-highlight{
     background-color: #fafafa;
     padding: 40px 15px;
-    color: #000;
+    color: $default-color;
     @include md {
       padding: 40px 45px;
     }
@@ -164,7 +164,7 @@
 }
 
 .news-related-wrap{
-  border-top: 2px solid #000;  
+  border-top: 2px solid $default-color;  
   margin: 0 15px;
   @include md {
     margin: 0;
@@ -251,7 +251,7 @@
     }
   }
   .callout-wrap{
-    border: 2px solid #000;
+    border: 2px solid $default-color;
     margin:20px 15px; 
     padding: 30px 15px;
     position: relative;
@@ -285,7 +285,7 @@
       left: 3px;
       right: 3px;
       bottom: 3px;
-      border: 1px solid #000;
+      border: 1px solid $default-color;
     }
   }
 }

@@ -10,11 +10,13 @@
   }
 
   h3 {
-    font-family: 'YuGo';
+    font-family: $go-semibold;
+    font-weight: 700;
     line-height: 1;
     margin-bottom: 20px;
     line-height: 1.4;
     letter-spacing: 4px;
+    @include font-size(20px);
     @include md {
       margin-bottom: 30px;
     }
@@ -22,7 +24,7 @@
 
   p {
     @include font-size(14px);
-    font-family: 'YuMin';
+    font-family: $mi-regular;
     line-height: 2;
     letter-spacing: 1.4px;
     margin: 0;
@@ -62,10 +64,10 @@
       }
     }
     .resturant-list-info{
-      background: #fff;
+      background: $secondary-color;
       padding: 40px;
       opacity: 0.95;
-      color: #000;
+      color: $default-color;
       text-align: center;
       @include md {
         position: absolute;
@@ -78,18 +80,20 @@
       h2{
         @include font-size(20px);
         letter-spacing: 0.5px;
-        font-family: 'YuMin';
+        font-family: $go-bold;
+        font-weight: 700;
         margin:0 0 25px;
         @include md {
-          @include font-size(20px);
+          @include font-size(24px);
           margin:0 0 35px;
         }
       }
       > p{
-        font-family: 'YuMin';
+        font-family: $mi-regular;
         line-height: 2;
         letter-spacing: 1.4px;
         margin-bottom: 30px;
+        font-weight: 500;
         @include md {
           margin-bottom: 40px;
         }
@@ -99,6 +103,8 @@
         line-height: 1.79;
         letter-spacing: 2.8px;
         margin-bottom: 10px;
+        font-family: $go-bold;
+        font-weight: 700;
         @include md {
           margin-bottom: 20px;
         }
@@ -114,6 +120,8 @@
           line-height: 1.79;
           letter-spacing: 0.7px;
           margin:0;
+          font-family: $go-semibold;
+          font-weight: 500;
         }
         span{
           min-width: 40px;
@@ -129,6 +137,9 @@
         p{
           @include font-size(24px);
           letter-spacing: 0.4px;
+          font-family: $go-semibold;
+          font-weight: 500;
+          margin: 0;
         }
       }
     }
@@ -150,7 +161,7 @@
       height: auto;
       background-color: #fafafa;
       @include md {
-        background-color: #fff;
+        background-color: $secondary-color;
       }
     }
     #booking-tab2 {
@@ -315,8 +326,8 @@
             letter-spacing: 6.8px;
             font-weight: normal;
             padding: 20px 0;
-            border-top: 1px solid $default-color;
-            border-bottom: 2px solid $default-color;
+            border-top: 1px solid $default-color;;
+            border-bottom: 2px solid $default-color;;
             margin: 0;
             @include sm {
               @include font-size(34px);
@@ -328,14 +339,14 @@
             line-height: 31px;
             font-weight: bold;
             padding: 20px 0;
-            border-bottom: 1px solid $default-color;
+            border-bottom: 1px solid $default-color;;
             @include sm {
               @include font-size(20px);
             }
           }
           .menu-items {
             @extend %clearfix;
-            border-bottom: 2px solid $default-color;
+            border-bottom: 2px solid $default-color;;
             @include sm {
               padding-bottom: 20px;
             }
@@ -349,7 +360,7 @@
               &:last-of-type {
                 @include sm {
                   padding-left: 30px;
-                  border-left: 1px solid $default-color;
+                  border-left: 1px solid $default-color;;
                 }
                 ul {
                   margin-bottom: 0;
@@ -372,7 +383,7 @@
                   margin-bottom: 0;
                   padding: 16px 0;
                   width: 100%;
-                  border-bottom: 1px solid $default-color;
+                  border-bottom: 1px solid $default-color;;
                   @include sm {
                     padding: 20px 0;
                     border-bottom: 0;
@@ -412,7 +423,7 @@
                 padding: 20px 0;
                 margin-bottom: 0;
                 text-align: left;
-                border-bottom: 1px solid $default-color;
+                border-bottom: 1px solid $default-color;;
                 &:last-of-type {
                   border-bottom: none;
                 }
@@ -436,10 +447,10 @@
           .warning-messages-list {
             @extend %clearfix;
             .warning-message {
-              font-family: 'YuMin';
+              font-family: $mi-regular;
               @include font-size(14px);
               padding: 30px 0;
-              border-top: 2px solid $default-color;
+              border-top: 2px solid $default-color;;
               line-height: 30px;
               @include sm {
                 width: 25%;

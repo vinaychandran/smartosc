@@ -1,318 +1,299 @@
 #pool-full-info {
-    .promo-content {
-        .container {
-            padding: 0 17px;
-            h3 {
-                font-size: 16px;
-                font-weight: bold;
-                line-height: 1.25;
-                letter-spacing: 3.2px;
-                text-align: center;
-                padding: 41px 0 28px;
-            }
-            ul {
-                @include md {
-                    display: flex;
-                    justify-content: space-between;
-                }
-                ;
-                li {
-                    position: relative;
-                    background: #fff;
-                    margin-bottom: 40px;
-                    @include md {
-                        max-width: 346px;
-                        padding: 0;
-                        margin: 0 35px 0 0;
-                        padding-bottom: 20px;
-                    }
-                    ;
-                    .promo-text {
-                        position: absolute;
-                        top: 0;
-                        background: #fff;
-                        text-align: center;
-                        padding: 10px 30px;
-                    }
-                    .content {
-                        padding: 24px 20px;
-                        @include md {
-                            padding: 28px;
-                        }
-                    }
-                    .see-more {
-                        span {
-                            background: #fff;
-                        }
-                        @include md {
-                            margin: 0px 25px;
-                            width: 85%;
-                        }
-                        ;
-                    }
-                    &:last-child {
-                        margin-bottom: 0;
-                        @include md {
-                            margin-right: 0;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
+  .room-info-header {
+    .content-right {
+      @include md {
+        margin-right: 94px;
+      };
 
-.content-image {
-    @include md {
-        padding-top: 81px;
-    }
-    ;
-    img {
-        margin: 0 auto;
-        //padding: 81px 0 41px 0;
-    }
-    p {
-        padding: 38px;
-        margin: 0;
-        // max-width: 673px;
-        // margin: 0 auto;
+      .cta {
+        @include font-size(18px);
+        width: 40%;
+        float: left;
+        display: inline-block;
+        text-align: center;
+        padding-top: 5%;
+
+        i {
+          margin-right: 10px;
+
+          &:before {
+            color: #000;
+          }
+        }
         @include md {
-            max-width: 673px;
-            margin: 0 auto;
-            padding: 43px 0;
+           @include font-size(24px);
+          padding: 10px 20px;
+          line-height: 61px;
+          width: auto;
         }
-        ;
-    }
-}
+      }
 
-.pool-info-content {
-    //max-width: 920px;
-    background-color: #ffffff;
-    margin: 0 auto;
-    padding: 40px 38px;
-    //  margin-top: 60px;
-    @include md {
-        padding: 0;
-        background-color: transparent;
+      .book-room {
+        width: 60%;
+        text-align: center;
+        @include md {
+          width: auto;
+        };
+      }
     }
-    ;
+  }
+
+  .promo-content {
     .container {
-        @include md {
-            padding: 44px 55px;
-            background-color: #ffffff;
-            max-width: 920px;
-        }
-        ;
-    }
-    h2 {
-        font-family: YuGo;
+      padding: 0 17px;
+
+      h3 {
         font-size: 16px;
         font-weight: bold;
-        font-style: normal;
-        font-stretch: normal;
         line-height: 1.25;
         letter-spacing: 3.2px;
         text-align: center;
-        color: #333333;
-        padding: 0 0 20px;
-        margin: 0 auto;
-        border-bottom: 2px solid #000;
-        // &.header-content {
-        //   line-height: 1.25;
-        //   margin-bottom: 43px;
-        // }
-        //
-        // &.content {
-        //   line-height: 2;
-    }
-    ul {
-        @extend %clearfix;
+        padding: 41px 0 28px;
+      }
+
+      ul {
+        @include md {
+          display: flex;
+          justify-content: space-between;
+        };
+
         li {
+          position: relative;
+          background: #fff;
+          margin-bottom: 40px;
+          @include md {
+            max-width: 346px;
+            padding: 0;
+            margin: 0 35px 0 0;
+            padding-bottom: 20px;
+          };
+
+          .promo-text {
+            position: absolute;
+            top: 0;
+            background: #fff;
+            text-align: center;
+            padding: 10px 30px;
+          }
+
+          .content {
+            padding: 24px 20px;
             @include md {
-                float: left;
-                width: 50%;
-                padding: 0 53px;
-                margin: 31px 0;
+              padding: 28px;
             }
-            ;
-            .container {
-                border-bottom: 1px solid #eeeeee;
-                @include md {
-                    padding: 0 !important;
-                    border-bottom: 0;
-                }
+          }
+
+          .see-more {
+            span {
+              background: #fff;
             }
-            &:nth-child(even) {
-                @include md {
-                    border-left: 1px solid #eeeeee;
-                }
-                ;
-                .container {
-                    border-bottom: 0;
-                }
+            @include md {
+              margin: 0 25px;
+              width: 85%;
+            };
+          }
+
+          &:last-child {
+            margin-bottom: 0;
+            @include md {
+              margin-right: 0;
             }
-            .content-left,
-            .content-right {
-                float: left;
-                width: 50%;
-                padding: 0;
-                p {
-                    text-align: left;
-                    padding: 18px 0 0;
-                    @include md {
-                        text-align: left;
-                    }
-                    ;
-                }
-                .header-content {
-                    font-family: YuGo;
-                    font-size: 24px;
-                    font-weight: 500;
-                    font-style: normal;
-                    line-height: 1.04;
-                    letter-spacing: 0.6px;
-                    padding-bottom: 30px;
-                    @include md {
-                        text-align: left;
-                        padding-bottom: 0;
-                    }
-                    ;
-                }
-            }
-            .content-right {
-                float: right;
-            }
-            h3 {
-                font-family: YuGo;
-                font-size: 14px;
-                font-weight: bold;
-                font-style: normal;
-                font-stretch: normal;
-                line-height: 1.43;
-                letter-spacing: 2.8px;
-                text-align: center;
-                color: #333333;
-                padding: 31px 0 14px;
-            }
-            h4 {
-                font-family: YuGo;
-                font-size: 14px;
-                font-weight: 500;
-                font-style: normal;
-                font-stretch: normal;
-                line-height: 1.79;
-                letter-spacing: 2.8px;
-                text-align: left;
-                color: #000000;
-                //max-width: 320px;
-                margin: 0 auto;
-                border-bottom: 1px solid #000;
-                padding-top: 53px;
-            }
+          }
         }
+      }
     }
+  }
 }
 
-.bottom-header {
-    @extend %clearfix;
+.content-image {
+  @include md {
+    padding-top: 81px;
+  };
+
+  img {
+    margin: 0 auto;
+    //padding: 81px 0 41px 0;
+  }
+
+  p {
+    padding: 38px;
+    margin: 0;
+    line-height: 1.6;
+    // max-width: 673px;
+    // margin: 0 auto;
     @include md {
-        max-width: 406px;
-        margin: 0 auto;
+      max-width: 673px;
+      margin: 0 auto;
+      padding: 43px 0;
+    };
+  }
+}
+
+.pool-info-content {
+  //max-width: 920px;
+  background-color: #ffffff;
+  margin: 0 auto;
+  padding: 40px 38px;
+  //  margin-top: 60px;
+  @include md {
+    padding: 0;
+    background-color: transparent;
+  };
+
+  .container {
+    @include md {
+      padding: 44px 55px;
+      background-color: #ffffff;
+      max-width: 920px;
+    };
+
+    .content{
+      line-height: 1.6;
     }
-    ;
-    h4 {
+  }
+
+  h2 {
+    font-family: YuGo;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.25;
+    letter-spacing: 3.2px;
+    text-align: center;
+    color: #333333;
+    padding: 0 0 20px;
+    margin: 0 auto;
+    border-bottom: 2px solid #000;
+    // &.header-content {
+    //   line-height: 1.25;
+    //   margin-bottom: 43px;
+    // }
+    //
+    // &.content {
+    //   line-height: 2;
+  }
+
+  ul {
+    @extend %clearfix;
+
+    li {
+      @include md {
+        float: left;
+        width: 50%;
+        padding: 0 53px;
+        margin: 31px 0;
+      };
+
+      .container {
+        border-bottom: 1px solid #eeeeee;
+        @include md {
+          padding: 0 !important;
+          border-bottom: 0;
+        }
+      }
+
+      &:nth-child(even) {
+        @include md {
+          border-left: 1px solid #eeeeee;
+        };
+
+        .container {
+          border-bottom: 0;
+        }
+      }
+
+      .content-left,
+      .content-right {
+        float: left;
+        width: 50%;
+        padding: 0;
+
+        p {
+          text-align: left;
+          padding: 18px 0 0;
+          @include md {
+            text-align: left;
+          };
+        }
+
+        .header-content {
+          font-family: YuGo;
+          font-size: 24px;
+          font-weight: 500;
+          font-style: normal;
+          line-height: 1.04;
+          letter-spacing: 0.6px;
+          padding-bottom: 30px;
+          @include md {
+            text-align: left;
+            padding-bottom: 0;
+          };
+        }
+      }
+
+      .content-right {
+        float: right;
+      }
+
+      h3 {
+        font-family: YuGo;
+        font-size: 14px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.43;
+        letter-spacing: 2.8px;
+        text-align: center;
+        color: #333333;
+        padding: 31px 0 14px;
+      }
+
+      h4 {
         font-family: YuGo;
         font-size: 14px;
         font-weight: 500;
         font-style: normal;
+        font-stretch: normal;
         line-height: 1.79;
         letter-spacing: 2.8px;
-        text-align: center;
+        text-align: left;
+        color: #000000;
+        //max-width: 320px;
+        margin: 0 auto;
         border-bottom: 1px solid #000;
-        margin-bottom: 20px;
-        display: table;
-        margin: 0 auto 20px;
+        padding-top: 53px;
+      }
     }
-    p {
-        font-family: YuGo;
-        font-size: 14px;
-        font-weight: 500;
-        line-height: 2;
-        letter-spacing: 2.8px;
-    }
+  }
 }
 
-// .content-left, .content-right{
-//   float: left;
-//   width: 50%;
-//   padding: 0;
-//
-//   p{
-//       text-align: left;
-//     padding: 18px 0 0 0;
-//   }
-//   .header-content{
-//     font-family: YuGo;
-//     font-size: 24px;
-//     font-weight: 500;
-//     font-style: normal;
-//
-//     line-height: 1.04;
-//     letter-spacing: 0.6px;
-//     border-bottom: 1px solid #eeeeee;
-//     padding-bottom: 30px;
-//   }
-//
-// }
-// .content-right{
-//   float: right;
-//
-//
-// }
-//
-//
-// .col {
-//   // border-right: 1px solid #eee;
-//   h4 {
-//     font-family: YuGo;
-//     font-size: 14px;
-//     font-weight: 500;
-//     font-style: normal;
-//     font-stretch: normal;
-//     line-height: 1.79;
-//     letter-spacing: 2.8px;
-//     text-align: left;
-//     color: #000000;
-//     //max-width: 320px;
-//     margin: 0 auto;
-//     border-bottom: 1px solid #000;
-//     padding-top: 53px;
-//   }
-//
-//   h3 {
-//     font-family: YuGo;
-//     font-size: 14px;
-//     font-weight: bold;
-//     font-style: normal;
-//     font-stretch: normal;
-//     line-height: 1.43;
-//     letter-spacing: 2.8px;
-//     text-align: center;
-//     color: #333333;
-//     padding: 31px 0 14px;
-//   }
-//
-//   p {
-//     font-family: YuGo;
-//     font-size: 14px;
-//     font-weight: 500;
-//     font-style: normal;
-//     font-stretch: normal;
-//     line-height: 1.43;
-//     letter-spacing: 2.8px;
-//     text-align: center;
-//     color: #333333;
-//     max-width: 320px;
-//     margin: 0 auto;
-//   }
-// }
+.bottom-header {
+  @extend %clearfix;
+  @include md {
+    max-width: 406px;
+    margin: 0 auto;
+  };
+
+  h4 {
+    font-family: YuGo;
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 1.79;
+    letter-spacing: 2.8px;
+    text-align: center;
+    border-bottom: 1px solid #000;
+    margin-bottom: 20px;
+    display: table;
+    margin: 0 auto 20px;
+  }
+
+  p {
+    font-family: YuGo;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 2;
+    letter-spacing: 2.8px;
+  }
+}

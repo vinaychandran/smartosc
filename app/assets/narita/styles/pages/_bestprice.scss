@@ -19,8 +19,8 @@
         .bestprice-banner {
             background: url('../images/bestprice/banner.png') no-repeat;
             background-size: cover;
-            padding: 35px 20px 15px 20px;            
-            color: $secondary-color;
+            padding: 35px 20px 15px 20px;
+            color: $secondary-color;;
             background-position: top;
             @include md {
                 padding: 95px 0;
@@ -57,17 +57,17 @@
         }
         ul {
             margin-bottom: 30px;
-            .accordion-item {                
-                cursor: pointer;                
-                .container {     
-                    max-width: 800px;               
-                    .accordion-title {  
-                        @extend %clearfix;    
-                        border-bottom: 1px solid #eee; 
-                        padding: 20px 0;                          
+            .accordion-item {
+                cursor: pointer;
+                .container {
+                    max-width: 800px;
+                    .accordion-title {
+                        @extend %clearfix;
+                        border-bottom: 1px solid #eee;
+                        padding: 20px 0;
                         @include md {
                             padding: 0;
-                        }                                      
+                        }
                         .number {
                             @include font-size(40px);
                             font-weight: 300;
@@ -97,7 +97,7 @@
                         }
                         .right-text {
                             @include font-size(14px);
-                            font-weight: bold;                            
+                            font-weight: bold;
                             text-align: center;
                             display: block;
                             padding-bottom: 15px;
@@ -121,14 +121,14 @@
                                 border-width: 0 2px 2px 0;
                                 display: inline-block;
                                 padding: 3px;
-                                top: 15%;   
+                                top: 15%;
                                 @include md {
                                     top: 43%;
                                     right: -6px;
-                                }                             
+                                }
                             }
                             &.box {
-                                color: $secondary-color;
+                                color: $secondary-color;;
                                 background: $primary-bg;
                                 line-height: 25px;
                                 display: block;
@@ -136,7 +136,7 @@
                                 margin: 18px auto 0;
                                 width: 60%;
                                 @include md {
-                                    width: auto;                                    
+                                    width: auto;
                                 }
                             }
                         }
@@ -170,7 +170,7 @@
                             text-align: left;
                         }
                         .accordion-sub-content {
-                            padding: 30px 20px 0 20px; 
+                            padding: 30px 20px 0 20px;
                             ul {
                                 padding: 18px 0 30px 0;
                                 &:first-of-type {
@@ -199,20 +199,20 @@
                     }
                 }
                 &:last-of-type {
-                    .accordion-title {  
-                        border-bottom: 0; 
+                    .accordion-title {
+                        border-bottom: 0;
                         @include md {
-                            border-bottom: 1px solid #eee; 
+                            border-bottom: 1px solid #eee;
                         }
-                    }                           
+                    }
                 }
             }
         }
     }
     .bestprice-page-booking {
-        background-color: #fafafa; 
-        padding: 45px 0;  
-        text-align: center; 
+        background-color: #fafafa;
+        padding: 45px 0;
+        text-align: center;
         h2 {
             @include font-size(20px);
             font-weight: bold;
@@ -223,18 +223,18 @@
         }
         .booking-widget{
             max-width: 1140px;
-            margin:40px auto 0; 
+            margin:40px auto 0;
             position: static;
-            height: auto; 
+            height: auto;
             padding-bottom: 0;
             text-align: left;
             .tabs-content{
               height: auto;
-              background-color: #fafafa; 
+              background-color: #fafafa;
               @include md {
-                background-color: #fff;
+                background-color: $secondary-color;
               }
             }
-        }      
+        }
     }
 }

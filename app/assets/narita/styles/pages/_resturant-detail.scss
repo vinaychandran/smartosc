@@ -1,12 +1,22 @@
 .resturant-detail-page{
   background: #fafafa;
+  .see-more{
+    margin-bottom: 0;
+  }
   .inner-page-slider-wrap{
     background: #fafafa;
+    padding: 75px 0 50px;
+    @include md {
+      padding: 75px 0 75px;
+    }
+  }
+  .btn-map{
+    margin-bottom: 25px;
   }
 }
 .resturant-detail-menu-wrap{
   overflow: hidden;
-  background: #fff;
+  background: $secondary-color;
 }
 .resturant-detail-cta-wrap{ 
   @include md {
@@ -16,9 +26,11 @@
     display: inline-block;
     padding: 15px 40px;
     width: 50%;
+    float: right;
     @include md {
       padding: 20px 50px;
       width: auto;
+      float: none;
     }
   }
   .cta{
@@ -35,7 +47,7 @@
       float: left;
       margin-right: 10px;
       &:before{
-        color: #000;
+        color: $default-color;
       }
     }
     @include md {
@@ -97,7 +109,7 @@
   @include md {
     float: left;
     padding-left: 70px;
-    background: #fff;
+    background: $secondary-color;
     clear:none;
   }
 
@@ -112,58 +124,79 @@
     }
 
     a {
-      @include font-size(14px);
+      @include font-size(13.6px);
       display: block;
       letter-spacing: 1.6px;
       text-align: center;
-      padding: 20px 30px;
+      padding: 20px 40px 20px 30px;
       border-bottom: 1px solid #eeeeee;
+      position: relative;
+      font-family: $go-bold;
+      font-weight: 700;
       @include md {
-        padding: 0 25px 0 10px;
+        padding: 0 35px 0 20px;
         text-align: left;
-        border-bottom: 0;
+        border-bottom: 0; 
       }
-
       i {
         border: solid black;
-        border-width: 0 3px 3px 0;
+        border-width: 0 2px 2px 0;  
         display: inline-block;
         padding: 3px;
-        float: right;
-        @include md {
-          border: none;
-        }
-      }
-
-      .down {
         transform: rotate(45deg);
-        -webkit-transform: rotate(45deg);
-      }
+        position: absolute;
+        right: 15px;
+        top: 22px;
+      }      
     }
   }
 }
 
 .resturant-timing-wrap{
   background: linear-gradient(#fafafa, #ffffff 5%);
-  padding: 60px 0 0;
+  padding: 50px 0 0;
   text-align: center;
+  p{
+    font-weight: 500;
+    font-family: $mi-regular;
+    line-height: 2;
+    letter-spacing: 1.4px;
+    margin-bottom: 55px;
+    padding: 0 25px;
+    @include md {
+      padding: 0;
+      margin-bottom: 75px;
+    }
+  }
   h2.higlight span{
-    background: #fff;
+    background: $secondary-color;
   }
   .resturant-timing{
     max-width: 940px;
     margin:0 auto;
-    background: #fff;
+    background: $secondary-color;
     overflow: hidden;
     position: relative;
     z-index: 1;
-    background: #fff;
+    background: $secondary-color;
   }
   .timings{
-    width: 33.33%;
-    float: left; 
-    padding: 50px 25px;
+    width: 100%;    
     position: relative;
+    display: flex;
+    align-items:center;
+    background-color: #fafafa;
+    padding: 25px 35px;
+    &:nth-child(2){
+      background: #fff;
+    }
+    @include md {
+      width: 33.33%;
+      float: left; 
+      padding: 50px 25px;
+      display: block;
+      background: none;
+    }
     &:before{ 
       content:"";
       width: 1px;
@@ -182,13 +215,38 @@
   }
   .slot{
     letter-spacing: 2.8px;
-    color: #000000;
+    color: $default-color;
     line-height: 1;
+    font-family: $go-semibold;
+    font-weight: 500; 
+    padding-right: 35px;
+    @include md {
+      padding-right: 0;
+    }   
+    
+  }
+  .time-wrap{
+    float: right;
+    border-left: 1px solid #eeeeee;
+    padding-left: 60px;
+    @include md {
+      float: none;
+      border-left: 0px;
+      padding-left: 0;
+    }
   }
   .time{
     @include font-size(24px);
     letter-spacing: 0.6px;
     color: #000000;
+    font-weight: 700;    
+    font-family: $go-bold;
+    padding: 10px 0;
+    @include md {
+      padding: 25px 0;
+    }
+
+    color: $default-color;
     font-weight: 700;
     padding: 25px 0;
   }
@@ -196,6 +254,8 @@
     opacity: 0.6;
     color: rgba(0, 0, 0, 0.6);
     line-height: 1;
+    font-weight: 500;
+    font-family: $go-semibold;
   }
 }
 
@@ -234,7 +294,7 @@
   li{
     float: left;
     position: relative;
-    margin-bottom: 160px;
+    margin-bottom: 140px;
     @include md {
       margin-bottom: 72px;
     }    
@@ -247,10 +307,10 @@
     }
   }
   .resturant-list-info{
-    background: #fff;
+    background: $secondary-color;
     padding: 40px;      
     opacity: 0.95;
-    color: #000;
+    color: $default-color;
     text-align: center;
     box-shadow: 14.1px 14.1px 90px 0 rgba(0, 0, 0, 0.2);
     position: absolute;
@@ -268,12 +328,13 @@
     h2{
       @include font-size(20px);
       letter-spacing: 0.5px;
-      font-family: 'YuMin';
+      font-family: $go-bold;
       margin:0 0 25px;
       text-align: center;
+      font-weight: 700;
       @include md {
         @include font-size(20px);
-        margin:0 0 35px;
+        margin:0 0 15px;
       }
     } 
     .see-more {
@@ -288,7 +349,7 @@
         left: 0;
         right: 0;
         height: 1px;
-        background-color: #000;
+        background-color: $default-color;
         top: 8px;
       }
 
@@ -298,12 +359,12 @@
         left: 0;
         right: 0;
         height: 1px;
-        background-color: #000;
+        background-color: $default-color;
         top: 10px;
       }
 
       span {
-        background: #fff;
+        background: $secondary-color;
         font-weight: 700;
         color: #c5ad6c;
         padding: 0 35px;

@@ -1,5 +1,5 @@
 .rfp-form-details {
-  background: #fff;
+  background: $secondary-color;
   height: 100vh;
   overflow-y: scroll;
   position: relative;
@@ -27,7 +27,7 @@
   top: 0;
   width: 56px;
   height: 56px;
-  background: #000;
+  background: $default-color;
   @include md {
     right: 0;
     width: 94px;
@@ -43,7 +43,7 @@
   top: 16px;
   height: 20px;
   width: 1px;
-  background-color: #fff;
+  background-color: $secondary-color;
   @include md {
     left: 47px;
     top: 26px;
@@ -103,7 +103,7 @@
     font-style: normal;
     letter-spacing: 1.1px;
     text-align: left;
-    color: $default-color;
+    color: $default-color;;
     padding: 15px 0 10px;
     margin: 0;
     float: left;
@@ -247,7 +247,7 @@
       line-height: 2.5;
       letter-spacing: 0.9px;
       text-align: left;
-      color: $default-color;
+      color: $default-color;;
       border: 2px solid #eeeeee;
       border-radius: 4px;
       height: 66px;
