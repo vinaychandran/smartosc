@@ -58,12 +58,15 @@ block append content
 						a(href="#") 所在地
 							i.down
 		include ../components/rpf-form.pug
-		section.about-venue-info
-			h3 TOGETHER IN  STYLE
-			p のイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさをもつ青いそら、あうつくしい森で飾られたモリーオ市あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
+		.about-venue-info-wrap
+			section.about-venue-info 
+				h3 TOGETHER IN  STYLE
+				p のイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさをもつ青いそら、あうつくしい森で飾られたモリーオ市あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
 		section.venue-party-plan-wrap
 			.venue-party-plan.big
-				img.lazy(data-src='/assets/narita/images/venue-party/3.jpg')
+				.img-wrap
+					img.lazy(data-src='/assets/narita/images/venue-party/3.jpg')
+					i.icon-box
 				.venue-plan-content
 					h4 スプリングパーティープラン
 					p あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、あうつくしい森で飾られた
@@ -74,15 +77,20 @@ block append content
 
 			.venue-party-plan.small
 				.venue-party-plan-container
-					img.lazy(data-src='/assets/narita/images/venue-party/1.jpg')
+					.img-wrap
+						img.lazy(data-src='/assets/narita/images/venue-party/1.jpg')
+						i.icon-box
 					h4 スプリングパーティープラン
 					p 2018年11月10日〜2018年12月10日まで
 			.venue-party-plan.small
 				.venue-party-plan-container
+					.img-wrap
 						img.lazy(data-src='/assets/narita/images/venue-party/1.jpg')
-						h4 スプリングパーティープラン
-						p 2018年11月10日〜2018年12月10日まで
+						i.icon-box 
+					h4 スプリングパーティープラン
+					p 2018年11月10日〜2018年12月10日まで 
 		.btn.btn-party-plan 全てのプランを見る
+			i.icon-box 
 		section.venues-list-wrap
 			.container
 				h4 会場一覧

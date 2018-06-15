@@ -92,6 +92,9 @@ h2.higlight{
         display: block;
         transition: all 0.1s ease;
         letter-spacing: 1.6px;
+        @include font-size(13.6px);
+        font-family: $go-bold;
+        font-weight: 700;
         i {
             border: solid black;
             border-width: 0 2px 2px 0;  

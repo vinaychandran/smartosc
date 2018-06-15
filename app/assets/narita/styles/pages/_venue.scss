@@ -1,5 +1,14 @@
 .venue-page {
-  background: #fcfcfc;
+  //background: #fcfcfc;
+  .inner-page-slider-info{
+    padding: 20px 45px 60px;
+    .btn{
+      margin:10px 0;
+      @include md {
+        margin:0;
+      }
+    }
+  }
 }
 
 .venue-banner {
@@ -113,6 +122,10 @@
     }
   }
 }
+.about-venue-info-wrap{
+  background: linear-gradient(#fafafa, #ffffff);
+}
+
 
 .about-venue-info {
   max-width: 660px;
@@ -141,12 +154,15 @@
 .venue-party-plan-wrap {
   //float: left;
   margin: 0 20px;
-  padding-bottom: 30px;
   @include md {
     margin: 0 auto;
     padding-bottom: 30px;
     max-width: 720px;
     float: none;
+  }
+
+  .img-wrap{
+    position: relative;
   }
 
   .venue-party-plan {
@@ -160,6 +176,7 @@
     }
 
     &.small {
+      margin-bottom: 33px;
       //  float: none;
       //display: flex;
       .venue-party-plan-container {
@@ -175,8 +192,23 @@
         left: 0;
         right: 0;
         text-align: center;
+      }     
+      
+    }
+
+    .icon-box{
+      position: absolute;
+      right: 0;
+      bottom: 0; 
+      background: #c5ad6c;
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      @include font-size(20px);
+      &:before{
+        margin-top: 10px;
+        display: block;
       }
-      margin-bottom: 33px;
     }
 
     &:last-child {
@@ -208,6 +240,9 @@
       margin-top: 8px;
       margin-bottom: 0;
       text-align: left;
+      font-family: $go-semibold;
+      font-weight: 500;
+      color: rgba(0, 0, 0, 0.6);
     }
   }
 
@@ -270,25 +305,33 @@
 
 .btn-party-plan {
   clear: both;
-  margin: 0 20px;
+  margin: 0 20px 60px;
+  position: relative;
   @include md {
-    margin: 0 auto;
+    margin: 0 auto 80px;
     max-width: 460px;
+  }
+  .icon-box{
+    position: absolute;
+    right: 10px;
+    @include font-size(20px);
   }
 }
 
 .venues-list-wrap {
-  padding: 60px 10px 20px;
+  padding: 0 10px 20px;
   clear: both;
+  background: #fafafa;
   @include md {
-    padding: 80px 0 0;
+    padding: 0 0 0;
   }
 
   .container {
+    padding: 40px 0;
     @include md {
       padding: 80px 0;
-      background: #fafafa;
-    };
+      
+    }
   }
 
   h4 {
@@ -309,13 +352,17 @@ ul.venue-types {
   }
 
   li {
-    float: left;
+    float: left;       
+    margin: 0 15px 10px 0;
     @include md {
       float: none;
+      display: inline-block;
+      margin: 0 15px;
     }
-    display: inline-block;
-    margin: 0 15px;
-
+    label{
+      font-family: $go-bold;
+      font-weight: 700;
+    }
     input[type="checkbox"] {
       display: none;
     }
@@ -393,6 +440,10 @@ ul.venue-list {
       font-family: $go-semibold;
       color: rgba(0, 0, 0, 0.6);
       margin-bottom: 10px;
+      text-align: center;
+      @include md {
+        text-align: left;
+      }
     }
 
     h5 {
@@ -401,11 +452,19 @@ ul.venue-list {
       font-family: $go-bold;
       margin-bottom: 15px;
       font-weight: 700;
+      text-align: center;
+      @include md {
+        text-align: left;
+      }
     }
 
     .floor {
       margin-bottom: 25px;
       font-family: 'Lato';
+      text-align: center;
+      @include md {
+        text-align: left;
+      }
     }
 
     ul {
@@ -441,6 +500,7 @@ ul.venue-list {
       margin-top: 20px;
       display: block;
       float: none;
+      margin-bottom: 0;
       &:before {
         content: "";
         position: absolute;
@@ -514,7 +574,7 @@ ul.venue-list {
     font-family: 'Lato';
     line-height: 26px;
     color: $primary-color;
-    padding-bottom: 50px;
+    padding-bottom: 25px;
   }
 }
 
@@ -543,7 +603,7 @@ ul.venue-list {
 
   .venue-facilities {
     @extend %clearfix;
-    padding: 40px 0;
+    padding: 40px 0 30px;
     border-bottom: 1px solid #eee;
 
     ul {
@@ -554,13 +614,15 @@ ul.venue-list {
       }
 
       li {
-        @include font-size(15px);
+        @include font-size(14px);
         line-height: 26px;
         padding-bottom: 8px;
-
+        font-family: $go-semibold;
+        font-weight: 500;
         span {
           float: right;
-          font-weight: bold;
+          font-weight: 700;
+          font-family: $go-bold;
         }
       }
     }
@@ -597,15 +659,23 @@ ul.venue-list {
     h4 {
       @include font-size(14px);
       letter-spacing: 2.8px;
-      font-weight: bold;
+      font-weight: 700;
+      font-family: $go-bold;
+      text-align: center;
+      @include md {
+        text-align: left;
+      }
     }
 
     .tabs {
       padding: 30px 0 0;
 
       .tabs-header {
-        margin: 0 0 30px;
-
+        margin: 0 0 10px;
+        text-align: center;
+        @include md {
+          margin-bottom: 30px;
+        }
         li {
           &:first-of-type {
             padding-left: 0;
@@ -624,6 +694,8 @@ ul.venue-list {
         .max-text {
           @include font-size(12px);
           float: right;
+          font-family: $go-semibold;
+          font-weight: 500;
         }
       }
     }
@@ -656,6 +728,9 @@ ul.venue-list {
           border-bottom: 1px solid #E1E1E1;
           background: #EFEFEF;
           padding: 12px 15px;
+          @include font-size(14px);
+          font-weight: 700;
+          font-family: $go-bold;
         }
 
         div {
@@ -732,6 +807,9 @@ ul.venue-list {
         }
 
         div {
+          font-family: $go-semibold;
+          font-weight: 500;
+          @inlcude font-size(14px);
           @include md {
             width: 33%;
           }
@@ -853,16 +931,20 @@ ul.venue-list {
         @include font-size(14px);
         line-break: 24px;
         letter-spacing: 0.4px;
+        font-family: $go-semibold;
+        font-weight: 500;
+            text-underline-position: under;
       }
     }
 
     .note {
       @include sm {
         float: right;
+        font-family: $mi-regular;
       }
 
       p {
-        @include font-size(10px);
+        @include font-size(11px);
         letter-spacing: 0.3px;
         line-height: 15px;
       }
@@ -898,6 +980,7 @@ ul.venue-list {
         letter-spacing: 1.6px;
         margin-bottom: 30px;
         text-align: left;
+        font-family:$go-bold;
         @include sm {
           text-align: center;
         }
@@ -910,6 +993,7 @@ ul.venue-list {
           font-weight: 500;
           line-height: 34px;
           list-style-type: disc;
+          font-family: $go-semibold;
         }
       }
     }

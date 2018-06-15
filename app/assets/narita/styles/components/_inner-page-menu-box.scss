@@ -33,7 +33,7 @@
 
   .inner-page-food {
     @include font-size(14px);
-    font-family: 'YuMin';
+    font-family: $mi-regular;
     line-height: 2;
     letter-spacing: 1.4px; 
   }

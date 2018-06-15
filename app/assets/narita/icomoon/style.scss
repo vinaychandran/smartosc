@@ -3,9 +3,9 @@
 @font-face {
   font-family: 'icomoon';
   src:
-    url('#{$icomoon-font-path}/icomoon.ttf?twcjox') format('truetype'),
-    url('#{$icomoon-font-path}/icomoon.woff?twcjox') format('woff'),
-    url('#{$icomoon-font-path}/icomoon.svg?twcjox#icomoon') format('svg');
+    url('#{$icomoon-font-path}/icomoon.ttf?qhf079') format('truetype'),
+    url('#{$icomoon-font-path}/icomoon.woff?qhf079') format('woff'),
+    url('#{$icomoon-font-path}/icomoon.svg?qhf079#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -98,6 +98,12 @@
 .icon-bodysponge {
   &:before {
     content: $icon-bodysponge; 
+  }
+}
+.icon-box {
+  &:before {
+    content: $icon-box;     
+    color: #fff;
   }
 }
 .icon-calender {
@@ -237,6 +243,11 @@
     content: $icon-fax; 
   }
 }
+.icon-fb {
+  &:before {
+    content: $icon-fb; 
+  }
+}
 .icon-fitness {
   &:before {
     content: $icon-fitness; 
@@ -325,6 +336,33 @@
 .icon-freeshuttlebus {
   &:before {
     content: $icon-freeshuttlebus; 
+  }
+}
+.icon-google .path1 {
+  &:before {
+    content: $icon-google-path1;  
+    color: rgb(62, 130, 241);
+  }
+}
+.icon-google .path2 {
+  &:before {
+    content: $icon-google-path2;  
+    margin-left: -1em;  
+    color: rgb(50, 167, 83);
+  }
+}
+.icon-google .path3 {
+  &:before {
+    content: $icon-google-path3;  
+    margin-left: -1em;  
+    color: rgb(249, 187, 0);
+  }
+}
+.icon-google .path4 {
+  &:before {
+    content: $icon-google-path4;  
+    margin-left: -1em;  
+    color: rgb(231, 65, 51);
   }
 }
 .icon-grouporientedroom {
@@ -434,6 +472,19 @@
     color: #fff;
   }
 }
+.icon-map .path1 {
+  &:before {
+    content: $icon-map-path1;  
+    color: rgb(255, 255, 255);
+  }
+}
+.icon-map .path2 {
+  &:before {
+    content: $icon-map-path2;  
+    margin-left: -1em;  
+    color: rgb(0, 0, 0);
+  }
+}
 .icon-map_pin .path1 {
   &:before {
     content: $icon-map_pin-path1;  
@@ -522,6 +573,11 @@
   &:before {
     content: $icon-phone;     
     color: #fff;
+  }
+}
+.icon-plus {
+  &:before {
+    content: $icon-plus; 
   }
 }
 .icon-pocketwifi {
@@ -689,6 +745,11 @@
 .icon-wifi {
   &:before {
     content: $icon-wifi; 
+  }
+}
+.icon-yahoo {
+  &:before {
+    content: $icon-yahoo; 
   }
 }
 
