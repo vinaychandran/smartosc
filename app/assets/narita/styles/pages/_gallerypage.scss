@@ -19,6 +19,8 @@
                 margin: 0 auto;
                 display: block !important;
                 width: 750px;
+                position: static;
+                box-shadow: none;
                 @include md {
                     width: auto;
                     display: table !important;
@@ -27,6 +29,8 @@
                     display: inline-block;
                     padding: 0 20px;
                     a {
+                        padding: 0;
+                        border: none;
                         &.selected {
                             &:after {
                                 content: "";

@@ -106,11 +106,13 @@ var Tabs = function(options) {
             elem.querySelectorAll('.' + titleClass)[i].className += ' ' + activeClass;
             elem.querySelectorAll('.' + contentClass)[i].style.display = '';
 
-            if (document.getElementById('tablink') && document.getElementById('tabs-header')) {
+            if (document.getElementById('tablink') && document.getElementById('tabs-header') && document.getElementById('gallery-mask')) {
                 document.getElementById('tablink').innerText = elem.querySelectorAll('.' + titleClass)[i].text;
                 document.getElementById('tablink').classList.remove('opened');
                 if (window.innerWidth <= 768) {
                     document.getElementById('tabs-header').style.display = 'none';
+                    document.getElementById('gallery-mask').style.display = 'none';
+                    document.getElementById('tablink').classList.remove('tablink');
                 }
             }
             setTimeout(function() {

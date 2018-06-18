@@ -142,6 +142,14 @@
     padding: 16px 20px;
     border: 2px solid #000;
     position: relative;
+    z-index: 9999999;
+    &.tablink {
+        background: #eee;
+        border: none;
+        &:after {
+            transform: rotate(-180deg);
+        }
+    }
     @include sm {
       display: none;
     }

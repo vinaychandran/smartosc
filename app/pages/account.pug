@@ -1,245 +1,332 @@
 extends ../layouts/default
 
 block append content
-  section.profile
-    .wrapper
-      h2 アカウント設定
-      .tabs#profile-tabs
-        ul.tabs-header.open-tabs#tabs-header
-          li.tabs-title アカウント情報
-          li.tabs-title プロモーションコード
-        .tabs-content
-          #facebook-login
-          #google-login
-          #yahoo-login
-          .border-line
-          .form-header
-            p
-            p.text1 個人情報
-            p.text2 *は必須項目です
-          form#profile-form
-            .row
-              .col1
-                label プロフィール写真
-                .row
-                  .user-image
-                    <img id="preview"/>
-                    input(type="file" name="pic" accept="image/*" onchange="FE.global.loadFile(event)")
-              .col2
-                label お名前*
-                .row.right
-                  input.col-166(id='p-name' type='text', placeholder='姓' required)
-                .row
-                  input.col-166(id='p-lname' type='text', placeholder='名' required)
-                label お名前（英語）*
-                .row.right
-                  input.col-166(id='p-Lname' type='text', placeholder='Last name' required)
-                .row
-                  input.col-166(id='p-fname' type='text', placeholder='First name' required)
-            .row
-                .col1.text.right
-                  p.top パソコンからファイルを
-                  p.bottom アップロード
-                .col2.up-text
-                  label 性別
-                  input(id='p-1' type='text', placeholder='選択する' required)
-            .row
-                .col2.right
-                  label メールアドレス
-                  input.col-295(id='p-2' type='text', placeholder='選択する' required)
-                .col2
-                  label 携帯番号
-                  input.col-295(id='p-3' type='text', placeholder='選択する' required)
-            .row
-                label 生年月日
-                .col2.right
-                  input(id='p-4' type='text', placeholder='選択する' required)
-                .col2.right
-                  input(id='p-5' type='text', placeholder='選択する' required)
-                .col2
-                  input(id='p-6' type='text', placeholder='選択する' required)
-            .row
-                label 出身国
-                .col2
-                  input(type='text', placeholder='出身国')
-            .row
-                .col2.right
-                  label 郵便番号
-                  input.col-166(type='text', placeholder='郵便番号')
-                .col2.right
-                  label 都道府県
-                  input.col-166(type='text', placeholder='都道府県')
-                .col2
-                  label 市区町村
-                  input.col-166(type='text', placeholder='市区町村')
-            .row
-                .col2
-                  label 住所
-                  input.col-600(type='text', placeholder='住所')
-            .row
-                .col2
-                  button.submitProfile(type='button') 保存する
-        .tabs-content
-          ul.row.promo-coupon
-            li.col.col-1-2.selected
-              .container
-                .border-up
-                label  メンバー限定5%OFF
-                //input(type='radio',name='coupon',value='1')
-                p あのイーハトーヴォのすきとおった風、夏でも底に。
-                button(type='button')  選択しています
-
-            li.col.col-1-2
-              .container
-                .border-up
-                label  メンバー限定5%OFF
-                //input(type='radio',name='coupon',value='1')
-                p あのイーハトーヴォのすきとおった風、夏でも底に。
-                button(type='button')  選択しています
-          .booking-widget
-            h3  さっそく予約する
-            #booking-tab1(onclick='FE.global.bookingWidgetClick()')
-                .date-picker-tab1
-                    label チェックイン
-                    .date-picker-tab1-container
-                        .values
-                            .startDateContainer
-                                //label チェックイン
-                                .startDate
-                                    .value.date_at
-                                        span.date_at
-                                        input#date_at.date_at(type='hidden')
-                            .to ~
-                            .endDateContainer
-                                //label チェックアウト
-                                .endDate
-                                    .value.date_to
-                                        span.date_to
-                                        input#date_to.date_to(type='hidden')
-                        //.calendar-backdrop
-                        .calendar
-                            //img.clear(src='/assets/narita/images/clear.svg' )
-                            .button.button-prev
-                            .button.button-next
-                            .calendarContainer
-                            .bottomLayer
-                                span.daysFromTo 2018年00月00日 金曜日 ~ 2018年00月00日 金曜日
-                                .nights 10 金曜日
-                                //.button.closePopup &#x5B8C;&#x4E86;
-                .people
-                                  label ご利用人数
-                                  .people-list
-                                    p 大人2名, 子供1名
-                                      span １部屋
-                                  .popup-wrap.popup-create
-                                        //.overlay
-                                        .big-popup.people-list-popup
-                                          .head-popup
-                                            section.grown-up
-                                              .form-group
-                                                label.form-label(for='') 大人
-                                                .dropdown-custom
-                                                  .input-custom
-                                                    button 0
-                                                    .popup-menu
-                                                      .popup-content-input
-                                                        ul.cities
-                                                          li
-                                                            span(target='Hokkaido', names='Hokkaido') 0人
-                                                          li
-                                                            span(target='Okinawa', names='Okinawa') 1人
-                                                          li
-                                                            span(target='Tochigi', names='Tochigi') 2人
-                                                          li
-                                                            span(target='Tokyo', names='Tokyo') 3人
-                                            section.children
-                                              .form-group
-                                                label.form-label(for='') 子供
-                                                .dropdown-custom
-                                                  .input-custom
-                                                    button 0
-                                                    .popup-menu
-                                                      .popup-content-input
-                                                        ul.cities
-                                                          li
-                                                            span(target='Hokkaido', names='Hokkaido', value='0') 0人
-                                                          li
-                                                            span(target='Okinawa', names='Okinawa', value='1') 1人
-                                                          li
-                                                            span(target='Tochigi', names='Tochigi', value='2') 2人
-                                                          li
-                                                            span(target='Tokyo', names='Tokyo', value='3') 3人
-                                            section.room
-                                              .form-group
-                                                label.form-label(for='') 部屋
-                                                .dropdown-custom
-                                                  .input-custom
-                                                    button 0
-                                                    .popup-menu
-                                                      .popup-content-input
-                                                        ul.cities
-                                                          li
-                                                            span(target='Hokkaido', names='Hokkaido') 0
-                                                          li
-                                                            span(target='Okinawa', names='Okinawa') 1
-                                                          li
-                                                            span(target='Tochigi', names='Tochigi') 2
-                                                          li
-                                                            span(target='Tokyo', names='Tokyo') 3
-                                          .input-popup
-                                              .title 小学生の添い寝について
-                                              ul
-                                                li 大人1名様に対し、添い寝のお子様1名までとします。
-                                                li 小学生の添い寝希望のお客様がご朝食をご希望の場合、現地にて別途1,030円頂戴いたします。（未就学児は無料）
-                                                li 小学生の添い寝の場合、幼児欄の「食事・布団不要」に人数をご入力の上、予約画面下の備考欄にお子様の年齢をご記載ください。
-                                          .btn-group
-                                              button.clear クリア
-                                              button.done 完了
-                .promo-code
-                    section
-                        .form-group
-                            label.form-label(for='') プロモコード
+  .bg
+    .container
+      .account-page
+          section
+              .container-inner.top-padding
+                h2.header アカウント設定
+              .tabs#profile-tabs
+                .container-inner
+                  ul.tabs-header.open-tabs#tabs-header
+                    li.tabs-title アカウント情報
+                    li.tabs-title プロモーションコード
+                .tabs-content
+                  .container-inner
+                    .social-media
+                      #facebook-login
+                      #google-login
+                      #yahoo-login
+                    form#profile-form
+                      .row
+                        .col.col-1-3.profile
+                          label.profile-label プロフィール写真
+                          .user-image
+                            <img id="preview"/>
+                          .profile-image-upload.attachFile
+                            p パソコンからファイルを
+                            p アップロード
+                            label.custom-file-upload(for='file-upload')
+                              i.fa.fa-paperclip
+                              |  ファイルを添付する
+                            input#file-upload(type='file' accept="image/*" onchange="FE.global.loadFile(event)")
+                        .col.col-2-3
+                          .col.col-1-2.padding-left.padding-bottom
+                            label.label-left 個人情報
+                          .col.col-1-2.padding-bottom
+                            label.label-right  *は必須項目です
+                          .col.col-1-2.padding-left.padding-bottom
+                            .firstname
+                              label お名前
+                              .input-custom
+                                input.form-control(id='fname' name= "fname" type='text', placeholder='姓' required)
+                          .col.col-1-2.padding-left.padding-bottom
+                            .lastname.left-space.label-space
+                              .input-custom
+                                input.form-control(id='lname' type='text', placeholder='名' name='lname' required)
+                          .col.col-1-2.padding-left.padding-bottom
+                            .firstname
+                              label お名前（英語）
+                              .input-custom
+                                input.form-control(id='fname1' name= "fname1" type='text', placeholder='Last name' required)
+                          .col.col-1-2.padding-left.padding-bottom
+                            .lastname.left-space.label-space
+                              .input-custom
+                                input.form-control(id='lname1' type='text', placeholder='First name' name='lname' required)
+                          .col.col-1-2.padding-left.padding-bottom
+                            .form-group.dropdown-custom
+                              label 性別
+                              .input-custom
+                                button(name='button', type='button', value='') 選択する
+                                .popup-menu
+                                  .popup-content-input
+                                    ul.cities
+                                      li
+                                        span(target='Hokkaido', names='Hokkaido') Party
+                                      li
+                                        span(target='Okinawa', names='Okinawa') Meeting
+                                      li
+                                        span(target='Tochigi', names='Tochigi') Conference
+                                      li
+                                        span(target='Tokyo', names='Tokyo') Others
+                      .row.padding-bottom
+                        .col.col-1-2
+                          .firstname
+                            label メールアドレス
                             .input-custom
-                                input.form-control(type='text', placeholder='プロモコード)')
-                .find-button
-                    label 最低価格保証
-                    button(name='submit', type='submit', value='空室を検索') 空室を検索
-
-          section.popular-rooms
-            h3 人気のお部屋
-            .row
-              .col.col-1-2
-                  source(media='(min-width: 356px)', srcset='/assets/narita/images/popular-rooms.jpg')
-                  img(src='/assets/narita/images/popular-rooms.jpg')
-              .col.col-1-3
-                button.members(type='button') メンバー限定
-                h3  スーペリアツインハイフロア
-                p あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさをもつ青いそら、あうつくしい森で飾られたモリーオ市あのイーハトーヴォの
-                p すきとおった風、夏でも底に冷たさをもつ青いそら
-                button.see-more(type='button')  もっと見る
-          section.promo-content
-            .container
-              h3 併用施設
-              ul.row
-                li.col.col-1-3
-                  source(media='(min-width: 356px)', srcset='/assets/narita/images/promo-1.jpg')
-                  img(src='/assets/narita/images/promo-1.jpg')
-                  .header 施設01
-                  .content あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさを
-                  .see-more
-                    span もっと見る
-                li.col.col-1-3
-                  source(media='(min-width: 356px)', srcset='/assets/narita/images/promo-image.jpg')
-                  img(src='/assets/narita/images/promo-image.jpg')
-                  .header 施設01
-                  .content あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさを
-                  .see-more
-                    span もっと見る
-                li.col.col-1-3
-                  source(media='(min-width: 356px)', srcset='/assets/narita/images/promo-1.jpg')
-                  img(src='/assets/narita/images/promo-1.jpg')
-                  .header 施設01
-                  .content あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさを
-                  .see-more
-                    span もっと見る
-    include ../components/breadcrumb.pug
+                              input.form-control(id='fname2' name= "fname2" type='text', placeholder='' required)
+                        .col.col-1-2.padding-left
+                          .firstname
+                            label 携帯番号
+                            .input-custom
+                              input.form-control(id='fname3' name= "fname3" type='text', placeholder='' required)
+                      .row.padding-bottom
+                        .col.col-1-3
+                          .form-group.dropdown-custom
+                            label 生年月日
+                            .input-custom
+                              button(name='button', type='button', value='') 年
+                              .popup-menu
+                                .popup-content-input
+                                  ul.cities
+                                    li
+                                      span(target='Hokkaido', names='Hokkaido') Party
+                                    li
+                                      span(target='Okinawa', names='Okinawa') Meeting
+                                    li
+                                      span(target='Tochigi', names='Tochigi') Conference
+                                    li
+                                      span(target='Tokyo', names='Tokyo') Others
+                        .col.col-1-3.padding-left
+                          .form-group.dropdown-custom.label-space
+                            .label-space
+                              .input-custom
+                                button(name='button', type='button', value='') 月
+                                .popup-menu
+                                  .popup-content-input
+                                    ul.cities
+                                      li
+                                        span(target='Hokkaido', names='Hokkaido') Party
+                                      li
+                                        span(target='Okinawa', names='Okinawa') Meeting
+                                      li
+                                        span(target='Tochigi', names='Tochigi') Conference
+                                      li
+                                        span(target='Tokyo', names='Tokyo') Others
+                        .col.col-1-3.padding-left
+                          .form-group.dropdown-custom
+                            .label-space
+                              .input-custom
+                                button(name='button', type='button', value='') 日
+                                .popup-menu
+                                  .popup-content-input
+                                    ul.cities
+                                      li
+                                        span(target='Hokkaido', names='Hokkaido') Party
+                                      li
+                                        span(target='Okinawa', names='Okinawa') Meeting
+                                      li
+                                        span(target='Tochigi', names='Tochigi') Conference
+                                      li
+                                        span(target='Tokyo', names='Tokyo') Others
+                      .row.padding-bottom
+                        .col.col-1-2.padding-right
+                          .form-group.dropdown-custom
+                            label 出身国
+                            .input-custom
+                              button(name='button', type='button', value='') 選択する
+                              .popup-menu
+                                .popup-content-input
+                                  ul.cities
+                                    li
+                                      span(target='Hokkaido', names='Hokkaido') Party
+                                    li
+                                      span(target='Okinawa', names='Okinawa') Meeting
+                                    li
+                                      span(target='Tochigi', names='Tochigi') Conference
+                                    li
+                                      span(target='Tokyo', names='Tokyo') Others
+                      .row.padding-bottom
+                        .col.col-1-3
+                          .firstname
+                            label 郵便番号
+                            .input-custom
+                              input.form-control(id='fname4' name= "fname4" type='text', placeholder='' required)
+                        .col.col-1-3.padding-left
+                          .firstname
+                            label 都道府県
+                            .input-custom
+                              input.form-control(id='fname5' name= "fname5" type='text', placeholder='' required)
+                        .col.col-1-3.padding-left
+                          .firstname
+                            label 市区町村
+                            .input-custom
+                              input.form-control(id='fname6' name= "fname6" type='text', placeholder='' required)
+                      .row.padding-bottom
+                        .col.col-1-1
+                          .firstname
+                            label 住所
+                            .input-custom
+                              input.form-control(id='fname7' name= "fname7" type='text', placeholder='' required)
+                      .row.padding-bottom
+                        .col.col-1-1
+                          button.submitProfile(type='button') 保存する
+                .tabs-content
+                  .container
+                    .container-inner
+                      ul.row.promo-coupon
+                        li.col.col-1-2.selected
+                          label  メンバー限定5%OFF
+                          input(type='radio',name='coupon',value='1')
+                          p あのイーハトーヴォのすきとおった風、夏でも底に。
+                          button(type='button')  選択しています
+                        li.col.col-1-2
+                          label  メンバー限定5%OFF
+                          input(type='radio',name='coupon',value='1')
+                          p あのイーハトーヴォのすきとおった風、夏でも底に。
+                          button(type='button')  選択しています
+                  //.booking-widget
+                    h3  さっそく予約する
+                    #booking-tab1(onclick='FE.global.bookingWidgetClick()')
+                        .date-picker-tab1
+                            label チェックイン
+                            .date-picker-tab1-container
+                                .values
+                                    .startDateContainer
+                                        //label チェックイン
+                                        .startDate
+                                            .value.date_at
+                                                span.date_at
+                                                input#date_at.date_at(type='hidden')
+                                    .to ~
+                                    .endDateContainer
+                                        //label チェックアウト
+                                        .endDate
+                                            .value.date_to
+                                                span.date_to
+                                                input#date_to.date_to(type='hidden')
+                                //.calendar-backdrop
+                                .calendar
+                                    //img.clear(src='/assets/narita/images/clear.svg' )
+                                    .button.button-prev
+                                    .button.button-next
+                                    .calendarContainer
+                                    .bottomLayer
+                                        span.daysFromTo 2018年00月00日 金曜日 ~ 2018年00月00日 金曜日
+                                        .nights 10 金曜日
+                                        //.button.closePopup &#x5B8C;&#x4E86;
+                        .people
+                          label ご利用人数
+                          .people-list
+                            p 大人2名, 子供1名
+                              span １部屋
+                          .popup-wrap.popup-create
+                                //.overlay
+                                .big-popup.people-list-popup
+                                  .head-popup
+                                    section.grown-up
+                                      .form-group
+                                        label.form-label(for='') 大人
+                                        .dropdown-custom
+                                          .input-custom
+                                            button 0
+                                            .popup-menu
+                                              .popup-content-input
+                                                ul.cities
+                                                  li
+                                                    span(target='Hokkaido', names='Hokkaido') 0人
+                                                  li
+                                                    span(target='Okinawa', names='Okinawa') 1人
+                                                  li
+                                                    span(target='Tochigi', names='Tochigi') 2人
+                                                  li
+                                                    span(target='Tokyo', names='Tokyo') 3人
+                                    section.children
+                                      .form-group
+                                        label.form-label(for='') 子供
+                                        .dropdown-custom
+                                          .input-custom
+                                            button 0
+                                            .popup-menu
+                                              .popup-content-input
+                                                ul.cities
+                                                  li
+                                                    span(target='Hokkaido', names='Hokkaido', value='0') 0人
+                                                  li
+                                                    span(target='Okinawa', names='Okinawa', value='1') 1人
+                                                  li
+                                                    span(target='Tochigi', names='Tochigi', value='2') 2人
+                                                  li
+                                                    span(target='Tokyo', names='Tokyo', value='3') 3人
+                                    section.room
+                                      .form-group
+                                        label.form-label(for='') 部屋
+                                        .dropdown-custom
+                                          .input-custom
+                                            button 0
+                                            .popup-menu
+                                              .popup-content-input
+                                                ul.cities
+                                                  li
+                                                    span(target='Hokkaido', names='Hokkaido') 0
+                                                  li
+                                                    span(target='Okinawa', names='Okinawa') 1
+                                                  li
+                                                    span(target='Tochigi', names='Tochigi') 2
+                                                  li
+                                                    span(target='Tokyo', names='Tokyo') 3
+                                  .input-popup
+                                      .title 小学生の添い寝について
+                                      ul
+                                        li 大人1名様に対し、添い寝のお子様1名までとします。
+                                        li 小学生の添い寝希望のお客様がご朝食をご希望の場合、現地にて別途1,030円頂戴いたします。（未就学児は無料）
+                                        li 小学生の添い寝の場合、幼児欄の「食事・布団不要」に人数をご入力の上、予約画面下の備考欄にお子様の年齢をご記載ください。
+                                  .btn-group
+                                      button.clear クリア
+                                      button.done 完了
+                        .promo-code
+                            section
+                                .form-group
+                                    label.form-label(for='') プロモコード
+                                    .input-custom
+                                        input.form-control(type='text', placeholder='プロモコード)')
+                        .find-button
+                            label 最低価格保証
+                            button(name='submit', type='submit', value='空室を検索') 空室を検索
+                  section.popular-rooms
+                    h3 人気のお部屋
+                    .popular-rooms-container
+                      .popular-rooms-image
+                          source(media='(min-width: 356px)', srcset='/assets/narita/images/popular-rooms.jpg')
+                          img(src='/assets/narita/images/popular-rooms.jpg')
+                      .popular-rooms-right
+                        button.members(type='button') メンバー限定
+                        h3  スーペリアツインハイフロア
+                        p あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさをもつ青いそら、あうつくしい森で飾られたモリーオ市あのイーハトーヴォの
+                        button.more もっと見る
+                  section.promo-content
+                    .container
+                      ul.row
+                        li.col.col-1-3
+                          source(media='(min-width: 356px)', srcset='/assets/narita/images/promo-1.jpg')
+                          img(src='/assets/narita/images/promo-1.jpg')
+                          .header 施設01
+                          .content あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさを
+                          .see-more
+                            span もっと見る
+                        li.col.col-1-3
+                          source(media='(min-width: 356px)', srcset='/assets/narita/images/promo-image.jpg')
+                          img(src='/assets/narita/images/promo-image.jpg')
+                          .header 施設01
+                          .content あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさを
+                          .see-more
+                            span もっと見る
+                        li.col.col-1-3
+                          source(media='(min-width: 356px)', srcset='/assets/narita/images/promo-1.jpg')
+                          img(src='/assets/narita/images/promo-1.jpg')
+                          .header 施設01
+                          .content あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさを
+                          .see-more
+                            span もっと見る
+  include ../components/breadcrumb.pug

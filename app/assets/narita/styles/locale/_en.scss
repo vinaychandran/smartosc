@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'OpenSans';
+    src: url('../fonts/OpenSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'YuMin';
+    src: url('../fonts/yumin.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$default-font: 'OpenSans';
+$mi-regular:'Yu Mincho Regular';
+$mi-semibold:'Yu Mincho Demibold';
+$go-regular: 'Yu Gothic Regular';
+$go-semibold: 'Yu Gothic Medium';
+$go-bold: 'Yu Gothic Bold';
+@font-face {
+    font-family: 'YuGo';
+    src: url('../fonts/yugothib.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

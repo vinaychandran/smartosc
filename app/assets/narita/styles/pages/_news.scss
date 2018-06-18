@@ -1,13 +1,14 @@
 .news-main-page-wrap{
   padding: 115px 0 0;
   @include desktop {
-    padding: 200px 0 0;
+    padding: 160px 0 0;
   }
   h1{
     @include font-size(24px);
     font-weight: 500;
     text-align: center;
     margin: 0 0 35px;
+    font-family: $go-semibold;
   }
   .news-types{
     margin: 0 0 20px;
@@ -35,7 +36,7 @@
       }
       a {
         @include font-size(14px);
-        font-family: 'YuGo';
+        font-family: $go-semibold;
         line-height: 1.43;
         letter-spacing: 1.4px;
         font-weight: 500;
@@ -66,10 +67,10 @@
         }
         @include md {
           padding: 20px 5px;
-          border-bottom: 1px solid transparent;
+          border-bottom: 2px solid transparent;
           &.selected{
             background: #fafafa;
-            border-bottom: 1px solid $default-color;
+            border-bottom: 2px solid $default-color;
             &:before{
               display: none;
             }
@@ -121,6 +122,8 @@
         bottom: 4px;
         @include font-size(12px);
         line-height: 1;
+        font-family: $go-semibold;
+        font-weight: 500;
       }
       .room-short-info{
         padding: 30px 25px;
@@ -128,12 +131,16 @@
       .date{
         line-height: 2;
         letter-spacing: 1.4px;
+        font-family: $go-semibold;
+        font-weight: 500;
+        margin-bottom: 5px;
       }
       h6{
         @include font-size(15px);
         line-height: 1.75;
         letter-spacing: 1.6px;
         font-weight: 700;
+        font-family: $go-bold;
       }
       .see-more{
         margin: 30px 0;

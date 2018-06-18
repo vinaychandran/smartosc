@@ -1,8 +1,23 @@
-.tabs-header {
+.tabs {
+  position: relative;
+}
+.tabs-header, .room-types {
   display: none;
+  background: #fff;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    margin-left: -44.5%;
+    width: 89%;
+    z-index: 999999;
+    box-shadow: 35.4px 35.4px 90px 0 rgba(0, 0, 0, 0.15);
   @include sm {
     display: table;
     margin: 0 auto 40px;
+    position: static;
+    width: auto;
+    background: none;
+    box-shadow: none;
   }
   &.open-tabs {
     @extend %clearfix;
@@ -59,10 +74,13 @@
       color: #888888;
       display: block;
       position: relative;
-      margin: 8px 0;
+      padding: 18px 0;
+      border-bottom: 1px solid #eee;
       @include sm {
         text-align: left;
         margin: 0;
+        border: 0;
+        padding: 0;
       }
       &.tabs-title-active {
         color: $default-color;
@@ -93,4 +111,9 @@
       }      
     }
   }
+}
+.room-types {
+  top: 104px;
+  margin-left: -41.5%;
+  width: 83%;
 }

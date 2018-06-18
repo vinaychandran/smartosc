@@ -234,7 +234,7 @@
       .menu-gradient {
         top: 0;
         width: 100px;
-        height: 57px;
+        height: 49px;
         @include md {
           display: none;
         }
@@ -242,8 +242,10 @@
       .tabs-wrap {
         overflow: scroll;
         position: relative;
+        margin-bottom: 20px;
         @include sm {
           overflow: auto;
+          margin: 0;
         }
         ul {
           width: 310%;
@@ -251,16 +253,19 @@
           margin-bottom: 30px;
           background: $default-bg;
           padding-top: 8px;
+          position: static;
+          margin: 0;
           @include sm {
             width: 62%;
             text-align: center;
             background: transparent;
             padding-top: 0;
+            margin: 0 auto 40px;
           }
           li {
             display: inline-block;
             float: none;
-            margin-bottom: 6px;
+            margin-bottom: 14px;
             @include sm {
               margin-bottom: 20px;
             }
@@ -269,6 +274,8 @@
               letter-spacing: 3.2px;
               font-weight: normal;
               text-transform: uppercase;
+              padding: 0;
+              border: 0;
             }
           }
         }

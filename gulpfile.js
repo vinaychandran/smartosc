@@ -6,6 +6,8 @@ const del = require('del');
 const wiredep = require('wiredep').stream;
 const runSequence = require('run-sequence');
 var replace = require('gulp-replace');
+var rename = require('gulp-rename');
+var merge = require('merge-stream');
 
 // const svgSprite = require("gulp-svg-sprites");
 // const spritesmith = require('gulp.spritesmith');
@@ -24,13 +26,30 @@ gulp.task('views', () => {
         .pipe(reload({ stream: true }));
 });
 
-gulp.task('styles', () => {
-    var locale = args.locale;
-    console.log('locale >>>' + locale);
-    var bowerPath = args.locale;
-    return gulp.src('app/assets/narita/styles/**/*.scss')
+gulp.task('createCSS', () => {
+    var data = ['main-en', 'main-jp', 'main-kr', 'main-tw', 'main-cn'];
+    var streams = [];
+    data.forEach(function(name) {
+        var lang = (name.split('-')[1]) ? name.split('-')[1] : 'jp';
+        console.log(lang);
+        var stream = gulp.src('app/assets/narita/styles/main.scss')
+            .pipe(replace('$locale', lang))
+            .pipe(rename(function(path) {
+                path.basename = name;
+                path.extname = '.scss';
+            }))
+            .pipe(gulp.dest('app/assets/narita/styles'));
+        streams.push(stream);
+    });
+
+    return merge(streams);
+});
+
+gulp.task('styles', ['createCSS'], () => {
+
+    var locale = (args.locale) ? args.locale : 'jp';
+    var cssFile = gulp.src('app/assets/narita/styles/**/*.scss')
         .pipe(replace('$locale', locale))
-        //.pipe(header('$bowerPath: ' + bowerPath + ';\n'))
         .pipe($.plumber())
         .pipe($.sourcemaps.init())
         .pipe($.sass.sync({
@@ -42,6 +61,7 @@ gulp.task('styles', () => {
         .pipe($.sourcemaps.write())
         .pipe(gulp.dest('.tmp/assets/narita/styles'))
         .pipe(reload({ stream: true }));
+    return cssFile;
 
 });
 

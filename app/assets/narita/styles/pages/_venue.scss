@@ -671,14 +671,24 @@ ul.venue-list {
       padding: 30px 0 0;
 
       .tabs-header {
-        margin: 0 0 10px;
+        margin: 0;
+        position: static;
+        box-shadow: none;
         text-align: center;
-        @include md {
-          margin-bottom: 30px;
+        @include sm {
+          margin: 0 0 30px;
         }
         li {
+          margin-bottom: 30px;
+          @include sm {
+            margin-bottom: 0;
+          }
           &:first-of-type {
             padding-left: 0;
+          }
+          .tabs-title {
+            border: 0;
+            padding: 0;
           }
         }
       }

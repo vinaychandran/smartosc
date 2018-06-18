@@ -56,8 +56,7 @@ ul.room-types{
       color: #888888;
       display: block;
       position: relative;
-      margin: 8px 0;
-      cursor: pointer;
+      cursor: pointer; 
       @include sm {
         text-align: left;
         margin: 0;
@@ -239,19 +238,13 @@ ul.rooms-list{
   background:#fafafa;
   overflow: auto;
   display: block;
-  transform: scale(1);
   opacity: 0;
-  transition: opacity ;
+  transition-duration: .5s;
   &:after{
     display: none;
   }
-  .basicLightbox__placeholder{
-    transition: scale(1) ;
-  }
   &.basicLightbox--visible{
      opacity: 1;
-    animation: roomPop 1s ease; /* IE 10+, Fx 29+ */
-
   }
 }
 
