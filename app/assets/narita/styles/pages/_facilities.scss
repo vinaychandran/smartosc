@@ -20,6 +20,7 @@
                     @include font-size(13.6px);
                     letter-spacing: 1.6px;
                     font-weight: bold;
+                    font-family: $go-bold;     
                     i {
                         border: solid black;
                         border-width: 0 2px 2px 0;
@@ -68,16 +69,16 @@
                 }
                 h2 {
                     @include font-size(20px);
-                    font-weight: 600;
+                    font-weight: 500;
                     line-height: 33px;
                     color: #141414;
                     margin: 0;
                     padding-bottom: 20px;
                     letter-spacing: 0.7px;
                     text-align: left;
+                    font-family: 'Lato-B';
                     @include md {
                         @include font-size(24px);
-                        font-weight: 600;
                         padding-bottom: 40px;
                     }
                 }
@@ -86,6 +87,7 @@
                     font-weight: 500;
                     line-height: 28px;
                     letter-spacing: 1.4px;
+                    font-family: $mi-regular;
                 }
             }
             .design-img {
@@ -150,6 +152,7 @@
                 .amusement-info {
                     text-align: center;
                     position: relative;
+                    padding: 27px 50px 60px;
                     h6 {
                         @include font-size(20px);
                         line-height: 20px;
@@ -157,9 +160,10 @@
                         float: none;
                         text-align: center;
                         margin-bottom: 30px;
+                        font-family: $go-bold;
                     }
                     p {
-                        font-family: 'YuMin';
+                        font-family: $mi-regular;
                         @include font-size(14px);
                         line-height: 28px;
                         font-weight: 500;
@@ -167,6 +171,7 @@
                     }
                     .room-more {
                         width: 80%;
+                        bottom: -40px;
                     }
                 }
             }
@@ -178,7 +183,7 @@
             text-align: center;
             @include font-size(24px);
             font-weight: 500;
-            font-family: 'YuGo';
+            font-family: $go-semibold;
             margin: 60px 0 40px 0;
         }
         ul {
@@ -216,6 +221,7 @@
         letter-spacing: 1.4px;
         font-weight: 500;
         text-align: center;
+        font-family: $go-semibold;
     }
     h2 {
         @include font-size(24px);
@@ -224,8 +230,13 @@
         text-align: center;
         border-bottom: 2px solid $default-color;
         padding-bottom: 30px;
+        font-family: $go-bold;
         @include md {
             @include font-size(36px);
+        }
+        + p{
+            font-family: $mi-regular;
+            margin-bottom: 30px;
         }
     }
 }
@@ -268,6 +279,7 @@
         line-height: 28px;
         letter-spacing: 1.4px;
         font-weight: 500;
+        font-family: $mi-regular;
     }
     .facilities-buttons {
         @extend %clearfix;
