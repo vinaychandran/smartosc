@@ -12,7 +12,7 @@
   p {
     &.forgot-pwd {
       text-align: center;
-      font-family: YuGo;
+      font-family: $go-semibold;
       font-size: 12px;
       font-weight: 500;
       font-style: normal;
@@ -239,7 +239,7 @@
 
   p {
     opacity: 0.6;
-    font-family: YuGo;
+    font-family: $go-semibold;
     font-size: 12px;
     font-weight: 500;
     font-style: normal;
@@ -251,7 +251,7 @@
     margin: 0 42px;
 
     &.header {
-      font-family: YuGo;
+      font-family: $go-bold;
       font-size: 20px;
       font-weight: bold;
       line-height: 1.5;

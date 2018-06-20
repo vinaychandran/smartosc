@@ -1,0 +1,83 @@
+extends ../layouts/default
+
+block append content
+    .offer-main-page
+        section.venues-list-wrap.offer-list-wrap
+            .container
+                h4 オファー
+                span.right-tag 12 ロケーション中の 12 を表示
+                ul.venue-list
+                    li.showItem
+                        img.lazy(data-src='/assets/narita/images/room-big1.jpg')
+                        .venue-short-info.offer-short-info
+                            h6 あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
+                            p Harbiye Mahallesi, Abdi Ipekci CaddesiNo 12 Nişantaşı, Şişli Istanbul, トルコ, 34367          							
+                            a.see-more(href="#" data-show-rooms="offer-full-info")
+                                span もっと見る
+                    li.showItem
+                        img.lazy(data-src='/assets/narita/images/room-big1.jpg')
+                        .venue-short-info.offer-short-info
+                            h6 あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
+                            p Harbiye Mahallesi, Abdi Ipekci CaddesiNo 12 Nişantaşı, Şişli Istanbul, トルコ, 34367          							
+                            a.see-more(href="#" data-show-rooms="facilities-full-info")
+                                span もっと見る
+                    li.showItem
+                        img.lazy(data-src='/assets/narita/images/room-big1.jpg')
+                        .venue-short-info.offer-short-info
+                            h6 あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
+                            p Harbiye Mahallesi, Abdi Ipekci CaddesiNo 12 Nişantaşı, Şişli Istanbul, トルコ, 34367          							
+                            a.see-more(href="#" data-show-rooms="facilities-full-info")
+                                span もっと見る
+                    li.showItem
+                        img.lazy(data-src='/assets/narita/images/room-big1.jpg')
+                        .venue-short-info.offer-short-info
+                            h6 あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
+                            p Harbiye Mahallesi, Abdi Ipekci CaddesiNo 12 Nişantaşı, Şişli Istanbul, トルコ, 34367          							
+                            a.see-more(href="#" data-show-rooms="facilities-full-info")
+                                span もっと見る
+                    li.showItem
+                        img.lazy(data-src='/assets/narita/images/room-big1.jpg')
+                        .venue-short-info.offer-short-info
+                            h6 あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
+                            p Harbiye Mahallesi, Abdi Ipekci CaddesiNo 12 Nişantaşı, Şişli Istanbul, トルコ, 34367          							
+                            a.see-more(href="#" data-show-rooms="facilities-full-info")
+                                span もっと見る
+                    li.showItem
+                        img.lazy(data-src='/assets/narita/images/room-big1.jpg')
+                        .venue-short-info.offer-short-info
+                            h6 あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
+                            p Harbiye Mahallesi, Abdi Ipekci CaddesiNo 12 Nişantaşı, Şişli Istanbul, トルコ, 34367          							
+                            a.see-more(href="#" data-show-rooms="facilities-full-info")
+                                span もっと見る
+                    li.showItem
+                        img.lazy(data-src='/assets/narita/images/room-big1.jpg')
+                        .venue-short-info.offer-short-info
+                            h6 あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
+                            p Harbiye Mahallesi, Abdi Ipekci CaddesiNo 12 Nişantaşı, Şişli Istanbul, トルコ, 34367          							
+                            a.see-more(href="#" data-show-rooms="facilities-full-info")
+                                span もっと見る
+        include ../components/breadcrumb.pug
+    #offer-full-info(data-basicLightbox data-id="offer-full-info" class="room-detail")
+        .room-info-header.offer-info-header
+            .content-right
+                a(href='#').book-room
+                    | 予約する
+                .close-room
+                    i.icon-close
+                .rating-wrap
+                    .review-count レビュー
+                    .rating-units
+                        span.rating-unit.is-full
+                            i.icon-star
+                        span.rating-unit.is-full
+                            i.icon-star
+                        span.rating-unit.is-full
+                            i.icon-star
+                        span.rating-unit.is-full
+                            i.icon-star
+                        span.rating-unit
+                    .rating-number
+                        span 4.3
+            .phone-number.header
+                | Mama treatment
+        include ../components/offer-info.pug

@@ -287,27 +287,22 @@
 
     .endDate,
     .startDate {
-      font-family: $primary-font;
+      font-family:$go-bold;
       @include font-size(12px);
       line-height: 2.5;
       letter-spacing: 0.9px;
       text-align: left;
       color: $default-color;;
       border: 2px solid #eeeeee;
-      border-radius: 4px;
+      border-radius: 4px; 
       height: 66px;
-      line-height: 66px;
+      line-height: 66px; 
       padding-top: 15px;
       width: 140px;
-      @include mobile {
-        background: none;
-        padding-left: 15px;
-      }
-
+      padding-left: 15px;   
       span.date_at,
       span.date_to {
         @extend .icon-calender;
-
         &:before {
           background-image: none;
           height: auto;

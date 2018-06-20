@@ -7,12 +7,12 @@ html {
 }
 
 body {
-    font-family: $go-semibold;
+    font-family: $mi-regular;
     @include font-size($font-size);
     background: $default-bg;
     color:$primary-color;
     line-height: $line-height;
-    position: relative;
+    position: relative; 
 }
 
 * {

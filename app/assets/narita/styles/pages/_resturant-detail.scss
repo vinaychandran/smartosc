@@ -56,52 +56,53 @@
       line-height: 61px;
     }
   }
-  .rating-wrap{
-    display: none;
-    line-height: 1;
-    padding-top: 8px;
-    @include md {
-      display: block;
-      float: left;
-    }
-    .review-count{
-      @include font-size(13.6px);  
-      color: rgba(0, 0, 0, 0.6);      
-      letter-spacing: 1.6px;
-      margin-bottom: 5px;
-    }
-    .rating-units {
-      float: left;
-    }
-    .rating-unit{
-      width: 20px;
-      height: 20px;
-      display: inline-block; 
-      background: #eeeeee;
-      border-radius: 10px;
-      margin: 0 2px;
-      position: relative;
-      i{
-        position: absolute;
-        left: 5px;
-        top: 4px;
-        @include font-size(11px);
-      }
-      &.is-full{
-        background: #c5ad6c;
-      }
-    }
-    .rating-number{
-      display: block;
-      float: left;
-      margin: 0 15px 0 10px;
-      margin-top: -5px;
-      span{
-        @include font-size(24px);
-      }
-    }
-  }  
 }
+
+.rating-wrap{
+  display: none;
+  line-height: 1;
+  padding-top: 8px;
+  @include md {
+    display: block;
+    float: left;
+  }
+  .review-count{
+    @include font-size(13.6px);  
+    color: rgba(0, 0, 0, 0.6);      
+    letter-spacing: 1.6px;
+    margin-bottom: 5px;
+  }
+  .rating-units {
+    float: left;
+  }
+  .rating-unit{
+    width: 20px;
+    height: 20px;
+    display: inline-block; 
+    background: #eeeeee;
+    border-radius: 10px;
+    margin: 0 2px;
+    position: relative;
+    i{
+      position: absolute;
+      left: 5px;
+      top: 4px;
+      @include font-size(11px);
+    }
+    &.is-full{
+      background: #c5ad6c;
+    }
+  }
+  .rating-number{
+    display: block;
+    float: left;
+    margin: 0 15px 0 10px;
+    margin-top: -5px;
+    span{
+      @include font-size(24px);
+    }
+  }
+}  
 
 .resturant-detail-menu {
   background: #fafafa;

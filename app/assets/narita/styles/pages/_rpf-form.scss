@@ -76,7 +76,7 @@
 
   h5,
   p {
-    font-family: 'YuGo';
+    font-family: $go-bold;
     @include font-size(24px);
     font-weight: bold;
     line-height: 1.04;
@@ -97,7 +97,7 @@
   }
 
   label {
-    font-family: $secondary-font;
+    font-family: $mi-regular;
     @include font-size(14px);
     font-weight: 500;
     font-style: normal;
@@ -242,7 +242,7 @@
 
     .endDate,
     .startDate {
-      font-family: $primary-font;
+      font-family: $go-bold;
       @include font-size(12px);
       line-height: 2.5;
       letter-spacing: 0.9px;
@@ -254,9 +254,10 @@
       line-height: 66px;
       padding-top: 15px;
       width: 160px;
+      padding-left: 15px;
+      font-weight: 700;
       @include mobile {
-        background: none;
-        padding-left: 15px;
+        background: none;        
       }
 
       span.date_at,
@@ -272,7 +273,7 @@
         }
         @include md {
           float: left;
-          padding: 0 10px;
+          padding: 0 0; 
 
           &:before {
             background-image: url("../svg/sprite.svg");

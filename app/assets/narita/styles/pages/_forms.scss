@@ -3,7 +3,7 @@
 
   input,
   input::placeholder {
-    font-family: $primary-font;
+    font-family: $go-bold;
     background-size: 6px;
     background-repeat: no-repeat;
     border-radius: 4px;
@@ -14,7 +14,7 @@
     letter-spacing: 0.9px;
     padding: 0 11px;
     color: $default-color;
-
+    font-weight: 700;
     &:focus {
       border: 2px solid #eeeeee;
     }
@@ -53,7 +53,7 @@
     button,
     input,
     input::placeholder {
-      font-family: $primary-font;
+      font-family: $go-bold;
       background-size: 6px;
       background-repeat: no-repeat;
       cursor: pointer;
@@ -65,7 +65,7 @@
       letter-spacing: 0.9px;
       padding: 0 11px;
       color: $default-color;
-
+      font-weight: 700;
       &:focus {
         border: 2px solid #eeeeee;
       }

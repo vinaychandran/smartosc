@@ -19,7 +19,7 @@
 
   &.sticky {
     position: fixed;
-    top: 94px;
+    top: 80px;
     width: 100%;
     z-index: 9;
     bottom: auto;
@@ -89,7 +89,7 @@
   }
 
   #booking-tabs{
-     @include mobile{
+     @include mobile {
       margin: 0 -10px;
     }
   }
@@ -99,8 +99,13 @@
     margin: 0;
     @include mobile {
       border-top: 1px solid #eee;
+      display: inline-block;
+      position: static;
+      box-shadow: none;
+      margin: 0 auto;
+      padding: 0;
+      width: 100%;    
     }
-
     li {
       background: #eeeeee;
       padding: 0;
@@ -279,23 +284,18 @@
       letter-spacing: 0.9px;
       text-align: left;
       color: $default-color;
-      //border: 2px solid #eeeeee;
       height: 62px;
       line-height: 66px;
-      // background: url("../icons/calendar-interface-symbol-tool.svg") 10% center no-repeat;
-      // padding-left: 45px;
-      // background-size: 20px;
-      //width: 164px;
-      font-weight: 700;
-      @include mobile {
-        width: 100%;
-        padding-left: 15px;
-      }
+      font-weight: 700;      
       //padding-top: 18px;
-      padding: 20px 10px;
+      padding: 20px 10px 20px 15px;
+      width: 100%;
       @include md {
         padding-top: 0;
-      };
+        padding-left: 0;
+        padding-right: 0;
+        width: auto;
+      }
 
       span.date_at,
       span.date_to {
@@ -769,8 +769,12 @@
     }
 
     label {
-      padding: 5px 10px 5px 20px;
+      padding: 5px 10px 5px 10px;
       clear: both;
+      text-align: center;
+      .icon-info{
+        margin-right: 5px; 
+      }
       &.visible-device{
         text-align: center;
         padding-top: 20px;
@@ -821,7 +825,7 @@
       }
 
       label {
-        font-family: $secondary-font;
+        font-family: $mi-regular;
         @include font-size(14px);
         font-weight: 500;
         letter-spacing: 1.1px;
@@ -853,7 +857,7 @@
         button,
         input,
         input::placeholder {
-          font-family: $primary-font;
+          font-family: $go-bold;
           background-size: 6px;
           background-repeat: no-repeat;
           cursor: pointer;
@@ -869,6 +873,7 @@
           padding: 0 20px;
           color: $default-color;
           text-align: left;
+          font-weight: 700;
           @include md {
             width: 140px;
           }
@@ -995,7 +1000,7 @@
 
             .value {
               //border-right: 2px solid #eeeeee;
-              padding-right: 20px;
+              padding-right: 0; 
             }
           }
         }

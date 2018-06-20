@@ -5,7 +5,7 @@ header{
   position: fixed;
   z-index: 99999;
   @include md {
-  	height: 94px;
+  	height: 80px;
   }
   @include tablet {
     height: 56px;
@@ -14,15 +14,15 @@ header{
   	float: left;
   	.logo{
   		margin:17px 18px;
-  		max-width: 148px;
-  		@include md {
-  			margin:30px 50px;
+  		max-width: 148px;  		
+	    @include tablet {
+	    	max-width: 148px;
+	    	margin:17px 18px;
+	    }
+	    @include md {
+  			margin:23px 50px;
 			max-width: 236px;
   		}
-      @include tablet {
-        max-width: 148px;
-        margin:17px 18px;
-      }
   	}
   }
   .header-right{
@@ -37,7 +37,7 @@ header{
     display: none!important;
   }
 	@include center(horizontal);
-	padding: 40px 20px 0;
+	padding: 32px 20px 0;
 	ul{
 		li{
 			display: block;
@@ -55,7 +55,7 @@ header{
 
 .top-cta{  
 	float: left;
-	padding: 27px 30px 27px;
+	padding: 21px 30px;
 	line-height: 1;
 	border-right:1px solid rgba(255,255,255,0.2);
 	.phone{
@@ -92,7 +92,7 @@ header{
 	border-left:1px solid rgba(255,255,255,0.2);
 	border-right:1px solid rgba(255,255,255,0.2);
 	@include md {
-		padding: 25px 15px 25px;
+		padding: 18px 15px;
 		border-left:0;
 	}
 	@include tablet {
@@ -123,7 +123,7 @@ header{
 	cursor: pointer;
 	float: left;
 	@include md {
-		margin: 38px 35px;
+		margin: 30px 35px;
 	}
 	@include tablet {
 	   margin: 20px 15px;
@@ -188,7 +188,7 @@ header{
 	}
 	@include md {
 		width: 300px;
-		top: 94px;
+		top: 80px;
 	}
   @include tablet {
     top: 56px;

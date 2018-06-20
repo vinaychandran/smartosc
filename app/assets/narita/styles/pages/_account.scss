@@ -15,7 +15,7 @@
       }
 
       .header {
-        font-family: YuGo;
+        font-family: $go-semibold;
         font-size: 24px;
         font-weight: 500;
         font-style: normal;
@@ -31,7 +31,7 @@
 
         ul {
           .tabs-title {
-            font-family: YuGo;
+            font-family: $go-semibold;
             font-size: 14px;
             font-weight: 500;
             font-style: normal;
@@ -171,7 +171,7 @@
             }
 
             label {
-              font-family: YuGo;
+              font-family: $go-bold;
               font-size: 14px;
               font-weight: bold;
               font-style: normal;
@@ -199,7 +199,7 @@
                 input {
                   position: relative;
                   top: 100px;
-                  font-family: calibri;
+                  font-family: $go-bold;
                   width: 100%;
                   padding: 10px;
                   -webkit-border-radius: 5px;
@@ -303,7 +303,7 @@
                 padding: 10px 0 40px;
 
                 label {
-                  font-family: YuGo;
+                  font-family: $go-semibold;
                   font-size: 18px;
                   font-weight: 500;
                   line-height: 1.67;
@@ -463,7 +463,7 @@
                   };
 
                   h3 {
-                    font-family: YuGo;
+                    font-family: $go-bold;
                     font-size: 20px;
                     font-weight: bold;
                     line-height: 1;
