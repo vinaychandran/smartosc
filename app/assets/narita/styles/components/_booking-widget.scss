@@ -85,6 +85,7 @@
       display: table;
       float: right;
       border-left: 1px solid #eee;
+      cursor: pointer;
     }
   }
 
@@ -104,7 +105,7 @@
       box-shadow: none;
       margin: 0 auto;
       padding: 0;
-      width: 100%;    
+      width: 100%;
     }
     li {
       background: #eeeeee;
@@ -202,7 +203,7 @@
     }
 
     .input-custom {
-      position: relative;     
+      position: relative;
 
       input,
       input::placeholder {
@@ -286,7 +287,7 @@
       color: $default-color;
       height: 62px;
       line-height: 66px;
-      font-weight: 700;      
+      font-weight: 700;
       //padding-top: 18px;
       padding: 20px 10px 20px 15px;
       width: 100%;
@@ -773,7 +774,7 @@
       clear: both;
       text-align: center;
       .icon-info{
-        margin-right: 5px; 
+        margin-right: 5px;
       }
       &.visible-device{
         text-align: center;
@@ -835,7 +836,7 @@
       }
 
       .input-custom {
-        position: relative;        
+        position: relative;
 
         @include md {
           padding: 0;
@@ -1000,7 +1001,7 @@
 
             .value {
               //border-right: 2px solid #eeeeee;
-              padding-right: 0; 
+              padding-right: 0;
             }
           }
         }
@@ -1046,7 +1047,7 @@
     //clear: both;
     float: right;
     padding-bottom: 0;
-    @include md { 
+    @include md {
       clear: none;
       //float: none;
       width: 135px;

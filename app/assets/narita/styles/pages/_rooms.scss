@@ -44,7 +44,7 @@ ul.room-types{
   li {
     @include sm {
       float: none;
-      display: table-cell; 
+      display: table-cell;
     }
     a {
       @include font-size(14px);
@@ -56,7 +56,7 @@ ul.room-types{
       color: #888888;
       display: block;
       position: relative;
-      cursor: pointer; 
+      cursor: pointer;
       @include sm {
         text-align: left;
         margin: 0;
@@ -238,6 +238,7 @@ ul.rooms-list{
 .roomPopup{
   background:#fafafa;
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
   display: block;
   opacity: 0;
   transition-duration: .2s;
@@ -270,6 +271,7 @@ ul.rooms-list{
 
 .room-info-header{
   position: sticky;
+  transform: translate3d(0,0,0);
   top: 0;
   left: 0;
   right: 0;
@@ -590,7 +592,7 @@ ul.rooms-list{
   margin: 0 15px;
   @include md {
     padding: 100px 0 25px;
-    margin: 0; 
+    margin: 0;
   }
   h3{
     @include font-size(16px);
