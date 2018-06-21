@@ -119,6 +119,7 @@
             margin: 0 30px;
             @include md {
               padding: 0 25px;
+              margin-bottom: 62px;
             };
 
             .col {
@@ -388,32 +389,51 @@
           }
 
           .promo-content {
-            .container {
-              margin: 62px auto;
+            margin: 62px auto;
 
-              ul li {
-                background: #fff;
-                padding: 0;
-                width: 100%;
+            ul {
+              margin:0;
+              li {
+              background: #fff;
+              padding: 0;
+              width: 100%;
+              margin-right: 0;
+              margin-bottom: 20px;
+              @include md {
+                width: 346px;
+                margin-right: 30px;
+                margin-bottom: 0;
+              };
+              @include tablet {
+                margin-right: 26px;
+              };
+
+              &:last-child {
                 margin-right: 0;
-                margin-bottom: 20px;
-                @include md {
-                  width: 31%;
-                  margin-right: 34px;
-                  margin-bottom: 0;
-                };
-                @include tablet {
-                  margin-right: 26px;
-                };
-
-                &:last-child {
-                  margin-right: 0;
-                }
-
-                .see-more span {
-                  background: #fff;
-                }
               }
+
+               header{
+                padding:30px 20px;
+              }
+              .content{
+                padding:0 20px;
+              }
+              .see-more {
+                    margin-top: 40px;
+              padding-bottom: 20px;
+                &:after{
+                  left:20px;
+                  right:20px;
+                }
+                &:before{
+                  left:20px;
+                  right:20px;
+                }
+                span {
+                background: #fff;
+
+              }
+            }}
             }
           }
 
@@ -518,7 +538,7 @@
               margin-top: 39px;
               background: #fff;
               padding: 30px 5px;
-              @include md{
+              @include md {
                 padding: 30px 60px;
               };
             }
