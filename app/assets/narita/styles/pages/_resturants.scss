@@ -42,8 +42,8 @@
     @include md {
       margin-bottom: 100px;
       float: left;
-      .resturant-list-info{
-        right: 0;
+      .resturant-list-info{        right: 0;
+
       }
       &:nth-child(odd){
         float: right;
@@ -65,10 +65,11 @@
     }
     .resturant-list-info{
       background: $secondary-color;
-      padding: 40px;
+      padding: 40px 40px 10px;
       opacity: 0.95;
       color: $default-color;
       text-align: center;
+      overflow: hidden;
       @include md {
         position: absolute;
         padding: 80px 60px;
