@@ -19,9 +19,7 @@
 body.modal-open{
     overflow: hidden;
     header {
-        @include sm {
-            right: 15px;
-        }
+        
     }
     @include sm {
         padding-right: 15px;

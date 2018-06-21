@@ -5,6 +5,7 @@
     .banner-text {
         h1{
             @include font-size(32px);
+            text-shadow: none;  
         }
     }
 }
@@ -31,6 +32,7 @@
             text-align: center;
             margin: 0 0 15px;
             @include font-size(24px); 
+            text-shadow: 0 0 8.5px rgba(0, 0, 0, 0.8);  
             @include md {
                 margin: 0 0 20px;
                 @include font-size(32px);
