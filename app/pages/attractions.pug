@@ -14,7 +14,8 @@ block append content
 		section.attractions-list
 			.container
 				ul
-					li(data-lat='12.9816' data-long='77.7956' data-src = '../assets/narita/icons/dummy-map.png')
+					- var attarction1 = '<div id="content"> <h1>Header 1</h1><div id="bodyContent"><div class="map-slider"><div class="slick-slide"><img src="/assets/narita/images/dummy-slider1.jpg"/></div><div class="slick-slide"><img src="/assets/narita/images/dummy-slider1.jpg"/></div><div class="slick-slide"><img src="/assets/narita/images/dummy-slider1.jpg"/></div><div class="slick-slide"><img src="/assets/narita/images/dummy-slider1.jpg"/></div><div class="slick-slide"><img src="/assets/narita/images/dummy-slider1.jpg"/></div><div class="slick-slide"><img src="/assets/narita/images/dummy-slider1.jpg"/></div></div><p>Hotel Narita ....</p></div></div>'
+					li(data-lat='12.9816' data-long='77.7956' data-src = '../assets/narita/images/map.png' data-num = '1' data-content= attarction1)
 						picture
 							source(media='(min-width: 768px)', srcset='/assets/narita/images/attractions/1.jpg')
 							img(src='/assets/narita/images/resturant/resturant1-mobile.jpg')
@@ -38,7 +39,9 @@ block append content
 								p 000-0000-0000
 							.see-more
 								span もっと見る
-					li(data-lat='12.9616' data-long='77.7966' data-src = '../assets/narita/icons/dummy-map.png')
+								
+					- var attarction2 = '<div id="content"> <h1>Header 2</h1><div id="bodyContent"><div class="map-slider"><div class="slick-slide"><img src="/assets/narita/images/dummy-slider1.jpg"/></div><div class="slick-slide"><img src="/assets/narita/images/dummy-slider1.jpg"/></div><div class="slick-slide"><img src="/assets/narita/images/dummy-slider1.jpg"/></div><div class="slick-slide"><img src="/assets/narita/images/dummy-slider1.jpg"/></div><div class="slick-slide"><img src="/assets/narita/images/dummy-slider1.jpg"/></div><div class="slick-slide"><img src="/assets/narita/images/dummy-slider1.jpg"/></div></div><p>Hotel Narita ....</p></div></div>'
+					li(data-lat='12.9616' data-long='77.7966' data-src = '../assets/narita/images/map.png' data-num = '2' data-content = attarction2)
 						picture
 							source(media='(min-width: 768px)', srcset='/assets/narita/images/attractions/2.jpg')
 							img(src='/assets/narita/images/resturant/resturant2-mobile.jpg')
@@ -62,7 +65,8 @@ block append content
 								p 000-0000-0000
 							.see-more
 								span もっと見る
-					li(data-lat='12.9116' data-long='77.7976' data-src = '../assets/narita/icons/dummy-map.png')
+					- var attarction3 = '<div id="content"> <h1>Header 3</h1><div id="bodyContent"><div class="map-slider"><div class="slick-slide"><img src="/assets/narita/images/dummy-slider1.jpg"/></div><div class="slick-slide"><img src="/assets/narita/images/dummy-slider1.jpg"/></div><div class="slick-slide"><img src="/assets/narita/images/dummy-slider1.jpg"/></div><div class="slick-slide"><img src="/assets/narita/images/dummy-slider1.jpg"/></div><div class="slick-slide"><img src="/assets/narita/images/dummy-slider1.jpg"/></div><div class="slick-slide"><img src="/assets/narita/images/dummy-slider1.jpg"/></div></div><p>Hotel Narita ....</p><p>Hotel Narita ....</p></div></div>'
+					li(data-lat='12.9116' data-long='77.7976' data-src = '../assets/narita/images/map.png' data-num = '3' data-content = attarction3)
 						picture
 							source(media='(min-width: 768px)', srcset='/assets/narita/images/attractions/1.jpg')
 							img(src='/assets/narita/images/resturant/resturant3-mobile.jpg')
@@ -86,7 +90,8 @@ block append content
 								p 000-0000-0000
 							.see-more
 								span もっと見る
-					li(data-lat='12.9213' data-long='77.7946' data-src = '../assets/narita/icons/dummy-map.png')
+					- var attarction4 = '<div id="content"> <h1>Header 4</h1><div id="bodyContent"><div class="map-slider"><div class="slick-slide"><img src="/assets/narita/images/dummy-slider1.jpg"/></div><div class="slick-slide"><img src="/assets/narita/images/dummy-slider1.jpg"/></div><div class="slick-slide"><img src="/assets/narita/images/dummy-slider1.jpg"/></div><div class="slick-slide"><img src="/assets/narita/images/dummy-slider1.jpg"/></div><div class="slick-slide"><img src="/assets/narita/images/dummy-slider1.jpg"/></div><div class="slick-slide"><img src="/assets/narita/images/dummy-slider1.jpg"/></div></div><p>Hotel Narita ....</p><p>Hotel Narita ....</p><p>Hotel Narita ....</p></div></div>'
+					li(data-lat='12.9213' data-long='77.7946' data-src = '../assets/narita/images/map.png' data-num = '4' data-content = attarction4)
 						picture
 							source(media='(min-width: 768px)', srcset='/assets/narita/images/attractions/2.jpg')
 							img(src='/assets/narita/images/resturant/resturant4-mobile.jpg')
