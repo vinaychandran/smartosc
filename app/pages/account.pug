@@ -25,11 +25,9 @@ block append content
                           .user-image
                             <img id="preview"/>
                           .profile-image-upload.attachFile
-                            p パソコンからファイルを
-                            p アップロード
                             label.custom-file-upload(for='file-upload')
-                              i.fa.fa-paperclip
-                              |  ファイルを添付する
+                              p パソコンからファイルを
+                              p アップロード
                             input#file-upload(type='file' accept="image/*" onchange="FE.global.loadFile(event)")
                         .col.col-2-3
                           .col.col-1-2.padding-left.padding-bottom

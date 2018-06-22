@@ -74,6 +74,12 @@ const FE = {
                 e.target.classList.add('tablink');
             }
 
+            if (document.getElementById('resturant-tabs-header') !== null && document.getElementById('gallery-mask') !== null) {
+                document.getElementById('resturant-tabs-header').style.display = 'block';
+                document.getElementById('gallery-mask').style.display = 'block';
+                e.target.classList.add('tablink');
+            }
+
             if (document.getElementById('room-types') !== null && document.getElementById('gallery-mask') !== null) {
                 document.getElementById('room-types').style.display = 'block';
                 document.getElementById('gallery-mask').style.display = 'block';

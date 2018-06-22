@@ -114,6 +114,15 @@ var Tabs = function(options) {
                     document.getElementById('gallery-mask').style.display = 'none';
                     document.getElementById('tablink').classList.remove('tablink');
                 }
+            } 
+            if(document.getElementById('tablink') && document.getElementById('resturant-tabs-header') && document.getElementById('gallery-mask')){
+                document.getElementById('tablink').innerText = elem.querySelectorAll('.' + titleClass)[i].text;
+                document.getElementById('tablink').classList.remove('opened');
+                if (window.innerWidth <= 768) {
+                    document.getElementById('resturant-tabs-header').style.display = 'none';
+                    document.getElementById('gallery-mask').style.display = 'none';
+                    document.getElementById('tablink').classList.remove('tablink');
+                }
             }
             setTimeout(function() {
                 sliderImage('.inner-page-slider', 1, false, true), 500
