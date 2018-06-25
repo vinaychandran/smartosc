@@ -16,8 +16,11 @@ block append content
                   .container-inner
                     .social-media
                       #facebook-login
+                        i.icon-facebook
                       #google-login
+                        i.icon-google
                       #yahoo-login
+                        i.icon-yahoo
                     form#profile-form
                       .row
                         .col.col-1-3.profile
@@ -177,7 +180,7 @@ block append content
                         li.col.col-1-2.selected
                           .label-container
                             label  メンバー限定5%OFF
-                            span.icon-checked
+                            span.icon-checked(onclick='FE.global.selectPromoCoupon()')
                           input(type='radio',name='coupon',value='1')
                           p あのイーハトーヴォのすきとおった風、夏でも底に。
                           button(type='button')
@@ -186,7 +189,7 @@ block append content
                         li.col.col-1-2
                           .label-container
                             label  メンバー限定5%OFF
-                            span.icon-checked
+                            span(onclick='FE.global.selectPromoCoupon()')
                           input(type='radio',name='coupon',value='1')
                           p あのイーハトーヴォのすきとおった風、夏でも底に。
                           button(type='button')

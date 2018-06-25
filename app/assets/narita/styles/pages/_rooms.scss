@@ -237,16 +237,9 @@ ul.rooms-list{
 
 .roomPopup{
   background:#fafafa;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
   display: block;
-  opacity: 0;
-  transition-duration: .2s;
   &:after{
     display: none;
-  }
-  &.basicLightbox--visible{
-     opacity: 1;
   }
 }
 

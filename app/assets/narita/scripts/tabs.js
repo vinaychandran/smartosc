@@ -124,6 +124,15 @@ var Tabs = function(options) {
                     document.getElementById('tablink').classList.remove('tablink');
                 }
             }
+            if(document.getElementById('resturant-timing-tablink') && document.getElementById('resturant-timing-tabs-header') && document.getElementById('gallery-mask')){
+                document.getElementById('resturant-timing-tablink').innerText = elem.querySelectorAll('.' + titleClass)[i].text;
+                document.getElementById('resturant-timing-tablink').classList.remove('opened');
+                if (window.innerWidth <= 768) {
+                    document.getElementById('resturant-timing-tabs-header').style.display = 'none';
+                    document.getElementById('gallery-mask').style.display = 'none';
+                    document.getElementById('resturant-timing-tablink').classList.remove('resturant-timing-tablink');
+                }
+            }
             setTimeout(function() {
                 sliderImage('.inner-page-slider', 1, false, true), 500
             });

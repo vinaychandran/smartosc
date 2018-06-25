@@ -53,6 +53,14 @@ const FE = {
                 let tabLink = document.getElementById('tablink');
                 tabLink.addEventListener('click', FE.global.openTab);
             }
+            if (document.getElementById('resturant-timing-tablink') && isMobile) {
+                let tabLink = document.getElementById('resturant-timing-tablink');
+                tabLink.addEventListener('click', FE.global.openResturantTab);
+            }    
+            if (document.getElementById('gallery-mask') && isMobile) {
+                let tabLink = document.getElementById('gallery-mask');
+                tabLink.addEventListener('click', FE.global.closeGalleryMask);
+            }          
         },
         openModalTab: (element) => {
             var tabs = new Tabs({
@@ -91,6 +99,45 @@ const FE = {
                 e.target.classList.add('tablink');
             }
             e.preventDefault();
+        },
+
+        openResturantTab: (e) => {
+            if (document.getElementById('resturant-timing-tabs-header') !== null && document.getElementById('gallery-mask') !== null) {
+                document.getElementById('resturant-timing-tabs-header').style.display = 'block';
+                document.getElementById('gallery-mask').style.display = 'block';
+                e.target.classList.add('resturant-timing-tablink');
+            }
+            e.preventDefault();
+        },
+
+        closeGalleryMask: (e) => {
+            if (document.getElementById('tabs-header') !== null && document.getElementById('gallery-mask') !== null) {
+                document.getElementById('tabs-header').style.display = 'none';
+                document.getElementById('gallery-mask').style.display = 'none';
+                document.getElementById('tablink').classList.remove('tablink');
+            }
+
+            if (document.getElementById('resturant-tabs-header') !== null && document.getElementById('gallery-mask') !== null) {
+                document.getElementById('resturant-tabs-header').style.display = 'none';
+                document.getElementById('gallery-mask').style.display = 'none';
+                document.getElementById('tablink').classList.remove('tablink');
+            }
+
+            if (document.getElementById('room-types') !== null && document.getElementById('gallery-mask') !== null) {
+                document.getElementById('room-types').style.display = 'none';
+                document.getElementById('gallery-mask').style.display = 'none';
+                document.getElementById('tablink').classList.remove('tablink');
+            }
+            if (document.getElementById('venue-types') !== null && document.getElementById('gallery-mask') !== null) {
+                document.getElementById('venue-types').style.display = 'none';
+                document.getElementById('gallery-mask').style.display = 'none';
+                document.getElementById('tablink').classList.remove('tablink');
+            }
+            if (document.getElementById('resturant-timing-tabs-header') !== null && document.getElementById('gallery-mask') !== null) {
+                document.getElementById('resturant-timing-tabs-header').style.display = 'none';
+                document.getElementById('gallery-mask').style.display = 'none';
+                document.getElementById('resturant-timing-tablink').classList.remove('resturant-timing-tablink');
+            }
         },
 
         checkValidationRules: (x) => {
@@ -270,11 +317,12 @@ const FE = {
                 var inputs = (mapElem) ? mapElem.getElementsByTagName('li') : '';
                 if (inputs.length) {
                     for (var i = 0; i < inputs.length; i += 1) {
+                        let mapContent = (inputs[i].getElementsByClassName('map-locator')) ? inputs[i].getElementsByClassName('map-locator') : '';
                         mapMarker.push({
                             position: new google.maps.LatLng(inputs[i].dataset.lat, inputs[i].dataset.long),
                             icon: inputs[i].dataset.src,
                             num: inputs[i].dataset.num,
-                            content: inputs[i].dataset.content
+                            content: mapContent[0].innerHTML
                         })
                     }
                 }
@@ -284,24 +332,47 @@ const FE = {
                         position: list.position,
                         icon: list.icon,
                         map: map,
-                        label: {
-                            text: list.num,
-                            color: "black"
-                        }
+                        id: list.num
                     });
+                    if (list.num) {
+                        marker.set("id", list.num);
+                        marker.set("label", list.num);
+                    }
                     var infowindow = new google.maps.InfoWindow({
                         content: list.content
                     });
-
                     marker.addListener('click', function() {
                         infowindow.open(map, marker);
-                        FE.global.sliderImage('.map-slider', 1, false, true);
+                        if (inputs.length) {
+                            for (var i = 0; i < inputs.length; i += 1) {
+                                if (marker.get('id') == i + 1) {
+                                    FE.global.sliderImage('.' + inputs[i].className, 1, false, true);
+                                }
+
+                            }
+                        }
+
                     });
 
                 });
             }
         },
+        selectPromoCoupon: () => {
+            let couponElem = event.currentTarget.parentElement.parentElement;
+            if (couponElem.className.indexOf("selected") >= 0) {
+                couponElem.classList.remove('selected');
+                event.currentTarget.classList.remove('icon-checked');
+            } else {
+                let input = document.querySelectorAll('.promo-coupon li');
+                for (var i = 0; i < input.length; i++) {
+                    input[i].classList.remove('selected');
+                    input[i].getElementsByTagName('span')[0].classList.remove('icon-checked');
+                }
+                event.currentTarget.classList.add('icon-checked');
+                couponElem.classList.add('selected');
+            }
 
+        },
         scroll: () => {
             const scroll = new SmoothScroll('.scroll', {
                 speed: 2000,
@@ -830,6 +901,7 @@ const FE = {
             FE.global.tabs('booking-tabs');
             FE.global.tabs('layout-tabs');
             FE.global.tabs('profile-tabs');
+            FE.global.tabs('resturant-timing-tabs');
             FE.global.instaFeed();
             FE.global.googleMap();
             FE.global.scroll();

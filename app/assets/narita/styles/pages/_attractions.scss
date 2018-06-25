@@ -369,6 +369,9 @@
             right: 0px !important;
         }
     }
+    .map-locator {
+        display: none;
+    }
     .map-container .btn-map {
         display: none;
         @include md {

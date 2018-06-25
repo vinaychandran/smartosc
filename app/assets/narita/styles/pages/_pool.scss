@@ -310,7 +310,7 @@
   }
 
   .header {
-    background: $secondary-color;
+    background: #fafafa;
     width: 100%;
     margin: 0;
     text-align: center;
@@ -322,6 +322,7 @@
     text-transform: uppercase;
     font-weight: bold;
     @include md {
+      background: $secondary-color;
       font-size: 32px;
       text-align: left;
       color: #333333;

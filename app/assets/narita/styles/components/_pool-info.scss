@@ -125,12 +125,11 @@
 }
 
 .pool-info-content {
-  //max-width: 920px;
   background-color: #ffffff;
-  margin: 0 auto;
+  margin: 0 20px;
   padding: 40px 38px;
-  //  margin-top: 60px;
   @include md {
+    margin: 0 auto;
     padding: 0;
     background-color: transparent;
   };

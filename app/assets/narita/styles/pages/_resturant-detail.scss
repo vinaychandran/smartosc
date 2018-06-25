@@ -174,12 +174,25 @@
   }
   .resturant-timing{
     max-width: 940px;
-    margin:0 auto;
-    background: $secondary-color;
-    overflow: hidden;
+    margin:20px auto 0;
+    background: $secondary-color;    
     position: relative;
-    z-index: 1;
     background: $secondary-color;
+    @include md {
+      z-index: 1;
+      overflow: hidden;
+    }
+    .tabs {
+      .tabs-header {
+        margin-bottom: 20px;
+      }
+      .tabs-content {
+        ul {
+          display: table;
+          margin: 0 auto;
+        }
+      }
+    }
   }
   .timings{
     width: 100%;    
@@ -192,9 +205,9 @@
       background: #fff;
     }
     @include md {
-      width: 33.33%;
+      width: auto;
       float: left; 
-      padding: 50px 25px;
+      padding: 50px 70px;
       display: block;
       background: none;
     }
@@ -298,6 +311,7 @@
     margin-bottom: 140px;
     @include md {
       margin-bottom: 72px;
+      width: 48%;
     }    
     &:nth-child(even){
       float: right; 

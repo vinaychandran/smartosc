@@ -5,6 +5,10 @@
     @include md {
       padding: 70px 70px 50px;
     };
+    @include tablet{
+        padding: 30px;
+        top: 0;
+    };
     padding: 35px;
     max-width: 540px;
     opacity: 0.95;
@@ -52,7 +56,7 @@
       letter-spacing: 1.4px;
       text-align: left;
       color: #333333;
-      
+
     }
   }
 }
@@ -60,18 +64,23 @@
 .spa {
   &.promo-content {
     background: $secondary-color;
-    .container ul li .see-more span{
+    .container ul {
+          margin-bottom: 0;
+          @include md{
+            margin-bottom: 40px;
+          };
+      li .see-more span{
       background: $secondary-color;
-    }
+    }}
     h3 {
       padding: 0 0 40px;
       font-family: $go-semibold;
-      @include md {        
-        padding: 62px 0 40px;       
+      @include md {
+        padding: 62px 0 40px;
       }
-    } 
+    }
     .container ul li .see-more{
       padding-bottom: 30px;
-    }   
+    }
   }
 }
