@@ -9,12 +9,10 @@ block append content
 			.banner-text
 				h1 アクセス
 		.about-venue-info-wrap
-			section.about-venue-info 
+			section.about-venue-info
 				h3 TOGETHER IN  STYLE
 				p のイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさをもつ青いそら、あうつくしい森で飾られたモリーオ市あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら		
 		section.location
-			.section-title
-				h2 所在地
 			.map-container
 				#gmap_canvas(data-lat='12.9316' data-lan='77.7946' data-src='../assets/narita/images/marker-icon.png')
 				.map-info-wrap
@@ -31,4 +29,30 @@ block append content
 							li 成田空港第二ターミナル26番乗り場
 				.btn.btn-map GOOGLE MAPで見る
 					i.mys-arrow-left.white
+		//- section.shuttle-bus-wrap
+		//- 	h2 シャトルバス
+		//- 	.shuttle-bus
+		//- 		.level1
+		//- 			h4
+		//- 				東京						
+		//- 		.level2
+		//- 		.level3
+		section.access-map
+			.container
+				h2 USJアクセス
+				img(src='/assets/narita/images/access/access-map.jpg')
+		section.parking-space
+			.container
+				h2 駐車設備
+				.parking-content 
+					p あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさをもつ青いそら、あうつくしい森で飾られたモリーオ市あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそらあのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさをもつ青いそら、あうつくしい森で飾られたモリーオ市あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
+					img(src="/assets/narita/images/parking-space.jpg", alt="")
+
+		section.contact
+			picture.banner-image
+				source(media='(min-width: 768px)', srcset='/assets/narita/images/pool1.jpg')
+				img(src='/assets/narita/images/pool1.jpg')
+			.banner-text
+				span お問合せ
+				h1 000-0000-0000
 		include ../components/breadcrumb.pug

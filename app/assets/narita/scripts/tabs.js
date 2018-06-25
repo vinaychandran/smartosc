@@ -151,6 +151,7 @@ var Tabs = function(options) {
                     lazyLoad: 'progressive'
                 });
                 imgIndex = $(this).find('.slider-content').index();
+                $('.slider-count .number').text(1);
                 console.log(sliderImageCount);
                 $(this).on('init reInit afterChange', function(event, slick, currentSlide, nextSlide) {
                     if (currentSlide !== undefined) {

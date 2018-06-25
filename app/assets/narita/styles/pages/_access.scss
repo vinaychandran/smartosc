@@ -1,0 +1,43 @@
+
+.access-map{
+    margin-bottom: 100px;
+    text-align: center;
+    h2{
+        @include font-size(24px);
+        font-family: $go-semibold;
+        font-weight: 500;
+        text-align: center; 
+        margin: 40px 0;
+    }
+    img{
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+
+.parking-space{
+    margin-bottom: 100px;
+    .container{
+        max-width: 980px;
+    }
+    h2{
+        @include font-size(24px);
+        font-family: $go-semibold;
+        font-weight: 500;
+        text-align: center; 
+        margin: 0 0 40px;
+    }
+    p{
+        float: left;
+        max-width: 370px;
+        font-family: $mi-regular;
+        font-weight: 500;
+        line-height: 2;
+        letter-spacing: 1.4px; 
+        margin-top: 30px; 
+    }
+    img{
+        float: right;  
+    }
+}
