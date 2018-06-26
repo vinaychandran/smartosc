@@ -58,7 +58,6 @@ ul.room-types{
       position: relative;
       cursor: pointer;
       @include sm {
-        text-align: left;
         margin: 0;
       }
       &.selected {

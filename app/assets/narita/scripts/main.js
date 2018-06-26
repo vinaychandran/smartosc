@@ -56,11 +56,11 @@ const FE = {
             if (document.getElementById('resturant-timing-tablink') && isMobile) {
                 let tabLink = document.getElementById('resturant-timing-tablink');
                 tabLink.addEventListener('click', FE.global.openResturantTab);
-            }    
+            }
             if (document.getElementById('gallery-mask') && isMobile) {
                 let tabLink = document.getElementById('gallery-mask');
                 tabLink.addEventListener('click', FE.global.closeGalleryMask);
-            }          
+            }
         },
         openModalTab: (element) => {
             var tabs = new Tabs({
@@ -343,14 +343,14 @@ const FE = {
                     });
                     marker.addListener('click', function() {
                         infowindow.open(map, marker);
-                        if (inputs.length) {
-                            for (var i = 0; i < inputs.length; i += 1) {
-                                if (marker.get('id') == i + 1) {
-                                    FE.global.sliderImage('.' + inputs[i].className, 1, false, true);
-                                }
-
-                            }
-                        }
+                        // if (inputs.length) {
+                        //     for (var i = 0; i < inputs.length; i += 1) {
+                        //         if (marker.get('id') == i + 1) {
+                        //             FE.global.sliderImage('.' + inputs[i].className, 1, false, true);
+                        //         }
+                        //
+                        //     }
+                        // }
 
                     });
 
