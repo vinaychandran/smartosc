@@ -7,6 +7,16 @@
         padding: 0 20px;
         .container {
             position: relative;
+            .offer-types {
+                width: 88%;
+                top: 93px;
+                margin-left: -44%;
+                @include sm {
+                    width: 43%; 
+                    top: auto;
+                    margin-left: auto;                   
+                }
+            }
             h4 {
                 margin-bottom: 26px;
                 @include sm {
@@ -23,6 +33,11 @@
                     right: 0;
                     top: 80px;
                     padding: 0;
+                }
+            }
+            .venue-list {
+                li {
+                    position: relative;
                 }
             }
             .offer-short-info {

@@ -548,12 +548,11 @@ ul.rooms-list{
   ul{
     margin: 0;
     display: flex;
-    justify-content:space-between;
     flex-wrap:  wrap;
     align-items:center;
     @include md {
       border-bottom: 1px solid rgba(0,0,0,0.1);
-      padding: 40px 50px 40px 0;
+      padding: 15px 0;
     }
     li{
       border-bottom: 1px solid rgba(0,0,0,0.1);

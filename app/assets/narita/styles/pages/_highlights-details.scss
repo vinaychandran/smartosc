@@ -1,0 +1,51 @@
+.highlights-detail-page {
+    padding-top: 80px;
+    .hightlights-detail-content {
+        .container {
+            max-width: 880px;
+            .highlights-banner {
+                margin: 0auto;
+                display: block;
+                margin: 40px 0;
+            }
+            .highlight-title {
+                @include font-size(24px);
+                font-weight: 500;
+                line-height: 1.17;
+                letter-spacing: 0.6px;
+                text-align: center;
+            }
+            .highlight-date {
+                font-family: Lato;
+                @include font-size(16px);
+                font-weight: normal;
+                line-height: 1.75;
+                letter-spacing: 0.4px;
+                text-align: center;
+                display: block;
+                margin-top: 10px;
+            }
+            .row {
+                padding: 30px 0;
+                .highlight-detail-text {
+                    p {
+                        @include font-size(14px);
+                        font-family: $mi-regular;
+                        font-weight: 500;
+                        line-height: 2;
+                        letter-spacing: 0.4px;
+                    }
+                    ul {
+                        li {
+                            @include font-size(14px);
+                            font-family: $mi-regular;
+                            font-weight: 500;
+                            line-height: 2;
+                            letter-spacing: 0.4px;
+                        }
+                    }
+                }               
+            }
+        }
+    }
+}
