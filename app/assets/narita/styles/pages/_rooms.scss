@@ -300,9 +300,10 @@ ul.rooms-list{
     width: 55px;
     height: 55px;
     line-height: 55px;
-    position: absolute;
-    right: 0;
-    top: 0;
+    position: static;
+    // right: 0;
+    // top: 0;
+    float: right;
     @include font-size(24px);
      font-family: 'Lato-L';
      text-align: center;
@@ -315,7 +316,6 @@ ul.rooms-list{
   }
   .book-room{
     float: right;
-    margin-right: 55px;
     background-color: #c5ad6c;
     color: $secondary-color;
     @include font-size(14px);
@@ -324,7 +324,6 @@ ul.rooms-list{
     line-height: 1;
     font-weight: 500;
     @include sm {
-      margin-right: 94px;
       padding: 39px 80px;
       @include font-size(16px);
     }

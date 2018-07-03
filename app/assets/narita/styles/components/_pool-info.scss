@@ -1,10 +1,6 @@
 #pool-full-info {
   .room-info-header {
-    .content-right {
-      @include md {
-        margin-right: 94px;
-      };
-
+    .content-right {  
       .cta {
         @include font-size(18px);
         width: 50%;
