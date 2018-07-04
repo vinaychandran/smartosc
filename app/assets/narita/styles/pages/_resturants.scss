@@ -42,8 +42,9 @@
     @include md {
       margin-bottom: 100px;
       float: left;
-      .resturant-list-info{        right: 0;
-
+      max-width: 80%;
+      .resturant-list-info{        
+        right: 0;
       }
       &:nth-child(odd){
         float: right;
@@ -73,10 +74,13 @@
       @include md {
         position: absolute;
         padding: 80px 60px;
-        top: 100px;
+        top: 80px;
         max-width: 500px;
         box-shadow: 14.1px 14.1px 90px 0 rgba(0, 0, 0, 0.2);
         text-align: left;
+      }
+      @include lg {
+        top: 100px;
       }
       h2{
         @include font-size(20px);

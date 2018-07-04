@@ -8,10 +8,17 @@
             text-shadow: none;  
         }
     }
+    img{
+        margin: 0 auto;
+    }
 }
 
 .main-banner {
     position: relative;    
+    padding-top: 56px;
+    @include sm {
+        padding-top: 80px;
+    }
     .banner-image{
         img{
             width: 100%;

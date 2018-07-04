@@ -19,7 +19,7 @@ block append content
 						i.down
 		section.main-banner
 			picture.banner-image
-				source(media='(min-width: 768px)', srcset='/assets/narita/images/resturant/resturant-banner.jpg')
+				source(media='(min-width: 768px)', srcset='/assets/narita/images/resturant/resturant-banner-detail.jpg')
 				img(src='/assets/narita/images/resturant/resturant-banner-mobile.jpg')
 			.banner-text
 				h1  レストラン 「ガーデニア」
@@ -136,7 +136,17 @@ block append content
 									.time 7:00 ~ 9:30
 									.lo LO 9:00
 		section.resturamt-food-wrap
-			include ../components/inner-page-food-menu.pug
+			.inner-page-food-wrap
+				picture.banner-image
+					source(media='(min-width: 768px)', srcset='/assets/narita/images/resturant/chef.jpg')
+					img(src='/assets/narita/images/resturant/chef-mobile.jpg') 
+				.inner-page-food-info
+					.star
+						span
+					h4 ケータリングメニュー
+					.inner-page-food あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさをもつ青いそら、あうつくしい森で飾られたモリーオ市あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそらあのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、夏でも底に冷たさをもつ青いそら、あうつくしい森で飾られたモリーオ市あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら
+					a.see-more(href="#")
+						span もっと見る 
 		section.inner-page-slider-wrap.resturant-detail-slider
 			h2.higlight
 				i

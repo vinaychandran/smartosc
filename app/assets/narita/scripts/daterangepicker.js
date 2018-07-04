@@ -113,8 +113,12 @@
             var tomorrow = new Date();
             tomorrow.setDate(tomorrow.getDate() + 1);
             var nextDay = getDateLocale(tomorrow);
-            containerValues.find('span.date_at').html(now);
-            containerValues.find('span.date_to').html(nextDay);
+            if (!containerValues.find('span.date_at').html()) {
+                containerValues.find('span.date_at').html(now);
+            }
+            if (!containerValues.find('span.date_to').html()) {
+                containerValues.find('span.date_to').html(nextDay);
+            }
 
             if (opts.date_at == '') {
                 containerValues.find('span.date_at').text(opts.l.at);
@@ -200,6 +204,14 @@
         // Check the dates in the calendar
         function checkDates(year, month, day) {
             var date = year + '-' + ('0' + (month + 1)).slice(-2) + '-' + ('0' + day).slice(-2);
+            //alert(opts.date_at);
+            if (opts.date_at == '') {
+                containerCalendar.find('td.valid:first').addClass('start');
+            }
+            if (opts.date_to == '') {
+                containerCalendar.find('td.valid:eq(1)').addClass('end');
+            }
+
             if (opts.date_at != '' && opts.date_at == date) {
                 return ' start';
             }
@@ -288,8 +300,6 @@
 
         // Assign a date
         containerCalendar.on('click', 'td.valid', function() {
-            debugger
-
             var year = Number($(this).data('year')),
                 month = Number($(this).data('month'));
 
@@ -307,6 +317,7 @@
                 containerCalendar.find('td.valid').removeClass('start');
                 $(this).addClass('start');
 
+
                 opts.date_at = year + '-' + ('0' + month).slice(-2) + '-' + ('0' + $(this).text()).slice(-2);
                 var date_at_ = new Date(opts.date_at);
                 var checkoutDate = new Date(opts.date_at);
@@ -316,20 +327,18 @@
                     closeCalendarAndEmpty();
                     clearAll();
                 }
-
                 if (date_at_ > date_to_) {
                     date_to_ = new Date(checkoutDate.setDate(checkoutDate.getDate() + 1));
                     opts.date_to = new Date(checkoutDate.setDate(checkoutDate.getDate() + 1));
-                    //date_to_ = (opts.date_to) ? new Date(opts.date_to) : new Date(checkoutDate.setDate(checkoutDate.getDate() + 1));
                     opts.inputActive = 'date_to';
-                    //opts.date_at = year + '-' + ('0' + month).slice(-2) + '-' + ('0' + $(this).text()).slice(-2);
                     container.find('input.date_to').val('');
                     container.find('.value').removeClass('active');
                     container.find('span.date_at').html(getDateLocale(date_at_));
                     container.find('span.date_to').html(getDateLocale(date_to_));
-                    //container.find('span.daysFromTo').html(getDateLocale(date_at_) + ' to ' + getDateLocale(date_to_));
+                    container.find('.value.date_to').addClass('active');
                     containerValues.find('span.date_to').text(opts.l.to);
-                    containerCalendar.find('td.valid').removeClass('end');
+                    //containerCalendar.find('td.valid').removeClass('end');
+                    $(this).next().addClass('end');
                     container.find('.value.date_to').addClass('active');
                 } else {
                     container.find('span.date_at').html(getDateLocale(date_at_));
@@ -337,6 +346,8 @@
                     opts.inputActive = 'date_to';
                     if (!opts.date_to) {
                         container.find('span.date_to').html(getDateLocale(date_to_));
+                        $(this).next().addClass('end');
+                        container.find('.value.date_to').addClass('active');
                     }
                     container.find('.value').removeClass('active');
                     container.find('.value.date_to').addClass('active');
@@ -344,8 +355,6 @@
                 checkHover(containerCalendar.find('td.valid.end'), 'click');
             } else {
 
-
-                //clearAll();
                 var end = $(this).text();
                 containerCalendar.find('td.valid').removeClass('end');
                 $(this).addClass('end');
@@ -427,8 +436,8 @@
             containerValues.find('span.date_to').text(opts.l.to);
 
 
-            // opts.date_at = '';
-            // opts.date_to = '';
+            opts.date_at = '';
+            opts.date_to = '';
             //date_at_ > date_to_
 
             containerCalendar.find('td').removeClass('start intermediate end');
@@ -459,6 +468,7 @@
             if (opts.date_at != '' && opts.date_to == '') {
                 checkHover($(this), 'hover');
             }
+
         }).on('mouseleave', 'td', function() {
             if (opts.date_at != '' && opts.date_to == '') {
                 $(this).removeClass('hovered');
@@ -467,7 +477,6 @@
         });
         // function of Highlights the range when hovering
         function checkHover(element, method) {
-
             //  containerCalendar.find('td').removeClass('intermediate-hover intermediate');
 
             var year = Number(element.data('year')),
