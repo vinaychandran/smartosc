@@ -171,3 +171,9 @@
         }
     }
 }
+
+[data-id="popup-gallery"]{
+    .slick-next, .slick-prev{
+        top: 50%;  
+    }
+}
