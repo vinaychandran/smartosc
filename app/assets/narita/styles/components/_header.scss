@@ -4,22 +4,19 @@ header{
   background: $footer-bg;
   position: fixed;
   z-index: 99999;
-  @include md {
+  @include lg {
   	height: 80px;
-  }
-  @include tablet {
-    height: 56px;
-  }
+  }  
   .header-left{
   	float: left;
   	.logo{
   		margin:17px 18px;
   		max-width: 148px;  		
-	    @include tablet {
+	    @include sm {
 	    	max-width: 148px;
 	    	margin:17px 18px;
-	    }
-	    @include md {
+	    }	   
+  		@include lg {
   			margin:23px 50px;
 			max-width: 236px;
   		}

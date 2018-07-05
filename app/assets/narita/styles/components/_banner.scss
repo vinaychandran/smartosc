@@ -1,22 +1,9 @@
-.home-banner{
-    @include md {
-        box-shadow: -3px 53px 81px rgba(0,0,0,0.2);
-    }
-    .banner-text {
-        h1{
-            @include font-size(32px);
-            text-shadow: none;  
-        }
-    }
-    img{
-        margin: 0 auto;
-    }
-}
+
 
 .main-banner {
     position: relative;    
     padding-top: 56px;
-    @include sm {
+    @include lg {
         padding-top: 80px;
     }
     .banner-image{
@@ -82,7 +69,7 @@
             line-height: 1;
             letter-spacing: 0.1px;            
             padding: 8px;            
-            text-align: left;
+            text-align: center;
             float: left;
             margin-left: 1px;
             @include md {
@@ -92,6 +79,7 @@
                 float: none;
                 margin-bottom: 1px;
                 text-transform: uppercase;
+                text-align: left;
             }
         }
         i{
@@ -135,5 +123,27 @@
                 @include font-size(21px);
             }
         }
+    }
+}
+
+.home-banner{
+    @include md {
+        box-shadow: -3px 53px 81px rgba(0,0,0,0.2);
+    }
+    .banner-text {
+        h1{
+            @include font-size(32px);
+            text-shadow: none;  
+        }
+        max-width: 220px;
+        left: 50%;
+        @include center(both);
+        padding-top: 20px;
+        @include sm {
+            max-width: 100%;
+        }
+    }
+    img{
+        margin: 0 auto;
     }
 }
