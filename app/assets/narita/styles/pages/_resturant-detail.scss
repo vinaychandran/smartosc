@@ -190,6 +190,7 @@
         ul {
           display: table;
           margin: 0 auto;
+          width: 100%;
         }
       }
     }
@@ -205,10 +206,9 @@
       background: #fff;
     }
     @include md {
-      width: auto;
-      float: left; 
-      padding: 50px 70px;
-      display: block;
+      width: 33.33%;
+      padding: 50px 20px;
+      display: inline-block;
       background: none;
     }
     &:before{ 
