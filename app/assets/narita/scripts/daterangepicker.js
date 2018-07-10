@@ -205,10 +205,8 @@
         function checkDates(year, month, day) {
             var date = year + '-' + ('0' + (month + 1)).slice(-2) + '-' + ('0' + day).slice(-2);
             //alert(opts.date_at);
-            if (opts.date_at == '') {
+            if (opts.date_at == '' && opts.date_to == '') {
                 containerCalendar.find('td.valid:first').addClass('start');
-            }
-            if (opts.date_to == '') {
                 containerCalendar.find('td.valid:eq(1)').addClass('end');
             }
 
@@ -341,14 +339,15 @@
                     $(this).next().addClass('end');
                     container.find('.value.date_to').addClass('active');
                 } else {
+                    debugger
                     container.find('span.date_at').html(getDateLocale(date_at_));
                     //container.find('span.daysFromTo').html(getDateLocale(date_at_) + ' to ' + getDateLocale(date_to_));
                     opts.inputActive = 'date_to';
-                    if (!opts.date_to) {
-                        container.find('span.date_to').html(getDateLocale(date_to_));
-                        $(this).next().addClass('end');
-                        container.find('.value.date_to').addClass('active');
-                    }
+                    // if (!opts.date_to) {
+                    //     container.find('span.date_to').html(getDateLocale(date_to_));
+                    //     $(this).next().addClass('end');
+                    //     container.find('.value.date_to').addClass('active');
+                    // }
                     container.find('.value').removeClass('active');
                     container.find('.value.date_to').addClass('active');
                 }
@@ -521,6 +520,20 @@
         function closeCalendarAndEmpty() {
             container.find('input.date_at').val(opts.date_at);
             container.find('input.date_to').val(opts.date_to);
+
+            if (opts.date_at !== '') {
+                var date_at_ = new Date(opts.date_at);
+                var checkoutDate = new Date(opts.date_at);
+                var date_to_ = (opts.date_to) ? new Date(opts.date_to) : new Date(checkoutDate.setDate(checkoutDate.getDate() + 1));
+
+            }
+
+            if (!opts.date_to) {
+                var checkoutDate = new Date(opts.date_at);
+                var date_to_ = (opts.date_to) ? new Date(opts.date_to) : new Date(checkoutDate.setDate(checkoutDate.getDate() + 1));
+                container.find('span.date_to').html(getDateLocale(date_to_));
+                containerCalendar.find('td.start').next().addClass('end');
+            }
 
             container.removeClass('active').find('.value').removeClass('active');
 

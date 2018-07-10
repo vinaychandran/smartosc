@@ -476,6 +476,7 @@ const FE = {
                         FE.global.lazyLoad();
                         FE.global.sliderImage('.gallery-nav', 1, false, true);
                         $('.gallery-nav').slick('slickGoTo', SlideNumber, true);
+
                         FE.global.submitForm();
                         FE.global.openModalTab('loginForm');
                         FE.global.openModalTab('resturant-tabs');
@@ -583,18 +584,23 @@ const FE = {
             });
             $(document).on('click', '.people-list-popup .btn-group .done', function(e) {
                 var popup = $(this).parents('.popup-wrap');
-                console.log(popup);
-                let getText = '大人' + popup.find('.grown-up .input-custom button').text() + ' 名, 子供' + popup.find('.children .input-custom button').text() + ' 名 <span>' + popup.find('.room .input-custom button').text() + ' 部屋 </span>';
-                $('.people .people-list p').html(getText);
+                //let getText = '大人' + popup.find('.grown-up .input-custom button').text() + ' 名, 子供' + popup.find('.children .input-custom button').text() + ' 名 <span>' + popup.find('.room .input-custom button').text() + ' 部屋 </span>';
+                var adults_string = popup.find('.grown-up .input-custom button').text();
+                var adults_split_string = adults_string.split(/(\d+)/);
+                var child_string = popup.find('.children .input-custom button').text();
+                var child_split_string = child_string.split(/(\d+)/);
+                $('.people .people-list p span.adults').html(adults_split_string[1]);
+                $('.people .people-list p span.child').html(child_split_string[1]);
+                $('.people .people-list p span.room').html(popup.find('.room .input-custom button').text());
                 popup.css('display', 'none');
                 e.preventDefault();
             });
             $(document).on('click', '.people-list-popup .btn-group .clear', function(e) {
                 e.preventDefault();
                 var popup = $(this).parents('.people-list-popup')
-                popup.find('.grown-up .input-custom button').text('0人');
-                popup.find('.children .input-custom button').text('0人');
-                popup.find('.room .input-custom button').text('0人');
+                popup.find('.grown-up .input-custom button').text('0');
+                popup.find('.children .input-custom button').text('0');
+                popup.find('.room .input-custom button').text('0');
             });
             $(document).on('click', '.submitSubscribeForm', function(e) {
                 if (FE.global.checkValidationRules('#subscribeForm')) {
@@ -730,17 +736,39 @@ const FE = {
                             e.className += ' ' + className;
                         }
                     }
+
+
                 });
                 document.querySelectorAll('[data-room-type]').forEach(function(e) {
                     e.classList.remove(classNa);
                 })
                 el.classList.add(classNa);
+
+
+                fillGalleryNav();
             };
             document.querySelectorAll('[data-room-type]').forEach(function(elem) {
                 elem.addEventListener('click', function() {
                     showFilterRoom(elem);
                 }, false);
             })
+            fillGalleryNav();
+
+            function fillGalleryNav() {
+                if (document.getElementById('gallery-nav')) {
+                    document.getElementById('gallery-nav').innerHTML = '';
+                }
+                Array.from(document.getElementsByClassName('show')).forEach(function(item, index) {
+                    item.children[0].setAttribute('data-slide', index);
+                    var galleryImageSrc = item.children[0].src;
+                    var galleryImage = document.createElement('img');
+                    galleryImage.setAttribute('src', galleryImageSrc);
+                    var galleryNavDiv = document.createElement('div');
+                    galleryNavDiv.appendChild(galleryImage);
+                    document.getElementById('gallery-nav').appendChild(galleryNavDiv);
+                });
+                FE.global.lightBox(true);
+            }
         },
         filter: (targetElement) => {
             // get all of our list items

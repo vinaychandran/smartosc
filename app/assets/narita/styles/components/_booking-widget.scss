@@ -731,15 +731,24 @@
         //   background-position: 0.5em -142.4em;
         // }
       }
-
-      span {
+      span.container{
         display: block;
+        padding: 0;
+      }
+      span.room  {
+        display: block;
+        float: left;
         opacity: 0.5;
         font-family: $go-bold;
         @include font-size(12px);
         letter-spacing: 0.9px;
         text-align: left;
         color: rgba(0, 0, 0, 0.5);
+
+      }
+      span.roomText{
+        color: rgba(0, 0, 0, 0.5);
+        //display: inline-block;
       }
     }
 

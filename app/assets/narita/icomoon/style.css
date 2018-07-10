@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'icomoon';
   src:
-    url('fonts/icomoon.ttf?qhf079') format('truetype'),
-    url('fonts/icomoon.woff?qhf079') format('woff'),
-    url('fonts/icomoon.svg?qhf079#icomoon') format('svg');
+    url('fonts/icomoon.ttf?xfxl4b') format('truetype'),
+    url('fonts/icomoon.woff?xfxl4b') format('woff'),
+    url('fonts/icomoon.svg?xfxl4b#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -23,6 +23,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-breakfast:before {
+  content: "\e91c";
+}
+.icon-cottonswab:before {
+  content: "\e989";
+}
+.icon-mini-fridge:before {
+  content: "\e98a";
+}
+.icon-pay:before {
+  content: "\e98b";
+}
 .icon-generation:before {
   content: "\e900";
 }
@@ -107,9 +119,6 @@
 }
 .icon-cookwareinkitchen:before {
   content: "\e91b";
-}
-.icon-Cottonswab:before {
-  content: "\e91c";
 }
 .icon-coupleorientedroom:before {
   content: "\e91d";

@@ -193,8 +193,15 @@ block append content
                     .people
                         label ご利用人数
                         .people-list
-                            p 大人2名, 子供1名
-                                span １部屋
+                          p
+                            | 大人
+                            span.adults 0
+                            | 名, 子供
+                            span.child 0
+                            | 名
+                            span.container
+                              span.room 0
+                              span.roomText 部屋
                         .popup-wrap.popup-create
                             //.overlay
                             .big-popup.people-list-popup

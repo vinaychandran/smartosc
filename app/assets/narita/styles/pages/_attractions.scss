@@ -189,8 +189,8 @@
           text-align: left;
           @include md {
             display: block;
-            float: left;
-            padding-left: 50px;
+            float: right;
+            padding-left: 10px;
           }
 
           p {
