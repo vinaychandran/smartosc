@@ -205,9 +205,12 @@
         function checkDates(year, month, day) {
             var date = year + '-' + ('0' + (month + 1)).slice(-2) + '-' + ('0' + day).slice(-2);
             //alert(opts.date_at);
-            if (opts.date_at == '' && opts.date_to == '') {
+            if (opts.date_at == '' && opts.date_to == '' && !singleDatePicker) {
                 containerCalendar.find('td.valid:first').addClass('start');
                 containerCalendar.find('td.valid:eq(1)').addClass('end');
+            }
+            if (opts.date_at == '' && singleDatePicker) {
+                containerCalendar.find('td.valid:first').addClass('start');
             }
 
             if (opts.date_at != '' && opts.date_at == date) {
@@ -309,6 +312,7 @@
 
             }
             console.log('opts.inputActive ' + opts.inputActive)
+            debugger
             if (opts.inputActive == 'date_at') {
                 containerCalendar.find('td.valid').removeClass('hovered');
                 var start = $(this).text();
@@ -339,19 +343,15 @@
                     $(this).next().addClass('end');
                     container.find('.value.date_to').addClass('active');
                 } else {
-                    debugger
                     container.find('span.date_at').html(getDateLocale(date_at_));
                     //container.find('span.daysFromTo').html(getDateLocale(date_at_) + ' to ' + getDateLocale(date_to_));
                     opts.inputActive = 'date_to';
-                    // if (!opts.date_to) {
-                    //     container.find('span.date_to').html(getDateLocale(date_to_));
-                    //     $(this).next().addClass('end');
-                    //     container.find('.value.date_to').addClass('active');
-                    // }
                     container.find('.value').removeClass('active');
                     container.find('.value.date_to').addClass('active');
                 }
-                checkHover(containerCalendar.find('td.valid.end'), 'click');
+                if (!singleDatePicker) {
+                    checkHover(containerCalendar.find('td.valid.end'), 'click');
+                }
             } else {
 
                 var end = $(this).text();
@@ -409,7 +409,10 @@
 
                 }
                 //  closeCalendarAndEmpty();
-                checkHover(containerCalendar.find('td.valid.start'), 'click');
+                if (!singleDatePicker) {
+                    checkHover(containerCalendar.find('td.valid.start'), 'click');
+                }
+
             }
 
             if (opts.date_at != '' && opts.date_to != '' && containerCalendar.is(':hidden')) {
@@ -434,14 +437,19 @@
             containerValues.find('span.date_at').text(opts.l.at);
             containerValues.find('span.date_to').text(opts.l.to);
 
+            if (!singleDatePicker) {
+                opts.date_at = '';
+                opts.date_to = '';
+                //date_at_ > date_to_
 
-            opts.date_at = '';
-            opts.date_to = '';
-            //date_at_ > date_to_
+                containerCalendar.find('td').removeClass('start intermediate end');
 
-            containerCalendar.find('td').removeClass('start intermediate end');
+                containerValues.find('.value').find('input').val('').change();
+            } else {
+                opts.date_to = '';
+                containerCalendar.find('td').removeClass('intermediate end');
+            }
 
-            containerValues.find('.value').find('input').val('').change();
         }
 
 
@@ -464,7 +472,7 @@
 
         // Highlights the range when hovering
         containerCalendar.on('mouseenter', 'td.valid', function() {
-            if (opts.date_at != '' && opts.date_to == '') {
+            if (opts.date_at != '' && opts.date_to == '' && !singleDatePicker) {
                 checkHover($(this), 'hover');
             }
 
@@ -521,17 +529,18 @@
             container.find('input.date_at').val(opts.date_at);
             container.find('input.date_to').val(opts.date_to);
 
-            if (opts.date_at !== '') {
+            if (opts.date_at !== '' && !singleDatePicker) {
                 var date_at_ = new Date(opts.date_at);
                 var checkoutDate = new Date(opts.date_at);
                 var date_to_ = (opts.date_to) ? new Date(opts.date_to) : new Date(checkoutDate.setDate(checkoutDate.getDate() + 1));
 
             }
 
-            if (!opts.date_to) {
+            if (!opts.date_to && opts.date_at && !singleDatePicker) {
                 var checkoutDate = new Date(opts.date_at);
                 var date_to_ = (opts.date_to) ? new Date(opts.date_to) : new Date(checkoutDate.setDate(checkoutDate.getDate() + 1));
                 container.find('span.date_to').html(getDateLocale(date_to_));
+                opts.date_to = date_to_.toISOString().split("T")[0];
                 containerCalendar.find('td.start').next().addClass('end');
             }
 
