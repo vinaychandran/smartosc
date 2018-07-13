@@ -201,7 +201,7 @@
     display: flex;
     align-items:center;
     background-color: #fafafa;
-    padding: 25px 35px;
+    padding: 25px 15px 25px 35px;
     &:nth-child(2){
       background: #fff;
     }
@@ -242,7 +242,7 @@
   .time-wrap{
     float: right;
     border-left: 1px solid #eeeeee;
-    padding-left: 60px;
+    padding-left: 30px;
     @include md {
       float: none;
       border-left: 0px;

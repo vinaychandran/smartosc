@@ -504,7 +504,7 @@ const FE = {
                 }, 410);
                 $('body').removeClass('modal-open');
             });
-
+            FE.global.lazyLoad();
         },
         resetUserDetails: () => {
             let url = new URL(window.location.href);
@@ -534,7 +534,7 @@ const FE = {
                     className: 'roomPopup',
                     closable: true,
                     beforeShow: (instance) => {
-
+                        
                     },
                     afterShow: (instance) => {
                         FE.global.sliderImage('.roomPopup .room-info-slider', 1, false, true);
@@ -543,12 +543,13 @@ const FE = {
                         FE.global.openModalTab('resturant-tabs');
                         $('body').addClass('modal-open');
                         let checkSlider = true;
+                        FE.global.lazyLoad();
                     },
                     beforeClose: (instance) => {
                         $('.roomPopup .room-info-slider').slick('unslick');
                         $('body').removeClass('modal-open');
                     }
-                }).show
+                }).show                
             })
             $(document).on('click', '.room-detail .close-room', function() {
                 $('.roomPopup .room-info-slider').slick('unslick');
@@ -559,7 +560,7 @@ const FE = {
 
                 }, 410);
                 $('body').removeClass('modal-open');
-            });
+            });           
         },
         autocomplatePopup: () => {
             $(document).on('click', '.input-custom button', function() {
@@ -793,17 +794,18 @@ const FE = {
             function fillGalleryNav() {
                 if (document.getElementById('gallery-nav')) {
                     document.getElementById('gallery-nav').innerHTML = '';
+                    Array.from(document.getElementsByClassName('show')).forEach(function(item, index) {
+                        item.children[0].setAttribute('data-slide', index);
+                        var galleryImageSrc = item.children[0].getAttribute('data-src');
+                        var galleryImage = document.createElement('img');
+                        galleryImage.setAttribute('src', galleryImageSrc);
+                        var galleryNavDiv = document.createElement('div');
+                        galleryNavDiv.appendChild(galleryImage);
+                        document.getElementById('gallery-nav').appendChild(galleryNavDiv);
+                    });
+                    FE.global.lightBox(true);
                 }
-                Array.from(document.getElementsByClassName('show')).forEach(function(item, index) {
-                    item.children[0].setAttribute('data-slide', index);
-                    var galleryImageSrc = item.children[0].src;
-                    var galleryImage = document.createElement('img');
-                    galleryImage.setAttribute('src', galleryImageSrc);
-                    var galleryNavDiv = document.createElement('div');
-                    galleryNavDiv.appendChild(galleryImage);
-                    document.getElementById('gallery-nav').appendChild(galleryNavDiv);
-                });
-                FE.global.lightBox(true);
+                
             }
         },
         filter: (targetElement) => {
@@ -947,7 +949,7 @@ const FE = {
         },
 
         init: () => {
-            FE.global.lazyLoad();
+            
         },
 
         loaded: function loaded() {
@@ -991,6 +993,7 @@ const FE = {
             FE.global.filterNews();
             FE.global.sliderImage('.single-room-wrap .room-info-slider', 1, false, true);
             FE.global.pauseVideo();
+            FE.global.lazyLoad();
         },
         resize: function resize() {
             //Functions inside loaded execute when window resize

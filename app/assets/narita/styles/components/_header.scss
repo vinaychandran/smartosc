@@ -52,17 +52,18 @@ header{
 
 .top-cta{  
 	float: left;
-	padding: 21px 30px;
+	padding: 32px 30px 21px;
 	line-height: 1;
 	border-right:1px solid rgba(255,255,255,0.2);
 	.phone{
 		color: $secondary-color;
+		@include font-size(16px);
 		span{
 			padding-left: 12px;
 			font-family: 'Lato-B';
 		}
 		.icon-phone{
-			@include font-size(10px);
+			@include font-size(14px);
 		}
 	}
 	@include tablet {
