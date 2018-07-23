@@ -294,12 +294,12 @@
       text-align: left;
       color: $default-color;;
       border: 2px solid #eeeeee;
-      border-radius: 4px; 
+      border-radius: 4px;
       height: 66px;
-      line-height: 66px; 
+      line-height: 66px;
       padding-top: 15px;
       width: 140px;
-      padding-left: 15px;   
+      padding-left: 15px;
       span.date_at,
       span.date_to {
         @extend .icon-calender;

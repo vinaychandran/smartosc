@@ -1,6 +1,10 @@
 .input-custom {
   position: relative;
 
+  input[type='text'], textarea{
+    font-size: 16px;
+  }
+
   input,
   input::placeholder {
     font-family: $go-bold;

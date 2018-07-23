@@ -101,7 +101,7 @@
                 if ($(window).width() < 769) {
                     dateText = '<div class="day"> ' + day + '</div><div class="month"> ' + thisMonth + '</div><div class="dayoftheweek">' + dayName + '</div>';
                 } else {
-                    dateText = '<div class="year"> ' + year + yearSuffix + '</div><div class="month"> ' + thisMonth + '</div><div class="day"> ' + day + dateSuffix + '</day><div class="dayoftheweek">' + dayName + '</div>';
+                    dateText = '<div class="year">' + year + yearSuffix + '</div><div class="month">' + thisMonth + '</div><div class="day">' + day + dateSuffix + '</day><div class="dayoftheweek">' + dayName + '</div>';
                 }
             }
             return dateText;
