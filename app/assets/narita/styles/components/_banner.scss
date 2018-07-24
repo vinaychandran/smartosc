@@ -133,7 +133,7 @@
     .banner-text {
         h1{
             @include font-size(32px);
-            text-shadow: none;  
+           // text-shadow: none;  
         }
         max-width: 220px;
         left: 50%;
