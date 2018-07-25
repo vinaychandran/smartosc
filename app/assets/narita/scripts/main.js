@@ -276,7 +276,8 @@ const FE = {
                         div.appendChild(arrow);
                         node.appendChild(div);
                         node.id = 'more-link';
-                        node.href = 'gallery.html';
+                        node.href = "https://www.instagram.com/explore/locations/2070731686276652/hotel-mystays-narita/";
+                        node.target = '_blank';
                         let feed = document.getElementById('instafeed');
                         feed.appendChild(node);
                         FE.global.lazyLoad();
