@@ -6,8 +6,8 @@ block append content
   include ../components/home-slider.pug
   .banner-middle
     picture 
-      source(media='(min-width: 768px)', srcset='/assets/narita/images/banner-middle.jpg')
-      img(src='/assets/narita/images/banner-middle-mobile.jpg')    
+      source(media='(min-width: 768px)', data-srcset='/assets/narita/images/banner-middle.jpg')
+      img(data-src='/assets/narita/images/banner-middle-mobile.jpg' class="lazy")    
   include ../components/home-video-slider.pug
   include ../components/home-review.pug
   include ../components/home-concept.pug
