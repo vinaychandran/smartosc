@@ -14,7 +14,7 @@ const FE = {
         lazyLoad: () => {
             const myLazyLoad = new LazyLoad({
                 elements_selector: '.lazy',
-                threshold: 0
+                threshold: 200
             });
             myLazyLoad.update();
         },
