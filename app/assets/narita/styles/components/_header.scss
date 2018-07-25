@@ -10,11 +10,11 @@ header{
   .header-left{
   	float: left;
   	.logo{
-  		margin:17px 18px;
-  		max-width: 148px;  		
+  		margin:16px 18px;
+  		max-width: 170px;  		
 	    @include sm {
-	    	max-width: 148px;
-	    	margin:17px 18px;
+	    	max-width: 170px;
+	    	margin:16px 18px;
 	    }	   
   		@include lg {
   			margin:23px 50px;
@@ -30,9 +30,9 @@ header{
 }
 
 .top-menu{
-  @include tablet {
-    display: none!important;
-  }
+  // @include tablet {
+  //   display: none!important;
+  // }
 	@include center(horizontal);
 	padding: 32px 20px 0;
 	ul{

@@ -3,6 +3,7 @@
   height: 100vh;
   overflow-y: scroll;
   position: relative;
+  -webkit-overflow-scrolling: touch;
   @include md {
     height: auto;
     //overflow-y: hidden;
@@ -23,8 +24,9 @@
 // }
 
 .closeBtn {
-  position: absolute;
+  //position: fixed;
   right: 15px;
+  z-index: 99999;
   top: 0;
   width: 56px;
   height: 56px;

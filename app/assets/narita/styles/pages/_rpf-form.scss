@@ -3,6 +3,7 @@
   height: 100vh;
   overflow-y: scroll;
   position: relative;
+  -webkit-overflow-scrolling: touch;
   @include md {
     height: auto;
     //overflow-y: hidden;
@@ -276,7 +277,7 @@
           padding: 0 0;
 
           &:before {
-            background-image: url("../svg/sprite.svg");
+            //background-image: url("../svg/sprite.svg");
             margin-left: 5px;
             width: 28px;
             height: 20px;

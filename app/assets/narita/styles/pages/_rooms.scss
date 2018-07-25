@@ -237,6 +237,7 @@ ul.rooms-list{
 .roomPopup{
   background:#fafafa;
   display: block;
+  -webkit-overflow-scrolling: touch;
   &:after{
     display: none;
   }
