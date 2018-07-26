@@ -15,7 +15,7 @@
                 days: ['日', '一', '二', '三', '四', '五', '六'],
                 yearSuffix: '年',
                 dateSuffix: '日',
-                nights: 'nights**',
+                nights: 'nights',
                 night: 'night'
             }
             opts.l = dateLocale;
@@ -28,7 +28,7 @@
                 days: ['日', '月', '火', '水', '木', '金', '土'],
                 yearSuffix: '年',
                 dateSuffix: '日',
-                nights: 'nights**',
+                nights: 'nights',
                 night: 'night'
             }
             opts.l = dateLocale;
@@ -42,7 +42,7 @@
                 days: ['일', '월', '화', '수', '목', '금', '토'],
                 yearSuffix: '년',
                 dateSuffix: '日',
-                nights: 'nights**',
+                nights: 'nights',
                 night: 'night'
             }
             opts.l = dateLocale;
@@ -56,7 +56,7 @@
                 days: ['日', '一', '二', '三', '四', '五', '六'],
                 yearSuffix: '年',
                 dateSuffix: '日',
-                nights: 'nights**',
+                nights: 'nights',
                 night: 'night'
             }
             opts.l = dateLocale;
@@ -67,7 +67,7 @@
                 days: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
                 yearSuffix: '',
                 dateSuffix: '',
-                nights: 'nights**',
+                nights: 'nights',
                 night: 'night'
             }
 
@@ -80,7 +80,7 @@
             containerCalendarContainer = container.find('.calendarContainer'),
             backdrop = container.find('.calendar-backdrop');
 
-        function getDateLocale(value) {
+        function getDateLocale(value, thiru) {
             var day = value.getDay();
             var thisMonth = opts.l.months[value.getMonth()];
             var dayName = days[value.getDay()];
@@ -92,14 +92,22 @@
             if (opts.locale == 'en') {
                 var dateText;
                 if ($(window).width() < 769) {
-                    dateText = '<div class="day"> ' + day + '</div><div class="month"> ' + thisMonth + '</div><div class="dayoftheweek">' + dayName + '</div>';
+                  if(thiru){
+                    dateText = '<div class="year"> ' + year + '</div><div class="month"> ' + thisMonth + '</div><div class="day"> ' + day + '</day><div class="dayoftheweek">' + dayName + '</div>';
+
+                  }else
+                    {dateText = '<div class="day"> ' + day + '</div><div class="month"> ' + thisMonth + '</div><div class="dayoftheweek">' + dayName + '</div>';}
                 } else {
                     dateText = '<div class="year"> ' + year + '</div><div class="month"> ' + thisMonth + '</div><div class="day"> ' + day + '</day><div class="dayoftheweek">' + dayName + '</div>';
                 }
             } else {
                 var dateText;
                 if ($(window).width() < 769) {
-                    dateText = '<div class="day"> ' + day + '</div><div class="month"> ' + thisMonth + '</div><div class="dayoftheweek">' + dayName + '</div>';
+                  if(thiru){
+                    dateText = '<div class="year">' + year + yearSuffix + '</div><div class="month">' + thisMonth + '</div><div class="day">' + day + dateSuffix + '</day><div class="dayoftheweek">' + dayName + '</div>';
+
+                  }else
+                  {  dateText = '<div class="day"> ' + day + '</div><div class="month"> ' + thisMonth + '</div><div class="dayoftheweek">' + dayName + '</div>';}
                 } else {
                     dateText = '<div class="year">' + year + yearSuffix + '</div><div class="month">' + thisMonth + '</div><div class="day">' + day + dateSuffix + '</day><div class="dayoftheweek">' + dayName + '</div>';
                 }
@@ -113,11 +121,15 @@
             var tomorrow = new Date();
             tomorrow.setDate(tomorrow.getDate() + 1);
             var nextDay = getDateLocale(tomorrow);
+
             if (!containerValues.find('span.date_at').html()) {
                 containerValues.find('span.date_at').html(now);
             }
             if (!containerValues.find('span.date_to').html()) {
                 containerValues.find('span.date_to').html(nextDay);
+
+                container.find('span.daysFromTo').html(getDateLocale(new Date(), true) + ' ~ ' +  getDateLocale(tomorrow, true));
+
             }
 
             if (opts.date_at == '') {
@@ -140,6 +152,13 @@
         init();
 
         function createCalendar(year, month, direction, max_m = 3) {
+
+
+            if((opts.date_at != "") && (opts.date_to != "") )
+            {
+              container.find('span.daysFromTo').html(getDateLocale(new Date(opts.date_at), true)+ ' ~ ' + getDateLocale(new Date(opts.date_to), true));
+
+            }
             var html;
 
             var start = 1;
@@ -311,8 +330,8 @@
                 opts.inputActive = 'date_at'
 
             }
+
             console.log('opts.inputActive ' + opts.inputActive)
-            debugger
             if (opts.inputActive == 'date_at') {
                 containerCalendar.find('td.valid').removeClass('hovered');
                 var start = $(this).text();
@@ -329,7 +348,7 @@
                     closeCalendarAndEmpty();
                     clearAll();
                 }
-                if (date_at_ > date_to_) {
+                if (date_at_ >= date_to_) {
                     date_to_ = new Date(checkoutDate.setDate(checkoutDate.getDate() + 1));
                     opts.date_to = new Date(checkoutDate.setDate(checkoutDate.getDate() + 1));
                     opts.inputActive = 'date_to';
@@ -364,7 +383,7 @@
                     date_to_ = new Date(opts.date_to);
 
 
-                if (date_at_ > date_to_) {
+                if (date_at_ >= date_to_) {
                     console.log('greater ')
                     opts.date_at = date_to_;
                     //date_at_ = date_to_;
@@ -393,7 +412,7 @@
                     }
 
                     container.find('span.date_to').html(getDateLocale(date_to_));
-                    container.find('span.daysFromTo').html(getDateLocale(date_at_) + ' ~ ' + getDateLocale(date_to_));
+                    container.find('span.daysFromTo').html(getDateLocale(date_at_, true) + ' ~ ' + getDateLocale(date_to_, true));
 
                     var date1 = new Date(date_at_);
                     var date2 = new Date(date_to_);

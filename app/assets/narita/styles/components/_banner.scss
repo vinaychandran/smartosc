@@ -134,11 +134,9 @@
         h1{
             @include font-size(32px);
            // text-shadow: none;  
-        }
-        max-width: 220px;
-        left: 50%;
+        }        
         @include center(both);
-        padding-top: 20px;
+        padding-top: 20px; 
         @include sm {
             max-width: 100%;
         }
