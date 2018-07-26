@@ -30,9 +30,12 @@ header{
 }
 
 .top-menu{
-  // @include tablet {
-  //   display: none!important;
-  // }
+   @include md {
+     display: none!important;
+   }
+   @include lg {
+		display: block !important;
+   }
 	@include center(horizontal);
 	padding: 32px 20px 0;
 	ul{
@@ -76,12 +79,15 @@ header{
 
 .mobile-phone{
 	@include tablet {
-	display: block!important;
+		display: block!important;
 	}
 	float: left;
-	padding:18px 19px;
+	padding:20px 19px 13px;
 	border-right:1px solid rgba(255,255,255,0.2);
 	@include font-size(20px);
+	@include lg {
+		padding:18px 19px;
+	}
 }
 
 .sign-in{  
@@ -120,11 +126,16 @@ header{
 	margin: 20px 15px;
 	cursor: pointer;
 	float: left;
-	@include md {
-		margin: 30px 35px;
-	}
+	display: block !important;
 	@include tablet {
-	   margin: 20px 15px;
+	   display: block !important;
+	}
+	@include md {		
+		display: block !important;
+	}
+	@include lg {
+		margin: 30px 35px;
+		display: none !important;
 	}
     span {
 		display: block;
