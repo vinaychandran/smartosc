@@ -5,6 +5,7 @@
             mobile = false;
 
         var days, dateLocale, opts, nights;
+        var isMobile = $(window).width() <= 767;
 
         if (opts.locale === 'tw') {
             days = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
@@ -224,14 +225,12 @@
         function checkDates(year, month, day) {
             var date = year + '-' + ('0' + (month + 1)).slice(-2) + '-' + ('0' + day).slice(-2);
             //alert(opts.date_at);
-            if (opts.date_at == '' && opts.date_to == '' && !singleDatePicker) {
+            if (opts.date_at == '' && opts.date_to == '' && !singleDatePicker && !isMobile) {
                 containerCalendar.find('td.valid:first').addClass('start');
                 containerCalendar.find('td.valid:eq(1)').addClass('end');
-            }
-            if (opts.date_at == '' && singleDatePicker) {
+            } else if (opts.date_at == '' && opts.date_to == '' && !isMobile) {
                 containerCalendar.find('td.valid:first').addClass('start');
             }
-
             if (opts.date_at != '' && opts.date_at == date) {
                 return ' start';
             }
