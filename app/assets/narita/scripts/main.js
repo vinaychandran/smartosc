@@ -14,7 +14,10 @@ const FE = {
         lazyLoad: () => {
             const myLazyLoad = new LazyLoad({
                 elements_selector: '.lazy',
-                threshold: 200
+                threshold: 0,
+                callback_enter: function(element){
+                    $(element).addClass('loaded');
+                }
             });
             myLazyLoad.update();
         },
@@ -373,9 +376,21 @@ const FE = {
         scroll: () => {
             const scroll = new SmoothScroll('.scroll', {
                 speed: 2000,
-                offset: 180,
+                offset: function (anchor, toggle) {
+                    let imageTags = document.getElementsByClassName('lazy');
+                    console.log(imageTags);
+                    for (var i = 0; i < imageTags.length; i++) {
+                        if(imageTags[i].classList.contains('loaded')) {
+                            return 180;
+                        } else {
+                            return -150;
+                        }
+                    }                                              
+                },                
+                header: 'header',
+                clip: true,
                 before: function(anchor, toggle) {
-                    console.log(toggle.className.split(' ')[0]);
+                    console.log(toggle.className.split(' ')[0]);                    
                     [].forEach.call(
                         anchor.querySelectorAll('.tabs-title'),
                         function(el) {
@@ -397,6 +412,9 @@ const FE = {
                         anchor.querySelectorAll('.tabs-title')[0].classList.add('tabs-title-active');
                         anchor.querySelectorAll('.tabs-content')[0].style.display = 'block';
                     }
+                },
+                scrollStart: function(anchor, toggle) {
+                    FE.global.lazyLoad();
                 }
             });
         },

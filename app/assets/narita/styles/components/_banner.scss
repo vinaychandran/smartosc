@@ -135,7 +135,7 @@
             @include font-size(32px);
            // text-shadow: none;  
         }        
-        @include center(both);
+        @include center(vertical);
         padding-top: 20px; 
         @include sm {
             max-width: 100%;
