@@ -16,8 +16,8 @@
                 days: ['一','二', '三', '四', '五', '六', '日' ],
                 yearSuffix: '年',
                 dateSuffix: '日',
-                nights: 'nights',
-                night: 'night'
+                nights: '晚',
+                night: '晚'
             }
             opts.l = dateLocale;
         } else if (opts.locale === 'ja') {
@@ -29,8 +29,8 @@
                 days: [ '月', '火', '水', '木', '金', '土', '日'],
                 yearSuffix: '年',
                 dateSuffix: '日',
-                nights: 'nights',
-                night: 'night'
+                nights: '泊',
+                night: '泊'
             }
             opts.l = dateLocale;
         } else
@@ -43,8 +43,8 @@
                 days: [ '월', '화', '수', '목', '금', '토', '일'],
                 yearSuffix: '년',
                 dateSuffix: '日',
-                nights: 'nights',
-                night: 'night'
+                nights: '박',
+                night: '박'
             }
             opts.l = dateLocale;
         } else if (opts.locale === 'cn') {
@@ -57,8 +57,8 @@
                 days: [ '一', '二', '三', '四', '五', '六', '日'],
                 yearSuffix: '年',
                 dateSuffix: '日',
-                nights: 'nights',
-                night: 'night'
+                nights: '晚',
+                night: '晚'
             }
             opts.l = dateLocale;
         } else {
