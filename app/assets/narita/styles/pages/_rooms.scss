@@ -673,11 +673,32 @@ ul.rooms-list{
 
 .single-room-wrap{
   background: #fafafa;
+  .room-info-header{
+    position: fixed;
+    top: 56px; 
+    height: 63px;
+    box-shadow: 3.5px 3.5px 6px 0 rgba(0, 0, 0, 0.1);
+    @include md {
+      top: 80px; 
+      height: 65px;
+    }
+    .room-price{
+      height: 50px;
+      line-height: 60px;
+    }
+    .book-room{
+      padding: 25px 80px 24px;
+    }
+  }
+
   .room-info-container{
     margin-top: 0;
     margin-bottom: 0;
-    padding-top: 120px;
+    padding-top: 150px;
     padding-bottom: 80px;
+    @include md {
+      padding-top: 180px;
+    }
   }
 }
 
