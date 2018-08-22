@@ -107,7 +107,7 @@ var Tabs = function(options) {
             elem.querySelectorAll('.' + contentClass)[i].style.display = '';
 
             if (document.getElementById('tablink') && document.getElementById('tabs-header') && document.getElementById('gallery-mask')) {
-                document.getElementById('tablink').innerText = elem.querySelectorAll('.' + titleClass)[i].text;
+                document.getElementById('tablink').innerText = document.querySelectorAll('#gallery-tabs .' + titleClass)[i].text;
                 document.getElementById('tablink').classList.remove('opened');
                 if (window.innerWidth <= 768) {
                     document.getElementById('tabs-header').style.display = 'none';
