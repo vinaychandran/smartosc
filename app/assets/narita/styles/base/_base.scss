@@ -12,7 +12,7 @@ body {
     background: $default-bg;
     color:$primary-color;
     line-height: $line-height;
-    position: relative; 
+    position: relative;
 }
 
 * {
@@ -54,7 +54,7 @@ ul {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 h1{
-    @include font-size(24px); 
+    @include font-size(24px);
 }
 
 h2{
@@ -105,17 +105,17 @@ h6{
     }
     h6 {
         @include font-size(16px);
-    }    
+    }
 }
 
 p {
     margin-top: 0;
-} 
+}
 
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-a {    
+a {
     color: $default-color;
     text-decoration: none;
 }
@@ -130,7 +130,7 @@ a {
 
 
 
-a, button, li 
+a, button, li
 {
     -ms-touch-action: manipulation; /* IE10  */
     touch-action: manipulation;     /* IE11+ */
@@ -147,7 +147,7 @@ textarea {
     outline: none !important;
     padding: 0 10px;
     -webkit-appearance: none;
-    -webkit-border-radius: 0; 
+    -webkit-border-radius: 0;
 }
 
 button{
@@ -270,14 +270,14 @@ pre>code {
 
 th,
 td {
-    padding: 12px 15px;
+    //padding: 12px 15px;
     text-align: left;
-    border-bottom: 1px solid #E1E1E1;
+    //border-bottom: 1px solid #E1E1E1;
 }
 
 th:first-child,
 td:first-child {
-    padding-left: 0;
+    //padding-left: 0;
 }
 
 th:last-child,
@@ -347,4 +347,3 @@ hr {
     display: table;
     clear: both;
 }
-
