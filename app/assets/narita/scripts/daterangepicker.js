@@ -296,7 +296,7 @@
 
 
         // Turn over the calendar back
-        containerCalendar.on('click', '.button-prev', function() {
+        containerCalendar.off('click', '.button-prev').on('click', '.button-prev', function() {
             var year = containerCalendarContainer.find('table:first').data('year'),
                 month = parseFloat(containerCalendarContainer.find('table:first').data('month')) - 1,
                 m_max = 1;
@@ -309,7 +309,7 @@
 
 
         // Turn over the calendar next
-        containerCalendar.on('click', '.button-next', function() {
+        containerCalendar.off('click', '.button-next').on('click', '.button-next', function() {
             var year = containerCalendarContainer.find('table:last').data('year');
             var month = parseFloat(containerCalendarContainer.find('table:last').data('month')) + 1;
             var m_max = 1;
