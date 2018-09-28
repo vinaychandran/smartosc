@@ -259,7 +259,7 @@
             line-height: 66px;
             font-weight: 700;
             //padding-top: 18px;
-            padding: 20px 10px 20px 15px;
+            padding: 20px 0 20px 15px;
             width: 100%;
             @include md {
                 padding-top: 0;
@@ -668,7 +668,7 @@
             span.room {
                 display: block;
                 float: left;
-                opacity: 0.5;
+                opacity: 1;
                 font-family: $go-bold;
                 @include font-size(12px);
                 letter-spacing: 0.9px;
@@ -703,7 +703,7 @@
             clear: none;
         }
         label {
-            padding: 5px 10px 5px 10px;
+            padding: 5px 0;
             clear: both;
             text-align: center;
             cursor: pointer;

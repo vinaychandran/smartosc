@@ -25,7 +25,7 @@
   .btn{
     display: inline-block;
     padding: 15px 40px;
-    width: 50%;
+    width: 40%; 
     float: right;
     @include md {
       padding: 25px 50px;
@@ -202,6 +202,7 @@
     align-items:center;
     background-color: #fafafa;
     padding: 25px 15px 25px 35px;
+    cursor: pointer;
     &:nth-child(2){
       background: #fff;
     }

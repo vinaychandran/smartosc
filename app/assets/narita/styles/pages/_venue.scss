@@ -480,7 +480,7 @@ ul.venue-list {
 
         span {
           border: solid 1px $default-color;
-          width: 122px;
+          min-width: 122px;
           line-height: 1;
           padding: 15px 5px;
           display: inline-block;
